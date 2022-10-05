@@ -1,3 +1,4 @@
+import { ProfileCard } from '@/components/ProfileCard'
 import { FaKaggle } from 'react-icons/fa'
 import { BsMailbox } from 'react-icons/bs'
 import { EmailIcon } from 'react-share'
@@ -43,7 +44,7 @@ export default function AuthorLayout({ children, frontMatter }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 pb-5 pt-6 lg:grid-cols-2 lg:grid-rows-[auto_1fr] ">
+      {/* <div className="grid grid-cols-1 pb-5 pt-6 lg:grid-cols-2 lg:grid-rows-[auto_1fr] ">
         <div className="lg:pl-10">
           <div className="flex justify-center pt-0 lg:pt-[1em]">
             <div className="max-w-xs   px-2.5 lg:max-w-none">
@@ -186,6 +187,14 @@ export default function AuthorLayout({ children, frontMatter }) {
               range={d.range}
             />
           ))}
+        </div>
+      </div> */}
+      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+        <div className="items-start space-y-2 pt-8 xl:grid xl:grid-cols-3 xl:space-y-0">
+          <ProfileCard />
+          <div className="prose prose-lg max-w-none pb-8 dark:prose-dark xl:col-span-2 xl:pl-8">
+            {children}
+          </div>
         </div>
       </div>
     </>

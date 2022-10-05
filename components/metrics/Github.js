@@ -16,11 +16,11 @@ export default function GithubCard() {
   return (
     <div className="my-2 grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
       {/* <MetricCard header="GitHub Stars" link={link} metric={stars} isCurrency={false} /> */}
-      <img 
-        src='https://github-readme-stats.vercel.app/api?username=ashishlotake&show_icons=true&hide_title=true'
-        className='items-center rounded-lg '
+      <img
+        src="https://github-readme-stats.vercel.app/api?username=ashishlotake&show_icons=true&hide_title=true"
+        className="items-center rounded-lg "
         width="100%"
-        />
+      />
       <MetricCard header="Github Followers" link={link} metric={followers} isCurrency={false} />
     </div>
   )

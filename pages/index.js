@@ -1,3 +1,4 @@
+import { ProfileCard } from '@/components/ProfileCard'
 import { PageTitle, Subtitle, CardTitle, PageSubHeading } from '@/components/PageTitle'
 import CustomLink from '@/components/Link'
 import Link from 'next/link'
@@ -19,23 +20,66 @@ export async function getStaticProps() {
 
   return { props: { posts } }
 }
+let headingColorClass =
+  'bg-gradient-to-r from-yellow-600 to-red-600 dark:bg-gradient-to-l dark:from-emerald-500 dark:to-primary-600'
 
 export default function Home({ posts }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <div className="border-b border-gray-200 dark:border-gray-700">
-        <div className=" ">
-          <PageTitle>
-            Hi, I am <span className="text-primary-500 dark:text-primary-500">Ashish</span>
-          </PageTitle>
-          <Subtitle>
-            Welcome to my website. I use it to share information about myself, case
-            studies/projects, and my thoughts.
-          </Subtitle>
+      <div className="border-b border-gray-200 pb-3 dark:border-gray-700">
+        <div className=" space-y-2 md:space-y-5 xl:grid xl:grid-cols-3">
+          <div className="md:pr-8 xl:col-span-2">
+            {/* <Greeting /> */}
+            <h2 className="text-xl">Hi I'm</h2>
+            <div
+              className={` bg-clip-text text-4xl font-extrabold leading-[60px] tracking-tight text-transparent ${headingColorClass} md:text-6xl md:leading-[86px]`}
+            >
+              Ashish Lotake, ! <i className="twa twa-waving-hand"></i>
+            </div>
+            <div className="text-lg leading-8 text-gray-600 dark:text-gray-400">
+              {/* <Heading /> */}
+              {/* <h1 className="text-neutral-900 dark:text-neutral-200">
+                I'm <span className="font-medium">{siteMetadata.author}</span> - an open-minded{' '}
+                <span className="font-medium">Student </span> in{' '}
+                <span className="font-medium ">India</span>
+              </h1> */}
+              <p className="leadnig-none">
+                Welcome to my website.
+                {/* <br /> */}I use it to share information about myself, case studies/projects, and
+                my thoughts
+              </p>
+              <div className="flex flex-col space-y-1">
+                <CustomLink href="/projects" className="hover:underline">
+                  <span className="ml-2">🛠️ What have I built?</span>
+                </CustomLink>
+                <CustomLink href="/blog" className="hover:underline">
+                  <span className="ml-2">✏️ My writings</span>
+                </CustomLink>
+                <CustomLink href="/snippets" className="hover:underline">
+                  <span className="ml-2">🧑‍💻 Useful snippets</span>
+                </CustomLink>
+                <CustomLink href="/about" className="hover:underline">
+                  <span className="ml-2">😎 More about me and myself</span>
+                </CustomLink>
+                <CustomLink href="/journey" className="hover:underline">
+                  <span className="ml-2">🛣️ My Journey</span>
+                </CustomLink>
+                <CustomLink href="/now" className="hover:underline">
+                  <span className="ml-2">⁉️ What I am doing?</span>
+                </CustomLink>
+                <CustomLink href="resume.ashishlotake.com" className="hover:underline">
+                  <span className="ml-2">💼 Resume</span>
+                </CustomLink>
+              </div>
+              <p className="mt-4">Happy learning!!</p>
+            </div>
+          </div>
+          <div className="hidden xl:block">
+            <ProfileCard />
+          </div>
         </div>
       </div>
-
       <div>
         <div className="mb-5 flex flex-col items-center gap-x-12 xl:flex-row"></div>
         <h2 className="text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
@@ -100,7 +144,7 @@ export default function Home({ posts }) {
           </CustomLink>
         </div>
       )}
-      <h2 className="text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
+      {/* <h2 className="text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
         Lastest Project
       </h2>
       <div className="mx-autodivide-y divide-gray-400">
@@ -128,7 +172,7 @@ export default function Home({ posts }) {
             All Posts &rarr;
           </CustomLink>
         </div>
-      )}
+      )} */}
       {siteMetadata.newsletter.provider !== '' && (
         <div className="flex items-center justify-center">{/* <NewsletterForm /> */}</div>
       )}

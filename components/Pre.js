@@ -63,7 +63,7 @@ const Pre = (props) => {
         </button>
       )}
 
-      <pre className=" rounded-xl border-b-2 border-r-2 border-l-2 border-gray-200  bg-gray-800 dark:border-gray-500 dark:bg-background-color">
+      <pre className=" rounded-xl border-2 border-gray-200  bg-gray-800 dark:border-gray-500 dark:bg-background-color">
         {props.children}
       </pre>
     </div>

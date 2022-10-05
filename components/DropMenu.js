@@ -137,7 +137,7 @@ export default function Example() {
               </Menu.Item>
             </div>
           </div>
-          <div className="py-1">
+          <div className="">
             <Menu.Item>
               {({ active }) => (
                 <CustomLink

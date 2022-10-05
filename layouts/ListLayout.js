@@ -101,7 +101,8 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
 
               <li key={slug} className="py-3">
                 <CustomLink href={`/blog/${slug}`} aria-label={`Read "${title}"`}>
-                  <article className="gap-3 bg-transparent bg-opacity-20 px-3 transition duration-100 hover:scale-[1] hover:rounded-xl hover:bg-gray-100 hover:bg-opacity-30 dark:hover:bg-gray-800 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
+                  {/* <article className="gap-3 bg-transparent bg-opacity-20 px-3 transition duration-100 hover:scale-[1] hover:rounded-xl hover:bg-gray-100 hover:bg-opacity-30 dark:hover:bg-gray-800 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0"> */}
+                  <article className="space-y-2 bg-transparent bg-opacity-20 p-2 transition duration-200 hover:rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                     <div className="space-y-3 xl:col-span-4">
                       <dl>
                         <dt className="sr-only">Published on</dt>
@@ -112,9 +113,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                           views
                         </dd>
                       </dl>
-                      <h3 className="text-2xl font-bold leading-8 tracking-tight">
-                        <CardTitle>{title}</CardTitle>
-                      </h3>
+                      <CardTitle>{title}</CardTitle>
                       <div className="mt-2 flex flex-wrap gap-1 text-sm">
                         {tags?.map((tag) => (
                           <small

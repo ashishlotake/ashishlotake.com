@@ -7,7 +7,8 @@ export function PageTitle({ children }) {
 }
 
 export function Subtitle({ children }) {
-  return <p className="mb-3 text-gray-600 dark:text-gray-400">{children}</p>
+  return <p className="text-lg text-gray-600 dark:text-gray-400">{children}</p>
+  // return <p className="mb-3 text-gray-600 dark:text-gray-400">{children}</p>
 }
 
 export function CardTitle({ children }) {

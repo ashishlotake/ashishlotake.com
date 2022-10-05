@@ -1,7 +1,6 @@
 import '@/css/tailwind.css'
 import '@/css/prism.css'
 import '@/css/extra.css'
-import 'katex/dist/katex.css'
 // import '@fontsource/inter/variable-full.css'P
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
@@ -13,8 +12,6 @@ import LayoutWrapper from '@/components/LayoutWrapper'
 import { ClientReload } from '@/components/ClientReload'
 import ProgressBar from 'react-scroll-progress-bar'
 import ScrollTop from '@/components/ScrollTop'
-// import { SessionProvider } from 'next-auth/react'
-import { Provider } from '@lyket/react'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
