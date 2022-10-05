@@ -83,7 +83,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
               //               <div className="flex flex-wrap gap-1 mt-2 text-sm">
               //                 {tags?.map((tag) => (
               //                 <small key={tag} className="text-[14px] border rounded  px-1 border-gray-400 dark:border-gray-600">
-                                
+
               //                   {tag}
               //                   </small>
               //                 ))}
@@ -100,37 +100,37 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
               // </CustomLink>
 
               <li key={slug} className="py-3">
-                <CustomLink  href={`/blog/${slug}`} aria-label={`Read "${title}"`}>
-                  <article className="hover:bg-opacity-30 gap-3 xl:grid xl:grid-cols-4 xl:space-y-0 xl:items-baseline bg-transparent bg-opacity-20 px-3 transition duration-100 hover:scale-[1] hover:rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800">
+                <CustomLink href={`/blog/${slug}`} aria-label={`Read "${title}"`}>
+                  <article className="gap-3 bg-transparent bg-opacity-20 px-3 transition duration-100 hover:scale-[1] hover:rounded-xl hover:bg-gray-100 hover:bg-opacity-30 dark:hover:bg-gray-800 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                     <div className="space-y-3 xl:col-span-4">
-                       <dl>
-                          <dt className="sr-only">Published on</dt>
-                          <dd className="text-sm font-normal leading-6 text-gray-500 dark:text-gray-400">
-                            <time dateTime={date}>{formatDate(date)}</time>
-                            {' • '}
-                            <ViewCounter className="mx-1" slug={slug} />
-                            views
-                          </dd>
-                        </dl>
+                      <dl>
+                        <dt className="sr-only">Published on</dt>
+                        <dd className="text-sm font-normal leading-6 text-gray-500 dark:text-gray-400">
+                          <time dateTime={date}>{formatDate(date)}</time>
+                          {' • '}
+                          <ViewCounter className="mx-1" slug={slug} />
+                          views
+                        </dd>
+                      </dl>
                       <h3 className="text-2xl font-bold leading-8 tracking-tight">
-                              <CardTitle>{title}</CardTitle>
-
+                        <CardTitle>{title}</CardTitle>
                       </h3>
-                            <div className="flex flex-wrap gap-1 mt-2 text-sm">
-                              {tags?.map((tag) => (
-                              <small key={tag} className="text-[14px] border rounded  px-1 border-gray-400 dark:border-gray-600 hover:bg-primary-500">
-                          {/* #<Tag key={tag} text={tag} /> */}
-                                {tag}
-                                </small>
-                              ))}
-                            </div>
-                        <Subtitle>{summary}</Subtitle>
+                      <div className="mt-2 flex flex-wrap gap-1 text-sm">
+                        {tags?.map((tag) => (
+                          <small
+                            key={tag}
+                            className="rounded border border-gray-400  px-1 text-[14px] hover:bg-primary-500 dark:border-gray-600"
+                          >
+                            {/* #<Tag key={tag} text={tag} /> */}
+                            {tag}
+                          </small>
+                        ))}
+                      </div>
+                      <Subtitle>{summary}</Subtitle>
                     </div>
                   </article>
                 </CustomLink>
               </li>
-
-
             )
           })}
         </ul>
@@ -141,4 +141,3 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
     </>
   )
 }
-

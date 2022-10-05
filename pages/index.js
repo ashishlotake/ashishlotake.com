@@ -52,39 +52,41 @@ export default function Home({ posts }) {
                 className="group flex bg-transparent bg-opacity-20  transition duration-100 hover:scale-[1] hover:rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800"
               >
                 {/* <a> */}
-                  <li className="">
-                    <article>
-                      <div className="space-y-2 bg-transparent bg-opacity-20 p-2 transition duration-200 hover:rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-                        <dl>
-                          <dt className="sr-only">Published on</dt>
-                          <dd className="text-sm font-normal leading-6 text-gray-500 dark:text-gray-400">
-                            <time dateTime={date}>{formatDate(date)}</time>
-                            {' • '}
-                            <ViewCounter className="mx-1" slug={slug} />
-                            views
-                          </dd>
-                        </dl>
-                        <div className="space-y-5 xl:col-span-4">
-                          <div className="space-y-1">
-                            <div>
-                              <CardTitle>{title}</CardTitle>
-                            </div>
-                            <div className="flex flex-wrap gap-1 mt-2 text-sm">
-                              {tags?.map((tag) => (
-                              <small key={tag} className="text-[14px] border rounded  px-1 border-gray-400 dark:border-gray-600">
-                                
+                <li className="">
+                  <article>
+                    <div className="space-y-2 bg-transparent bg-opacity-20 p-2 transition duration-200 hover:rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
+                      <dl>
+                        <dt className="sr-only">Published on</dt>
+                        <dd className="text-sm font-normal leading-6 text-gray-500 dark:text-gray-400">
+                          <time dateTime={date}>{formatDate(date)}</time>
+                          {' • '}
+                          <ViewCounter className="mx-1" slug={slug} />
+                          views
+                        </dd>
+                      </dl>
+                      <div className="space-y-5 xl:col-span-4">
+                        <div className="space-y-1">
+                          <div>
+                            <CardTitle>{title}</CardTitle>
+                          </div>
+                          <div className="mt-2 flex flex-wrap gap-1 text-sm">
+                            {tags?.map((tag) => (
+                              <small
+                                key={tag}
+                                className="rounded border border-gray-400  px-1 text-[14px] dark:border-gray-600"
+                              >
                                 {tag}
-                                </small>
-                              ))}
-                            </div>
-                            <div className="pt-1">
-                              <Subtitle>{summary}</Subtitle>
-                            </div>
+                              </small>
+                            ))}
+                          </div>
+                          <div className="pt-1">
+                            <Subtitle>{summary}</Subtitle>
                           </div>
                         </div>
                       </div>
-                    </article>
-                  </li>
+                    </div>
+                  </article>
+                </li>
                 {/* </a> */}
               </CustomLink>
             )
@@ -93,11 +95,7 @@ export default function Home({ posts }) {
       </div>
       {posts.length > MAX_DISPLAY && (
         <div className="flex justify-end  pt-3 text-lg font-normal leading-6">
-          <CustomLink
-            href="/blog"
-            className="hover:text-primary-500 "
-            aria-label="all posts"
-          >
+          <CustomLink href="/blog" className="hover:text-primary-500 " aria-label="all posts">
             All Posts &rarr;
           </CustomLink>
         </div>
@@ -126,11 +124,7 @@ export default function Home({ posts }) {
       </div>
       {projectsData.length > MAX_DISPLAY && (
         <div className="flex justify-end text-lg font-normal leading-6">
-          <CustomLink
-            href="/projects"
-            className="hover:text-primary-500 "
-            aria-label="all posts"
-          >
+          <CustomLink href="/projects" className="hover:text-primary-500 " aria-label="all posts">
             All Posts &rarr;
           </CustomLink>
         </div>

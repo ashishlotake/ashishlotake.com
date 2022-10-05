@@ -26,7 +26,7 @@ export default function Stats() {
             <GithubPersonal />
             <GitHub />
           </div>
-          <div className="grid  justify-center md:text-center sm:text-start w-full grid-cols-1 gap-4 py-2 sm:grid-cols-1">
+          <div className="grid  w-full grid-cols-1 justify-center gap-4 py-2 sm:grid-cols-1 sm:text-start md:text-center">
             <Analytics />
           </div>
         </div>
@@ -36,13 +36,12 @@ export default function Stats() {
           </PageSubHeading>
         </div>
         <Subtitle>
-          Curious what I'm currently jamming to? Here's my top tracks on Spotify updated daily. 
+          Curious what I'm currently jamming to? Here's my top tracks on Spotify updated daily.
         </Subtitle>
         <div>
-          
           <NowPlaying />
         </div>
-        <p className='pb-3'>Click to the track image to listen to the preview!</p>
+        <p className="pb-3">Click to the track image to listen to the preview!</p>
 
         <TopTracks />
         <div className="flex flex-col pl-4 pt-10">

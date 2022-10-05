@@ -45,7 +45,7 @@ const LayoutWrapper = ({ children }) => {
           <div className="flex items-center text-base  leading-5">
             <div className="mr-3 hidden sm:block">
               {headerNavLinks.map((link) => (
-                <NavItem key={link.href} href={link.href} text={link.title}/>
+                <NavItem key={link.href} href={link.href} text={link.title} />
               ))}
             </div>
             <DropMenu />
@@ -74,10 +74,9 @@ const LayoutWrapper = ({ children }) => {
 
 export default LayoutWrapper
 
-
 function NavItem({ href, text }) {
-  const router = useRouter();
-  const isActive = router.asPath === href;
+  const router = useRouter()
+  const isActive = router.asPath === href
 
   return (
     <Link href={href}>
@@ -86,11 +85,11 @@ function NavItem({ href, text }) {
           isActive
             ? 'font-semibold text-gray-800 dark:text-gray-200'
             : 'font-normal text-gray-600 dark:text-gray-400',
-          'hidden linkunderline md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all'
+          'linkunderline hidden rounded-lg p-1 transition-all hover:bg-gray-200 dark:hover:bg-gray-800 sm:px-3 sm:py-2 md:inline-block'
         )}
       >
         <span className="capsize">{text}</span>
       </a>
     </Link>
-  );
+  )
 }

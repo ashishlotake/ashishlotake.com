@@ -66,7 +66,7 @@ const Giscus = () => {
       {enableLoadComments && (
         <button
           onClick={LoadComments}
-          className="hover:border-accent hover:border-primary-500 hover:text-primary-500  focus:shadow-outline inline-flex h-10 items-center rounded-lg border border-gray-700 px-5"
+          className="hover:border-accent focus:shadow-outline inline-flex  h-10 items-center rounded-lg border border-gray-700 px-5 hover:border-primary-500 hover:text-primary-500"
         >
           <span>Show Comments</span>
           <svg className="ml-3 h-4 w-4 fill-current" viewBox="0 0 24 24">

@@ -27,18 +27,18 @@ export default function Tags({ tags }) {
         {sortedTags.map((t) => {
           return (
             <div
-            key={t}
-            className="relative m-2 inline-flex flex-row items-center rounded border  border-gray-700 font-medium uppercase lowercase "
-          >
-            <div className="flex justify-between">
-              <p className=" lg:text-md rounded-l px-1 text-base font-medium uppercase hover:bg-primary-500 ">
-                <Tag text={t} />
-              </p>
-              <small className="lg:text-md rounded-r bg-gray-500  bg-opacity-50 px-1  text-base    ">
-                {` (${tags[t]})`}
-              </small>
+              key={t}
+              className="relative m-2 inline-flex flex-row items-center rounded border  border-gray-700 font-medium uppercase lowercase "
+            >
+              <div className="flex justify-between">
+                <p className=" lg:text-md rounded-l px-1 text-base font-medium uppercase hover:bg-primary-500 ">
+                  <Tag text={t} />
+                </p>
+                <small className="lg:text-md rounded-r bg-gray-500  bg-opacity-50 px-1  text-base    ">
+                  {` (${tags[t]})`}
+                </small>
+              </div>
             </div>
-          </div>
           )
         })}
       </div>

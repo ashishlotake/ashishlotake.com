@@ -43,7 +43,7 @@ export default function AuthorLayout({ children, frontMatter }) {
         </div>
       </div>
 
-      <div className="pb-5 grid grid-cols-1 pt-6 lg:grid-cols-2 lg:grid-rows-[auto_1fr] ">
+      <div className="grid grid-cols-1 pb-5 pt-6 lg:grid-cols-2 lg:grid-rows-[auto_1fr] ">
         <div className="lg:pl-10">
           <div className="flex justify-center pt-0 lg:pt-[1em]">
             <div className="max-w-xs   px-2.5 lg:max-w-none">
@@ -60,31 +60,22 @@ export default function AuthorLayout({ children, frontMatter }) {
           <div className="flex justify-center space-x-3  ">
             <ul className="mt-4 flex justify-center gap-5">
               <li>
-                <SocialIcon kind='twitter' href={siteMetadata.twitter} size='5' />
+                <SocialIcon kind="twitter" href={siteMetadata.twitter} size="5" />
               </li>
               <li>
-                <SocialIcon kind='github' href={siteMetadata.github} size='5' />
+                <SocialIcon kind="github" href={siteMetadata.github} size="5" />
               </li>
               <li>
-                <SocialIcon kind='linkedin' href={siteMetadata.linkedin} size='5' />
+                <SocialIcon kind="linkedin" href={siteMetadata.linkedin} size="5" />
               </li>
               <li>
-                <Link
-                  href={siteMetadata.email}
-                  rel="noreferrer"
-                  target="_blank"
-                >
+                <Link href={siteMetadata.email} rel="noreferrer" target="_blank">
                   <span className="sr-only">mail</span>
                   <BsMailbox size={21} />
-                  </Link>
-
+                </Link>
               </li>
               <li>
-                <Link
-                  href={siteMetadata.kaggle}
-                  rel="noreferrer"
-                  target="_blank"
-                >
+                <Link href={siteMetadata.kaggle} rel="noreferrer" target="_blank">
                   <span className="sr-only">kaggle</span>
                   <svg
                     className="h-5 w-5"

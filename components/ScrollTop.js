@@ -47,7 +47,7 @@ const ScrollTop = () => {
       </button> */}
 
       <motion.button
-        className="flex h-8 w-8 items-center justify-center ml-3 rounded-full  hover:ring-1 hover:ring-gray-500 "
+        className="ml-3 flex h-8 w-8 items-center justify-center rounded-full  hover:ring-1 hover:ring-gray-500 "
         whileTap={{
           scale: 0.7,
         }}
@@ -60,7 +60,6 @@ const ScrollTop = () => {
         }}
       >
         <TbArrowBigUpLines size={25} />
-
       </motion.button>
       <ThemeSwitch />
     </div>

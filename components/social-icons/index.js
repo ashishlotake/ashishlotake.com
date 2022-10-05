@@ -1,10 +1,6 @@
-import {
-  AiOutlineFacebook,
-  AiOutlineTwitter,
-  AiOutlineGlobal,
-} from 'react-icons/ai'
+import { AiOutlineFacebook, AiOutlineTwitter, AiOutlineGlobal } from 'react-icons/ai'
 import { FaLinkedinIn } from 'react-icons/fa'
-import {  FiMail } from 'react-icons/fi'
+import { FiMail } from 'react-icons/fi'
 import { RiExternalLinkLine } from 'react-icons/ri'
 import { TbBrandGithub } from 'react-icons/tb'
 import { FaKaggle } from 'react-icons/fa'
@@ -17,7 +13,7 @@ const components = {
   twitter: AiOutlineTwitter,
   website: AiOutlineGlobal,
   external: RiExternalLinkLine,
-  kaggle: FaKaggle
+  kaggle: FaKaggle,
 }
 
 const SocialIcon = ({ kind, href, size = 8 }) => {

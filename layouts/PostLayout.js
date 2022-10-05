@@ -111,7 +111,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                     &larr; Back to the blog
                   </Link>
                 </div>
-                <div className="flex justify-end text-sm mb-1">
+                <div className="mb-1 flex justify-end text-sm">
                   <Link
                     className=" share-button reddit hover:bg-[#FF5700]  "
                     title="Share on Facebook"

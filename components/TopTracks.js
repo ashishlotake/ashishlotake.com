@@ -3,8 +3,7 @@ import fetcher from '@/lib/fetcher'
 import Track from '@/components/Track'
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { useAudio } from "react-use";
-
+import { useAudio } from 'react-use'
 
 export default function TopTracks() {
   const { data } = useSWR('/api/top-tracks', fetcher)
@@ -17,89 +16,74 @@ export default function TopTracks() {
   //   <Track ranking={index + 1} key={track.songUrl} {...track} />
   // ))
 
-  const [selected, setselected] = useState(-1);
+  const [selected, setselected] = useState(-1)
 
   return (
     <div className="px-2">
-    {data?.tracks.map((track, index) => (
-      <TrackSong
-        key={track.title}
-        selected={selected}
-        setselected={setselected}
-        track={track}
-        index={index}
-      />
-    ))}
-  </div>
+      {data?.tracks.map((track, index) => (
+        <TrackSong
+          key={track.title}
+          selected={selected}
+          setselected={setselected}
+          track={track}
+          index={index}
+        />
+      ))}
+    </div>
   )
 }
 
-
-
-function Audio({
-  url,
-  cstate,
-  setState,
-  setselected,
-}) {
+function Audio({ url, cstate, setState, setselected }) {
   const [audio, state, controls, ref] = useAudio({
     src: url,
     autoPlay: false,
-  });
+  })
 
   useEffect(() => {
-    if (cstate === "playing") return;
-    if (state.duration > 0) setTimeout(() => setState("playing"), 300);
-  }, [state]);
+    if (cstate === 'playing') return
+    if (state.duration > 0) setTimeout(() => setState('playing'), 300)
+  }, [state])
 
   useEffect(() => {
     if (ref.current) {
       ref.current.onended = () => {
-        setState("default");
-        setselected(-1);
-      };
+        setState('default')
+        setselected(-1)
+      }
     }
-  }, []);
+  }, [])
 
   useEffect(() => {
-    if (cstate == "playing") {
-      controls.volume(0.3);
-      controls.play();
+    if (cstate == 'playing') {
+      controls.volume(0.3)
+      controls.play()
     } else {
-      controls.pause();
+      controls.pause()
     }
-  }, [cstate]);
+  }, [cstate])
 
-  return audio;
+  return audio
 }
 
-function TrackSong({
-  track,
-  index,
-  setselected,
-  selected,
-}) {
-  const [state, setstate] = useState("default");
+function TrackSong({ track, index, setselected, selected }) {
+  const [state, setstate] = useState('default')
   function togglePlay() {
-    if (state === "playing") {
-      setselected(-1);
+    if (state === 'playing') {
+      setselected(-1)
     } else {
-      setselected(index);
+      setselected(index)
     }
   }
   useEffect(() => {
     if (selected === index) {
-      setstate("loading");
+      setstate('loading')
     } else {
-      setstate("default");
+      setstate('default')
     }
-  }, [selected]);
+  }, [selected])
   return (
-    <div
-      onClick={togglePlay}
-      className="relative flex items-center gap-4 p-1 cursor-pointer"
-    >
-      {state != "default" && (
+    <div onClick={togglePlay} className="relative flex cursor-pointer items-center gap-4 p-1">
+      {state != 'default' && (
         <Audio
           url={track.previewUrl}
           setselected={setselected}
@@ -108,64 +92,60 @@ function TrackSong({
         />
       )}
       <AnimatePresence>
-        {state != "default" && (
+        {state != 'default' && (
           <motion.div
             initial={{ width: 0, borderRadius: 0 }}
-            animate={{ width: "100%", borderRadius: 9999 }}
+            animate={{ width: '100%', borderRadius: 9999 }}
             exit={{ width: 0, borderRadius: 0 }}
             transition={{ duration: 1 }}
             className="absolute -left-2 h-full bg-gradient-to-r from-[#1ED760]/50"
           />
         )}
       </AnimatePresence>
-      <div className="relative w-10 overflow-hidden font-mono text-4xl text-center rounded-full">
+      <div className="relative w-10 overflow-hidden rounded-full text-center font-mono text-4xl">
         <motion.div
           animate={{
-            opacity: state != "default" ? 0 : 1,
-            scale: state != "default" ? 0 : 1,
+            opacity: state != 'default' ? 0 : 1,
+            scale: state != 'default' ? 0 : 1,
           }}
-          className='relative'
+          className="relative"
           transition={{ duration: 0.6 }}
         >
-          <img
-          className="object-cover w-full h-full rounded-lg"
-          src={track.imageUrl}
-          />
+          <img className="h-full w-full rounded-lg object-cover" src={track.imageUrl} />
           {/* {index + 1} */}
-
         </motion.div>
         <AnimatePresence>
-          {state == "loading" && (
+          {state == 'loading' && (
             <motion.div
               key="loading"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute top-0 left-0 w-full h-full rounded-full"
+              className="absolute top-0 left-0 h-full w-full rounded-full"
             >
               <motion.div
-                className="absolute w-full h-full border-4 rounded-full"
+                className="absolute h-full w-full rounded-full border-4"
                 animate={{
                   borderColor: [
-                    "rgba(255, 255, 255, 1)",
-                    "rgba(255, 255, 255, 0.7)",
-                    "rgba(255, 255, 255, 0.4)",
-                    "rgba(255, 255, 255, 0.2)",
-                    "rgba(255, 255, 255, 0)",
+                    'rgba(255, 255, 255, 1)',
+                    'rgba(255, 255, 255, 0.7)',
+                    'rgba(255, 255, 255, 0.4)',
+                    'rgba(255, 255, 255, 0.2)',
+                    'rgba(255, 255, 255, 0)',
                   ],
                   scale: [0.1, 0.3, 0.5, 0.7, 0.9],
                 }}
-                transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
+                transition={{ repeat: Infinity, duration: 1, ease: 'linear' }}
               />
               <motion.div
-                className="absolute w-full h-full border-4 rounded-full"
+                className="absolute h-full w-full rounded-full border-4"
                 animate={{
                   borderColor: [
-                    "rgba(255, 255, 255, 1)",
-                    "rgba(255, 255, 255, 0.7)",
-                    "rgba(255, 255, 255, 0.4)",
-                    "rgba(255, 255, 255, 0.2)",
-                    "rgba(255, 255, 255, 0)",
+                    'rgba(255, 255, 255, 1)',
+                    'rgba(255, 255, 255, 0.7)',
+                    'rgba(255, 255, 255, 0.4)',
+                    'rgba(255, 255, 255, 0.2)',
+                    'rgba(255, 255, 255, 0)',
                   ],
                   scale: [0.1, 0.3, 0.5, 0.7, 0.9],
                 }}
@@ -173,25 +153,25 @@ function TrackSong({
                   repeat: Infinity,
                   delay: 0.5,
                   duration: 1,
-                  ease: "linear",
+                  ease: 'linear',
                 }}
               />
             </motion.div>
           )}
-          {state == "playing" && (
+          {state == 'playing' && (
             <motion.div
               key="img"
-              className="absolute top-0 left-0 w-full h-full rounded-full"
+              className="absolute top-0 left-0 h-full w-full rounded-full"
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0 }}
               transition={{ duration: 1.3 }}
             >
               <motion.img
-                className="w-full h-full rounded-full "
+                className="h-full w-full rounded-full "
                 initial={{ rotate: 0 }}
                 animate={{ rotate: 360 }}
-                transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
+                transition={{ repeat: Infinity, duration: 3, ease: 'linear' }}
                 src={track.imageUrl}
               />
             </motion.div>
@@ -205,10 +185,10 @@ function TrackSong({
           target="_blank"
           className="text-lg font-bold"
         >
-         <span className='font-medium text-gray-500' >{index + 1} -</span>  {track.title}
+          <span className="font-medium text-gray-500">{index + 1} -</span> {track.title}
         </a>
         <p className="text-subtle">{track.artist}</p>
       </div>
     </div>
-  );
+  )
 }

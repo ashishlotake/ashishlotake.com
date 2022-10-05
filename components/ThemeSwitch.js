@@ -17,7 +17,7 @@ const ThemeSwitch = () => {
   return (
     <div className="ml-3 cursor-pointer rounded-full">
       <motion.button
-        className="flex pb-1 h-8 w-8 items-center justify-center rounded-full  hover:ring-1 hover:ring-gray-500 "
+        className="flex h-8 w-8 items-center justify-center rounded-full pb-1  hover:ring-1 hover:ring-gray-500 "
         whileTap={{
           scale: 0.7,
           // rotate: 360,

@@ -3,7 +3,7 @@ import SectionContainer from '@/components/SectionContainer'
 import { BlogSEO } from '@/components/SEO'
 import siteMetadata, { image } from '@/data/siteMetadata'
 import Comments from '@/components/comments'
-import {  FaTwitterSquare, FaRedditSquare, FaLinkedinIn } from 'react-icons/fa'
+import { FaTwitterSquare, FaRedditSquare, FaLinkedinIn } from 'react-icons/fa'
 import { PageTitle } from '@/components/PageTitle'
 import Image from 'next/image'
 
@@ -37,7 +37,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
         <div className="mx-auto max-w-3xl">
           {/* <p className="text-subtle">{moment(snippet.date).format("LL")}</p> */}
           <div className="mb-4">
-     <PageTitle>{title}</PageTitle>
+            <PageTitle>{title}</PageTitle>
             {/* <div className="flex flex-wrap gap-4 mt-2">
             {images.map((logo) => ( */}
             <img
