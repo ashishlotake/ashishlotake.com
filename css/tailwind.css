@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: optional;
+  src: url(/fonts/ibm-plex-sans-var.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: optional;
+  src: url(/fonts/ibm-plex-sans-var-italic.woff2) format('woff2');
+}
+
+@layer utilities {
+  .special-underline {
+    @apply from-sky-500 to-sky-500 dark:from-sky-500 dark:to-sky-500 bg-gradient-to-r
+      bg-no-repeat [background-position:0_100%]
+      [background-size:100%_0.2em]
+      hover:[background-size:100%_100%] focus:[background-size:100%_100%]
+      motion-safe:transition-all
+      motion-safe:duration-200;
+  }
+  .company {
+    box-shadow: inset 0 0 0 0 #0ea5e9;
+    color: #0ea5e9;
+    margin: 0 -0.25rem;
+    padding: 0 0.25rem;
+    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  .company:hover {
+    box-shadow: inset 200px 0 0 0 #0ea5e9;
+    color: white;
+  }
+}
+
+.link-underline {
+  position: relative;
+}
+
+.link-underline:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: linear-gradient(transparent, transparent), linear-gradient(to right, #0ea5e9, #0ea5e9);
+  transition: width 0.25s ease;
+  -webkit-transition: width 0.25s ease;
+}
+
+.link-underline:hover:after {
+  width: 100%;
+  left: 0;
+  background: linear-gradient(transparent, transparent), linear-gradient(to right, #0ea5e9, #0ea5e9);
+}
+
+
+.task-list-item::before {
+  @apply hidden;
+}
+
+.task-list-item {
+  @apply list-none;
+}
+
+.footnotes {
+  @apply mt-12 border-t border-gray-200 pt-8 dark:border-gray-700;
+}
+
+.csl-entry {
+  @apply my-5;
+}
+
+/* https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+.waving-hand {
+  animation-name: wave-animation;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(14deg);
+  } /* The following five values can be played with to make the waving more or less extreme */
+  30% {
+    transform: rotate(-8deg);
+  }
+  40% {
+    transform: rotate(14deg);
+  }
+  50% {
+    transform: rotate(-4deg);
+  }
+  60% {
+    transform: rotate(10deg);
+  }
+  70% {
+    transform: rotate(0deg);
+  } /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+
+
+
+.share-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px 2px 8px;
+  margin: 4px;
+  color: #fff;
+  background-color: #333;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+  text-decoration: none;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.share-button:hover {
+  color: #fff;
+  background-color: #4f4f4f;
+}
+
+.share-button:active {
+  top: 1px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+}
+
+.share-button svg {
+  fill: #ffffff;
+  width: 15px;
+  height: 19px;
+  margin-right: 5px;
+}
+/* 
+.share-button.facebook { background-color: #4A66B7; }
+.share-button.facebook:hover { background-color: #556fbb; }
+
+.share-button.twitter { background-color: #1B95E0; }
+.share-button.twitter:hover { background-color: #269ce5; }
+
+.share-button.pinterest { background-color: #c92228; }
+.share-button.pinterest:hover { background-color: #cf4146; }
+
+.share-button.linkedin { background-color: #0077B5; }
+.share-button.linkedin:hover { background-color: #1e84b9; }
+
+.share-button.reddit { background-color: #FF5700; }
+.share-button.reddit:hover { background-color: #FF4500; }
+
+.share-button.tumblr { background-color: #35465c; }
+.share-button.tumblr:hover { background-color: #455166; }
+
+.share-button.hacker-news { background-color: #ff6600; }
+.share-button.hacker-news:hover { background-color: #ff7515; }
+
+.share-button.designer-news { background-color: #2d72d9; }
+.share-button.designer-news:hover { background-color: #3d82e9; }
+
+.share-button.google-plus {
+  background-color: #fefefe;
+  color: #333;
+}
+
+.share-button.google-plus:hover {
+  background-color: #f6f6f6;
+  color: #333;
+}
+
+.share-button.google-plus svg {
+  fill: #DB4437;
+} */
+
+

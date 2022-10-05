@@ -1,0 +1,5 @@
+Sitemap: https://ashishlotake.com/sitemap.xml
+
+User-agent: *
+Allow: /
+Disallow: /api/*
