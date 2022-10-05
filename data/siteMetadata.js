@@ -7,8 +7,8 @@ const siteMetadata = {
   snippets: 'Reuseable code snippets collected by Ashish',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  website: 'https://ashishlotake.com',
-  siteRepo: 'https://github.com/ashishlotake/ashishlotake_website',
+  siteUrl: 'https://ashishlotake.com',
+  siteRepo: 'https://github.com/ashishlotake/ashishlotake.com',
   siteLogo: '/static/images/logo.jpg',
   image: '/static/images/avatar.jpg',
   socialBanner: '/static/images/twitter-card.png',
