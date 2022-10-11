@@ -84,7 +84,7 @@ export default function NowPlaying() {
   const { data } = useSWR('/api/now-playing', fetcher)
 
   return (
-    <div className="mb-8 flex w-full cursor-pointer flex-row-reverse items-center space-x-0  rounded-md border  border-zinc-200 bg-zinc-200 px-4 py-4 text-sm shadow-sm dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none sm:flex-row  sm:space-x-2">
+    <div className="mb-8 flex w-full cursor-pointer flex-row-reverse items-center space-x-0  rounded-md border  border-zinc-200 bg-zinc-200 px-4 py-4 text-sm shadow-sm dark:border-zinc-900 dark:bg-[#1a2532] dark:shadow-none sm:flex-row  sm:space-x-2">
       {data?.songUrl ? (
         <AnimatedBars />
       ) : (

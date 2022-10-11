@@ -9,7 +9,7 @@ const siteMetadata = {
   theme: 'system', // system, dark or light
   siteUrl: 'https://ashishlotake.com',
   siteRepo: 'https://github.com/ashishlotake/ashishlotake.com',
-  siteLogo: '/static/images/logo.jpg',
+  siteLogo: '/static/images/logo.svg',
   image: '/static/images/avatar.jpg',
   socialBanner: '/static/images/twitter-card.png',
   email: 'hello@ashishlotake.com',
@@ -30,9 +30,9 @@ const siteMetadata = {
     provider: 'giscus',
     giscusConfig: {
       repo: 'ashishlotake/ashishlotake.com',
-      repositoryId: 'R_kgDOHsLNAg=',
-      category: 'Announcements',
-      categoryId: 'DIC_kwDOHsLNAs4CRK9d-6vK',
+      repositoryId: 'R_kgDOIIl5tg',
+      category: 'General',
+      categoryId: 'DIC_kwDOIIl5ts4CR7bn',
       mapping: 'pathname',
       reactions: '1',
       metadata: '0',

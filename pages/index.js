@@ -1,3 +1,5 @@
+import SocialIcon from '@/components/social-icons'
+import Image from 'next/image'
 import { ProfileCard } from '@/components/ProfileCard'
 import { PageTitle, Subtitle, CardTitle, PageSubHeading } from '@/components/PageTitle'
 import CustomLink from '@/components/Link'
@@ -27,154 +29,143 @@ export default function Home({ posts }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <div className="border-b border-gray-200 pb-3 dark:border-gray-700">
-        <div className=" space-y-2 md:space-y-5 xl:grid xl:grid-cols-3">
-          <div className="md:pr-8 xl:col-span-2">
-            {/* <Greeting /> */}
-            <h2 className="text-xl">Hi I'm</h2>
-            <div
-              className={` bg-clip-text text-4xl font-extrabold leading-[60px] tracking-tight text-transparent ${headingColorClass} md:text-6xl md:leading-[86px]`}
-            >
-              Ashish Lotake, ! <i className="twa twa-waving-hand"></i>
-            </div>
-            <div className="text-lg leading-8 text-gray-600 dark:text-gray-400">
-              {/* <Heading /> */}
-              {/* <h1 className="text-neutral-900 dark:text-neutral-200">
-                I'm <span className="font-medium">{siteMetadata.author}</span> - an open-minded{' '}
-                <span className="font-medium">Student </span> in{' '}
-                <span className="font-medium ">India</span>
-              </h1> */}
-              <p className="leadnig-none">
-                Welcome to my website.
-                {/* <br /> */}I use it to share information about myself, case studies/projects, and
-                my thoughts
-              </p>
-              <div className="flex flex-col space-y-1">
-                <CustomLink href="/projects" className="hover:underline">
-                  <span className="ml-2">🛠️ What have I built?</span>
-                </CustomLink>
-                <CustomLink href="/blog" className="hover:underline">
-                  <span className="ml-2">✏️ My writings</span>
-                </CustomLink>
-                <CustomLink href="/snippets" className="hover:underline">
-                  <span className="ml-2">🧑‍💻 Useful snippets</span>
-                </CustomLink>
-                <CustomLink href="/about" className="hover:underline">
-                  <span className="ml-2">😎 More about me and myself</span>
-                </CustomLink>
-                <CustomLink href="/journey" className="hover:underline">
-                  <span className="ml-2">🛣️ My Journey</span>
-                </CustomLink>
-                <CustomLink href="/now" className="hover:underline">
-                  <span className="ml-2">⁉️ What I am doing?</span>
-                </CustomLink>
-                <CustomLink href="resume.ashishlotake.com" className="hover:underline">
-                  <span className="ml-2">💼 Resume</span>
-                </CustomLink>
-              </div>
-              <p className="mt-4">Happy learning!!</p>
-            </div>
-          </div>
-          <div className="hidden xl:block">
-            <ProfileCard />
-          </div>
+      <div className="flex flex-col-reverse items-start sm:flex-row">
+        <div className="flex flex-col pr-8">
+          <h1 className="mb-1 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
+            Ashish Lotake
+          </h1>
+          <h2 className="mb-4 text-gray-700 dark:text-gray-200">
+            DA, DS, ML & AI <span className="font-semibold">practitioner</span>
+          </h2>
+          <p className="mb-16 text-gray-600 dark:text-gray-400">
+            Welcome to my website.<br></br> I use it to share information about myself, case
+            studies/projects, and my thoughts.
+          </p>
+        </div>
+        <div className="relative mb-8 mr-auto hidden w-[80px] sm:mb-0 sm:w-[206px] md:block">
+          <Image
+            alt="Ashish Lotake"
+            src={siteMetadata.siteLogo}
+            className="roundedfull  bg-transparent object-cover "
+            width="250px"
+            height="250px"
+            objectPosition="0% 60%"
+          />
         </div>
       </div>
+
       <div>
-        <div className="mb-5 flex flex-col items-center gap-x-12 xl:flex-row"></div>
-        <h2 className="text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
+        <div className="mb-5 flex flex-col items-center xl:flex-row"></div>
+        <h2 className="pb-4 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
           Recent Posts
         </h2>
-        <ul>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
             const { slug, date, title, summary, tags } = frontMatter
             return (
-              <CustomLink
-                href={`/blog/${slug}`}
-                key={slug}
-                className="group flex bg-transparent bg-opacity-20  transition duration-100 hover:scale-[1] hover:rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800"
-              >
-                {/* <a> */}
-                <li className="">
-                  <article>
-                    <div className="space-y-2 bg-transparent bg-opacity-20 p-2 transition duration-200 hover:rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-                      <dl>
-                        <dt className="sr-only">Published on</dt>
-                        <dd className="text-sm font-normal leading-6 text-gray-500 dark:text-gray-400">
+              <Link key={slug} href={`/blog/${slug}`} aria-label={`Read "${title}"`}>
+                <a>
+                  <article className=" flex h-full flex-col rounded-lg shadow-xl dark:bg-[#0e141b]  dark:shadow-black">
+                    {/* <article className='border-2 h-full flex rounded-md hover:border-primary-500'> */}
+                    <div className="flex flex-1 flex-col px-6 py-3">
+                      <div className=" leading-none">
+                        <div className="flex flex-wrap pt-1 ">
+                          {tags.slice(0, 4).map((tag) => (
+                            <p key={tag} className="pr-2 text-xs tracking-wider  text-primary-400">
+                              {/* <Tag key={tag} text={tag} /> */}#{tag}
+                            </p>
+                          ))}
+                        </div>
+                      </div>
+                      <h3 className=" py-2 text-2xl font-semibold leading-snug">{title}</h3>
+                      <p className="flex-1 text-gray-500">{summary}</p>
+                      <div className="flex flex-wrap justify-between space-x-2 pt-3 text-xs dark:text-gray-400">
+                        <span>
                           <time dateTime={date}>{formatDate(date)}</time>
-                          {' • '}
+                        </span>
+                        <span>
                           <ViewCounter className="mx-1" slug={slug} />
                           views
-                        </dd>
-                      </dl>
-                      <div className="space-y-5 xl:col-span-4">
-                        <div className="space-y-1">
-                          <div>
-                            <CardTitle>{title}</CardTitle>
-                          </div>
-                          <div className="mt-2 flex flex-wrap gap-1 text-sm">
-                            {tags?.map((tag) => (
-                              <small
-                                key={tag}
-                                className="rounded border border-gray-400  px-1 text-[14px] dark:border-gray-600"
-                              >
-                                {tag}
-                              </small>
-                            ))}
-                          </div>
-                          <div className="pt-1">
-                            <Subtitle>{summary}</Subtitle>
-                          </div>
-                        </div>
+                        </span>
                       </div>
                     </div>
                   </article>
-                </li>
-                {/* </a> */}
-              </CustomLink>
+                </a>
+              </Link>
             )
           })}
-        </ul>
+        </div>
       </div>
-      {posts.length > MAX_DISPLAY && (
-        <div className="flex justify-end  pt-3 text-lg font-normal leading-6">
+      {posts.length > 1 && (
+        <div className="flex justify-end  pt-4 text-lg font-normal leading-6">
           <CustomLink href="/blog" className="hover:text-primary-500 " aria-label="all posts">
             All Posts &rarr;
           </CustomLink>
         </div>
       )}
-      {/* <h2 className="text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
+      <TopProject />
+      {siteMetadata.newsletter.provider !== '' && (
+        <div className="flex items-center justify-center">{/* <NewsletterForm /> */}</div>
+      )}
+    </>
+  )
+}
+
+function TopProject() {
+  return (
+    <>
+      <h2 className="text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
         Lastest Project
       </h2>
-      <div className="mx-autodivide-y divide-gray-400">
-        <div className="container py-4">
-          <div className="-m-4 flex flex-wrap">
-            {projectsData.slice(0, MAX_DISPLAY).map((d) => (
-              <Card
-                key={d.title}
-                title={d.title}
-                description={d.description}
-                imgSrc={d.imgSrc}
-                href={d.href}
-                github={d.github}
-                tech1={d.tech1}
-                tech2={d.tech2}
-                tech3={d.tech3}
-              />
-            ))}
-          </div>
-        </div>
+      <div className="grid grid-cols-1 gap-8 pt-4 md:grid-cols-2 lg:grid-cols-2">
+        {projectsData.slice(0, MAX_DISPLAY).map((d) => (
+          <article
+            key={d.github}
+            className=" flex h-full flex-col rounded-lg shadow-xl dark:bg-[#0e141b]  dark:shadow-black"
+          >
+            {/* <Image
+                src={d.imgSrc}
+                alt="avatar"
+                width="450px"
+                height="250px"
+                className="object-cover"
+                objectPosition="10% 10%"
+                /> */}
+            <div className="flex flex-1 flex-col px-6 py-3">
+              <h3 className=" py-2 text-2xl font-semibold leading-snug">{d.title}</h3>
+              <p className="flex-1 text-gray-500">{d.description}</p>
+              {/* <Subtitle>{d.description}</Subtitle> */}
+              <div className="flex flex-wrap justify-between space-x-2 pt-3 text-xs dark:text-gray-400">
+                {d.github ? (
+                  <button
+                    type="submit"
+                    className="w-auto rounded-full bg-slate-200 p-2 text-sm text-white transition-transform hover:scale-[1.2] dark:bg-slate-800"
+                  >
+                    <SocialIcon kind="github" href={d.github} size="8" />
+                  </button>
+                ) : null}
+
+                {d.href ? (
+                  <button
+                    type="submit"
+                    className="ml-6 w-auto rounded-full bg-slate-200 p-2 text-lg text-white transition-transform hover:scale-[1.2] dark:bg-slate-800"
+                  >
+                    {d.href ? <SocialIcon kind="external" href={d.href} size="8" /> : null}
+                  </button>
+                ) : null}
+              </div>
+            </div>
+          </article>
+        ))}
       </div>
+
       {projectsData.length > MAX_DISPLAY && (
-        <div className="flex justify-end text-lg font-normal leading-6">
+        <div className="flex justify-end pt-4 text-lg font-normal leading-6">
           <CustomLink href="/projects" className="hover:text-primary-500 " aria-label="all posts">
             All Posts &rarr;
           </CustomLink>
         </div>
-      )} */}
-      {siteMetadata.newsletter.provider !== '' && (
-        <div className="flex items-center justify-center">{/* <NewsletterForm /> */}</div>
       )}
     </>
   )

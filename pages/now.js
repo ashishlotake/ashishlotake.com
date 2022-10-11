@@ -132,7 +132,7 @@ export default function Now(currentlyReading) {
         url={siteMetadata.url}
       />
       <div>
-        <div className="border-b border-gray-200 dark:border-gray-700">
+        <div className="border-b border-slate-200 dark:border-slate-700">
           <div className="max-w-xl ">
             <PageTitle>What I am up to these days?</PageTitle>
             <Subtitle>Last update - 04/October/2022</Subtitle>

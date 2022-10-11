@@ -7,13 +7,12 @@ export function PageTitle({ children }) {
 }
 
 export function Subtitle({ children }) {
-  return <p className="text-lg text-gray-600 dark:text-gray-400">{children}</p>
-  // return <p className="mb-3 text-gray-600 dark:text-gray-400">{children}</p>
+  return <p className=" text-gray-500">{children}</p>
 }
 
 export function CardTitle({ children }) {
   return (
-    <h4 className="mb-2 w-full text-xl font-medium text-gray-900 dark:text-gray-100 md:text-2xl">
+    <h4 className="mb-2 w-full text-xl font-semibold text-gray-900 dark:text-gray-100 md:text-2xl">
       {children}
     </h4>
   )

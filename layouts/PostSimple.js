@@ -38,20 +38,13 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
           {/* <p className="text-subtle">{moment(snippet.date).format("LL")}</p> */}
           <div className="mb-4">
             <PageTitle>{title}</PageTitle>
-            {/* <div className="flex flex-wrap gap-4 mt-2">
-            {images.map((logo) => ( */}
-            <img
-              key={images}
-              src={images}
-              width={40}
-              height={40}
-              alt=""
-              className="object-contain"
-            />
-            {/* ))} 
-          </div> */}
+            <div className="mt-2 flex flex-wrap gap-4">
+              {images.map((logo) => (
+                <img key={images} src={images} width={40} height={40} alt="" />
+              ))}
+            </div>
           </div>
-          <div className=" border-subtle border-b-[1px] pb-4 ">
+          <div className="border-b border-slate-200 pb-4 dark:border-slate-700 ">
             <p className="text-text text-lg">{summary}</p>
           </div>
 

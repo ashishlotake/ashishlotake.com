@@ -17,7 +17,7 @@ export default function Stats() {
         description="Statistics about my blog, Github, Twitter and more"
       />
       <div className="mx-auto overflow-hidden">
-        <div className="border-b border-gray-200 dark:border-gray-700 ">
+        <div className="border-b border-slate-200 dark:border-slate-700">
           <PageTitle>Stats</PageTitle>
           <Subtitle>I use this dashboard to track various metrics across platforms.</Subtitle>
         </div>

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import DropMenu from './DropMenu'
 import siteMetadata from '@/data/siteMetadata'
@@ -32,10 +33,19 @@ const LayoutWrapper = ({ children }) => {
                   type="button"
                   className="group flex  shrink-0 items-center rounded-lg transition"
                 >
-                  <img
+                  {/* <Image
                     alt=""
                     src={siteMetadata.siteLogo}
-                    className="h-10 w-10 rounded-full object-cover"
+                    className="h-11 w-10 rounded-full object-cover"
+                  /> */}
+                  <Image
+                    alt=""
+                    src={siteMetadata.siteLogo}
+                    // className="rounded-full object-cover bg-slate-200 "
+                    className="roundedfull  bg-transparent object-cover "
+                    width="50px"
+                    height="50px"
+                    objectPosition="0% 60%"
                   />
                 </button>
               </div>
@@ -52,7 +62,7 @@ const LayoutWrapper = ({ children }) => {
             <ThemeSwitch />
           </div>
         </header>
-        <motion.div
+        {/* <motion.div
           key={router.asPath}
           className="mb-auto"
           initial="hidden"
@@ -61,10 +71,10 @@ const LayoutWrapper = ({ children }) => {
           variants={variants}
           transition={{ type: 'linear' }}
         >
-          <motion.main>
-            <main className="mb-auto">{children}</main>
-          </motion.main>
-        </motion.div>
+          <motion.main> */}
+        <main className="mb-auto">{children}</main>
+        {/* </motion.main>
+        </motion.div> */}
 
         <Footer />
       </div>
@@ -85,7 +95,7 @@ function NavItem({ href, text }) {
           isActive
             ? 'font-semibold text-gray-800 dark:text-gray-200'
             : 'font-normal text-gray-600 dark:text-gray-400',
-          'linkunderline hidden rounded-lg p-1 transition-all hover:bg-gray-200 dark:hover:bg-gray-800 sm:px-3 sm:py-2 md:inline-block'
+          'linkunderline hidden rounded-lg p-1 transition-all hover:bg-gray-200 dark:hover:bg-slate-800 sm:px-3 sm:py-2 md:inline-block'
         )}
       >
         <span className="capsize">{text}</span>

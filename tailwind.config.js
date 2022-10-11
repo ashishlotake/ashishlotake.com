@@ -35,7 +35,8 @@ module.exports = {
         primary: colors.sky,
         //@ts-ignore
         gray: colors.neutral, // TODO: Remove ts-ignore after tw types gets updated to v3
-        'background-color': '#111111',
+        // 'background-color': '#111111',
+        'background-color': '#0e141b',
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -84,7 +85,7 @@ module.exports = {
               content: 'none',
             },
             details: {
-              backgroundColor: theme('colors.white'),
+              backgroundColor: theme('colors.gray.200'),
               paddingLeft: '4px',
               paddingRight: '4px',
               paddingTop: '2px',
@@ -137,10 +138,10 @@ module.exports = {
               backgroundColor: theme('colors.gray.800'),
             },
             code: {
-              backgroundColor: theme('colors.gray.800'),
+              backgroundColor: theme('colors.slate.900'),
             },
             details: {
-              backgroundColor: theme('colors.gray.800'),
+              backgroundColor: theme('colors.slate.800'),
             },
             hr: { borderColor: theme('colors.gray.700') },
             'ol li::marker': {

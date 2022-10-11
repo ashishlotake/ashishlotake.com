@@ -1,5 +1,7 @@
+import Link from 'next/link'
 import siteMetadata from '@/data/siteMetadata'
 import NowPlaying from './NowPlayingFooter'
+import CustomLink from './CustomLink'
 
 function ProfileCardInfo() {
   return (
@@ -27,31 +29,29 @@ function ProfileCardInfo() {
               d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
             />
           </svg>
-
           <p className=" px-2">Student @ UoH</p>
         </div>
         <div className="flex items-center text-gray-500">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
+            className="icon icon-tabler icon-tabler-current-location"
+            width="24"
+            height="24"
             viewBox="0 0 24 24"
+            strokeWidth="1"
             stroke="currentColor"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1}
-              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-            />
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1}
-              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-            />
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+            <circle cx="12" cy="12" r="8"></circle>
+            <line x1="12" y1="2" x2="12" y2="4"></line>
+            <line x1="12" y1="20" x2="12" y2="22"></line>
+            <line x1="20" y1="12" x2="22" y2="12"></line>
+            <line x1="2" y1="12" x2="4" y2="12"></line>
           </svg>
-
           <p className="px-2">
             Ahmednagar, India 🇮🇳
             <span className="flag-vn ml-1 align-middle"></span>
@@ -65,12 +65,10 @@ function ProfileCardInfo() {
             viewBox="0 0 24 24"
             stroke="currentColor"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1}
-              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-            />
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M10 21v-6.5a3.5 3.5 0 0 0 -7 0v6.5h18v-6a4 4 0 0 0 -4 -4h-10.5"></path>
+            <path d="M12 11v-8h4l2 2l-2 2h-4"></path>
+            <path d="M6 15h1"></path>
           </svg>
           <a className="px-2" href={`mailto:${siteMetadata.email}`}>
             {siteMetadata.email}
@@ -88,7 +86,9 @@ function ProfileCardInfo() {
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth={1}
-              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"
+
+              // d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
             />
           </svg>
           <p className="px-2">
@@ -114,7 +114,9 @@ function ProfileCardInfo() {
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth={1}
-              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+
+              // d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
             />
           </svg>
           <p className="px-2">
@@ -193,7 +195,7 @@ export function ProfileCard() {
           alt="avatar"
           width="450px"
           height="350px"
-          className="object-cover"
+          className="bg-primary-200 object-cover"
           objectPosition="10% 50%"
         />
         <ProfileCardInfo />

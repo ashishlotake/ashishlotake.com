@@ -26,7 +26,7 @@ const Pre = (props) => {
         <button
           aria-label="Copy code"
           type="button"
-          className={`absolute right-2 top-2 h-8 w-8 rounded border-2 bg-gray-700 p-1 dark:bg-gray-800 ${
+          className={`absolute right-2 top-2 h-8 w-8 rounded border-2 bg-slate-800 p-1 dark:bg-slate-800 ${
             copied
               ? 'border-green-400 focus:border-green-400 focus:outline-none'
               : 'border-gray-300'
@@ -63,7 +63,7 @@ const Pre = (props) => {
         </button>
       )}
 
-      <pre className=" rounded-xl border-2 border-gray-200  bg-gray-800 dark:border-gray-500 dark:bg-background-color">
+      <pre className=" rounded-lg border-2 border-gray-500  bg-slate-800 dark:border-gray-500 dark:bg-[#151f28] ">
         {props.children}
       </pre>
     </div>

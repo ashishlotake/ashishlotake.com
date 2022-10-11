@@ -52,16 +52,16 @@ export default function Example() {
           toggleIcon()
         }}
       >
-        <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white  shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-gray-800 dark:text-white">
+        <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white  shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-slate-800 dark:text-white">
           <div className="block md:hidden">
-            <div className="py-1">
+            <div className="py-">
               <Menu.Item>
                 {({ active }) => (
                   <CustomLink
                     href="/"
                     className={classNames(
                       active
-                        ? 'bg-gray-200 dark:bg-gray-700 dark:text-gray-200'
+                        ? 'rounded-t-md bg-gray-200 dark:bg-slate-700 dark:text-gray-200'
                         : 'text-gray-700 dark:text-gray-100',
                       'block px-4 py-2 text-sm'
                     )}
@@ -76,7 +76,7 @@ export default function Example() {
                     href="/blog"
                     className={classNames(
                       active
-                        ? 'bg-gray-200 dark:bg-gray-700 dark:text-gray-200'
+                        ? 'bg-gray-200 dark:bg-slate-700 dark:text-gray-200'
                         : 'text-gray-700 dark:text-gray-100',
                       'block px-4 py-2 text-sm'
                     )}
@@ -93,7 +93,7 @@ export default function Example() {
                     href="/snippets"
                     className={classNames(
                       active
-                        ? 'bg-gray-200 dark:bg-gray-700 dark:text-gray-200'
+                        ? 'bg-gray-200 dark:bg-slate-700 dark:text-gray-200'
                         : 'text-gray-700 dark:text-gray-100',
                       'block px-4 py-2 text-sm'
                     )}
@@ -110,7 +110,7 @@ export default function Example() {
                     href="/projects"
                     className={classNames(
                       active
-                        ? 'bg-gray-200 dark:bg-gray-700 dark:text-gray-200'
+                        ? 'bg-gray-200 dark:bg-slate-700 dark:text-gray-200'
                         : 'text-gray-700 dark:text-gray-100',
                       'block px-4 py-2 text-sm'
                     )}
@@ -126,7 +126,7 @@ export default function Example() {
                     href="/about"
                     className={classNames(
                       active
-                        ? 'bg-gray-200 dark:bg-gray-700 dark:text-gray-200'
+                        ? 'bg-gray-200 dark:bg-slate-700 dark:text-gray-200'
                         : 'text-gray-700 dark:text-gray-100',
                       'block px-4 py-2 text-sm'
                     )}
@@ -144,7 +144,7 @@ export default function Example() {
                   href="/tags"
                   className={classNames(
                     active
-                      ? 'bg-gray-200 dark:bg-gray-700 dark:text-gray-200'
+                      ? 'bg-gray-200 dark:bg-slate-700 dark:text-gray-200 md:rounded-t-md'
                       : 'text-gray-700 dark:text-gray-100',
                     'block px-4 py-2 text-sm'
                   )}
@@ -159,7 +159,7 @@ export default function Example() {
                   href="/stats"
                   className={classNames(
                     active
-                      ? 'bg-gray-200 dark:bg-gray-700 dark:text-gray-200'
+                      ? 'bg-gray-200 dark:bg-slate-700 dark:text-gray-200'
                       : 'text-gray-700 dark:text-gray-100',
                     'block px-4 py-2 text-sm'
                   )}
@@ -176,7 +176,7 @@ export default function Example() {
                   href="/now"
                   className={classNames(
                     active
-                      ? 'bg-gray-200 dark:bg-gray-700 dark:text-gray-200'
+                      ? 'bg-gray-200 dark:bg-slate-700  dark:text-gray-200'
                       : 'text-gray-700 dark:text-gray-100',
                     'block px-4 py-2 text-sm'
                   )}
@@ -186,14 +186,14 @@ export default function Example() {
               )}
             </Menu.Item>
           </div>
-          <div className="py-1">
+          <div className="">
             <Menu.Item>
               {({ active }) => (
                 <CustomLink
                   href="/journey"
                   className={classNames(
                     active
-                      ? 'bg-gray-200 dark:bg-gray-700 dark:text-gray-200'
+                      ? 'rounded-b-md bg-gray-200 dark:bg-slate-700 dark:text-gray-200'
                       : 'text-gray-700 dark:text-gray-100',
                     'block px-4 py-2 text-sm'
                   )}
@@ -209,7 +209,7 @@ export default function Example() {
                 <CustomLink
                   href="/activity"
                   className={classNames(
-                    active ? 'bg-gray-200 dark:bg-gray-700 dark:text-gray-200' : 'text-gray-700 dark:text-gray-100',
+                    active ? 'bg-gray-200 dark:bg-slate-700 dark:text-gray-200' : 'text-gray-700 dark:text-gray-100',
                     'block px-4 py-2 text-sm'
                   )}
                 >

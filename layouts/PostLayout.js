@@ -41,7 +41,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
         authorDetails={authorDetails}
         {...frontMatter}
       />
-      <article>
+      <article className="mx-auto min-h-screen max-w-3xl">
         <header className=" relative pb-3">
           <div>
             <h1 className="text-3xl font-extrabold leading-normal tracking-normal sm:text-4xl md:text-5xl">
@@ -51,9 +51,9 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
           <dl className="space-y-10 ">
             <div className="flex w-full  flex-col items-start justify-between pt-5 font-medium md:flex-row md:items-center">
               <time dateTime={date}>
-                <span role="img" aria-label="wave" className="pr-2">
+                {/* <span role="img" aria-label="wave" className="pr-2">
                   📅
-                </span>
+                </span> */}
                 {`Written on ${new Date(date).toLocaleDateString(
                   siteMetadata.locale,
                   postDateTemplate
@@ -69,13 +69,12 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
           </dl>
           {/* </div> */}
         </header>
-        <article></article>
         <div className="">
-          <div className="prose max-w-none border-t border-b border-b  border-gray-200 pt-2 dark:prose-dark  dark:border-gray-700">
+          <div className="prose max-w-none border-t border-b border-b border-gray-200  pb-5 pt-2 dark:prose-dark  dark:border-gray-700">
             {children}
           </div>
           <footer>
-            <div className="dark:-gray-700 e-y text-sm font-medium leading-5 xl:col-start-1 xl:row-start-2">
+            <div className="dark:-gray-700 text-sm font-medium leading-5 xl:col-start-1 xl:row-start-2">
               {(next || prev) && (
                 <div className="flex justify-between py-4 ">
                   {prev && (

@@ -7,11 +7,11 @@
 
 /* Code title styles */
 .remark-code-title {
-  @apply rounded-t-xl  border-t-2 border-r-2 border-l-2 dark:border-gray-500 bg-primary-700 px-4 py-1 font-mono text-sm font-bold text-gray-200;
+  @apply rounded-t-lg border-t-2  border-r-2 border-l-2 border-gray-500 bg-slate-700 px-4 py-1 font-mono text-sm font-bold text-white dark:bg-slate-800;
 }
 
 .remark-code-title + div > pre {
-  @apply mt-0 rounded-t-none ;
+  @apply mt-0 rounded-t-none;
 }
 
 /* Code block styles */
@@ -20,7 +20,7 @@
 }
 
 .code-line {
-  @apply -mx-4 block border-l-4  dark:bg-background-color bg-gray-800  border-transparent pl-4 pr-4;
+  @apply -mx-4 block border-l-4  border-transparent bg-slate-800  pl-4 pr-4 dark:bg-[#151f28];
 }
 
 .code-line.inserted {
@@ -32,7 +32,7 @@
 }
 
 .highlight-line {
-  @apply -mx-4 border-l-4 border-primary-500  bg-gray-600 dark:bg-gray-800 bg-opacity-50;
+  @apply -mx-4 border-l-4 border-primary-500  bg-slate-600 bg-opacity-50 dark:bg-slate-800;
 }
 
 .line-number::before {
@@ -48,7 +48,7 @@
  * Ported by Sara vieria [@SaraVieira]
  * Added by Souvik Mandal [@SimpleIndian]
  */
- 
+
 .token.comment,
 .token.prolog,
 .token.cdata {

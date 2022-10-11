@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { AiOutlineFacebook, AiOutlineTwitter, AiOutlineGlobal } from 'react-icons/ai'
 import { FaLinkedinIn } from 'react-icons/fa'
 import { FiMail } from 'react-icons/fi'
@@ -31,7 +32,7 @@ const SocialIcon = ({ kind, href, size = 8 }) => {
     >
       <span className="sr-only">{kind}</span>
       <SocialSvg
-        className={`hover:text-primary-color-500 dark:hover:text-primary-color-dark-500 text-gray-700 dark:text-gray-200 h-${size} w-${size}`}
+        className={`text-gray-700 hover:text-primary-500 dark:text-gray-200 dark:hover:text-primary-500 h-${size} w-${size}`}
       />
     </a>
   )
