@@ -11,7 +11,7 @@ export default function Footer() {
       <NowPlayingFooter />
       <div className="flex flex-col-reverse justify-between gap-3  border-t border-gray-200 py-5 pb-2 text-sm dark:border-gray-700 md:flex-row ">
         <div>
-          © {new Date().getFullYear()} {siteMetadata.author} • Have a great{' '}
+          © {new Date().getFullYear()} | {siteMetadata.author} | Have a great{' '}
           <span className="font-extrabold text-primary-500">{currentDayName()}!</span>
         </div>
         <div>

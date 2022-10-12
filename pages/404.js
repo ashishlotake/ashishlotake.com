@@ -6,7 +6,9 @@ export default function FourZeroFour() {
   return (
     <>
       <PageSEO title={`Page Not Found - ${siteMetadata.title}`} />
-      <div className="flex flex-col items-start justify-start md:mt-24 md:flex-row md:items-center md:justify-center md:space-x-6">
+      <img src="/static/images/404.svg" />
+
+      <div className="flex flex-col items-start justify-start md:mt-2 md:flex-row md:items-center md:justify-center md:space-x-6">
         <div className="space-x-2 pt-6 pb-8 md:space-y-5">
           <h1 className="text-6xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 md:px-3 md:text-8xl md:leading-14">
             404
@@ -26,6 +28,7 @@ export default function FourZeroFour() {
           </div>
         </div>
       </div>
+
       <div className="mt-16 grid place-items-center">
         <Link href="/">
           <button aria-label="Scroll To Top" type="button" className="pushable">

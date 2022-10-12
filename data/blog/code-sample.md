@@ -3,7 +3,7 @@ title: Showcasing Features
 date: '2021-03-08'
 tags: ['markdown', 'code', 'features']
 draft: false
-images: ['/static/images/projects/anime.jpg']
+images: ['/static/images/projects/anime.svg']
 summary: Example of a markdown file with code blocks and syntax highlighting
 ---
 

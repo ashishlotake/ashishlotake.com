@@ -15,7 +15,7 @@ const Card = ({ title, description, imgSrc, href, github, tech1, tech2, tech3 })
           width="450px"
           height="200px"
           className="object-cover"
-          objectPosition="10% 10%"
+          // objectPosition="10% 10%"
         />
       </a>
     </Link>

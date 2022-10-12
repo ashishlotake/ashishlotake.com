@@ -17,7 +17,7 @@ export default function Projects() {
           <Subtitle>{/* A list of projects I have been working on or built */}</Subtitle>
         </div>
       </div>
-      <div className="grid grid-cols-1 gap-5 pt-6 md:grid-cols-2 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 pt-6 md:grid-cols-2 lg:grid-cols-2">
         {projectsData.map((d) => (
           <Card
             key={d.title}

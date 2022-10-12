@@ -4,11 +4,11 @@ import { getFileBySlug } from '@/lib/mdx'
 const DEFAULT_LAYOUT = 'ActivityLayout'
 
 export async function getStaticProps() {
-  const activityDetails = await getFileBySlug('activity', ['default'])
+  const activityDetails = await getFileBySlug('recommendation', ['default'])
   return { props: { activityDetails } }
 }
 
-export default function Activity({ activityDetails }) {
+export default function Recommendation({ activityDetails }) {
   const { mdxSource, frontMatter } = activityDetails
 
   return (

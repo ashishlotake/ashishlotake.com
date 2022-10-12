@@ -14,7 +14,7 @@ const projectsData = [
     title: 'General Q&A Conversational ChatBot',
     description:
       "This is a Q&A chatbot, which is capable of answering user questions, the model is implemented using the open-source tool RASA. This can be easily extended to a full fedge Q&A bot, we just need to add a few examples of intent and the underlying NLU model and answer user's questions.",
-    imgSrc: '/static/images/projects/chatbot.svg',
+    imgSrc: '/static/images/projects/messaging.svg',
     href: '',
     github: 'https://github.com/ashishlotake/rasa_chat_bot',
     tech1: 'Chatbot',

@@ -193,7 +193,7 @@ export default function Example() {
                   href="/journey"
                   className={classNames(
                     active
-                      ? 'rounded-b-md bg-gray-200 dark:bg-slate-700 dark:text-gray-200'
+                      ? ' bg-gray-200 dark:bg-slate-700 dark:text-gray-200'
                       : 'text-gray-700 dark:text-gray-100',
                     'block px-4 py-2 text-sm'
                   )}
@@ -203,21 +203,23 @@ export default function Example() {
               )}
             </Menu.Item>
           </div>
-          {/* <div className="py-1">
+          <div className="">
             <Menu.Item>
               {({ active }) => (
                 <CustomLink
-                  href="/activity"
+                  href="/recommendation"
                   className={classNames(
-                    active ? 'bg-gray-200 dark:bg-slate-700 dark:text-gray-200' : 'text-gray-700 dark:text-gray-100',
+                    active
+                      ? 'rounded-b-md bg-gray-200 dark:bg-slate-700 dark:text-gray-200'
+                      : 'text-gray-700 dark:text-gray-100',
                     'block px-4 py-2 text-sm'
                   )}
                 >
-                  Activity
+                  Recommendation
                 </CustomLink>
               )}
             </Menu.Item>
-          </div> */}
+          </div>
         </Menu.Items>
       </Transition>
     </Menu>
