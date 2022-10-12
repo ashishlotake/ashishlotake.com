@@ -28,7 +28,7 @@ const linkedinShare = (slug, title) =>
   )}`
 
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
-  const { slug, date, images, title, summary, readingTime } = frontMatter
+  const { slug, date, logo, title, summary, readingTime } = frontMatter
 
   return (
     <SectionContainer>
@@ -39,8 +39,8 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
           <div className="mb-4">
             <PageTitle>{title}</PageTitle>
             <div className="mt-2 flex flex-wrap gap-4">
-              {images.map((logo) => (
-                <img key={images} src={images} width={40} height={40} alt="" />
+              {logo.map((logo) => (
+                <img key={logo} src={logo} width={40} height={40} alt="" />
               ))}
             </div>
           </div>

@@ -7,18 +7,34 @@ import SocialIcon from './social-icons'
 
 const Card = ({ title, description, imgSrc, href, github, tech1, tech2, tech3 }) => (
   <article className="flex h-full flex-col rounded-lg shadow-xl dark:bg-[#0e141b]  dark:shadow-black">
-    <Link href={github}>
-      <a target="_blank" rel="noopener noreferrer">
-        <Image
-          src={imgSrc}
-          alt="avatar"
-          width="450px"
-          height="200px"
-          className="object-cover"
-          // objectPosition="10% 10%"
-        />
-      </a>
-    </Link>
+    {href ? (
+      <Link href={href}>
+        <a target="_blank" rel="noopener noreferrer">
+          <Image
+            src={imgSrc}
+            alt="avatar"
+            width="450px"
+            height="200px"
+            className="object-cover"
+            // objectPosition="10% 10%"
+          />
+        </a>
+      </Link>
+    ) : (
+      <Link href={github}>
+        <a target="_blank" rel="noopener noreferrer">
+          <Image
+            src={imgSrc}
+            alt="avatar"
+            width="450px"
+            height="200px"
+            className="object-cover"
+            // objectPosition="10% 10%"
+          />
+        </a>
+      </Link>
+    )}
+
     <div className="flex flex-1 flex-col px-6 py-3">
       {/* <h3 className=" py-2 text-2xl font-semibold leading-snug">{title}</h3> */}
       <CardTitle>{title}</CardTitle>

@@ -99,7 +99,11 @@ export default function Home({ posts }) {
       </div>
       {posts.length > 1 && (
         <div className="flex justify-end  pt-4 text-lg font-normal leading-6">
-          <CustomLink href="/blog" className="hover:text-primary-500 " aria-label="all posts">
+          <CustomLink
+            href="/blog"
+            className="link-underline  text-primary-500  "
+            aria-label="all posts"
+          >
             All Posts &rarr;
           </CustomLink>
         </div>
@@ -162,7 +166,11 @@ function TopProject() {
 
       {projectsData.length > MAX_DISPLAY && (
         <div className="flex justify-end pt-4 text-lg font-normal leading-6">
-          <CustomLink href="/projects" className="hover:text-primary-500 " aria-label="all posts">
+          <CustomLink
+            href="/projects"
+            className="link-underline  text-primary-500 "
+            aria-label="all posts"
+          >
             All Posts &rarr;
           </CustomLink>
         </div>
