@@ -7,6 +7,7 @@ export default function FourZeroFour() {
     <>
       <PageSEO title={`Page Not Found - ${siteMetadata.title}`} />
       <img src="/static/images/404.svg" />
+      {/* <img src="/static/images/underconstruction.svg" /> */}
 
       <div className="flex flex-col items-start justify-start md:mt-2 md:flex-row md:items-center md:justify-center md:space-x-6">
         <div className="space-x-2 pt-6 pb-8 md:space-y-5">

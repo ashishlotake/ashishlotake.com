@@ -8,6 +8,13 @@ images: ['/static/images/blog/labelling.png']
 layout: PostLayout
 ---
 
+<p align="center">
+  <img
+    className="rounded-lg bg-white"
+    src="/static/images/blog/active-labelling/webapp.gif"
+  />
+</p>
+
 <div className="mt-5 mb-5 grid place-items-center">
   <a target="_blank" rel="noopener noreferrer" href="https://ashishlotake-active-labelling-system-project-app-14t6bq.streamlitapp.com/">
     <button aria-label="Scroll To Top" type="button" className="pushable">
@@ -87,7 +94,7 @@ of the labels. With such an imbalanced dataset, it will be difficult to get a go
 <p align="center">
   <img
     className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/projectlayout.svg"
+    src="/static/images/blog/active-labelling/projectlayout.png"
   />
 </p>
 
@@ -750,6 +757,13 @@ We will be covering streamlit deployment here, as it's the fastest and it's free
 </p>
 
 Wola, your app is deployed. Go to the link.
+
+<p align="center">
+  <img
+    className="rounded-lg bg-white"
+    src="/static/images/blog/active-labelling/webapp.gif"
+  />
+</p>
 
 <div className="mt-16 mb-5 grid place-items-center">
   <a target="_blank" rel="noopener noreferrer" href="https://ashishlotake-active-labelling-system-project-app-14t6bq.streamlitapp.com/">
