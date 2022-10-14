@@ -61,9 +61,11 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
               return (
                 <Link key={slug} href={`/blog/${slug}`} aria-label={`Read "${title}"`}>
                   <a>
-                    <article className="flex h-full flex-col rounded-lg shadow-lg transition-all hover:scale-[1.005]  hover:shadow-2xl dark:shadow-black">
-                      {/* <img alt="" className="object-cover rounded-t w-full h-44 dark:bg-gray-500" src={images} /> */}
-                      <div className="flex flex-1 flex-col px-6 py-3">
+                    <article className="flex h-full flex-col rounded-lg shadow-lg  shadow-gray-300 transition-transform hover:scale-[1.005] hover:shadow-2xl dark:shadow-black">
+                      {images ? (
+                        <img alt="" className="h-44 w-full rounded-t object-cover" src={images} />
+                      ) : null}
+                      <div className="flex flex-1  flex-col px-6 py-3">
                         <div className=" leading-none">
                           <div className="flex flex-wrap pt-1 ">
                             {tags.slice(0, 4).map((tag) => (
@@ -71,12 +73,14 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                                 key={tag}
                                 className="pr-2 text-xs tracking-wider  text-primary-400"
                               >
-                                {/* <Tag key={tag} text={tag} /> */}#{tag}
+                                #{tag}
                               </p>
                             ))}
                           </div>
                         </div>
-                        <h3 className=" py-2 text-2xl font-semibold leading-snug">{title}</h3>
+                        <h3 className=" py-2 text-2xl font-semibold leading-snug text-black dark:text-white">
+                          {title}
+                        </h3>
                         <p className="flex-1 text-gray-500">{summary}</p>
                         <div className="flex flex-wrap justify-between space-x-2 pt-3 text-xs dark:text-gray-400">
                           <span>
@@ -90,6 +94,42 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                       </div>
                     </article>
                   </a>
+                  {/* <a class="group block h-full " href="/blog">
+                  <div
+                    class="relative flex flex-1 flex-col h-full  rounded border-2 border-black transition group-hover:-translate-x-2 group-hover:-translate-y-2 group-hover:shadow-[8px_8px_0_0_#000]"
+                  >
+
+                    <div className="flex flex-1 flex-col px-6 py-3">
+                      <div className=" leading-none">
+                      {images ? (
+                    <img alt="" className="object-cover  h-44" src={images} />
+                    ) : null}
+                       <div className="flex flex-wrap pt-1 ">
+                            {tags.slice(0, 4).map((tag) => (
+                              <p
+                                key={tag}
+                                className="pr-2 text-xs tracking-wider  text-primary-400"
+                              >
+                                #{tag}
+                              </p>
+                            ))}
+                          </div>
+                      </div>
+                      <h3 className=" py-2 text-2xl text-black dark:text-white font-semibold leading-snug">{title}</h3>
+
+                      <p className="flex-1 text-gray-500">{summary}</p>
+                      <div className="flex flex-wrap justify-between space-x-2 pt-3 text-xs dark:text-gray-400">
+                        <span>
+                          <time dateTime={date}>{formatDate(date)}</time>
+                        </span>
+                        <span>
+                          <ViewCounter className="mx-1" slug={slug} />
+                          views
+                        </span>
+                      </div>
+                    </div>
+                    </div>
+                    </a> */}
                 </Link>
               )
             })}

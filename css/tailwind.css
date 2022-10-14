@@ -19,12 +19,12 @@
 
 @layer utilities {
   .special-underline {
-    @apply from-sky-500 to-sky-500 dark:from-sky-500 dark:to-sky-500 bg-gradient-to-r
-      bg-no-repeat [background-position:0_100%]
-      [background-size:100%_0.2em]
-      hover:[background-size:100%_100%] focus:[background-size:100%_100%]
-      motion-safe:transition-all
-      motion-safe:duration-200;
+    @apply bg-gradient-to-r from-sky-500 to-sky-500 bg-no-repeat [background-position:0_100%]
+      [background-size:100%_0.2em] hover:[background-size:100%_100%]
+      focus:[background-size:100%_100%]
+      motion-safe:transition-all motion-safe:duration-200
+      dark:from-sky-500
+      dark:to-sky-500;
   }
   .company {
     box-shadow: inset 0 0 0 0 #0ea5e9;
@@ -49,7 +49,7 @@
   width: 0;
   height: 2px;
   display: block;
-  margin-top: 5px;
+  margin-top: 0px;
   right: 0;
   background: linear-gradient(transparent, transparent), linear-gradient(to right, #0ea5e9, #0ea5e9);
   transition: width 0.25s ease;
@@ -61,7 +61,6 @@
   left: 0;
   background: linear-gradient(transparent, transparent), linear-gradient(to right, #0ea5e9, #0ea5e9);
 }
-
 
 .task-list-item::before {
   @apply hidden;
@@ -120,9 +119,6 @@ input:-webkit-autofill:focus {
   }
 }
 
-
-
-
 .share-button {
   position: relative;
   display: inline-flex;
@@ -134,7 +130,7 @@ input:-webkit-autofill:focus {
   border-radius: 3px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
   text-decoration: none;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-weight: 600;
   font-size: 15px;
 }
@@ -193,5 +189,3 @@ input:-webkit-autofill:focus {
 .share-button.google-plus svg {
   fill: #DB4437;
 } */
-
-

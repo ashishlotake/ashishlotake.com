@@ -61,24 +61,18 @@ export default function Home({ posts }) {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
-            const { slug, date, title, summary, tags } = frontMatter
+            const { slug, date, title, summary, tags, images } = frontMatter
             return (
               <Link key={slug} href={`/blog/${slug}`} aria-label={`Read "${title}"`}>
-                <a>
-                  {/* <article className="flex h-full flex-col rounded-lg shadow-lg hover:shadow-2xl transition-all  dark:shadow-black"> */}
-                  <article className="flex h-full flex-col rounded-lg shadow-lg transition-all hover:scale-[1.005]  hover:shadow-2xl dark:shadow-black">
-                    {/* <article className='border-2 h-full flex rounded-md hover:border-primary-500'> */}
-                    <div className="flex flex-1 flex-col px-6 py-3">
+                <a className="group block h-full ">
+                  <div className="relative flex h-full flex-1 flex-col  rounded border-2 border-black transition group-hover:-translate-x-2 group-hover:-translate-y-2 group-hover:shadow-[8px_8px_0_0_#000]">
+                    <div className="flex flex-1 flex-col px-3 py-1">
                       <div className=" leading-none">
-                        <div className="flex flex-wrap pt-1 ">
-                          {tags.slice(0, 4).map((tag) => (
-                            <p key={tag} className="pr-2 text-xs tracking-wider  text-primary-400">
-                              {/* <Tag key={tag} text={tag} /> */}#{tag}
-                            </p>
-                          ))}
-                        </div>
+                        {/* <img alt="" className="object-cover  h-44" src={images} /> */}
                       </div>
-                      <h3 className=" py-2 text-2xl font-semibold leading-snug">{title}</h3>
+                      <h3 className=" py-2 text-2xl font-semibold leading-snug text-black dark:text-white">
+                        {title}
+                      </h3>
                       <p className="flex-1 text-gray-500">{summary}</p>
                       <div className="flex flex-wrap justify-between space-x-2 pt-3 text-xs dark:text-gray-400">
                         <span>
@@ -90,7 +84,7 @@ export default function Home({ posts }) {
                         </span>
                       </div>
                     </div>
-                  </article>
+                  </div>
                 </a>
               </Link>
             )
@@ -122,49 +116,19 @@ function TopProject() {
       <h2 className="text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
         Lastest Project
       </h2>
-      <div className="grid grid-cols-1 gap-8 pt-4 md:grid-cols-2 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-8 pt-4 md:grid-cols-1 lg:grid-cols-1">
         {projectsData.slice(0, MAX_DISPLAY).map((d) => (
-          // <article className="flex h-full flex-col rounded-lg shadow-lg hover:shadow-2xl transition-all  dark:shadow-black">
-          <article
+          <Card
             key={d.title}
-            className="flex h-full flex-col rounded-lg shadow-lg transition-all hover:scale-[1.005]  hover:shadow-2xl dark:shadow-black"
-          >
-            <div className="flex flex-1 flex-col px-6 py-3">
-              {d.href ? (
-                <Link href={d.href}>
-                  <a target="_blank" rel="noopener noreferrer">
-                    <CardTitle>{d.title}</CardTitle>
-                  </a>
-                </Link>
-              ) : (
-                <Link href={d.github}>
-                  <a target="_blank" rel="noopener noreferrer">
-                    <CardTitle>{d.title}</CardTitle>
-                  </a>
-                </Link>
-              )}
-              <p className="flex-1 text-gray-500">{d.description}</p>
-              <div className="flex flex-wrap justify-between space-x-2 pt-3 text-xs dark:text-gray-400">
-                {d.github ? (
-                  <button
-                    type="submit"
-                    className="w-auto rounded-full bg-slate-200 p-2 text-sm text-white transition-transform hover:scale-[1.2] dark:bg-slate-800"
-                  >
-                    <SocialIcon kind="github" href={d.github} size="8" />
-                  </button>
-                ) : null}
-
-                {d.href ? (
-                  <button
-                    type="submit"
-                    className="ml-6 w-auto rounded-full bg-slate-200 p-2 text-lg text-white transition-transform hover:scale-[1.2] dark:bg-slate-800"
-                  >
-                    {d.href ? <SocialIcon kind="external" href={d.href} size="8" /> : null}
-                  </button>
-                ) : null}
-              </div>
-            </div>
-          </article>
+            title={d.title}
+            description={d.description}
+            imgSrc={d.imgSrc}
+            href={d.href}
+            github={d.github}
+            tech1={d.tech1}
+            tech2={d.tech2}
+            tech3={d.tech3}
+          />
         ))}
       </div>
 

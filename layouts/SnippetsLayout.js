@@ -57,7 +57,7 @@ export default function SnippetsLayout({ posts, title, initialDisplayPosts = [],
             const { slug, date, title, summary, tags, logo } = frontMatter
             return (
               <Link key={slug} href={`/snippets/${slug}`}>
-                <div className="flex h-full w-full rounded-md  border-2 border-slate-200 transition-transform duration-300   hover:border-primary-500 dark:border-slate-700 dark:hover:border-primary-500">
+                <div className="flex h-full w-full rounded  border-2 border-slate-200 transition-transform duration-300   hover:border-primary-500 dark:border-slate-700 dark:hover:border-primary-500">
                   <div className="flex flex-shrink-0 items-center  border-r border-gray-600 px-3 dark:border-gray-400 ">
                     <img alt="moto" src={logo[0]} className="h-11 w-11" />
                   </div>
