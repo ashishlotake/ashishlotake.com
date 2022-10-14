@@ -6,7 +6,8 @@ import { BsFolder2 } from 'react-icons/bs'
 import SocialIcon from './social-icons'
 
 const Card = ({ title, description, imgSrc, href, github, tech1, tech2, tech3 }) => (
-  <article className="flex h-full flex-col rounded-lg shadow-xl dark:bg-[#0e141b]  dark:shadow-black">
+  // <article className="flex h-full flex-col rounded-lg shadow-xl   dark:shadow-black">
+  <article className="flex h-full flex-col rounded-lg shadow-lg transition-all hover:scale-[1.005]  hover:shadow-2xl dark:shadow-black">
     {href ? (
       <Link href={href}>
         <a target="_blank" rel="noopener noreferrer">
@@ -36,8 +37,19 @@ const Card = ({ title, description, imgSrc, href, github, tech1, tech2, tech3 })
     )}
 
     <div className="flex flex-1 flex-col px-6 py-3">
-      {/* <h3 className=" py-2 text-2xl font-semibold leading-snug">{title}</h3> */}
-      <CardTitle>{title}</CardTitle>
+      {href ? (
+        <Link href={href}>
+          <a target="_blank" rel="noopener noreferrer">
+            <CardTitle>{title}</CardTitle>
+          </a>
+        </Link>
+      ) : (
+        <Link href={github}>
+          <a target="_blank" rel="noopener noreferrer">
+            <CardTitle>{title}</CardTitle>
+          </a>
+        </Link>
+      )}
       <p className="flex-1 text-gray-500">{description}</p>
       <div className="flex flex-wrap justify-between space-x-2 pt-3 text-xs dark:text-gray-400">
         {github ? (

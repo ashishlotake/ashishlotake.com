@@ -61,7 +61,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
               return (
                 <Link key={slug} href={`/blog/${slug}`} aria-label={`Read "${title}"`}>
                   <a>
-                    <article className="hoverscale-[1.02] flex h-full flex-col rounded-lg shadow-xl transition-transform hover:-translate-y-2 dark:bg-[#0e141b] dark:shadow-black">
+                    <article className="flex h-full flex-col rounded-lg shadow-lg transition-all hover:scale-[1.005]  hover:shadow-2xl dark:shadow-black">
                       {/* <img alt="" className="object-cover rounded-t w-full h-44 dark:bg-gray-500" src={images} /> */}
                       <div className="flex flex-1 flex-col px-6 py-3">
                         <div className=" leading-none">

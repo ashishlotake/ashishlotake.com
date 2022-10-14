@@ -25,29 +25,31 @@ const LayoutWrapper = ({ children }) => {
   return (
     <SectionContainer>
       <div className="flex h-screen flex-col justify-between">
-        <header className="flex items-center justify-between pt-6 pb-10">
+        <header className="flex items-center justify-between pt-4 pb-10">
           <div>
             <Link href="/" aria-label={siteMetadata.headerTitle}>
               <div className="flex items-center justify-between text-xl font-semibold">
-                <button
-                  type="button"
-                  className="group flex  shrink-0 items-center rounded-lg transition"
+                <motion.div
+                  className="box"
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                  transition={{ type: 'spring', stiffness: 900, damping: 17 }}
                 >
-                  {/* <Image
-                    alt=""
-                    src={siteMetadata.siteLogo}
-                    className="h-11 w-10 rounded-full object-cover"
-                  /> */}
-                  <Image
-                    alt=""
-                    src={siteMetadata.siteLogo}
-                    // className="rounded-full object-cover bg-slate-200 "
-                    className="roundedfull  bg-transparent object-cover "
-                    width="50px"
-                    height="50px"
-                    objectPosition="0% 60%"
-                  />
-                </button>
+                  <button
+                    type="button"
+                    className="group flex  shrink-0 items-center rounded-lg transition"
+                  >
+                    <Image
+                      alt=""
+                      src={siteMetadata.siteLogo}
+                      // className="rounded-full object-cover bg-slate-200 "
+                      className="roundedfull  bg-transparent object-cover "
+                      width="50px"
+                      height="50px"
+                      objectPosition="0% 60%"
+                    />
+                  </button>
+                </motion.div>
               </div>
             </Link>
           </div>
