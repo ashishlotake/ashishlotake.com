@@ -8,15 +8,14 @@ images: ['/static/images/blog/labelling.png']
 layout: PostLayout
 ---
 
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/webapp.gif"
-  />
-</p>
+<div align="center">![](/static/images/blog/active-labelling/webapp.gif)</div>
 
 <div className="mt-5 mb-5 grid place-items-center">
-  <a target="_blank" rel="noopener noreferrer" href="https://ashishlotake-active-labelling-system-project-app-14t6bq.streamlitapp.com/">
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://ashishlotake-active-labelling-system-project-app-14t6bq.streamlitapp.com/"
+  >
     <button aria-label="Scroll To Top" type="button" className="pushable">
       <span className="shadow"></span>
       <span className="edgeblue"></span>
@@ -25,7 +24,7 @@ layout: PostLayout
   </a>
 </div>
 
-<TOCInline toc={props.toc} exclude="Overview" asDisclosure/>
+<TOCInline toc={props.toc} exclude="Overview" asDisclosure />
 
 ## All Jupyter Notebooks
 
@@ -64,36 +63,21 @@ Let's briefly go over the Caltech101 dataset
 
 It consists of 9146 images, split unevenly between 101 distinct object categories and a background category. According to the official website, there are about 40 to 800 images per category, additionally, most of the categories have around 50 images in the dataset. Such varying images per category can be a real problem when trying to achieve high accuracy in deep neural network training. The size of each image is roughly 300 x 200 pixels. The format of images is RGB, meaning we have 3 color channels.
 
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/caltech.png"
-  />
-</p>
+<div align="center">![](/static/images/blog/active-labelling/caltech.jpg)</div>
 Now let's look at the class distribution
 
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/caltechdisb.png"
-  />
-</p>
+<div align="center">![](/static/images/blog/active-labelling/caltechdisb.jpg)</div>
 
-<p align="center">
-  <img
-    src="https://media.tenor.com/q1mGRe4-LWcAAAAC/shocked-glass.gif"
-  />
-</p>
-We can see that the airplanes and motorbikes categories have the highest number of images, around 800, and the lowest number of images may be as low as 40 for most of the labels. With such an imbalanced dataset, it will be difficult to get a good performance from the network if we decided to train from scratch.
+<div align="center">
+  <img src="https://media.tenor.com/q1mGRe4-LWcAAAAC/shocked-glass.gif" />
+</div>
+We can see that the airplanes and motorbikes categories have the highest number of images, around 800,
+and the lowest number of images may be as low as 40 for most of the labels. With such an imbalanced dataset,
+it will be difficult to get a good performance from the network if we decided to train from scratch.
 
 # Let's understand the high-level deployment
 
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/projectlayout.png"
-  />
-</p>
+<div align="center">![](/static/images/blog/active-labelling/projectlayout.jpg)</div>
 
 I think the above layout is self-explanatory. Still, I will explain it in few lines:-
 
@@ -121,12 +105,7 @@ Before creating Alexnet from scratch, let's have a high overview of the Convolut
 
 Convolutional Neural Network is formed with the help of different layers stacked on top of one another to perform the image classification task. The architecture of the CNN contains different layers. The whole network itself is divided into two parts:- the **Convolution base** and the **Classifier**. The features are extracted in the convolution base and the classification is done in the classifier.
 
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/basicCNN.png"
-  />
-</p>
+<div align="center">![](/static/images/blog/active-labelling/basicCNN.png)</div>
 
 **Layers in Convolution base**:-
 
@@ -145,61 +124,31 @@ This is the simplest CNN you can build.
 
 Now you know the basics of CNN, let's look at the structure of AlexNet
 
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/alexnet1.png"
-  />
-</p>
+<div align="center">![](/static/images/blog/active-labelling/alexnet1.png)</div>
 
 That's a lot to take in, so let's briefly go over each unique layer
 
 _Convolutional layer_:- The mathematical term "convolution" refers to the dot product multiplication of two sets of elements. The convolutional layer's filters/kernels and an array of image data are affected by the convolution operation in deep learning. A convolutional layer is therefore just a layer that contains the convolution operation that takes place between the filters and the images that are processed by a convolutional neural network.
 
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/convultion.png"
-  />
-</p>
+<div align="center">![](/static/images/blog/active-labelling/convultion.png)</div>
 
 _ReLU Activation Function_:- A particular activation process that modifies a neuron's value output. The transformation imposed by ReLU on values from a neuron is represented by the formula y=max(0,x). Any negative values from the neuron are clamped down to 0 by the ReLU activation function, while positive values are left unaltered. Within a neural network, the outcome of this mathematical transformation is used as the input to the next layer and as the output of the current layer.
 
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/relu.png"
-  />
-</p>
+<div align="center">![](/static/images/blog/active-labelling/relu.png)</div>
 
 _Max Pooling_:- With max pooling, the output is the highest pixel value of pixels that are contained within a unit's receptive field within a sub-sampling layer. The max-pooling operation below produces an average of the pixels inside the kernel's receptive field by sliding across the input data with a 2x2 window.
 
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Max_pooling.png"
-  />
-</p>
+<div align="center">![](/static/images/blog/active-labelling/Max_pooling.png)</div>
 
 _Batch Normalisation_:- By adding a layer that operates on the inputs from the previous layer, batch normalization is a technique that reduces the impact of unstable gradients within a neural network. The operations first standardize and normalize the input values before scaling and shifting operations transform the input values.
 
 _Dropout_:- The dropout technique reduces the quantity of interconnecting neurons in a neural network at random. Each neuron has a chance to be dropped from the collated contributions from connected neurons at each training step.
 
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/dropout.png"
-  />
-</p>
+<div align="center">![](/static/images/blog/active-labelling/dropout.png)</div>
 
 _Flatten layer_:- Takes an input shape and flattens the input image data into a one-dimensional array.
 
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/flatten.png"
-  />
-</p>
+<div align="center">![](/static/images/blog/active-labelling/flatten.png)</div>
 
 _Dense Layer_:-A dense layer has an embedded number of arbitrary units/neurons within. Each neuron is a perceptron.
 
@@ -209,12 +158,7 @@ _Softmax Activation Function_:- AA specific kind of activation function used to 
 
 Keep this architecture in mind
 
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/basicCNN.png"
-  />
-</p>
+<div align="center">![](/static/images/blog/active-labelling/basicCNN.png)</div>
 
 Downlaod Data and extract from zip file
 
@@ -448,12 +392,7 @@ def plot_performance(history):
 plot_performance(history)
 ```
 
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/baseLinemodel01.png"
-  />
-</p>
+<div align="center">![](/static/images/blog/active-labelling/baseLinemodel01.jpg)</div>
 
 It's clear is model is overfitting to our training data,
 
@@ -471,18 +410,8 @@ I tried out three optimizers RMSProp, Adam, and SGD at various learning rates (0
 
 The result of using SGD as an optimizer at different learning rates.
 
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/sgd_lr_rate1.png"
-  />
-</p>
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/sgd_lr_rate2.png"
-  />
-</p>
+<div align="center">![](/static/images/blog/active-labelling/sgd_lr_rate1.jpg)</div>
+<div align="center">![](/static/images/blog/active-labelling/sgd_lr_rate2.jpg)</div>
 The result at learning rates 0.01 and 0.05 looks promising, let's explore more.
 
 | _learning rate_ | Train Acc | Train Loss | Val Acc | Val Loss | Test Acc | Test Loss |
@@ -500,18 +429,8 @@ We can say both results are very similar at learning rates 0.05 and 0.01, the di
 
 Now we will try out this configuration (optimizer =sgd, learning rate =0.01) at various momentum (0,0.3,0.6,0.8,0.9).
 
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/momentum1.png"
-  />
-</p>
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/momentum2.png"
-  />
-</p>
+<div align="center">![](/static/images/blog/active-labelling/momentum1.jpg)</div>
+<div align="center">![](/static/images/blog/active-labelling/momentum2.jpg)</div>
 Let's focus on top 3 momentums:-
 
 | _Momentum_ | Train Acc | Train Loss | Val Acc | Val Loss | Test Acc | Test Loss | Epochs |
@@ -557,27 +476,12 @@ The following Augmentation will be used:
 - Random Rotation Augmentation
 - Random Zoom Augmentation
 
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/augmented.png"
-  />
-</p>
+<div align="center">![](/static/images/blog/active-labelling/augmented.png)</div>
 
 Result after applying data Data Augmentation1
 
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/DataAugmentation1.png"
-  />
-</p>
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/DataAugmentation2.png"
-  />
-</p>
+<div align="center">![](/static/images/blog/active-labelling/DataAugmentation1.jpg)</div>
+<div align="center">![](/static/images/blog/active-labelling/DataAugmentation2.jpg)</div>
 
 It looks like applying data augmentation doesn't seem to improve model generalization for our models' architecture and dataset.
 
@@ -679,22 +583,12 @@ We will be testing out 3 models:
 
 For my scenario, MobileNet seems to be performing worse than the baseline model.
 
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/tansferlearn1.png"
-  />
-</p>
+<div align="center">![](/static/images/blog/active-labelling/tansferlearn1.jpg)</div>
 
 Both Resnet50 and Inception have achieved Train and Val accuracy of greater than
 90% let's focus on loss.
 
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/tansferlearn2.png"
-  />
-</p>
+<div align="center">![](/static/images/blog/active-labelling/tansferlearn2.jpg)</div>
 
 |               | Val acc | Val Loss | Test Acc | Test Loss |
 | ------------- | ------- | -------- | -------- | --------- |
@@ -711,12 +605,7 @@ After doing various experiments from hyperparameter tuning, and adding new data 
 
 As stated earlier, we need to preprocess images based on the pretrained model we choose, let’s look at preprocessed images from the resnet50 convolutional base:
 
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/resnetpreprocess.png"
-  />
-</p>
+<div align="center">![](/static/images/blog/active-labelling/resnetpreprocess.jpg)</div>
 
 ## Retraining
 
@@ -736,21 +625,11 @@ Class activation map (CAM) visualization is a broad family of methods that invol
 
 Grad-CAM consists of taking the output feature map of a convolution layer, giving an input image, and weighing every channel in that feature map by the gradient of the class concerning the channel. Intuitively, one way to understand this trick is to imagine that you’re weighting a spatial map of “how intensely the input image activates different channels” by “how important each channel is about the class,” resulting in a spatial map of “how intensely the input image activates the class.”^[[Deep Learning with Python](https://www.manning.com/books/deep-learning-with-python)]
 
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/modelintrep1.png"
-  />
-</p>
+<div align="center">![](/static/images/blog/active-labelling/modelintrep1.jpg)</div>
 
 By looking at the above images, we can say that after the model detected a person and wheel nearby, the model decided it was a wheelchair with 99.64% confidence.
 
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/modelintrep2.png"
-  />
-</p>
+<div align="center">![](/static/images/blog/active-labelling/modelintrep2.jpg)</div>
 
 ## Building App
 
@@ -808,12 +687,7 @@ After the images are built, run the following command to check images
 docker images
 ```
 
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/dockerimg.png"
-  />
-</p>
+<div align="center">![](/static/images/blog/active-labelling/dockerimg.png)</div>
 
 That's it your docker images it created!
 
@@ -840,31 +714,20 @@ We will be covering streamlit deployment here, as it's the fastest and it's free
 2. Push all the code from local to the GitHub repository.
 3. Now go to Streamlit and create an account.
 4. Click on New app
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/streamlit1.png"
-  />
-</p>
+   <div align="center">![](/static/images/blog/active-labelling/streamlit1.png)</div>
 5. Choose the repository where the app is stored and the main file path, where all streamlit code resides, and then press Deploy!.
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/streamlit2.png"
-  />
-</p>
+   <div align="center">![](/static/images/blog/active-labelling/streamlit2.png)</div>
 
 Wola, your app is deployed. Go to the link given by streamlit.
 
-<p align="center">
-  <img
-    className="rounded-lg bg-white"
-    src="/static/images/blog/active-labelling/webapp.gif"
-  />
-</p>
+<div align="center">![](/static/images/blog/active-labelling/webapp.gif)</div>
 
 <div className="mt-16 mb-5 grid place-items-center">
-  <a target="_blank" rel="noopener noreferrer" href="https://ashishlotake-active-labelling-system-project-app-14t6bq.streamlitapp.com/">
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://ashishlotake-active-labelling-system-project-app-14t6bq.streamlitapp.com/"
+  >
     <button aria-label="Scroll To Top" type="button" className="pushable">
       <span className="shadow"></span>
       <span className="edgeblue"></span>

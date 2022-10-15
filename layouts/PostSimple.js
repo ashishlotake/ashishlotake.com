@@ -1,3 +1,4 @@
+import formatDate from '@/lib/utils/formatDate'
 import Link from '@/components/Link'
 import SectionContainer from '@/components/SectionContainer'
 import { BlogSEO } from '@/components/SEO'
@@ -35,12 +36,21 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
       <BlogSEO url={`${siteMetadata.siteUrl}/snippets/${frontMatter.slug}`} {...frontMatter} />
       <article>
         <div className="mx-auto max-w-3xl">
-          {/* <p className="text-subtle">{moment(snippet.date).format("LL")}</p> */}
+          <p className="pb-1 text-gray-500">
+            Last update:-<time dateTime={date}>{formatDate(date)}</time>
+          </p>
           <div className="mb-4">
             <PageTitle>{title}</PageTitle>
             <div className="mt-2 flex flex-wrap gap-4">
               {logo.map((logo) => (
-                <img key={logo} src={logo} width={40} height={40} alt="" />
+                <Image
+                  key={logo}
+                  src={logo}
+                  width={32}
+                  height={32}
+                  alt=""
+                  className="object-contain"
+                />
               ))}
             </div>
           </div>

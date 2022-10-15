@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { PageTitle, Subtitle, CardTitle } from '@/components/PageTitle'
 import Link from '@/components/Link'
 import Tag from '@/components/Tag'
@@ -51,19 +52,34 @@ export default function SnippetsLayout({ posts, title, initialDisplayPosts = [],
             </svg>
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-5 pt-6 md:grid-cols-2 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-2 pt-5 md:grid-cols-2 lg:grid-cols-2">
           {!filteredBlogPosts.length && 'No posts found.'}
           {displayPosts.map((frontMatter) => {
             const { slug, date, title, summary, tags, logo } = frontMatter
             return (
               <Link key={slug} href={`/snippets/${slug}`}>
-                <div className=" group flex h-full w-full  rounded-md border-2 border-slate-200 transition-transform  hover:border-primary-500 dark:border-slate-700 dark:hover:border-primary-500">
-                  <div className="borderr group flex flex-shrink-0 items-center rounded-l  border-gray-600 bg-slate-200 px-3 group-hover:bg-primary-500 dark:border-gray-400 dark:bg-slate-700 ">
-                    <img alt="moto" src={logo[0]} className="h-11 w-11" />
+                <div className="group flex h-full w-full rounded-md  border border-2 border-slate-200 transition-transform  hover:border-primary-500 dark:border-slate-700 dark:hover:border-primary-500">
+                  <div className="group flex flex-shrink-0 items-center border-r-2 px-3 group-hover:border-primary-500 dark:border-slate-700  dark:hover:border-primary-500 ">
+                    {logo.slice(0, 1).map((logo) => (
+                      <Image
+                        key={logo}
+                        src={logo}
+                        width={42}
+                        height={42}
+                        alt=""
+                        className="object-contain"
+                      />
+                    ))}
                   </div>
                   <div className="flex-1 p-2">
-                    <CardTitle>{title}</CardTitle>
-                    <Subtitle>{summary}</Subtitle>
+                    <p className="pb-2 text-xs text-gray-500">
+                      Last update:-<time dateTime={date}>{formatDate(date)}</time>
+                    </p>
+
+                    <h4 className="mb-4 w-full text-xl font-semibold leading-none text-gray-900 dark:text-gray-100 ">
+                      {title}
+                    </h4>
+                    <p className="leading-none  text-gray-500">{summary}</p>
                   </div>
                 </div>
               </Link>

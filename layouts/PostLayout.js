@@ -51,9 +51,6 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
           <dl className="space-y-10 ">
             <div className="flex w-full  flex-col items-start justify-between pt-5 font-medium md:flex-row md:items-center">
               <time dateTime={date}>
-                {/* <span role="img" aria-label="wave" className="pr-2">
-                  📅
-                </span> */}
                 {`Written on ${new Date(date).toLocaleDateString(
                   siteMetadata.locale,
                   postDateTemplate
@@ -62,7 +59,6 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               <p className=" text min-w-32 md:mt-0">
                 {readingTime.text}
                 {` • `}
-                {/* <ViewCounter slug={slug} update /> */}
                 <ViewCounter className="ml-0" slug={slug} blogPage={true} /> views
               </p>
             </div>

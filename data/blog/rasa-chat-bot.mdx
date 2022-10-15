@@ -99,12 +99,9 @@ stories:
 
 ## Let's see the bot in action
 
-<p align="center">
-  <img
-    className="rounded-md"
-    src="https://raw.githubusercontent.com/ashishlotake/rasa_chat_bot/master/rasa_pic.png"
-  />
-</p>
+<div align="center">
+  ![](https://raw.githubusercontent.com/ashishlotake/rasa_chat_bot/master/rasa_pic.png)
+</div>
 ### Let's understand what's happening under the hood
 
 ```
@@ -169,14 +166,9 @@ _In the above code just replaces your **username** and **password** for your dat
 
 _The data that is stored in the database is unfiltered, so we need to perform some data pre-processing to make it more readable._
 
-<p align="center">
-  <img
-    className="rounded-md"
-    src="https://raw.githubusercontent.com/ashishlotake/rasa_chat_bot/master/unfiltered_chat.png"
-
-/>
-
-</p>
+<div align="center">
+  ![](https://raw.githubusercontent.com/ashishlotake/rasa_chat_bot/master/unfiltered_chat.png)
+</div>
 
 ```python showLineNumbers
 df = pd.read_csv("./events.csv") ## reading the csv file
@@ -206,12 +198,9 @@ final_df = final_df.loc[:, final_df.columns != "data"]
 final_df
 ```
 
-<p align="center">
-  <img
-    className="rounded-md"
-    src="https://raw.githubusercontent.com/ashishlotake/rasa_chat_bot/master/filter_conversation.png"
-  />
-</p>
+<div align="center">
+  ![](https://raw.githubusercontent.com/ashishlotake/rasa_chat_bot/master/filter_conversation.png)
+</div>
 
 ## Conclusion
 
