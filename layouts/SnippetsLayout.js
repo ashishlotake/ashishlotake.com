@@ -33,7 +33,7 @@ export default function SnippetsLayout({ posts, title, initialDisplayPosts = [],
               type="text"
               onChange={(e) => setSearchValue(e.target.value)}
               placeholder="Search snippets"
-              className="block w-full rounded-md border-2 border-slate-400 bg-white bg-transparent px-4 py-2 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-slate-500 dark:text-gray-100 dark:focus:border-primary-500"
+              className="block w-full rounded-md border-2 border-slate-200 bg-white bg-transparent px-4 py-2 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-slate-700 dark:text-gray-100 dark:focus:border-primary-500"
             />
             <svg
               className="absolute right-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-300"
@@ -57,11 +57,11 @@ export default function SnippetsLayout({ posts, title, initialDisplayPosts = [],
             const { slug, date, title, summary, tags, logo } = frontMatter
             return (
               <Link key={slug} href={`/snippets/${slug}`}>
-                <div className="flex h-full w-full rounded  border-2 border-slate-200 transition-transform duration-300   hover:border-primary-500 dark:border-slate-700 dark:hover:border-primary-500">
-                  <div className="flex flex-shrink-0 items-center  border-r border-gray-600 px-3 dark:border-gray-400 ">
+                <div className=" group flex h-full w-full  rounded-md border-2 border-slate-200 transition-transform  hover:border-primary-500 dark:border-slate-700 dark:hover:border-primary-500">
+                  <div className="borderr group flex flex-shrink-0 items-center rounded-l  border-gray-600 bg-slate-200 px-3 group-hover:bg-primary-500 dark:border-gray-400 dark:bg-slate-700 ">
                     <img alt="moto" src={logo[0]} className="h-11 w-11" />
                   </div>
-                  <div className="flex-1 p-4">
+                  <div className="flex-1 p-2">
                     <CardTitle>{title}</CardTitle>
                     <Subtitle>{summary}</Subtitle>
                   </div>
