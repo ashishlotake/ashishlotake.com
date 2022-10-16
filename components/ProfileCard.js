@@ -1,19 +1,15 @@
-import Link from 'next/link'
 import siteMetadata from '@/data/siteMetadata'
+import Link from 'next/link'
 import NowPlaying from './NowPlayingFooter'
 import CustomLink from './CustomLink'
 
 function ProfileCardInfo() {
   return (
-    <div className="hidden xl:block ">
-      <div className="bg-slate-900 text-center">
-        <h3 className="text-xl  font-semibold text-white">Ashish Lotake</h3>
-      </div>
-      <div className="bg-900 text-center">
-        <h5 className="text-black">Learner | Builder</h5>
-      </div>
+    <div className="hidden py-2 xl:block">
+      <h3 className="text-xl font-semibold text-gray-800 dark:text-white">Ashish Lotake</h3>
+      <h5 className=" text-gray-700 dark:text-gray-400">Learner | Builder</h5>
 
-      <div className="mt-2 mb-2 space-y-1 px-3">
+      <div className="mt-2 mb-2 space-y-1 ">
         <div className="flex items-center text-gray-500">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -87,8 +83,6 @@ function ProfileCardInfo() {
               strokeLinejoin="round"
               strokeWidth={1}
               d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"
-
-              // d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
             />
           </svg>
           <p className="px-2">
@@ -115,8 +109,6 @@ function ProfileCardInfo() {
               strokeLinejoin="round"
               strokeWidth={1}
               d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
-
-              // d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
             />
           </svg>
           <p className="px-2">
@@ -137,9 +129,14 @@ function ProfileCardInfo() {
 
 import Image from 'next/image'
 import React, { useCallback, useEffect, useRef, useState } from 'react'
+import fetcher from 'lib/fetcher'
+
 const { default: useSWR } = require('swr')
 
 export function ProfileCard() {
+  let response = useSWR('/api/spotify', fetcher)
+  let nowPlayingData = response.data
+
   let ref = useRef(null)
   let [style, setStyle] = useState(React.CSSProperties)
 
@@ -150,8 +147,8 @@ export function ProfileCard() {
     let { width, height, x, y } = ref.current.getBoundingClientRect()
     let mouseX = Math.abs(clientX - x)
     let mouseY = Math.abs(clientY - y)
-    let rotateMin = -15
-    let rotateMax = 15
+    let rotateMin = -10
+    let rotateMax = 8
     let rotateRange = rotateMax - rotateMin
 
     let rotate = {
@@ -181,25 +178,28 @@ export function ProfileCard() {
   }, [onMouseLeave, onMouseMove])
 
   return (
-    <div
-      className="z-10 mb-8 scale-100 transition-all duration-200 ease-out hover:z-50 xl:mb-0 xl:hover:scale-[1.15]"
-      style={{ perspective: '600px' }}
-      ref={ref}
-    >
+    <div className="mb-8 xl:mb-0" style={{ perspective: '600px' }} ref={ref}>
       <div
         style={style}
-        className="dark:bg-dark flex flex-col overflow-hidden bg-white shadow-cyan-100/50 transition-all duration-200 ease-out dark:shadow-cyan-700/50 xl:rounded-lg xl:shadow-lg"
+        className="flex flex-col  overflow-hidden  bg-transparent shadow-cyan-100/50 duration-200 dark:shadow-cyan-700/50 xl:rounded-lg xl:shadow-lg"
       >
         <Image
-          src={'/static/images/logo.jpg'}
+          src={'/static/images/logo2.svg'}
           alt="avatar"
           width="450px"
           height="350px"
-          className="bg-primary-200 object-cover"
+          className="object-cover"
           objectPosition="10% 50%"
         />
-        <ProfileCardInfo />
-        <span className="h-1.5 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"></span>
+        <div className="">
+          <div className="bg-background-color px-2 py-2 text-white xl:py-1">
+            <NowPlaying {...nowPlayingData} />
+          </div>
+          <div className="xl:px-2">
+            <ProfileCardInfo />
+          </div>
+        </div>
+        <span className="h-1.5 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500"></span>
       </div>
     </div>
   )

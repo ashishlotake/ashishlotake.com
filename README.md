@@ -6,17 +6,7 @@
   This is my portfolio  <a href="https://musing.vercel.app/" target="_blank">website</a> built with <a href="https://nextjs.org/" target="_blank">Next.js</a>, <a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a>, <a href="https://planetscale.com/" target="_blank">PlanetScale</a>  and hosted with <a href="https://www.vercel.com/" target="_blank">Vercel</a>.
 </p>
 
-<div align="center">
-  <img alt="Logo" src="public/static/images/twitter-card.png" width="600" />
-</div>
-
-<!-- ![](public/static/images/twitter-card.png) -->
-
-## Preview
-
-![](public/static/images/display.png)
-
-![](public/static/images/preview.png)
+![](public/static/images/twitter-card.png)
 
 ## 🛠 Installation & Set Up
 
@@ -63,3 +53,5 @@ The original template is designed by [Timothy Lin](https://github.com/timlrx) an
 2. [https://freesvgillustration.com/illustrations/](https://freesvgillustration.com/illustrations/)
 3. [https://www.manypixels.co/gallery](https://www.manypixels.co/gallery)
 4. [Free SVG Vectors](https://bloggingwizard.com/free-vector-illustrations/)
+
+## Feel free to clone and use
