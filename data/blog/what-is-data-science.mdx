@@ -1,0 +1,228 @@
+---
+title: 'What is data science?'
+date: '2022-10-17'
+tags: [Data science, Machine learning]
+draft: false
+summary: "Although data science very hot topic and considered the sexiest job of the 21st century, still many of us can't define DATA SCIENCE."
+images: ['/static/images/blog/what-is-ds.png']
+layout: PostLayout
+author: Ashish Lotake
+---
+
+<div align="center">![](/static/images/blog/what-is-data-science/01-ds-workflow.png)</div>
+
+<TOCInline toc={props.toc} exclude="Overview" asDisclosure />
+
+## Why define ?
+
+Last year after my graduation I had a conversation with my dad
+
+dad:- So what's now?<br></br>
+me:- I will learn Data Science and Machine Learning.<br></br>
+dad:- Why and What is Data Science?<br></br>
+me:- Its has the best job market, best pay and I can easily land a job with XXX amounts in just one year.<br></br>
+dad:- Sounds great, but what it is?<br></br>
+me:- I will work with data<br></br>
+dad:- Great, but WHAT IS DATA SCIENCE?<br></br>
+me:- 😵 ………………………<br></br>
+
+## What various sources says?
+
+> Data science combines math and statistics, specialized programming, advanced analytics, artificial intelligence (AI), and machine learning with specific subject matter expertise to uncover actionable insights hidden in an organization's data. These insights can be used to guide decision making and strategic planning. - IBM
+
+> Data science is the process of building, cleaning, and structuring datasets to analyze and extract meaning. It's not to be confused with data analytics, which is the act of analyzing and interpreting data. These processes share many similarities and are both valuable in the workplace. - Harvard
+
+> Data science is an inter-disciplinary field that uses scientific techniques from statistics and computer science to systematically extract knowledge from data. - MIT- OCW
+
+> Data Science is the science of collecting, storing, processing, describing and modelling data. - IIT Madras
+
+## What I have understood after learning academically for almost 1 year.
+
+Data science is an assortment of several tasks (roughly 5 tasks) from collecting data to modeling, these tasks are not concrete as they change depending on the problem at hand.<br></br>
+eg:- steps required to build a fake news detector will have significantly different steps when compared to building an Image Classifier.<br></br>
+
+We will go through each stage/step briefly.
+
+1. Collect Data
+2. Store Data
+3. Processing Data
+4. Analyzing & Describing Data
+5. Building Model
+
+Now many of us who have worked/are working or trying to land a role of data scientist position may have done only one or a few stages, as I told it all depend upon the problem at hand, some of us are more concerned about building a model and some of are more concerned about the Analyzing/Describing data.<br></br>
+Many new terms have come forth like Data Engineer, Data Analyst or Business Intelligence Analyst, Machine Learning Engineer, etc<br></br>
+
+**Data Engineer**:- Collecting, Storing, and Analyzing data at scale.
+
+**Data or BI Analyst**:- Processing, Analyzing and Describing Data.
+
+**Machine Learning**:- Focus on building Models for making the prediction.
+
+**Data Science**:- "Data Science is the science of collecting, storing, processing, describing and modelling data." - IIT Madras
+
+## Data collections
+
+<div align="center">![](/static/images/blog/what-is-data-science/02-data-collection.png)</div>
+
+1. It depended on what question we are trying to answer
+2. Depends upon which type of environment we are working in like we are working in FAANG like companies that are data rich or are we working in startups where we need to collect data.
+
+### To better understand this, I will try to explain the various situation you may face as a data scientist:-
+
+Recommend a new friend to a user? And we are working in Facebook/LinkedIn companies that have a social network platform.
+
+- Here, the company already has a humongous amount of data collected about users it may be stored in a relational database or non-relational database, so all we need to write a script that can acquire data from these sources.
+
+Give user jobs based on interest from various job platforms (Linkedin, indeed, etc)
+
+- Now in this case acquiring the API form, these sources are either expensive or don't have an API. So here we need to write a web scrapping script so to acquire data from these sources and we need to make sure we are legally allowed to use these data.
+
+Predict which party will win the elections.
+
+- Now as data scientists, we will be collecting data from users by doing surveys, then people's sentiment/polarity towards parties by going through various social platforms.
+- Here we need to go out of our comfort zone and look at various ways to acquire data by designing an experiment to collect data that will make sense. Data is not readily available.
+- Here we need statistics to build experiments and get insights from these experiments.
+
+## Storing Data
+
+<div align="center">![](/static/images/blog/what-is-data-science/03-data-storing.png)</div>
+When I was in school, the teacher used to take attendance in a tabular format like this:-
+<div align="center">![](/static/images/blog/what-is-data-science/04-tabular-data.png)</div>I hope you
+were not like me!
+
+And each time a new student joins the class new row is created.<br></br>
+This is what a relation database looks like a structure of tabular data, and the large amount of data collected in the early days have stored data in this format.
+
+To access data from the relational databases we use SQL (structured query language)
+
+**Now think about Amazon**, Amazon is an eCommerce platform, Video Streaming platform, Online audio-book platform, Cloud provider, and god know what other area amazon deals in.
+
+Now, in this case, Amazon can't store data all consumer data in one relational database, so they will have multiple databases one for each platform.
+
+Users can have an account in all or one of the services provided by amazon.
+
+Now, if you are working for amazon, as a data scientist, you need a way by which we can integrate all these separate databases to do analysis, so we gain insight about a user to recommend products or give better offers.
+
+So to analyze these multiple databases, we need to store them in a data warehouse like Amazon Redshift.
+
+Now when we use a platform like Instagram, we post images, videos, and text (captions) speech, and storing this in a structured format is not possible, so we store this in unstructured or semi-structured format (JSON, XML, etc).
+
+Now Instagram has a large number of users in billions, and this unstructured data is getting uploaded or generated in high volume, high variety (data in images, videos, speech, images, etc ), and high velocity (at very high-speed data is getting generated). Hence, a new term came **BIG DATA**.
+
+_"Since the evolution of writing the amount of data collected over 5 millennia up to 2003 is estimated at 5 exabytes. Since 2013, humans are generating the same amount of data every day."_
+
+So to store this BIG DATA, we came up with Data Lakes, like Amazon Redshift. Some knowledge of Hadoop, when we need to store the file in HDFS.
+
+## Processing Data
+
+<div align="center">![](/static/images/blog/what-is-data-science/05-processing-data.png)</div>
+Let's say we are crawling data from various job portals, we wrote a script and it returns a JSON format,
+now here need to:-
+
+### ETL
+
+- **E**xtract data from this JSON/CSV.
+- **T**ransform the data, let's say the date in JSON is in Unicode format, so we need to transform it into the required format dd-mm-yyyy.
+- **L**oad, the data in pandas data frame, or some data warehouse
+
+### Data Cleaning:
+
+- **Missing Values**:- Let's say for some jobs the salary or date is not given, so we need to handle these missing values. We will use various Imputation methods to fill these missing values.
+- **Correct Spelling errors**
+- **Find the remove outliers**:- lets day a company has entered its salary of 500,000K when other companies are offering 500K for the same position, then 500,000K is an outlier and we need to handle these.
+
+### Standardizing and Normalizing
+
+**Format**:- Some companies have given salaries like 100k and some have given like 100000, so we need to make them on the format.
+
+We need to make sure all the columns in the datasets must have the same scale, we use **Standardization**.
+
+- Expected year of experience have min value of 0 and a max of 10
+- Salary has min value of 100k and max value of 900k
+- when we input these values into our algorithm the model will not perform well, so to achieve good performance, we need to make sure all the values must be in the same range.
+  **Standardization** will ensure all the numerical columns are in the range of 0 and 1
+
+Normalization will ensure all the columns will have zero mean and unit variance.
+
+### How to process big data?
+
+<div align="center">![](/static/images/blog/what-is-data-science/06-big-data.png)</div>
+We need to use **distributed processing**, which means dividing data into smaller chunks and distributing
+these chunks to various servers/systems for processing each chuck separately and finally combining them.
+This is where **Hadoop (Map Reduce)** comes into play.
+
+## Analyzing/Describing data
+
+<div align="center">![](/static/images/blog/what-is-data-science/07-analyze-data.png)</div>
+Look at columns in data, compute some statics, and plot data to find out trends or relations and important
+columns in your data.
+
+### Data Visualization
+
+<div align="center">![](/static/images/blog/what-is-data-science/08-analyze-data-2.png)</div>
+We are crawling data from various job portals. - Now, what if want to show which sector or which position
+is getting the most paid? - Which companies have the highest number of position openings. - Correlation
+between salary and experience. - Job opening last year vs this year
+
+### Summarizing data
+
+- What is the typical number of jobs posted on daily basis for a particular position? → We can use mean, median, and mode
+- What's the typical variation in salaries? → We can use STD Deviation and Variance.
+
+## Building Model
+
+<div align="center">![](/static/images/blog/what-is-data-science/09-build-model.png)</div>
+There are two ways of building a model from data;- 1. Statistical modeling 2. Algorithm modeling (Machine
+Learning & Deep Learning)
+
+### Statistical modeling
+
+Build a very simple Statistical model to conclude from the data.<br></br>
+Most algorithms are designed keeping in mind that the underlying distribution of data follows a normal distribution.
+
+We are crawling data from various job portals.
+Now as Data scientists, we want to build a model from this data, to answer various questions or come up with new insights.<br></br>
+
+<div align="center">![](/static/images/blog/what-is-data-science/10-linear-model.png)</div>
+
+Here we have used a simple function `y = mx+b`. We also found that salary tends to increase linearly as experience increases, so now a data scientist can make a robust statement like
+
+> I am 99% confident that if a person has an experience of 5–7 years he/she can land a job of 100K+ as a data scientist
+
+In building a model we typically find the underlying data distribution, model the underlying relation, and give a robust statistical score. We care more about why a certain phenomenon is happening.
+
+### Algorithm modeling (Machine Learning)
+
+<div align="center">![](/static/images/blog/what-is-data-science/11-linear-model-2.png)</div>
+If we want to build a very complex model, and our data can't be represented by a simple straight line,
+for this, we use an alternate approach called Machine Learning.
+
+In the previous paragraph, we concluded that a person's salary only depends on one-factor experience.<br></br>
+Now, we all know that it's not true in real life, that salary depends on various factors like job location, company type (FAANG, Startups, etc), company past performance, applicants for a position, economy, job type (remote or in-office) and other various factors.
+
+To find build a model so to find the relations between this input and output, we need to do something complex.
+y = f(x), we need a general flexible function, where we can give any input.
+
+So, What is the end goal of machine learning?:- find the function `f` using data and some optimization techniques. After we find the function `f`, we can just input `x` to `f` and get the output `y`.
+
+Now for machine learning our main focus, is to try to make out predicted values to be as close to our original values.
+
+### Algorithm modeling (Deep Learning)
+
+<div align="center">![](/static/images/blog/what-is-data-science/12-dl-image.png)</div>
+When we have very high-dimensional data and we want to learn the very complex relationship between the
+inputs and the outputs, we typically tend to use Deep learning.
+
+Let's say we want to find out if a person has breast cancer or not using MRI scans, let's say the MRI scan is an image of size `1000x1000` pixels, so each image is represented using `1000000` columns (pixels values) and we have thousands of images like this.
+
+<div align="center">![](/static/images/blog/what-is-data-science/13-DL.png)</div>
+
+Here out of 1000000 pixels, only 1000 pixels are contributing towards deciding whether cancer is benign or malignant, but we don't know, so we input all 1000000 pixels input the deep learning model, and the model outputs the cancer is benign or malignant.
+
+## I think I helped you better understand "what is data science ?"
+
+## Reference
+
+- https://www.ibm.com/cloud/learn/data-science-introduction
+- https://online.hbs.edu/blog/post/what-is-data-science
+- https://openlearninglibrary.mit.edu/courses/course-v1:MITx+HST.953x+3T2020/courseware

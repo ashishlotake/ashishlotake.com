@@ -54,7 +54,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
           </div>
         </div>
         <section className=" ">
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-2">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {!posts.length && 'No posts found.'}
             {posts.map((frontMatter) => {
               const { slug, date, title, summary, tags, images } = frontMatter

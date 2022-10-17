@@ -32,7 +32,7 @@ const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/master/data/blog/${
 const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
-  const { slug, fileName, date, title, images, tags, readingTime } = frontMatter
+  const { slug, fileName, date, title, images, tags, readingTime, author } = frontMatter
   const postUrl = `${siteMetadata.siteUrl}/blog/${slug}`
   return (
     <>
@@ -54,7 +54,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                 {`Written on ${new Date(date).toLocaleDateString(
                   siteMetadata.locale,
                   postDateTemplate
-                )}`}
+                )} by ${author}`}
               </time>
               <p className=" text min-w-32 md:mt-0">
                 {readingTime.text}
