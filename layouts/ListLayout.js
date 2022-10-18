@@ -21,7 +21,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
 
   return (
     <>
-      <div className="border-b border-slate-200 dark:border-slate-700">
+      <div className="border-b border-gray-400 dark:border-gray-600">
         <div className="max-w-xl ">
           <PageTitle>{title}</PageTitle>
           <Subtitle></Subtitle>
@@ -35,7 +35,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
               type="text"
               onChange={(e) => setSearchValue(e.target.value)}
               placeholder="Search articles"
-              className="block w-full rounded-md border-2 border-slate-200 bg-white bg-transparent px-4 py-2 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-slate-700 dark:text-gray-100 dark:focus:border-primary-500"
+              className="block w-full rounded-md border-2 border-gray-400 bg-white bg-transparent px-4 py-2 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:text-gray-100 dark:focus:border-darkprimary-500 dark:focus:ring-darkprimary-500"
             />
             <svg
               className="absolute right-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-300"
@@ -60,35 +60,32 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
               const { slug, date, title, summary, tags, images } = frontMatter
               return (
                 <Link key={slug} href={`/blog/${slug}`} aria-label={`Read "${title}"`}>
-                  <a>
-                    <article className="group flex h-full flex-col   rounded border-black bg-cover bg-center shadow-lg shadow-gray-300 transition-transform hover:-translate-y-1 dark:shadow-black">
-                      <div className=" overflow-hidden">
+                  <a className="group relative block h-full">
+                    <div className="relative flex  h-full  rounded-3xl border-2 border-black border-opacity-50 transition hover:border-opacity-100 group-hover:-translate-x-2 group-hover:-translate-y-2 group-hover:shadow-[8px_8px_0_0_#000] dark:border-white dark:border-opacity-50 dark:hover:border-opacity-100 dark:group-hover:shadow-[8px_8px_0_0_#f2e8de] ">
+                      <div className="flex flex-1 flex-col pb-3">
                         {images ? (
                           <img
                             alt=""
-                            className="h-44 w-full rounded-t object-cover "
+                            className="h-44 w-full rounded-t-3xl object-cover "
                             src={images}
                           />
                         ) : null}
-                      </div>
-                      <div className="flex flex-1  flex-col px-6 py-3">
-                        <div className=" leading-none">
-                          <div className="flex flex-wrap pt-1 ">
-                            {tags.slice(0, 4).map((tag) => (
-                              <p
-                                key={tag}
-                                className="pr-2 text-xs tracking-wider  text-primary-400"
-                              >
-                                #{tag}
-                              </p>
-                            ))}
-                          </div>
+                        <div className="flex flex-wrap px-3 pt-1 ">
+                          {tags.slice(0, 4).map((tag) => (
+                            <p
+                              key={tag}
+                              className="pr-2 text-xs tracking-wider  text-primary-400 dark:text-darkprimary-400"
+                            >
+                              #{tag}
+                            </p>
+                          ))}
                         </div>
-                        <h3 className=" py-2 text-2xl font-semibold leading-snug text-black dark:text-white">
+                        <h3 className="px-3 pt-2 text-2xl font-semibold leading-snug text-black dark:text-white">
                           {title}
                         </h3>
-                        <p className="flex-1 text-gray-500">{summary}</p>
-                        <div className="flex flex-wrap justify-between space-x-2 pt-5 pt-3 text-xs dark:text-gray-400">
+
+                        <p className="flex-1 px-3 text-gray-500">{summary}</p>
+                        <div className="flex flex-wrap justify-between space-x-2 px-3 pt-3 text-xs dark:text-gray-400">
                           <span>
                             <time dateTime={date}>{formatDate(date)}</time>
                           </span>
@@ -98,46 +95,8 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                           </span>
                         </div>
                       </div>
-                    </article>
+                    </div>
                   </a>
-                  {/* <a class="group relative block h-full " href="/blog">
-                  <span class="absolute inset-0 border-2  border-dashed border-black dark:border-slate-300"></span>
-                    
-                  <div
-                  className="relative flex h-full transform border-2 border-black dark:border-slate-300 bg-white dark:bg-background-color transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2"
-                  >
-
-                    <div className="flex flex-1 flex-col px-6 py-3">
-                      <div className=" leading-none">
-                      {images ? (
-                    <img alt="" className="object-cover  h-44" src={images} />
-                    ) : null}
-                       <div className="flex flex-wrap pt-1 ">
-                            {tags.slice(0, 4).map((tag) => (
-                              <p
-                                key={tag}
-                                className="pr-2 text-xs tracking-wider  text-primary-400"
-                              >
-                                #{tag}
-                              </p>
-                            ))}
-                          </div>
-                      </div>
-                      <h3 className=" py-2 text-2xl text-black dark:text-white font-semibold leading-snug">{title}</h3>
-
-                      <p className="flex-1 text-gray-500">{summary}</p>
-                      <div className="flex flex-wrap justify-between space-x-2 pt-3 text-xs dark:text-gray-400">
-                        <span>
-                          <time dateTime={date}>{formatDate(date)}</time>
-                        </span>
-                        <span>
-                          <ViewCounter className="mx-1" slug={slug} />
-                          views
-                        </span>
-                      </div>
-                    </div>
-                    </div>
-                    </a> */}
                 </Link>
               )
             })}

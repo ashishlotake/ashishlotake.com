@@ -5,7 +5,7 @@ import CustomLink from './CustomLink'
 
 function ProfileCardInfo() {
   return (
-    <div className="hidden py-2 xl:block">
+    <div className="hidden py-2 xl:block ">
       <h3 className="text-xl font-semibold text-gray-800 dark:text-white">Ashish Lotake</h3>
       <h5 className=" text-gray-700 dark:text-gray-400">Learner | Builder</h5>
 
@@ -143,22 +143,22 @@ export function ProfileCard() {
   let onMouseMove = useCallback((e) => {
     if (!ref.current || window.innerWidth < 1280) return
 
-    let { clientX, clientY } = e
-    let { width, height, x, y } = ref.current.getBoundingClientRect()
-    let mouseX = Math.abs(clientX - x)
-    let mouseY = Math.abs(clientY - y)
-    let rotateMin = -10
-    let rotateMax = 8
-    let rotateRange = rotateMax - rotateMin
+    // let { clientX, clientY } = e
+    // let { width, height, x, y } = ref.current.getBoundingClientRect()
+    // let mouseX = Math.abs(clientX - x)
+    // let mouseY = Math.abs(clientY - y)
+    // let rotateMin = -10
+    // let rotateMax = 8
+    // let rotateRange = rotateMax - rotateMin
 
-    let rotate = {
-      x: rotateMax - (mouseY / height) * rotateRange,
-      y: rotateMin + (mouseX / width) * rotateRange,
-    }
+    // let rotate = {
+    //   x: rotateMax - (mouseY / height) * rotateRange,
+    //   y: rotateMin + (mouseX / width) * rotateRange,
+    // }
 
-    setStyle({
-      transform: `rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
-    })
+    // setStyle({
+    //   transform: `rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
+    // })
   }, [])
 
   let onMouseLeave = useCallback(() => {
@@ -181,18 +181,18 @@ export function ProfileCard() {
     <div className="mb-8 xl:mb-0" style={{ perspective: '600px' }} ref={ref}>
       <div
         style={style}
-        className="flex flex-col  overflow-hidden  bg-transparent shadow-cyan-100/50 duration-200 dark:shadow-cyan-700/50 xl:rounded-lg xl:shadow-lg"
+        className="lg:items-block  flex flex-col items-center overflow-hidden  rounded-2xl border-2 border-gray-500 bg-transparent pt-5  shadow-lg shadow-primary-500/50 duration-200 dark:shadow-darkprimary-700/50 xl:rounded-2xl xl:pt-0"
       >
         <Image
-          src={'/static/images/logo2.svg'}
+          src={'/static/images/logo.jpg'}
           alt="avatar"
-          width="450px"
+          width="350px"
           height="350px"
-          className="object-cover"
+          className="rounded-full object-cover xl:rounded-none"
           objectPosition="10% 50%"
         />
         <div className="">
-          <div className="bg-background-color px-2 py-2 text-white xl:py-1">
+          <div className="bgbackground-color px-2 py-2 dark:text-white xl:py-1">
             <NowPlaying {...nowPlayingData} />
           </div>
           <div className="xl:px-2">

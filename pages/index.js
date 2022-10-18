@@ -29,8 +29,9 @@ export default function Home({ posts }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <div className="flex flex-col-reverse items-start sm:flex-row">
-        <div className="flex flex-col pr-8">
+      <img src="/static/images/light.svg" />
+      {/* <div className="flex flex-col-reverse items-start sm:flex-row">
+        <div className="flex flex-col pr-20">
           <h1 className="mb-1 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
             Ashish Lotake
           </h1>
@@ -51,47 +52,39 @@ export default function Home({ posts }) {
             height="250px"
           />
         </div>
-      </div>
-
+      </div> */}
       <div>
         <div className="mb-5 flex flex-col items-center xl:flex-row"></div>
         <h2 className="pb-4 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
           Recent Posts
         </h2>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
+
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-3">
           {!posts.length && 'No posts found.'}
-          {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
+          {posts.slice(0, 3).map((frontMatter) => {
             const { slug, date, title, summary, tags, images } = frontMatter
             return (
               <Link key={slug} href={`/blog/${slug}`} aria-label={`Read "${title}"`}>
-                <a className="group block h-full ">
-                  <article className="flex h-full flex-col   rounded border-black bg-cover bg-center shadow-lg shadow-gray-300 transition-transform hover:-translate-y-1 dark:shadow-black">
-                    {/* <img alt="" className="h-44 w-full rounded-t object-cover" src={images} /> */}
-                    <div className="flex flex-1  flex-col px-6 py-3">
-                      <div className=" leading-none">
-                        <div className="flex flex-wrap pt-1 ">
-                          {tags.slice(0, 4).map((tag) => (
-                            <p key={tag} className="pr-2 text-xs tracking-wider  text-primary-400">
-                              #{tag}
-                            </p>
-                          ))}
-                        </div>
+                <a className="group relative block h-full">
+                  <div className="relative flex h-full  rounded-3xl  border-2 border-black border-opacity-50 pt-3 transition hover:border-opacity-100 group-hover:-translate-x-2 group-hover:-translate-y-2 group-hover:shadow-[8px_8px_0_0_#000] dark:border-white dark:border-opacity-50 dark:hover:border-opacity-100 dark:group-hover:shadow-[8px_8px_0_0_#f2e8de]">
+                    <div className="flex flex-1 flex-col pb-3">
+                      <div className="flex flex-wrap px-3 pt-1 ">
+                        {tags.slice(0, 4).map((tag) => (
+                          <p
+                            key={tag}
+                            className="pr-2 text-xs tracking-wider  text-primary-400 dark:text-darkprimary-400"
+                          >
+                            #{tag}
+                          </p>
+                        ))}
                       </div>
-                      <h3 className=" py-2 text-2xl font-semibold leading-snug text-black dark:text-white">
+                      <h3 className="px-3 pt-2 text-2xl font-semibold leading-snug text-black dark:text-white">
                         {title}
                       </h3>
-                      <p className="flex-1 text-gray-500">{summary}</p>
-                      <div className="flex flex-wrap justify-between space-x-2 pt-5 pt-3 text-xs dark:text-gray-400">
-                        <span>
-                          <time dateTime={date}>{formatDate(date)}</time>
-                        </span>
-                        <span>
-                          <ViewCounter className="mx-1" slug={slug} />
-                          views
-                        </span>
-                      </div>
+
+                      <p className="flex-1 px-3 text-gray-500">{summary}</p>
                     </div>
-                  </article>
+                  </div>
                 </a>
               </Link>
             )
@@ -102,7 +95,7 @@ export default function Home({ posts }) {
         <div className="flex justify-end  pt-4 text-lg font-normal leading-6">
           <CustomLink
             href="/blog"
-            className="link-underline  text-primary-500  "
+            className="link-underline  text-primary-500 dark:text-darkprimary-500  "
             aria-label="all posts"
           >
             All Posts &rarr;
@@ -143,7 +136,7 @@ function TopProject() {
         <div className="flex justify-end pt-4 text-lg font-normal leading-6">
           <CustomLink
             href="/projects"
-            className="link-underline  text-primary-500 "
+            className="link-underline  text-primary-500 dark:text-darkprimary-500"
             aria-label="all posts"
           >
             All Posts &rarr;

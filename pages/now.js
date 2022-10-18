@@ -132,7 +132,7 @@ export default function Now(currentlyReading) {
         url={siteMetadata.url}
       />
       <div>
-        <div className="border-b border-slate-200 dark:border-slate-700">
+        <div className="border-b border-gray-400 dark:border-gray-600">
           <div className="max-w-xl ">
             <PageTitle>What I am up to these days?</PageTitle>
             <Subtitle>Last update - 04/October/2022</Subtitle>
@@ -141,7 +141,7 @@ export default function Now(currentlyReading) {
         {/* Misc */}
         <div className="pt-3">
           <div className="mt-3 flex justify-between gap-5">
-            <div className=" text mb-10 w-1/2 rounded border border-slate-700 p-1 dark:border-slate-200">
+            <div className=" mb-10 w-1/2 rounded-2xl border-2 border-gray-500 p-4 text-lg dark:border-gray-500">
               <span className="ml-2 font-semibold">Location:</span> <span>Ahmednagar, India</span>
               <br />
               <span className="ml-2 font-semibold">Weather:</span>{' '}
@@ -159,7 +159,7 @@ export default function Now(currentlyReading) {
               </span>
             </div>
 
-            <div className=" text mb-10 w-1/2 rounded border border-slate-700 p-1 dark:border-slate-200">
+            <div className=" mb-10 w-1/2 rounded-2xl border-2 border-gray-500 p-4 text-lg dark:border-gray-500">
               <span className="ml-2 font-semibold">Reading:</span>{' '}
               <a>
                 <span>Atomic Habits</span> by <span>James Clear</span>
@@ -170,7 +170,7 @@ export default function Now(currentlyReading) {
           </div>
 
           <div className="-my-6 flex justify-between gap-5">
-            <div className="text mt-2 mb-10 w-1/2 rounded border border-slate-700 p-1 dark:border-slate-200">
+            <div className=" mb-10 w-1/2 rounded-2xl border-2 border-gray-500 p-4 text-lg dark:border-gray-500">
               <span className="ml-2 font-semibold">Date:</span>{' '}
               <span>{TodayDate.format('DD/MMMM/YYYY')}</span>
               <br />
@@ -181,7 +181,7 @@ export default function Now(currentlyReading) {
               </span>
             </div>
 
-            <div className="text mt-2 mb-10 w-1/2 rounded border border-slate-700 p-1 dark:border-slate-200">
+            <div className=" mb-10 w-1/2 rounded-2xl border-2 border-gray-500 p-4 text-lg dark:border-gray-500">
               <span className="ml-2 font-semibold">Listening:</span>{' '}
               <span>
                 {data?.songUrl ? (

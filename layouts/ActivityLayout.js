@@ -8,7 +8,7 @@ export default function ActivityLayout({ children, frontMatter }) {
     <>
       <PageSEO title={`Recommendation - ${siteMetadata.author}`} description="My Recommendation" />
       <div className="">
-        <div className="mb-10 border-b border-slate-200 dark:border-slate-700">
+        <div className="mb-10 border-b border-gray-400 dark:border-gray-600">
           <div className="max-w-xl ">
             <PageTitle>Recommendation</PageTitle>
             {/* <Subtitle>Few </Subtitle> */}

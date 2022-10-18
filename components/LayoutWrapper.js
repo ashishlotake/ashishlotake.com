@@ -64,7 +64,7 @@ const LayoutWrapper = ({ children }) => {
             <ThemeSwitch />
           </div>
         </header>
-        {/* <motion.div
+        <motion.div
           key={router.asPath}
           className="mb-auto"
           initial="hidden"
@@ -73,10 +73,10 @@ const LayoutWrapper = ({ children }) => {
           variants={variants}
           transition={{ type: 'linear' }}
         >
-          <motion.main> */}
-        <main className="mb-auto">{children}</main>
-        {/* </motion.main>
-        </motion.div> */}
+          <motion.main>
+            <main className="mb-auto">{children}</main>
+          </motion.main>
+        </motion.div>
 
         <Footer />
       </div>
@@ -95,9 +95,9 @@ function NavItem({ href, text }) {
       <a
         className={cn(
           isActive
-            ? 'font-semibold text-gray-800 dark:text-gray-200'
+            ? 'font-semibold text-gray-900 dark:text-gray-200'
             : 'font-normal text-gray-600 dark:text-gray-400',
-          'linkunderline hidden rounded-lg p-1 transition-all hover:bg-gray-200 dark:hover:bg-slate-800 sm:px-3 sm:py-2 md:inline-block'
+          'linkunderline hidden rounded-lg p-1 transition-all hover:bg-gray-300 dark:hover:bg-slate-800 sm:px-3 sm:py-2 md:inline-block'
         )}
       >
         <span className="capsize">{text}</span>

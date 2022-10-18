@@ -18,7 +18,7 @@ export default function Tags({ tags }) {
     <>
       <PageSEO title={`Tags - ${siteMetadata.author}`} description="Things I blog about" />
       {/* <div className="flex flex-col items-start justify-start divide-y divide-gray-200 dark:divide-gray-700 md:mt-24 md:flex-row md:items-center md:justify-center md:space-x-6 md:divide-y-0"> */}
-      <div className="border-b border-slate-200 dark:border-slate-700">
+      <div className="border-b border-gray-400 dark:border-gray-600">
         <PageTitle>Tags</PageTitle>
         <Subtitle></Subtitle>
       </div>
@@ -31,7 +31,7 @@ export default function Tags({ tags }) {
               className="relative m-2 inline-flex flex-row items-center rounded border  border-gray-700 font-medium uppercase lowercase "
             >
               <div className="flex justify-between">
-                <p className=" lg:text-md rounded-l px-1 text-base font-medium uppercase hover:bg-primary-500 ">
+                <p className=" lg:text-md rounded-l px-1 text-base font-medium uppercase hover:bg-primary-500  dark:hover:bg-darkprimary-500">
                   <Tag text={t} />
                 </p>
                 <small className="lg:text-md rounded-r bg-gray-500  bg-opacity-50 px-1  text-base    ">

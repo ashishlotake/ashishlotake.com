@@ -54,7 +54,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               ))}
             </div>
           </div>
-          <div className="border-b border-slate-200 pb-4 dark:border-slate-700 ">
+          <div className="border-b border-gray-200 pb-4 dark:border-gray-700 ">
             <p className="text-text text-lg">{summary}</p>
           </div>
 
@@ -95,7 +95,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                   <div className="pt-4 xl:pt-8">
                     <Link
                       href={`/snippets/${prev.slug}`}
-                      className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                      className="link-underline text-primary-500 hover:text-primary-600 dark:text-darkprimary-500 dark:hover:text-darkprimary-400  "
                     >
                       &larr; {prev.title}
                     </Link>
@@ -105,7 +105,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                   <div className="pt-4 xl:pt-8">
                     <Link
                       href={`/snippets/${next.slug}`}
-                      className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                      className="link-underline text-primary-500 hover:text-primary-600 dark:text-darkprimary-500 dark:hover:text-darkprimary-400  "
                     >
                       {next.title} &rarr;
                     </Link>

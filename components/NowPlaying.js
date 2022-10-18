@@ -84,7 +84,7 @@ export default function NowPlaying() {
   const { data } = useSWR('/api/now-playing', fetcher)
 
   return (
-    <div className="mb-8 flex w-full cursor-pointer flex-row-reverse items-center space-x-0  rounded-md border  border-zinc-200 bg-zinc-200 px-4 py-4 text-sm shadow-sm dark:border-zinc-900 dark:bg-[#1a2532] dark:shadow-none sm:flex-row  sm:space-x-2">
+    <div className="mb-8 flex w-full cursor-pointer flex-row-reverse items-center space-x-0  rounded-md border border-slate-500 bg-slate-800 px-4 py-4 text-sm shadow-sm dark:bg-slate-800 dark:shadow-none sm:flex-row  sm:space-x-2">
       {data?.songUrl ? (
         <AnimatedBars />
       ) : (
@@ -106,14 +106,10 @@ export default function NowPlaying() {
             {data.title}
           </a>
         ) : (
-          <p className="capsize font-medium text-gray-800 dark:text-gray-200">Not Playing</p>
+          <p className="capsize font-medium text-gray-200">Not Playing</p>
         )}
-        <span className="capsize mx-2 hidden text-gray-500 dark:text-gray-300 sm:block">
-          {' – '}
-        </span>
-        <p className="capsize max-w-max truncate text-gray-500 dark:text-gray-300">
-          {data?.artist ?? 'Spotify'}
-        </p>
+        <span className="capsize mx-2 hidden text-gray-300 sm:block">{' – '}</span>
+        <p className="capsize max-w-max truncate text-gray-300">{data?.artist ?? 'Spotify'}</p>
       </div>
     </div>
   )

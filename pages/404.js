@@ -34,7 +34,7 @@ export default function FourZeroFour() {
         <Link href="/">
           <button aria-label="Scroll To Top" type="button" className="pushable">
             <span className="shadow"></span>
-            <span className="edgeblue"></span>
+            <span className="edgeblue "></span>
             <span className="frontblue">Return to Homepage</span>
           </button>
         </Link>

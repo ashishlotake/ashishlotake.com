@@ -6,7 +6,7 @@
   This is my portfolio  <a href="https://musing.vercel.app/" target="_blank">website</a> built with <a href="https://nextjs.org/" target="_blank">Next.js</a>, <a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a>, <a href="https://planetscale.com/" target="_blank">PlanetScale</a>  and hosted with <a href="https://www.vercel.com/" target="_blank">Vercel</a>.
 </p>
 
-![](public/static/images/twitter-card.png)
+![](public/static/images/light.png)
 
 ## 🛠 Installation & Set Up
 

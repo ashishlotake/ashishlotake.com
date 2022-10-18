@@ -41,7 +41,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
         authorDetails={authorDetails}
         {...frontMatter}
       />
-      <article className="mx-auto min-h-screen max-w-3xl">
+      <article className="mx-auto min-h-screen max-w-4xl">
         <header className=" relative pb-3">
           <div>
             <h1 className="text-3xl font-extrabold leading-normal tracking-normal sm:text-4xl md:text-5xl">
@@ -66,7 +66,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
           {/* </div> */}
         </header>
         <div className="">
-          <div className="prose max-w-none border-t border-b border-b border-gray-200  pb-5 pt-2 dark:prose-dark  dark:border-gray-700">
+          <div className="prose max-w-none  border-t border-b border-gray-500 pb-5 pt-2 dark:prose-dark dark:border-gray-500">
             {children}
           </div>
           <footer>
@@ -78,7 +78,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                       <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
                         Previous Article
                       </h2>
-                      <div className="link-underline text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
+                      <div className="link-underline text-primary-500 hover:text-primary-600 dark:text-darkprimary-500 dark:hover:text-darkprimary-400  ">
                         <Link href={`/blog/${prev.slug}`}>{prev.title}</Link>
                       </div>
                     </div>
@@ -88,7 +88,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                       <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
                         Next Article
                       </h2>
-                      <div className="link-underline text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
+                      <div className="link-underline text-primary-500 hover:text-primary-600 dark:text-darkprimary-500 dark:hover:text-darkprimary-400  ">
                         <Link href={`/blog/${next.slug}`}>{next.title}</Link>
                       </div>
                     </div>
@@ -96,12 +96,12 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                 </div>
               )}
             </div>
-            <div className=" border-gray-200 pb-2 dark:border-gray-700 ">
+            <div className=" border-gray-500 pb-2 dark:border-gray-500 ">
               <div className="mt-2 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
                 <div className="py-3 md:py-0">
                   <Link
                     href="/blog"
-                    className="link-underline text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                    className="link-underline text-primary-500 hover:text-primary-600 dark:text-darkprimary-500 dark:hover:text-darkprimary-400  "
                   >
                     &larr; Back to the blog
                   </Link>

@@ -40,8 +40,10 @@ const TOCInline = ({
   const tocList = (
     <ul>
       {filteredToc.map((heading) => (
-        <li key={heading.value} className={`${heading.depth >= indentDepth && 'ml-6'}`}>
-          <a href={heading.url}>{heading.value}</a>
+        <li key={heading.value} className={`${heading.depth >= indentDepth && 'ml-6 '}`}>
+          <a className="text-primary-500 dark:text-darkprimary-500" href={heading.url}>
+            {heading.value}
+          </a>
         </li>
       ))}
     </ul>
@@ -52,7 +54,7 @@ const TOCInline = ({
       {asDisclosure ? (
         <details open>
           <summary className="px-6 py-2 pt-2 text-xl font-bold">Table of Contents</summary>
-          <div className="px-6 ">{tocList}</div>
+          <div className="px-6">{tocList}</div>
         </details>
       ) : (
         tocList

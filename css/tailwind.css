@@ -19,24 +19,47 @@
 
 @layer utilities {
   .special-underline {
-    @apply bg-gradient-to-r from-sky-500 to-sky-500 bg-no-repeat [background-position:0_100%]
+    @apply bg-gradient-to-r from-primary-500 to-primary-500 bg-no-repeat [background-position:0_100%]
       [background-size:100%_0.2em] hover:[background-size:100%_100%]
       focus:[background-size:100%_100%]
       motion-safe:transition-all motion-safe:duration-200
-      dark:from-sky-500
-      dark:to-sky-500;
+      dark:from-darkprimary-500
+      dark:to-darkprimary-500;
   }
   .company {
-    box-shadow: inset 0 0 0 0 #0ea5e9;
-    color: #0ea5e9;
+    box-shadow: inset 0 0 0 0 #6366f1;
+    color: #6366f1;
     margin: 0 -0.25rem;
     padding: 0 0.25rem;
     transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   }
   .company:hover {
-    box-shadow: inset 200px 0 0 0 #0ea5e9;
+    box-shadow: inset 200px 0 0 0 #6366f1;
     color: white;
   }
+}
+
+.dark .link-underline {
+  position: relative;
+}
+
+.dark .link-underline:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 0px;
+  right: 0;
+  background: linear-gradient(transparent, transparent), linear-gradient(to right, #84cc16, #84cc16);
+  transition: width 0.25s ease;
+  -webkit-transition: width 0.25s ease;
+}
+
+.dark .link-underline:hover:after {
+  width: 100%;
+  left: 0;
+  background: linear-gradient(transparent, transparent), linear-gradient(to right, #84cc16, #84cc16);
 }
 
 .link-underline {
@@ -51,7 +74,7 @@
   display: block;
   margin-top: 0px;
   right: 0;
-  background: linear-gradient(transparent, transparent), linear-gradient(to right, #0ea5e9, #0ea5e9);
+  background: linear-gradient(transparent, transparent), linear-gradient(to right, #6366f1, #6366f1);
   transition: width 0.25s ease;
   -webkit-transition: width 0.25s ease;
 }
@@ -59,7 +82,7 @@
 .link-underline:hover:after {
   width: 100%;
   left: 0;
-  background: linear-gradient(transparent, transparent), linear-gradient(to right, #0ea5e9, #0ea5e9);
+  background: linear-gradient(transparent, transparent), linear-gradient(to right, #6366f1, #6366f1);
 }
 
 .task-list-item::before {
@@ -71,7 +94,7 @@
 }
 
 .footnotes {
-  @apply mt-12 border-t border-gray-200 pt-8 dark:border-gray-700;
+  @apply mt-12 border-t border-gray-500 pt-8 dark:border-gray-500;
 }
 
 .csl-entry {
@@ -126,7 +149,7 @@ input:-webkit-autofill:focus {
   padding: 3px 8px 2px 8px;
   margin: 4px;
   color: #fff;
-  background-color: #333;
+  background-color: #111111;
   border-radius: 3px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
   text-decoration: none;

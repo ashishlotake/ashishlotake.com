@@ -28,15 +28,17 @@ module.exports = {
         // @ts-ignore
         sans: ['IBM Plex Sans', ...defaultTheme.fontFamily.sans],
       },
-      // fontFamily: {
-      //   sans: ['IBM Plex Sans', defaultTheme.fontFamily.sans]
-      // },
+
       colors: {
-        primary: colors.sky,
+        primary: colors.indigo,
+        darkprimary: colors.lime,
         //@ts-ignore
         gray: colors.neutral, // TODO: Remove ts-ignore after tw types gets updated to v3
-        // 'background-color': '#111111',
-        'background-color': '#0e141b',
+        'background-color': '#111827',
+        // 'background-color':'#1f1f1f',
+        // 'background-color': '#0e141b',
+        // 'slate': colors.gray,
+        white: '#f2e8de',
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -71,7 +73,7 @@ module.exports = {
             },
             code: {
               color: theme('colors.pink.500'),
-              backgroundColor: theme('colors.white'),
+              backgroundColor: theme('colors.slate.700'),
               paddingLeft: '0px',
               paddingRight: '0px',
               paddingTop: '0px',
@@ -111,11 +113,11 @@ module.exports = {
           css: {
             color: theme('colors.white'),
             a: {
-              color: theme('colors.primary.500'),
+              color: theme('colors.darkprimary.500'),
               '&:hover': {
-                color: `${theme('colors.primary.300')} !important`,
+                color: `${theme('colors.darkprimary.300')} !important`,
               },
-              code: { color: theme('colors.primary.300') },
+              code: { color: theme('colors.darkprimary.300') },
             },
             h1: {
               fontWeight: '700',
@@ -138,7 +140,7 @@ module.exports = {
               backgroundColor: theme('colors.gray.800'),
             },
             code: {
-              backgroundColor: theme('colors.slate.900'),
+              backgroundColor: theme('colors.slate.800'),
             },
             details: {
               backgroundColor: theme('colors.slate.800'),

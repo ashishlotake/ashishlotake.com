@@ -11,7 +11,7 @@ export default function Projects() {
         title={`Projects - ${siteMetadata.author}`}
         description="A list of projects I have built"
       />
-      <div className="border-b border-slate-200 dark:border-slate-700">
+      <div className="border-b border-gray-400 dark:border-gray-600">
         <div className="max-w-xl ">
           <PageTitle>Project</PageTitle>
           <Subtitle>{/* A list of projects I have been working on or built */}</Subtitle>

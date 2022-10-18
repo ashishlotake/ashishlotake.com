@@ -33,25 +33,41 @@ Router.onRouteChangeError = () => {
   NProgress.done()
 }
 
+const colmode = [
+  {
+    dark: '#84cc16',
+    light: '#6366f1',
+  },
+]
+
 export default function App({ Component, pageProps: { session, ...pageProps } }) {
+  const theme = <Chekctheme />
+
   return (
     <>
-      {/* <SessionProvider session={session}> */}
-      {/* <Provider apiKey="pt_7c8b6840f5ba39cd3b2b471cd8efc2" theme={defaultTheme}> */}
       <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
-        <ProgressBar bgcolor="#0ea5e9" />
+        <ProgressBar bgcolor="#f97316" />
         <ScrollTop />
         <Head>
           <meta content="width=device-width, initial-scale=1" name="viewport" />
         </Head>
+
         {isDevelopment && isSocket && <ClientReload />}
         <Analytics />
+
         <LayoutWrapper>
           <Component {...pageProps} />
         </LayoutWrapper>
       </ThemeProvider>
-      {/* </Provider> */}
-      {/* </SessionProvider> */}
     </>
   )
+}
+
+import { useTheme } from 'next-themes'
+import { th } from 'date-fns/locale'
+
+const Chekctheme = () => {
+  const { theme, setTheme, resolvedTheme } = useTheme()
+
+  return <p>{theme}</p>
 }

@@ -20,7 +20,7 @@ export default function AuthorLayout({ children, frontMatter }) {
   return (
     <>
       <PageSEO title={`About - ${name}`} description={`A little trivia me`} />
-      <div className="border-b border-gray-200 dark:border-gray-700">
+      <div className="border-b border-gray-400 dark:border-gray-600">
         <div className="max-w-xl ">
           <PageTitle>About</PageTitle>
           <Subtitle>

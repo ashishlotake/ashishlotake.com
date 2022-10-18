@@ -8,7 +8,7 @@ const CustomLink = ({ href, ...rest }) => {
   if (isInternalLink) {
     return (
       <Link href={href}>
-        <a {...rest} />
+        <a className="text-primary-500 dark:text-darkprimary-500" {...rest} />
       </Link>
     )
   }
@@ -19,7 +19,7 @@ const CustomLink = ({ href, ...rest }) => {
 
   return (
     <a
-      className="special-underline-new no-underline hover:text-gray-100 dark:hover:text-gray-100"
+      className="special-underline-new text-primary-500 no-underline hover:text-gray-100 dark:text-darkprimary-500 dark:hover:text-gray-100"
       target="_blank"
       rel="noopener noreferrer"
       href={href}

@@ -11,7 +11,7 @@ export default function Journey() {
       <PageSEO title={`Journey - ${siteMetadata.author}`} description="My journey" />
 
       <div className="">
-        <div className="mb-2 border-b border-slate-200 dark:border-slate-700 ">
+        <div className="mb-2 border-b border-gray-400 dark:border-gray-600">
           <PageTitle>Journery</PageTitle>
           <Subtitle>Growing everyday a bit.</Subtitle>
         </div>
