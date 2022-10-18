@@ -87,8 +87,8 @@ Predict which party will win the elections.
 
 <div align="center">![](/static/images/blog/what-is-data-science/03-data-storing.png)</div>
 When I was in school, the teacher used to take attendance in a tabular format like this:-
-<div align="center">![](/static/images/blog/what-is-data-science/04-tabular-data.png)</div>I hope you
-were not like me!
+<div align="center">![](/static/images/blog/what-is-data-science/04-tabular-data.png)</div>I hope
+you were not like me!
 
 And each time a new student joins the class new row is created.<br></br>
 This is what a relation database looks like a structure of tabular data, and the large amount of data collected in the early days have stored data in this format.
@@ -133,16 +133,17 @@ now here need to:-
 
 ### Standardizing and Normalizing
 
+<div align="center">![](/static/images/blog/what-is-data-science/14-normalize-standardize.png)</div>
+
 **Format**:- Some companies have given salaries like 100k and some have given like 100000, so we need to make them on the format.
 
-We need to make sure all the columns in the datasets must have the same scale, we use **Standardization**.
+We need to make sure all the columns in the datasets must have the same scale, we use **Standardization and Normalization**.
 
 - Expected year of experience have min value of 0 and a max of 10
 - Salary has min value of 100k and max value of 900k
 - when we input these values into our algorithm the model will not perform well, so to achieve good performance, we need to make sure all the values must be in the same range.
-  **Standardization** will ensure all the numerical columns are in the range of 0 and 1
-
-Normalization will ensure all the columns will have zero mean and unit variance.
+- **Normalization** will ensure all the numerical columns are in the range of 0 and 1.
+- **Standardization** will ensure all the columns will have zero mean and unit variance.
 
 ### How to process big data?
 
