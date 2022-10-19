@@ -59,7 +59,6 @@ const LayoutWrapper = ({ children }) => {
               {headerNavLinks.map((link) => (
                 <NavItem key={link.href} href={link.href} text={link.title} />
               ))}
-              <NavItem href="https://resume.ashishlotake.com/" text="Résumé" />
             </div>
             <DropMenu />
             <ThemeSwitch />

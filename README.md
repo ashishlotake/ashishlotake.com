@@ -1,4 +1,4 @@
-![](public/static/images/light.png)
+![](public/static/images/index.png)
 
 # Personal Blog
 

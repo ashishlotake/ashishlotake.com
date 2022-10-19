@@ -138,7 +138,7 @@ export default function Example() {
               <Menu.Item>
                 {({ active }) => (
                   <CustomLink
-                    href="https://resume.ashishlotake.com/"
+                    href="/resume"
                     className={classNames(
                       active
                         ? 'hover:bg-gray-300 dark:text-gray-200 dark:hover:bg-slate-800'

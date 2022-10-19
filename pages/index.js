@@ -20,7 +20,7 @@ export default function Home({ posts }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <img className="" src="/static/images/light.svg" />
+      <img className="" src="/static/images/index.svg" />
       {/* <div className="flex flex-col-reverse items-start sm:flex-row">
         <div className="flex flex-col pr-20">
           <h1 className="mb-1 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">

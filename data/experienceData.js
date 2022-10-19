@@ -3,14 +3,14 @@ export const educationData = [
     title: 'Diploma in Artificial Intelligence & Machine Learning',
     company: ' UoH',
     location: 'Hyderabad, India',
-    range: 'Sep 2021 - Oct 2022',
+    range: 'Sep 2021 - Present',
     url: 'https://uohyd.ac.in/',
     text1:
       'This course covers Python, SQL, Machine learning (Supervised and Unsupervised), Neural networks, Advance Optimization Methods and Deep Learning( CNN, RNN).I work on Active Labelling Project, in this the model will sort user input images by placing them into respective class',
   },
   {
     title: 'B.E. Mechanical Engineering',
-    company: 'PVG COET',
+    company: 'PVG',
     location: 'Pune, India',
     range: 'Jul 2017 - Apr 2021',
     url: 'https://www.pvgcoet.ac.in/',
@@ -52,7 +52,6 @@ export const experienceData = [
 ]
 
 // ##########3
-
 
 export const certificateData = [
   {
