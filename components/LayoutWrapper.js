@@ -59,6 +59,7 @@ const LayoutWrapper = ({ children }) => {
               {headerNavLinks.map((link) => (
                 <NavItem key={link.href} href={link.href} text={link.title} />
               ))}
+              <NavItem href="https://resume.ashishlotake.com/" text="Résumé" />
             </div>
             <DropMenu />
             <ThemeSwitch />
@@ -95,9 +96,9 @@ function NavItem({ href, text }) {
       <a
         className={cn(
           isActive
-            ? 'font-semibold text-gray-900 dark:text-gray-200'
-            : 'font-normal text-gray-600 dark:text-gray-400',
-          'linkunderline hidden rounded-lg p-1 transition-all hover:bg-gray-300 dark:hover:bg-slate-800 sm:px-3 sm:py-2 md:inline-block'
+            ? 'font-semibold text-primary-500 dark:text-darkprimary-500 dark:text-white'
+            : 'font-normal text-gray-700 dark:text-white',
+          'link-underline hidden rounded-lg p-1 transition-all sm:px-3 sm:py-2 md:inline-block'
         )}
       >
         <span className="capsize">{text}</span>

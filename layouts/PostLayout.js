@@ -1,9 +1,11 @@
+import { useState } from 'react'
 import Link from '@/components/Link'
 import { BlogSEO } from '@/components/SEO'
 import Image from '@/components/Image'
 import ViewCounter from '@/components/ViewCounter'
 import siteMetadata from '@/data/siteMetadata'
 import Comments from '@/components/comments'
+import { BiCopyAlt } from 'react-icons/bi'
 
 import { FaFacebookSquare, FaTwitterSquare, FaRedditSquare, FaLinkedinIn } from 'react-icons/fa'
 
@@ -33,7 +35,18 @@ const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day:
 
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
   const { slug, fileName, date, title, images, tags, readingTime, author } = frontMatter
-  const postUrl = `${siteMetadata.siteUrl}/blog/${slug}`
+  const [copied, setCopied] = useState(false)
+
+  function copy() {
+    const el = document.createElement('input')
+    el.value = window.location.href
+    document.body.appendChild(el)
+    el.select()
+    document.execCommand('copy')
+    document.body.removeChild(el)
+    setCopied(true)
+  }
+
   return (
     <>
       <BlogSEO
@@ -96,6 +109,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                 </div>
               )}
             </div>
+
             <div className=" border-gray-500 pb-2 dark:border-gray-500 ">
               <div className="mt-2 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
                 <div className="py-3 md:py-0">
@@ -106,32 +120,52 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                     &larr; Back to the blog
                   </Link>
                 </div>
-                <div className="mb-1 flex justify-end text-sm">
-                  <Link
-                    className=" share-button reddit hover:bg-[#FF5700]  "
-                    title="Share on Facebook"
-                    href={redditShare(slug, title)}
-                  >
-                    <FaRedditSquare size={34} />
-                    <span className="text-white"> Post</span>
-                  </Link>
-                  <Link
-                    className="share-button twitter hover:bg-[#1B95E0]"
-                    title="Share on Twitter"
-                    href={twitterShare(slug, title)}
-                  >
-                    <FaTwitterSquare size={34} />
+                <span className="py-2 md:hidden">share</span>
+                <div className="sm:boder group relative inline-block flex rounded-lg border-gray-500  px-10 py-1 dark:border-gray-500 md:border-2 md:px-14">
+                  <span className="text-lg font-medium opacity-0 transition-opacity group-hover:opacity-0 md:opacity-100">
+                    Share it
+                  </span>
 
-                    <span className="text-white"> Tweet</span>
-                  </Link>
-                  <Link
-                    className="share-button linkedin hover:bg-[#0077B5] "
-                    title="Share on Twitter"
-                    href={linkedinShare(slug, title)}
-                  >
-                    <FaLinkedinIn size={34} />
-                    <span className="text-white"> Post</span>
-                  </Link>
+                  <ul className="absolute inset-0 flex items-center justify-center gap-3 opacity-100 transition-opacity group-hover:opacity-100 md:opacity-0 ">
+                    <li className="hover:text-primary-600 dark:hover:text-darkprimary-500">
+                      <span className="sr-only"> linkedin </span>
+                      <button
+                        className="block  hover:opacity-90 focus:opacity-75 focus:outline-none"
+                        onClick={copy}
+                      >
+                        {!copied ? <BiCopyAlt size={25} /> : <BiCopyAlt size={25} />}
+                      </button>
+                    </li>
+
+                    <li className="hover:text-[#1B95E0]">
+                      <Link
+                        class="block rounded-full transition-opacity hover:opacity-90 focus:opacity-75 focus:outline-none"
+                        href={twitterShare(slug, title)}
+                      >
+                        <span className="sr-only"> twitter </span>
+                        <FaTwitterSquare size={25} />
+                      </Link>
+                    </li>
+                    <li className="hover:text-[#FF5700]">
+                      <Link
+                        class="block rounded-full transition-opacity hover:opacity-90 focus:opacity-75 focus:outline-none"
+                        href={redditShare(slug, title)}
+                      >
+                        <span className="sr-only"> Reddit </span>
+                        <FaRedditSquare size={25} />
+                      </Link>
+                    </li>
+
+                    <li className="hover:text-[#0077B5]">
+                      <Link
+                        class="block rounded-full transition-opacity hover:opacity-90 focus:opacity-75 focus:outline-none"
+                        href={linkedinShare(slug, title)}
+                      >
+                        <span className="sr-only"> linkedin </span>
+                        <FaLinkedinIn size={25} />
+                      </Link>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>

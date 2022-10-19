@@ -6,7 +6,7 @@ const siteMetadata = {
     'Dive deep into nitty-gritty of Data science, Machine learning & Artificial Intelligence with me!',
   snippets: 'Reuseable code snippets collected by Ashish',
   language: 'en-us',
-  theme: 'system', // system, dark or light
+  theme: 'dark', // system, dark or light
   siteUrl: 'https://ashishlotake.com',
   siteRepo: 'https://github.com/ashishlotake/ashishlotake.com',
   siteLogo: '/static/images/logo.svg',

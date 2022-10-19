@@ -181,25 +181,27 @@ export function ProfileCard() {
     <div className="mb-8 xl:mb-0" style={{ perspective: '600px' }} ref={ref}>
       <div
         style={style}
-        className="lg:items-block  flex flex-col items-center overflow-hidden  rounded-2xl border-2 border-gray-500 bg-transparent pt-5  shadow-lg shadow-primary-500/50 duration-200 dark:shadow-darkprimary-700/50 xl:rounded-2xl xl:pt-0"
+        className="lg:items-block  itemscenter flex flex-col overflow-hidden  rounded-2xl border-2 border-gray-500 bg-transparent pt-5  shadow-lg shadow-primary-500/50 duration-200 dark:shadow-darkprimary-700/50 xl:rounded-2xl xl:pt-0"
       >
-        <Image
-          src={'/static/images/logo.jpg'}
-          alt="avatar"
-          width="350px"
-          height="350px"
-          className="rounded-full object-cover xl:rounded-none"
-          objectPosition="10% 50%"
-        />
+        <div className="m-auto items-center">
+          <Image
+            src={'/static/images/logo.jpg'}
+            alt="avatar"
+            width="350px"
+            height="350px"
+            className="rounded-full object-cover xl:rounded-none "
+            objectPosition="10% 50%"
+          />
+        </div>
         <div className="">
-          <div className="bgbackground-color px-2 py-2 dark:text-white xl:py-1">
+          <div className="bgbackground-color xl:py1 px-2 dark:text-white">
             <NowPlaying {...nowPlayingData} />
           </div>
           <div className="xl:px-2">
             <ProfileCardInfo />
           </div>
         </div>
-        <span className="h-1.5 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500"></span>
+        {/* <span className="h-1.5 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500"></span> */}
       </div>
     </div>
   )

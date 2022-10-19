@@ -39,6 +39,7 @@ module.exports = {
         // 'background-color': '#0e141b',
         // 'slate': colors.gray,
         white: '#f2e8de',
+        black: '#333333',
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -105,7 +106,12 @@ module.exports = {
             strong: { color: theme('colors.gray.600') },
             blockquote: {
               color: theme('colors.black'),
-              borderLeftColor: theme('colors.gray.200'),
+              borderLeftColor: theme('colors.gray.500'),
+            },
+            li: {
+              '&::marker': {
+                color: theme('colors.black'),
+              },
             },
           },
         },
@@ -167,6 +173,11 @@ module.exports = {
             blockquote: {
               color: theme('colors.white'),
               borderLeftColor: theme('colors.gray.700'),
+            },
+            li: {
+              '&::marker': {
+                color: theme('colors.white'),
+              },
             },
           },
         },

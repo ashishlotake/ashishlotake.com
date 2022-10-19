@@ -1,3 +1,5 @@
+import { BiCopyAlt } from 'react-icons/bi'
+import { useState } from 'react'
 import formatDate from '@/lib/utils/formatDate'
 import Link from '@/components/Link'
 import SectionContainer from '@/components/SectionContainer'
@@ -30,6 +32,17 @@ const linkedinShare = (slug, title) =>
 
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
   const { slug, date, logo, title, summary, readingTime } = frontMatter
+  const [copied, setCopied] = useState(false)
+
+  function copy() {
+    const el = document.createElement('input')
+    el.value = window.location.href
+    document.body.appendChild(el)
+    el.select()
+    document.execCommand('copy')
+    document.body.removeChild(el)
+    setCopied(true)
+  }
 
   return (
     <SectionContainer>
@@ -54,15 +67,24 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               ))}
             </div>
           </div>
-          <div className="border-b border-gray-200 pb-4 dark:border-gray-700 ">
+          <div className="borderb border-gray-500 pb-4 dark:border-gray-500 ">
             <p className="text-text text-lg">{summary}</p>
           </div>
 
           <div className=" pb-8 " style={{ gridTemplateRows: 'auto 1fr' }}>
             <div className="  xl:col-span-3 xl:row-span-2 xl:pb-0">
-              <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
+              <div className="prose max-w-none  border-t border-b border-gray-500 pb-4 pt-10 pb-8 dark:prose-dark dark:border-gray-500">
+                {children}
+              </div>
             </div>
-            <div className="flex justify-end py-5 text-sm">
+            <div className="flex justify-center py-5 text-sm">
+              <button
+                className="share-button reddit hover:bg-primary-500 dark:hover:bg-darkprimary-500 "
+                onClick={copy}
+              >
+                {!copied ? <BiCopyAlt size={25} /> : <BiCopyAlt size={25} />}
+                Copy link
+              </button>
               <Link
                 className="share-button reddit hover:bg-[#FF5700]  "
                 title="Share on Facebook"

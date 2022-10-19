@@ -93,7 +93,7 @@ export default function Timeline() {
         {TimeLineInfo.slice(0, 1).map((d) => (
           <li
             key={d.title}
-            className="mb-4 ml-8 rounded-md border-2  border-gray-500 bg-white  bg-orange-100  px-4 py-4 shadow-sm shadow-gray-300  dark:border-gray-500 dark:bg-[#1a2532]  dark:shadow-none"
+            className="mb-4 ml-8 rounded-md border-2  border-gray-500   px-4 py-4 shadow-md  shadow-black dark:border-gray-600 dark:shadow-gray-500"
           >
             <span
               className={` absolute -left-3 flex h-6 w-6 animate-pulse items-center justify-center rounded-full text-black  ${d.color}  ring-8 ring-white  dark:ring-gray-900`}
@@ -118,7 +118,7 @@ export default function Timeline() {
         {TimeLineInfo.slice(1).map((d) => (
           <li
             key={d.title}
-            className="mb-4 ml-8 rounded-md border-2  border-gray-500 bg-white  bg-orange-100  px-4 py-4 shadow-sm shadow-gray-300  dark:border-gray-500 dark:bg-[#1a2532]  dark:shadow-none"
+            className="mb-4 ml-8 rounded-md border-2  border-gray-500   px-4 py-4 shadow-md  shadow-black dark:border-gray-600 dark:shadow-gray-500"
           >
             {/* <li className="mb-4 ml-8 rounded-md border border-gray-100 bg-white  px-4  py-4 shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-[#1a2532] dark:shadow-none"> */}
             <span

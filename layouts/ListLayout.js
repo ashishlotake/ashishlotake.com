@@ -61,12 +61,12 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
               return (
                 <Link key={slug} href={`/blog/${slug}`} aria-label={`Read "${title}"`}>
                   <a className="group relative block h-full">
-                    <div className="relative flex  h-full  rounded-3xl border-2 border-black border-opacity-50 transition hover:border-opacity-100 group-hover:-translate-x-2 group-hover:-translate-y-2 group-hover:shadow-[8px_8px_0_0_#000] dark:border-white dark:border-opacity-50 dark:hover:border-opacity-100 dark:group-hover:shadow-[8px_8px_0_0_#f2e8de] ">
+                    <div className="relative flex  h-full  rounded-3xl border-2 border-black border-opacity-10 transition hover:border-opacity-100 group-hover:-translate-x-2 group-hover:-translate-y-2 group-hover:shadow-[8px_8px_0_0_#000] dark:border-white dark:border-opacity-10 dark:hover:border-opacity-100 dark:group-hover:shadow-[8px_8px_0_0_#f2e8de] ">
                       <div className="flex flex-1 flex-col pb-3">
                         {images ? (
                           <img
                             alt=""
-                            className="h-44 w-full rounded-t-3xl object-cover "
+                            className="h-44 w-full overflow-hidden rounded-t-3xl object-cover"
                             src={images}
                           />
                         ) : null}

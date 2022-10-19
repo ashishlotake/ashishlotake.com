@@ -1,17 +1,8 @@
-import SocialIcon from '@/components/social-icons'
-import Image from 'next/image'
-import { ProfileCard } from '@/components/ProfileCard'
-import { PageTitle, Subtitle, CardTitle, PageSubHeading } from '@/components/PageTitle'
 import CustomLink from '@/components/Link'
 import Link from 'next/link'
 import { PageSEO } from '@/components/SEO'
-import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
-import formatDate from '@/lib/utils/formatDate'
-import { RoughNotation } from 'react-rough-notation'
-import NewsletterForm from '@/components/NewsletterForm'
-import ViewCounter from '@/components/ViewCounter'
 import projectsData from '@/data/projectsData'
 import Card from '@/components/Card'
 
@@ -29,7 +20,7 @@ export default function Home({ posts }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <img src="/static/images/light.svg" />
+      <img className="" src="/static/images/light.svg" />
       {/* <div className="flex flex-col-reverse items-start sm:flex-row">
         <div className="flex flex-col pr-20">
           <h1 className="mb-1 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
@@ -54,8 +45,7 @@ export default function Home({ posts }) {
         </div>
       </div> */}
       <div>
-        <div className="mb-5 flex flex-col items-center xl:flex-row"></div>
-        <h2 className="pb-4 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
+        <h2 className="py-4 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
           Recent Posts
         </h2>
 
@@ -66,7 +56,7 @@ export default function Home({ posts }) {
             return (
               <Link key={slug} href={`/blog/${slug}`} aria-label={`Read "${title}"`}>
                 <a className="group relative block h-full">
-                  <div className="relative flex h-full  rounded-3xl  border-2 border-black border-opacity-50 pt-3 transition hover:border-opacity-100 group-hover:-translate-x-2 group-hover:-translate-y-2 group-hover:shadow-[8px_8px_0_0_#000] dark:border-white dark:border-opacity-50 dark:hover:border-opacity-100 dark:group-hover:shadow-[8px_8px_0_0_#f2e8de]">
+                  <div className="relative flex h-full  rounded-3xl  border-2 border-[#6366f1] border-opacity-50 pt-3 transition hover:border-opacity-100 group-hover:-translate-x-2 group-hover:-translate-y-2 group-hover:shadow-[8px_8px_0_0_#6366f1] dark:border-[#c9dc56] dark:border-opacity-50 dark:hover:border-opacity-100 dark:group-hover:shadow-[8px_8px_0_0_#c9dc56]">
                     <div className="flex flex-1 flex-col pb-3">
                       <div className="flex flex-wrap px-3 pt-1 ">
                         {tags.slice(0, 4).map((tag) => (
