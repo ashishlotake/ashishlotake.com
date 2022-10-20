@@ -1,3 +1,6 @@
+import formatDate from '@/lib/utils/formatDate'
+import ViewCounter from '@/components/ViewCounter'
+import Image from 'next/image'
 import CustomLink from '@/components/Link'
 import Link from 'next/link'
 import { PageSEO } from '@/components/SEO'
@@ -13,14 +16,15 @@ export async function getStaticProps() {
 
   return { props: { posts } }
 }
-let headingColorClass =
-  'bg-gradient-to-r from-yellow-600 to-red-600 dark:bg-gradient-to-l dark:from-emerald-500 dark:to-primary-600'
 
 export default function Home({ posts }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <img className="" src="/static/images/index.svg" />
+      <img
+        className="rounded-xl border-2 border-white bg-white md:rounded-2xl"
+        src="/static/images/index.svg"
+      />
       {/* <div className="flex flex-col-reverse items-start sm:flex-row">
         <div className="flex flex-col pr-20">
           <h1 className="mb-1 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
@@ -55,24 +59,21 @@ export default function Home({ posts }) {
             const { slug, date, title, summary, tags, images } = frontMatter
             return (
               <Link key={slug} href={`/blog/${slug}`} aria-label={`Read "${title}"`}>
-                <a className="group relative block h-full">
-                  <div className="relative flex h-full  rounded-3xl  border-2 border-[#6366f1] border-opacity-50 pt-3 transition hover:border-opacity-100 group-hover:-translate-x-2 group-hover:-translate-y-2 group-hover:shadow-[8px_8px_0_0_#6366f1] dark:border-[#c9dc56] dark:border-opacity-50 dark:hover:border-opacity-100 dark:group-hover:shadow-[8px_8px_0_0_#c9dc56]">
-                    <div className="flex flex-1 flex-col pb-3">
-                      <div className="flex flex-wrap px-3 pt-1 ">
-                        {tags.slice(0, 4).map((tag) => (
-                          <p
-                            key={tag}
-                            className="pr-2 text-xs tracking-wider  text-primary-400 dark:text-darkprimary-400"
-                          >
-                            #{tag}
-                          </p>
-                        ))}
-                      </div>
-                      <h3 className="px-3 pt-2 text-2xl font-semibold leading-snug text-black dark:text-white">
-                        {title}
-                      </h3>
+                <a className="w-full rounded-xl bg-gradient-to-r from-primary-300 to-primary-400 p-1 shadow-lg shadow-primary-200/10 duration-300 hover:scale-[102%] hover:shadow-xl hover:shadow-primary-500/10 dark:bg-gradient-to-r dark:from-darkprimary-300 dark:via-darkprimary-400 dark:to-darkprimary-300 dark:hover:shadow-darkprimary-500/10">
+                  <div className="flex h-full cursor-pointer flex-col justify-between  rounded-lg bg-white py-3 dark:bg-background-color">
+                    <div className="px-3">
+                      <h3 className="m-0 w-full text-xl font-bold tracking-tight">{title}</h3>
+                    </div>
+                    <p className="flex-1 px-3 text-base tracking-tight text-gray-500">{summary}</p>
 
-                      <p className="flex-1 px-3 text-gray-500">{summary}</p>
+                    <div className="flex flex-wrap justify-between space-x-2 px-3 pt-3 text-xs dark:text-gray-400">
+                      <span>
+                        <time dateTime={date}>{formatDate(date)}</time>
+                      </span>
+                      <span>
+                        <ViewCounter className="mx-1" slug={slug} />
+                        views
+                      </span>
                     </div>
                   </div>
                 </a>

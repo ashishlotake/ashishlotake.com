@@ -79,7 +79,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
           {/* </div> */}
         </header>
         <div className="">
-          <div className="prose max-w-none  border-t border-b border-gray-500 pb-5 pt-2 dark:prose-dark dark:border-gray-500">
+          <div className="prose max-w-none border-t  border-b border-gray-500 pb-5 pt-2 text-lg dark:prose-dark dark:border-gray-500">
             {children}
           </div>
           <footer>
@@ -128,7 +128,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
 
                   <ul className="absolute inset-0 flex items-center justify-center gap-3 opacity-100 transition-opacity group-hover:opacity-100 md:opacity-0 ">
                     <li className="hover:text-primary-600 dark:hover:text-darkprimary-500">
-                      <span className="sr-only"> linkedin </span>
+                      <span className="sr-only"> copy </span>
                       <button
                         className="block  hover:opacity-90 focus:opacity-75 focus:outline-none"
                         onClick={copy}
@@ -137,33 +137,33 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                       </button>
                     </li>
 
-                    <li className="hover:text-[#1B95E0]">
-                      <Link
-                        class="block rounded-full transition-opacity hover:opacity-90 focus:opacity-75 focus:outline-none"
+                    <li className=" hover:text-[#1B95E0]">
+                      <a
+                        className="block rounded-full transition-opacity hover:opacity-90 focus:opacity-75 focus:outline-none"
                         href={twitterShare(slug, title)}
                       >
                         <span className="sr-only"> twitter </span>
                         <FaTwitterSquare size={25} />
-                      </Link>
+                      </a>
                     </li>
                     <li className="hover:text-[#FF5700]">
-                      <Link
-                        class="block rounded-full transition-opacity hover:opacity-90 focus:opacity-75 focus:outline-none"
+                      <a
+                        className="block rounded-full transition-opacity hover:opacity-90 focus:opacity-75 focus:outline-none"
                         href={redditShare(slug, title)}
                       >
                         <span className="sr-only"> Reddit </span>
                         <FaRedditSquare size={25} />
-                      </Link>
+                      </a>
                     </li>
 
                     <li className="hover:text-[#0077B5]">
-                      <Link
-                        class="block rounded-full transition-opacity hover:opacity-90 focus:opacity-75 focus:outline-none"
+                      <a
+                        className="block rounded-full transition-opacity hover:opacity-90 focus:opacity-75 focus:outline-none"
                         href={linkedinShare(slug, title)}
                       >
                         <span className="sr-only"> linkedin </span>
                         <FaLinkedinIn size={25} />
-                      </Link>
+                      </a>
                     </li>
                   </ul>
                 </div>

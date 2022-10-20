@@ -76,10 +76,10 @@ export default function SnippetsLayout({ posts, title, initialDisplayPosts = [],
                       Last update:-<time dateTime={date}>{formatDate(date)}</time>
                     </p>
 
-                    <h4 className="mb-4 w-full text-xl font-semibold leading-none text-black dark:text-white ">
+                    <h4 className="mb-4 w-full text-xl font-bold leading-none tracking-tight text-black dark:text-white ">
                       {title}
                     </h4>
-                    <p className="leading-none  text-gray-500">{summary}</p>
+                    <p className=" tracking-tight text-gray-500">{summary}</p>
                   </div>
                 </div>
               </Link>

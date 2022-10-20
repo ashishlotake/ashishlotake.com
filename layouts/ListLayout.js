@@ -61,12 +61,12 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
               return (
                 <Link key={slug} href={`/blog/${slug}`} aria-label={`Read "${title}"`}>
                   <a className="group relative block h-full">
-                    <div className="relative flex  h-full  rounded-3xl border-2 border-black border-opacity-10 transition hover:border-opacity-100 group-hover:-translate-x-2 group-hover:-translate-y-2 group-hover:shadow-[8px_8px_0_0_#000] dark:border-white dark:border-opacity-10 dark:hover:border-opacity-100 dark:group-hover:shadow-[8px_8px_0_0_#f2e8de] ">
-                      <div className="flex flex-1 flex-col pb-3">
+                    <div className="relative flex  h-full  rounded-xl border border-black border-opacity-10 transition duration-300 hover:border-opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:shadow-[5px_5px_0_0_#000] dark:border-white dark:border-opacity-10 dark:hover:border-opacity-100 dark:group-hover:shadow-[5px_5px_0_0_#f2e8de]">
+                      <div className="flex flex-1 transform flex-col pb-3 transition">
                         {images ? (
                           <img
                             alt=""
-                            className="h-44 w-full overflow-hidden rounded-t-3xl object-cover"
+                            className="h-44 w-full overflow-hidden rounded-t-[10px] object-cover "
                             src={images}
                           />
                         ) : null}
@@ -74,18 +74,19 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                           {tags.slice(0, 4).map((tag) => (
                             <p
                               key={tag}
-                              className="pr-2 text-xs tracking-wider  text-primary-400 dark:text-darkprimary-400"
+                              className="pr-2 text-xs tracking-tight  text-primary-400 dark:text-darkprimary-400"
                             >
                               #{tag}
                             </p>
                           ))}
                         </div>
-                        <h3 className="px-3 pt-2 text-2xl font-semibold leading-snug text-black dark:text-white">
+                        <h3 className="m-0 w-full px-3 pt-2 text-xl font-bold tracking-tight text-black dark:text-white">
                           {title}
                         </h3>
-
-                        <p className="flex-1 px-3 text-gray-500">{summary}</p>
-                        <div className="flex flex-wrap justify-between space-x-2 px-3 pt-3 text-xs dark:text-gray-400">
+                        <p className="flex-1 px-3 pt-3 leading-[20px] tracking-tight text-gray-500">
+                          {summary}
+                        </p>
+                        <div className="flex flex-wrap justify-between space-x-2 px-3 pt-3 text-xs text-gray-600 dark:text-gray-400">
                           <span>
                             <time dateTime={date}>{formatDate(date)}</time>
                           </span>

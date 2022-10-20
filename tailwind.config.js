@@ -73,12 +73,12 @@ module.exports = {
               backgroundColor: theme('colors.gray.800'),
             },
             code: {
-              color: theme('colors.pink.500'),
+              color: theme('colors.amber.500'),
               backgroundColor: theme('colors.slate.700'),
-              paddingLeft: '0px',
-              paddingRight: '0px',
-              paddingTop: '0px',
-              paddingBottom: 'px',
+              paddingLeft: '2px',
+              paddingRight: '2px',
+              paddingTop: '2px',
+              paddingBottom: '2px',
               borderRadius: '0.25rem',
             },
             'code::before': {
@@ -118,6 +118,7 @@ module.exports = {
         dark: {
           css: {
             color: theme('colors.white'),
+
             a: {
               color: theme('colors.darkprimary.500'),
               '&:hover': {
@@ -146,7 +147,7 @@ module.exports = {
               backgroundColor: theme('colors.gray.800'),
             },
             code: {
-              backgroundColor: theme('colors.slate.800'),
+              backgroundColor: theme('colors.slate.700'),
             },
             details: {
               backgroundColor: theme('colors.slate.800'),

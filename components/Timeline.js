@@ -9,6 +9,14 @@ import { RiDoorClosedLine } from 'react-icons/ri'
 import { TbDeviceDesktopAnalytics } from 'react-icons/tb'
 
 const TimeLineInfo = [
+  // {
+  //   title: 'Graduated College',
+  //   description:"",
+  //   icon: <FaGraduationCap />,
+  //   color:'bg-lime-200',
+  //   dark_color:'dark:bg-purple-900',
+  //   date:'Dec 2022',
+  // },
   {
     title: 'Applying for Jobs',
     description: 'Feel confident that I can work as a junior Data Scientist. Wish me Luck',
@@ -18,14 +26,6 @@ const TimeLineInfo = [
     date: 'September 2022',
     status: 'Present',
   },
-  // {
-  //   title: 'Graduated College',
-  //   description:"",
-  //   icon: <FaGraduationCap />,
-  //   color:'bg-lime-200',
-  //   dark_color:'dark:bg-purple-900',
-  //   date:'Dec 2022',
-  // },
   {
     title: '3 Month Intership',
     description: 'A.I. Technical Intern',
@@ -100,16 +100,16 @@ export default function Timeline() {
             >
               {d.icon}
             </span>
-            <h3 className="flex items-center text-base  font-semibold text-gray-900 dark:text-white">
+            <h3 className="flex items-center text-xl font-bold tracking-tight text-gray-900 dark:text-white">
               {d.title}
               <span className="mr-2 ml-3 rounded bg-blue-100 px-2.5 py-0.5 text-sm font-medium text-blue-800 dark:bg-blue-200 dark:text-blue-800">
                 {d.status}
               </span>
             </h3>
-            <time className="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+            <time className="text-sm font-normal leading-none text-gray-500 dark:text-gray-500">
               {d.date}
             </time>
-            <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
+            <p className="text mt-1 font-normal tracking-tight text-gray-700 dark:text-gray-300">
               {d.description}
             </p>
           </li>
@@ -126,7 +126,7 @@ export default function Timeline() {
             >
               {d.icon}
             </span>
-            <h3 className="flex items-center text-base  font-semibold text-gray-900 dark:text-white">
+            <h3 className="flex items-center text-xl font-bold tracking-tight text-gray-900 dark:text-white">
               {d.title}
 
               {d.status ? (
@@ -135,10 +135,10 @@ export default function Timeline() {
                 </span>
               ) : null}
             </h3>
-            <time className="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+            <time className="text-sm font-normal leading-none text-gray-500 dark:text-gray-500">
               {d.date}
             </time>
-            <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
+            <p className="text mt-1 font-normal tracking-tight text-gray-700 dark:text-gray-300">
               {d.description}
             </p>
           </li>

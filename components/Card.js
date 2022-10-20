@@ -7,22 +7,21 @@ import SocialIcon from './social-icons'
 
 const Card = ({ title, description, imgSrc, href, github, tech1, tech2, tech3 }) => (
   <>
-    <article className="rounded-3xl border-2 border-slate-500 border-opacity-50 p-3 sm:border-opacity-0 md:p-0  ">
+    <article className="rounded-xl border-2 border-slate-500 border-opacity-50 p-3 sm:border-opacity-0 md:p-0  ">
       <div className=" flex flex-col items-center  md:flex-row">
         {imgSrc ? (
           <div className=" sm:mr-8 sm:grid sm:h-40 sm:w-40 sm:shrink-0 sm:place-content-center sm:rounded-full ">
-            <img alt="" className="object-cover" src={imgSrc} />
+            <img alt="" className=" h-44 object-contain" src={imgSrc} />
           </div>
         ) : null}
         <div className="">
-          <h1 className="relative my-2 w-full flex-none text-2xl font-semibold ">{title}</h1>
-          <Subtitle>{description}</Subtitle>
-
-          <div className="flex space-x-4 pt-1">
+          <h3 className="m-0 my-2 w-full text-2xl font-bold tracking-tight">{title}</h3>
+          <p className="flex-1  tracking-tight text-gray-500">{description}</p>
+          <div className="flex space-x-4 pb-1 pt-1">
             {github ? (
               <Link href={github}>
                 <a className="group block ">
-                  <article className="relative flex flex-col items-end  rounded-lg border-2 border-[#6366f1] px-3 transition  group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:shadow-[3px_3px_0_0_#6366f1] dark:border-[#84cc16] dark:group-hover:shadow-[3px_3px_0_0_#84cc16]">
+                  <article className="group-hover:-translate-x- group-hover:-translate-y- relative flex  flex-col items-end rounded-lg border-2 border-[#6366f1]  px-3 transition group-hover:shadow-[5px_5px_0_0_#6366f1] dark:border-[#84cc16] dark:group-hover:shadow-[5px_5px_0_0_#84cc16]">
                     <h3 className="group py-2  font-semibold leading-snug text-black dark:text-white">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +45,7 @@ const Card = ({ title, description, imgSrc, href, github, tech1, tech2, tech3 })
             {href ? (
               <Link href={href}>
                 <a className="group block ">
-                  <article className="relative flex flex-col items-end  rounded-lg border-2 border-black  bg-primary-500 px-3 transition group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:shadow-[3px_3px_0_0_#6366f1] dark:bg-darkprimary-500  dark:group-hover:shadow-[3px_3px_0_0_#84cc16]">
+                  <article className="group-hover:-translate-x- group-hover:-translate-y- relative flex  flex-col items-end rounded-lg  border-2 border-black bg-primary-500 px-3 transition group-hover:shadow-[5px_5px_0_0_#6366f1] dark:bg-darkprimary-500  dark:group-hover:shadow-[5px_5px_0_0_#84cc16]">
                     <h3 className="group py-2 font-semibold leading-snug text-white dark:text-black dark:text-white ">
                       Web app
                       <svg

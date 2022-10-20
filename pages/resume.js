@@ -28,16 +28,18 @@ const logo = [
 export default function Journey() {
   return (
     <>
-      <PageSEO title={`Journey - ${siteMetadata.author}`} description="My journey" />
+      <PageSEO
+        title={`Resume - ${siteMetadata.author}`}
+        description="A dedicated and aspiring data scientist and machine learning engineer, wish to work for an institution that offers technical and personal growth."
+      />
       <img className="" src="/static/images/resumeHead.svg" />
-
       <div className="fontmono grid grid-cols-1 gap-4 pt-4 md:grid-cols-2">
         {/* #################### 1nd col #################### */}
         <div className="space-y-4">
           {/* 1 */}
           <div className="rounded-3xl border-2 border-black hover:bg-[#6562F5]  hover:bg-opacity-90 hover:text-white dark:border-[#BFB9AA] dark:border-opacity-80 dark:hover:bg-[#cadd57] dark:hover:text-black">
             <div className="group">
-              <div className=" border-b border-black  px-5 py-2 text-2xl font-medium md:text-4xl">
+              <div className=" border-b border-black  px-5 py-2 text-2xl font-medium md:text-3xl">
                 Experience
               </div>
 
@@ -45,7 +47,7 @@ export default function Journey() {
                 {experienceData.map((d) => (
                   <div key={d.title} className="group">
                     <div className="flex flex-row">
-                      <h1 className=" text-lg font-medium md:text-xl">{d.title}</h1>{' '}
+                      <h1 className="m-0 w-full text-xl font-bold tracking-tight">{d.title}</h1>{' '}
                       <span className="text-lg text-gray-500 group-hover:text-gray-400 dark:group-hover:text-gray-500 md:text-xl">
                         &nbsp;@&nbsp;
                       </span>{' '}
@@ -59,7 +61,7 @@ export default function Journey() {
                       <div className=" font-mono text-sm text-gray-500 group-hover:text-gray-400 dark:group-hover:text-gray-500">
                         {d.range}
                       </div>
-                      <p className="pb-5 pt-2 text-gray-700 group-hover:text-white dark:text-gray-400 dark:group-hover:text-black">
+                      <p className="pb-5 pt-2 tracking-tight text-gray-700 group-hover:text-white dark:text-gray-400 dark:group-hover:text-black">
                         {d.text1}
                       </p>
                     </div>
@@ -72,14 +74,14 @@ export default function Journey() {
 
           <div className="rounded-3xl border-2 border-black hover:bg-[#6562F5] hover:bg-opacity-90 hover:text-white dark:border-[#BFB9AA] dark:border-opacity-80 dark:hover:bg-[#cadd57] dark:hover:text-black">
             <div className="group">
-              <div className=" border-b border-black  px-5 py-2 text-2xl font-medium md:text-4xl">
+              <div className=" border-b border-black  px-5 py-2 text-2xl font-medium md:text-3xl">
                 Education
               </div>
               <div className="px-5 pt-5">
                 {educationData.map((d) => (
                   <div key={d.title} className="">
                     <div className="flex flex-row">
-                      <h1 className=" text-lg font-medium md:text-xl">{d.title}</h1>{' '}
+                      <h1 className=" m-0 w-full text-xl font-bold tracking-tight">{d.title}</h1>{' '}
                       <span className="text-lg text-gray-500 group-hover:text-gray-400 dark:group-hover:text-gray-500 md:text-xl">
                         &nbsp;@&nbsp;
                       </span>{' '}
@@ -93,7 +95,7 @@ export default function Journey() {
                       <div className=" font-mono text-sm text-gray-500 group-hover:text-gray-400 dark:group-hover:text-gray-500">
                         {d.range}
                       </div>
-                      <p className="pb-5 pt-2 text-gray-700 group-hover:text-white dark:text-gray-400 dark:group-hover:text-black">
+                      <p className="pb-5 pt-2 tracking-tight text-gray-700 group-hover:text-white dark:text-gray-400 dark:group-hover:text-black">
                         {d.text1}
                       </p>
                     </div>
@@ -106,14 +108,14 @@ export default function Journey() {
           {/* 3 */}
           <div className="rounded-3xl border-2 border-black hover:bg-[#6562F5] hover:bg-opacity-90 hover:text-white dark:border-[#BFB9AA] dark:border-opacity-80 dark:hover:bg-[#cadd57] dark:hover:text-black">
             <div className="group">
-              <div className=" border-b border-black  px-5 py-2 text-2xl font-medium md:text-4xl">
+              <div className=" border-b border-black  px-5 py-2 text-2xl font-medium md:text-3xl">
                 Certificates
               </div>
               <div className="px-5 pt-5">
                 {certificateData.map((d) => (
                   <div key={d.title} className="pb-2">
                     <div className="flex flex-row">
-                      <h1 className=" text-lg font-medium md:text-lg">{d.title}</h1>{' '}
+                      <h1 className=" m-0 w-full text-xl font-bold tracking-tight">{d.title}</h1>{' '}
                       <span className="text-lg text-gray-500 group-hover:text-gray-400 dark:group-hover:text-gray-500 md:text-xl">
                         &nbsp;@&nbsp;
                       </span>{' '}
@@ -124,7 +126,7 @@ export default function Journey() {
                       </span>
                     </div>
                     <div>
-                      <div className=" font-mono text-sm text-gray-500 group-hover:text-gray-400 dark:group-hover:text-gray-500">
+                      <div className="font-mono  text-sm tracking-tight text-gray-500 group-hover:text-gray-400 dark:group-hover:text-gray-500">
                         {d.provider}
                       </div>
                     </div>
@@ -147,7 +149,7 @@ export default function Journey() {
                 {projectsData.map((d) => (
                   <div key={d.title} className="pb-2">
                     <div className="flex flex-row">
-                      <h1 className=" text-lg font-medium md:text-lg">{d.title}</h1>{' '}
+                      <h1 className=" m-0g w-full text-xl font-bold tracking-tight">{d.title}</h1>{' '}
                     </div>
                   </div>
                 ))}
@@ -158,7 +160,7 @@ export default function Journey() {
           {/* 2 */}
 
           <div className="rounded-3xl border-2 border-black hover:bg-[#6562F5] hover:bg-opacity-90 hover:text-white dark:border-[#BFB9AA] dark:border-opacity-80 dark:hover:bg-[#cadd57] dark:hover:text-black">
-            <div className=" border-b border-black  px-5 py-2 text-2xl font-medium md:text-4xl">
+            <div className=" border-b border-black  px-5 py-2 text-2xl font-medium md:text-3xl">
               Skills
             </div>
             <div className="px-5 py-5">
@@ -186,14 +188,14 @@ export default function Journey() {
 
           <div className="rounded-3xl border-2  border-black hover:bg-[#6562F5] hover:bg-opacity-90 hover:text-white dark:border-[#BFB9AA] dark:border-opacity-80 dark:hover:bg-[#cadd57] dark:hover:text-black">
             <div className="group">
-              <div className=" border-b border-black  px-5 py-2 text-2xl font-medium md:text-4xl">
+              <div className=" border-b border-black  px-5 py-2 text-2xl font-medium md:text-3xl">
                 Community works
               </div>
               <div className="px-5 pt-5">
                 {communityData.map((d) => (
                   <div key={d.title} className="">
                     <div className="flex flex-row">
-                      <h1 className=" text-lg font-medium md:text-xl">{d.title}</h1>{' '}
+                      <h1 className=" m-0  w-full text-xl font-bold tracking-tight">{d.title}</h1>{' '}
                       <span className="text-lg text-gray-500 group-hover:text-gray-400 dark:group-hover:text-gray-500 md:text-xl">
                         &nbsp;@&nbsp;
                       </span>{' '}
@@ -207,7 +209,7 @@ export default function Journey() {
                       <div className=" font-mono text-sm text-gray-500 group-hover:text-gray-400 dark:group-hover:text-gray-500">
                         {d.range}
                       </div>
-                      <p className="pb-5 pt-2 text-gray-700 group-hover:text-white dark:text-gray-400 dark:group-hover:text-black">
+                      <p className="pb-5 pt-2 tracking-tight text-gray-700 group-hover:text-white dark:text-gray-400 dark:group-hover:text-black">
                         {d.text1}
                       </p>
                     </div>

@@ -2,7 +2,7 @@ export default function MetricCard({ header, link, metric, isCurrency }) {
   return (
     // <div className="metric-card max-w-72 w-full rounded-lg bg-gray-200 p-4 backdrop-filter transition-transform transition duration-200 hover:bg-gray-600 hover:bg-opacity-40 dark:bg-[#1a2532] dark:hover:bg-slate-600 dark:hover:bg-opacity-40">
     // <div className="metric-card max-w-72 w-full rounded-lg border-2 border-slate-500 p-4 hover:bg-primary-500 hover:bg-opacity-50 dark:hover:bg-[#b2ed57] dark:hover:bg-opacity-60  ">
-    <div className="metric-card max-w-72 group w-full rounded-3xl border-2 border-black p-4 hover:bg-[#6562F5]  hover:bg-opacity-90 hover:text-white dark:border-[#BFB9AA] dark:border-opacity-80 dark:hover:bg-[#cadd57] dark:hover:text-black">
+    <div className="metric-card max-w-72 group w-full rounded-lg border-2 border-black p-4 hover:bg-[#6562F5]  hover:bg-opacity-90 hover:text-white dark:border-[#BFB9AA] dark:border-opacity-80 dark:hover:bg-[#cadd57] dark:hover:text-black">
       <a aria-label={header} target="_blank" rel="noopener noreferrer" href={link}>
         <div className="flex items-center text-gray-900 dark:text-gray-100 dark:group-hover:text-black">
           {header}

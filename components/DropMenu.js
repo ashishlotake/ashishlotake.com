@@ -3,7 +3,7 @@ import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { useState } from 'react'
 import CustomLink from './CustomLink'
-// import CustomLink from 'next/link'
+import { ImCross } from 'react-icons/im'
 import { GiHamburgerMenu } from 'react-icons/gi'
 
 function classNames(...classes) {
@@ -21,14 +21,15 @@ export default function Example() {
           <motion.div
             className="flex h-8 w-8 items-center justify-center "
             whileTap={{
-              scale: 0.5,
+              scale: 0.8,
+              // rotate:100
             }}
             transition={{ duration: 0.2, ease: 'easeIn' }}
             aria-label="Toggle List Menu"
             type="button"
           >
             {isOpen ? (
-              <GiHamburgerMenu size={20} />
+              <ImCross size={15} />
             ) : (
               //  <HamburgerMenuIcon size={20} />
               <GiHamburgerMenu size={20} />
