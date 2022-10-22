@@ -1,3 +1,4 @@
+import TechIcons from '@/components/TechIcons'
 import Image from 'next/image'
 import { PageTitle, Subtitle, CardTitle } from '@/components/PageTitle'
 import Link from '@/components/Link'
@@ -34,7 +35,7 @@ export default function SnippetsLayout({ posts, title, initialDisplayPosts = [],
               type="text"
               onChange={(e) => setSearchValue(e.target.value)}
               placeholder="Search snippets"
-              className="block w-full rounded-md border-2 border-gray-400 bg-white bg-transparent px-4 py-2 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:text-gray-100 dark:focus:border-darkprimary-500 dark:focus:ring-darkprimary-500"
+              className="block w-full rounded-md border border-gray-400 bg-white bg-transparent px-4 py-2 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:text-gray-100 dark:focus:border-darkprimary-500 dark:focus:ring-darkprimary-500"
             />
             <svg
               className="absolute right-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-300"
@@ -52,34 +53,29 @@ export default function SnippetsLayout({ posts, title, initialDisplayPosts = [],
             </svg>
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-4 pt-5 md:grid-cols-2 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-3 pt-5 md:grid-cols-2 lg:grid-cols-2">
           {!filteredBlogPosts.length && 'No posts found.'}
           {displayPosts.map((frontMatter) => {
-            const { slug, date, title, summary, tags, logo } = frontMatter
+            const { slug, date, title, summary, tags, logo, icons } = frontMatter
             return (
               <Link key={slug} href={`/snippets/${slug}`}>
-                <div className="group flex h-full w-full rounded-xl  border-2  border-gray-400 transition-transform  hover:border-primary-500 dark:border-gray-600 dark:hover:border-darkprimary-500">
-                  <div className="group flex flex-shrink-0 items-center border-r-2 border-gray-400 px-3 group-hover:border-primary-500 dark:border-gray-600 dark:group-hover:border-darkprimary-500   ">
-                    {logo.slice(0, 1).map((logo) => (
-                      <Image
-                        key={logo}
-                        src={logo}
-                        width={42}
-                        height={42}
-                        alt=""
-                        className="object-contain "
-                      />
-                    ))}
-                  </div>
+                <div className=" flex h-full w-full rounded-md  border  border-gray-400 duration-100  hover:scale-[1.03] hover:border-primary-500 dark:border-gray-600 dark:hover:border-darkprimary-500">
                   <div className="flex-1 p-2">
                     <p className="pb-2 text-xs text-gray-500">
                       Last update:-<time dateTime={date}>{formatDate(date)}</time>
                     </p>
 
-                    <h4 className="mb-4 w-full text-xl font-bold leading-none tracking-tight text-black dark:text-white ">
+                    <h4 className=" w-full text-xl font-bold leading-none tracking-tight text-black dark:text-white ">
                       {title}
                     </h4>
-                    <p className=" tracking-tight text-gray-500">{summary}</p>
+                    <div className="my-2 flex flex-wrap gap-4">
+                      {icons.map((logo) => (
+                        <div key={logo} className="group">
+                          <TechIcons className="" techs={[logo]} />
+                        </div>
+                      ))}
+                    </div>
+                    <p className="tracking-tight text-gray-500">{summary}</p>
                   </div>
                 </div>
               </Link>

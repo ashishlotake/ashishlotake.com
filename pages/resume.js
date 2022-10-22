@@ -1,3 +1,4 @@
+import TechIcons from '@/components/TechIcons'
 import Image from 'next/image'
 import { experienceData } from '@/data/experienceData'
 import siteMetadata from '@/data/siteMetadata'
@@ -5,24 +6,24 @@ import { PageSEO } from '@/components/SEO'
 import { educationData, certificateData, communityData } from '@/data/experienceData'
 import projectsData from '@/data/projectsData'
 
-const logo = [
-  '/static/images/snippets/icons/sklearn.svg',
-  '/static/images/snippets/icons/python.svg',
-  '/static/images/snippets/icons/pandas.svg',
-  '/static/images/snippets/icons/keras.svg',
-  '/static/images/snippets/icons/AWS Cloud.svg',
-  '/static/images/snippets/icons/Cloud Computing.svg',
-  '/static/images/snippets/icons/Docker.svg',
-  '/static/images/snippets/icons/Matplotlib.svg',
-  '/static/images/snippets/icons/Numpy.svg',
-  '/static/images/snippets/icons/Rasa.png',
-  '/static/images/snippets/icons/Sql & NoSQL.png',
-  '/static/images/snippets/icons/Tensorflow.svg',
-  '/static/images/snippets/icons/Microsoft Office Excel.svg',
-  '/static/images/snippets/icons/Kubernetes.svg',
-  '/static/images/snippets/icons/Linux.svg',
-  '/static/images/snippets/icons/PowerBI.svg',
-  '/static/images/snippets/icons/Git.svg',
+let logo = [
+  'python',
+  'keras',
+  'tensorflow',
+  'pytorch',
+  'sklearn',
+  'pandas',
+  'plotly',
+  'matplotlib',
+  'mysql',
+  'excel',
+  'kubernetes',
+  'docker',
+  'linux',
+  'numpy',
+  'aws',
+  'mdx',
+  'git',
 ]
 
 export default function Journey() {
@@ -32,14 +33,17 @@ export default function Journey() {
         title={`Resume - ${siteMetadata.author}`}
         description="A dedicated and aspiring data scientist and machine learning engineer, wish to work for an institution that offers technical and personal growth."
       />
-      <img className="" src="/static/images/resumeHead.svg" />
+      <img
+        className="rounded-xl  bg-[#f2e8de] md:rounded-2xl"
+        src="/static/images/resumeHead.svg"
+      />
       <div className="fontmono grid grid-cols-1 gap-4 pt-4 md:grid-cols-2">
         {/* #################### 1nd col #################### */}
         <div className="space-y-4">
           {/* 1 */}
-          <div className="rounded-3xl border-2 border-black hover:bg-[#6562F5]  hover:bg-opacity-90 hover:text-white dark:border-[#BFB9AA] dark:border-opacity-80 dark:hover:bg-[#cadd57] dark:hover:text-black">
+          <div className="rounded-xl border-2 border-black hover:bg-[#6562F5]  hover:bg-opacity-90 hover:text-white dark:border-[#BFB9AA] dark:border-opacity-80 dark:hover:bg-[#cadd57] dark:hover:text-black">
             <div className="group">
-              <div className=" border-b border-black  px-5 py-2 text-2xl font-medium md:text-3xl">
+              <div className=" border-b-2 border-gray-500  px-5 py-2 text-2xl font-medium md:text-3xl">
                 Experience
               </div>
 
@@ -72,9 +76,9 @@ export default function Journey() {
           </div>
           {/* 2 */}
 
-          <div className="rounded-3xl border-2 border-black hover:bg-[#6562F5] hover:bg-opacity-90 hover:text-white dark:border-[#BFB9AA] dark:border-opacity-80 dark:hover:bg-[#cadd57] dark:hover:text-black">
+          <div className="rounded-xl border-2 border-black hover:bg-[#6562F5] hover:bg-opacity-90 hover:text-white dark:border-[#BFB9AA] dark:border-opacity-80 dark:hover:bg-[#cadd57] dark:hover:text-black">
             <div className="group">
-              <div className=" border-b border-black  px-5 py-2 text-2xl font-medium md:text-3xl">
+              <div className="  border-b-2 border-gray-500  px-5 py-2 text-2xl font-medium md:text-3xl">
                 Education
               </div>
               <div className="px-5 pt-5">
@@ -106,9 +110,9 @@ export default function Journey() {
           </div>
 
           {/* 3 */}
-          <div className="rounded-3xl border-2 border-black hover:bg-[#6562F5] hover:bg-opacity-90 hover:text-white dark:border-[#BFB9AA] dark:border-opacity-80 dark:hover:bg-[#cadd57] dark:hover:text-black">
+          <div className="rounded-xl border-2 border-black hover:bg-[#6562F5] hover:bg-opacity-90 hover:text-white dark:border-[#BFB9AA] dark:border-opacity-80 dark:hover:bg-[#cadd57] dark:hover:text-black">
             <div className="group">
-              <div className=" border-b border-black  px-5 py-2 text-2xl font-medium md:text-3xl">
+              <div className="  border-b-2 border-gray-500  px-5 py-2 text-2xl font-medium md:text-3xl">
                 Certificates
               </div>
               <div className="px-5 pt-5">
@@ -140,9 +144,9 @@ export default function Journey() {
         {/* #################### 2nd col #################### */}
         <div className="space-y-4 ">
           {/* 1 */}
-          <div className="rounded-3xl border-2 border-black hover:bg-[#6562F5] hover:bg-opacity-90 hover:text-white dark:border-[#BFB9AA] dark:border-opacity-80 dark:hover:bg-[#cadd57] dark:hover:text-black">
+          <div className="rounded-xl border-2 border-black hover:bg-[#6562F5] hover:bg-opacity-90 hover:text-white dark:border-[#BFB9AA] dark:border-opacity-80 dark:hover:bg-[#cadd57] dark:hover:text-black">
             <div className="group">
-              <div className=" border-b border-black  px-5 py-2 text-2xl font-medium md:text-4xl">
+              <div className="  border-b-2 border-gray-500  px-5 py-2 text-2xl font-medium md:text-4xl">
                 Project
               </div>
               <div className="px-5 pt-5">
@@ -159,25 +163,15 @@ export default function Journey() {
 
           {/* 2 */}
 
-          <div className="rounded-3xl border-2 border-black hover:bg-[#6562F5] hover:bg-opacity-90 hover:text-white dark:border-[#BFB9AA] dark:border-opacity-80 dark:hover:bg-[#cadd57] dark:hover:text-black">
-            <div className=" border-b border-black  px-5 py-2 text-2xl font-medium md:text-3xl">
+          <div className="rounded-xl border-2 border-black  hover:bg-[#6562F5] hover:bg-opacity-90 hover:text-white dark:border-[#BFB9AA] dark:border-opacity-80 dark:hover:bg-[#cadd57] dark:hover:text-black">
+            <div className="  border-b-2 border-gray-500  px-5 py-2 text-2xl font-medium md:text-3xl">
               Skills
             </div>
             <div className="px-5 py-5">
               <div className="mt-2 flex flex-wrap gap-4">
                 {logo.map((logo) => (
-                  <div key={logo} className="group ">
-                    <Image
-                      key={logo}
-                      src={logo}
-                      width={35}
-                      height={32}
-                      alt=""
-                      className="object-contain "
-                    />
-                    <span className="tooltip-text darkbg-[#cadd57]  absolute z-50 hidden rounded border border-black  bg-primary-300 px-2 text-center text-black group-hover:block dark:border-black  dark:bg-darkprimary-300">
-                      {logo.slice(logo.indexOf('icons/') + 6, logo.indexOf('.'))}
-                    </span>
+                  <div key={logo} className="group dark:hover:text-black">
+                    <TechIcons className="my-2" techs={[logo]} />
                   </div>
                 ))}
               </div>
@@ -186,9 +180,9 @@ export default function Journey() {
 
           {/* 3 */}
 
-          <div className="rounded-3xl border-2  border-black hover:bg-[#6562F5] hover:bg-opacity-90 hover:text-white dark:border-[#BFB9AA] dark:border-opacity-80 dark:hover:bg-[#cadd57] dark:hover:text-black">
+          <div className="rounded-xl border-2  border-black hover:bg-[#6562F5] hover:bg-opacity-90 hover:text-white dark:border-[#BFB9AA] dark:border-opacity-80 dark:hover:bg-[#cadd57] dark:hover:text-black">
             <div className="group">
-              <div className=" border-b border-black  px-5 py-2 text-2xl font-medium md:text-3xl">
+              <div className="  border-b-2 border-gray-500  px-5 py-2 text-2xl font-medium md:text-3xl">
                 Community works
               </div>
               <div className="px-5 pt-5">

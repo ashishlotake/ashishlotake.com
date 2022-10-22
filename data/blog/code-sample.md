@@ -3,6 +3,10 @@ title: Showcasing Features
 date: '2021-03-08'
 tags: ['markdown', 'code', 'features']
 draft: false
+images:
+  [
+    'https://res.cloudinary.com/dh7z3vizh/image/upload/v1666461420/BlogCover/photo-1657157566460-adbd9a8a717f-min_wuwg3m.webp',
+  ]
 summary: Example of a markdown file with code blocks and syntax highlighting
 author: Ashish Lotake
 ---

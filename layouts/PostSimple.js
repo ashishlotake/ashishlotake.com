@@ -1,3 +1,4 @@
+import TechIcons from '@/components/TechIcons'
 import { BiCopyAlt } from 'react-icons/bi'
 import { useState } from 'react'
 import formatDate from '@/lib/utils/formatDate'
@@ -30,8 +31,10 @@ const linkedinShare = (slug, title) =>
     `https://ashishlotake.com/blog/${slug}`
   )}`
 
+const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/main/data/snippets/${fileName}`
+
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
-  const { slug, date, logo, title, summary, readingTime } = frontMatter
+  const { slug, date, logo, title, summary, readingTime, icons, fileName } = frontMatter
   const [copied, setCopied] = useState(false)
 
   function copy() {
@@ -48,22 +51,17 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
     <SectionContainer>
       <BlogSEO url={`${siteMetadata.siteUrl}/snippets/${frontMatter.slug}`} {...frontMatter} />
       <article>
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto min-h-screen max-w-4xl">
           <p className="pb-1 text-gray-500">
             Last update:-<time dateTime={date}>{formatDate(date)}</time>
           </p>
           <div className="mb-4">
             <PageTitle>{title}</PageTitle>
-            <div className="mt-2 flex flex-wrap gap-4">
-              {logo.map((logo) => (
-                <Image
-                  key={logo}
-                  src={logo}
-                  width={32}
-                  height={32}
-                  alt=""
-                  className="object-contain"
-                />
+            <div className="my-2 flex flex-wrap gap-4">
+              {icons.map((logo) => (
+                <div key={logo} className="group">
+                  <TechIcons className="" techs={[logo]} />
+                </div>
               ))}
             </div>
           </div>
@@ -85,54 +83,48 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                 {!copied ? <BiCopyAlt size={25} /> : <BiCopyAlt size={25} />}
                 Copy link
               </button>
-              <Link
+              <a
                 className="share-button reddit hover:bg-[#FF5700]  "
                 title="Share on Facebook"
                 href={redditShare(slug, title)}
               >
                 <FaRedditSquare size={34} />
                 Post
-              </Link>
-              <Link
+              </a>
+              <a
                 className="share-button twitter hover:bg-[#1B95E0]"
                 title="Share on Twitter"
                 href={twitterShare(slug, title)}
               >
                 <FaTwitterSquare size={34} />
                 Tweet
-              </Link>
-              <Link
+              </a>
+              <a
                 className="share-button linkedin hover:bg-[#0077B5] "
                 title="Share on Twitter"
                 href={linkedinShare(slug, title)}
               >
                 <FaLinkedinIn size={34} />
                 Post
-              </Link>
+              </a>
             </div>
-            <Comments frontMatter={frontMatter} />
             <footer>
-              <div className="flex flex-col text-sm font-medium sm:flex-row sm:justify-between sm:text-base">
-                {prev && (
-                  <div className="pt-4 xl:pt-8">
+              <div className=" dark:-gray-700  font-medium leading-5 xl:col-start-1 xl:row-start-2">
+                <div className="flex justify-between py-4 ">
+                  <div>
                     <Link
-                      href={`/snippets/${prev.slug}`}
+                      href="/snippets"
                       className="link-underline text-primary-500 hover:text-primary-600 dark:text-darkprimary-500 dark:hover:text-darkprimary-400  "
                     >
-                      &larr; {prev.title}
+                      &larr; Back to the Snippets
                     </Link>
                   </div>
-                )}
-                {next && (
-                  <div className="pt-4 xl:pt-8">
-                    <Link
-                      href={`/snippets/${next.slug}`}
-                      className="link-underline text-primary-500 hover:text-primary-600 dark:text-darkprimary-500 dark:hover:text-darkprimary-400  "
-                    >
-                      {next.title} &rarr;
-                    </Link>
+                  <div>
+                    <div className="link-underline text-primary-500 hover:text-primary-600 dark:text-darkprimary-500 dark:hover:text-darkprimary-400  ">
+                      <Link href={editUrl(fileName)}>{'Edit this on GitHub'}</Link>
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
             </footer>
           </div>

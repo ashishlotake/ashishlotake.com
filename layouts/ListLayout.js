@@ -1,3 +1,5 @@
+import { BlogCard } from '@/layouts/PostLayout'
+import clsx from 'clsx'
 import Tags from 'pages/tags'
 import { PageTitle, Subtitle, CardTitle } from '@/components/PageTitle'
 import CustomLink from '@/components/CustomLink'
@@ -24,7 +26,6 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
       <div className="border-b border-gray-400 dark:border-gray-600">
         <div className="max-w-xl ">
           <PageTitle>{title}</PageTitle>
-          <Subtitle></Subtitle>
         </div>
       </div>
       <div className="mx-auto max-w-6xl pb-10">
@@ -35,7 +36,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
               type="text"
               onChange={(e) => setSearchValue(e.target.value)}
               placeholder="Search articles"
-              className="block w-full rounded-md border-2 border-gray-400 bg-white bg-transparent px-4 py-2 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:text-gray-100 dark:focus:border-darkprimary-500 dark:focus:ring-darkprimary-500"
+              className="block w-full rounded-md border border-gray-400 bg-white bg-transparent px-4 py-2 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:text-gray-100 dark:focus:border-darkprimary-500 dark:focus:ring-darkprimary-500"
             />
             <svg
               className="absolute right-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-300"
@@ -54,39 +55,45 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
           </div>
         </div>
         <section className=" ">
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className=" grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
             {!posts.length && 'No posts found.'}
             {posts.map((frontMatter) => {
               const { slug, date, title, summary, tags, images } = frontMatter
               return (
                 <Link key={slug} href={`/blog/${slug}`} aria-label={`Read "${title}"`}>
                   <a className="group relative block h-full">
-                    <div className="relative flex  h-full  rounded-xl border border-black border-opacity-10 transition duration-300 hover:border-opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:shadow-[5px_5px_0_0_#000] dark:border-white dark:border-opacity-10 dark:hover:border-opacity-100 dark:group-hover:shadow-[5px_5px_0_0_#f2e8de]">
+                    <div className="relative flex  h-full  rounded-md border border-black border-opacity-50 transition duration-300 hover:border-opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:shadow-[8px_8px_0_0_#000] dark:border-white dark:border-opacity-50 dark:hover:border-opacity-100 dark:group-hover:shadow-[8px_8px_0_0_#f2e8de]">
                       <div className="flex flex-1 transform flex-col pb-3 transition">
                         {images ? (
-                          <img
-                            alt=""
-                            className="h-44 w-full overflow-hidden rounded-t-[10px] object-cover "
-                            src={images}
-                          />
-                        ) : null}
-                        <div className="flex flex-wrap px-3 pt-1 ">
-                          {tags.slice(0, 4).map((tag) => (
-                            <p
-                              key={tag}
-                              className="pr-2 text-xs tracking-tight  text-primary-400 dark:text-darkprimary-400"
+                          <div className="relative">
+                            <img
+                              alt=""
+                              className="pointer-events-none h-52 w-full overflow-hidden rounded-t-[5px] object-cover"
+                              src={images}
+                              // src=''
+                            />
+                            <div
+                              className={clsx(
+                                'absolute bottom-0 w-full px-4 py-2',
+                                'mt-2 flex flex-wrap justify-end gap-y-1 gap-x-2 text-sm text-black dark:text-gray-100'
+                              )}
                             >
-                              #{tag}
-                            </p>
-                          ))}
-                        </div>
+                              {tags.slice(0, 2).map((tag) => (
+                                <p
+                                  className="rounded bg-black bg-opacity-70 px-1 font-semibold text-white "
+                                  key={tag}
+                                >
+                                  {tag}
+                                </p>
+                              ))}
+                            </div>
+                          </div>
+                        ) : null}
                         <h3 className="m-0 w-full px-3 pt-2 text-xl font-bold tracking-tight text-black dark:text-white">
                           {title}
                         </h3>
-                        <p className="flex-1 px-3 pt-3 leading-[20px] tracking-tight text-gray-500">
-                          {summary}
-                        </p>
-                        <div className="flex flex-wrap justify-between space-x-2 px-3 pt-3 text-xs text-gray-600 dark:text-gray-400">
+                        <p className="flex-1 px-3 pt-3 leading-[20px] text-gray-500">{summary}</p>
+                        <div className="flex flex-wrap justify-between space-x-2 px-3 pt-3 text-sm font-semibold text-primary-400 dark:text-darkprimary-400">
                           <span>
                             <time dateTime={date}>{formatDate(date)}</time>
                           </span>

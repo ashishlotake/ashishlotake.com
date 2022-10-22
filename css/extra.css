@@ -39,7 +39,7 @@ input:-webkit-autofill:focus {
   left: 0;
 
   width: 100%;
-  height: 2px;
+  height: 3px;
 }
 
 .dark #nprogress .bar {
@@ -242,3 +242,9 @@ input:-webkit-autofill:focus {
   transform: translateY(-2px);
   transition: transform 34ms;
 }
+
+/*  */
+
+/* .prose {
+  max-width: 40rem;
+} */

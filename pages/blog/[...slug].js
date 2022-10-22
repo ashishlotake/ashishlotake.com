@@ -1,9 +1,11 @@
+import clsx from 'clsx'
 import Link from '@/components/CustomLink'
 import fs from 'fs'
 import { PageTitle } from '@/components/PageTitle'
 import generateRss from '@/lib/generate-rss'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@/lib/mdx'
+import TOCInline from '@/components/TOCInline'
 
 const DEFAULT_LAYOUT = 'PostLayout'
 
@@ -57,6 +59,33 @@ export default function Blog({ post, authorDetails, prev, next }) {
           next={next}
         />
       ) : (
+        // <section className='lg:grid lg:grid-cols-[auto,250px] lg:gap-8'>
+        // <article className='mdx prose  mx-auto mt-4 w-full transition-colors dark:prose-invert'>
+
+        //         <MDXLayoutRenderer
+        //           layout={frontMatter.layout || DEFAULT_LAYOUT}
+        //           toc={toc}
+        //           mdxSource={mdxSource}
+        //           frontMatter={frontMatter}
+        //           authorDetails={authorDetails}
+        //           prev={prev}
+        //           next={next}
+        //         />
+        //         </article>
+
+        //     <div
+        //       id='toc-container'
+        //       className='hidden max-h-[calc(100vh-9rem-113px)] overflow-auto pb-4 lg:block'
+        //     >
+        //       <h3 className='text-gray-900 dark:text-gray-100 md:text-xl'>
+        //         Table of Contents
+        //       </h3>
+        //       <div className='mt-4 flex flex-col space-y-2 text-sm'>
+        //       <TOCInline toc={toc}/>
+
+        //       </div>
+        //     </div>
+        //               </section>
         <div className=" textcenter">
           <img src="/static/images/underconstruction.svg" />
           <div className="flex flex-col items-start justify-start md:mt-2 md:flex-row md:items-center md:justify-center md:space-x-6">

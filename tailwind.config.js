@@ -36,9 +36,9 @@ module.exports = {
         gray: colors.neutral, // TODO: Remove ts-ignore after tw types gets updated to v3
         'background-color': '#111827',
         // 'background-color':'#1f1f1f',
-        // 'background-color': '#0e141b',
+        // 'background-color': '#111111',
         // 'slate': colors.gray,
-        white: '#f2e8de',
+        white: '#f9f5f0',
         black: '#333333',
       },
       typography: (theme) => ({
@@ -112,6 +112,9 @@ module.exports = {
               '&::marker': {
                 color: theme('colors.black'),
               },
+            },
+            tbody: {
+              colors: theme('transparent'),
             },
           },
         },

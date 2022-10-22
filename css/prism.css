@@ -32,7 +32,7 @@
 }
 
 .highlight-line {
-  @apply -mx-4 border-l-4 border-primary-500  bg-slate-600 bg-opacity-50 dark:bg-slate-800;
+  @apply -mx-4 border-l-4 border-primary-500 bg-slate-600  bg-opacity-50 dark:border-darkprimary-500 dark:bg-slate-800;
 }
 
 .line-number::before {
