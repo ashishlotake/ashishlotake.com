@@ -20,9 +20,11 @@ import {
   SiKeras,
 } from 'react-icons/si'
 
-import { RiFileExcel2Fill } from 'react-icons/ri'
+import { AiOutlineTwitter, AiTwotoneMail, AiOutlineBarChart } from 'react-icons/ai'
 
-export default function TechIcons({ className, techs }) {
+import { RiFileExcel2Fill, RiLinkedinBoxFill } from 'react-icons/ri'
+
+export default function TechIcons({ className, techs, techsize }) {
   return (
     <ul className={clsx(className, 'group flex gap-2')}>
       {techs.map((tech) => {
@@ -32,8 +34,9 @@ export default function TechIcons({ className, techs }) {
 
         return (
           <li key={current} className="text-xl ">
-            <current.icon />
-            <span className="absolute z-50 hidden rounded border border-black  bg-white px-2 text-center text-black group-hover:block dark:border-black dark:bg-background-color  dark:text-white">
+            {techsize ? <current.icon size={techsize} /> : <current.icon size={20} />}
+
+            <span className="absolute z-50 hidden rounded border border-white border-opacity-20 bg-[#000]  bg-opacity-[85%] p-2 text-center text-sm text-white group-hover:block">
               {current.name}
             </span>
           </li>
@@ -69,7 +72,7 @@ const techList = {
     name: 'Plotly',
   },
   matplotlib: {
-    icon: SiPlotly,
+    icon: AiOutlineBarChart,
     name: 'Matplotlib',
   },
   mysql: {
@@ -111,5 +114,25 @@ const techList = {
   keras: {
     icon: SiKeras,
     name: 'Keras',
+  },
+  powerbi: {
+    icon: SiPowerbi,
+    name: 'Power BI',
+  },
+  socialgit: {
+    icon: SiGit,
+    name: 'See my code',
+  },
+  socialtwitter: {
+    icon: AiOutlineTwitter,
+    name: 'Say Hallo!',
+  },
+  sociallinkedin: {
+    icon: RiLinkedinBoxFill,
+    name: 'See my Professional Profile',
+  },
+  socialmail: {
+    icon: AiTwotoneMail,
+    name: 'Mail Me',
   },
 }

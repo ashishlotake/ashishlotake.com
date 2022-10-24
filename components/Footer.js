@@ -11,7 +11,7 @@ export default function Footer() {
       <NowPlayingFooter />
       <div className="flex flex-col-reverse justify-between gap-3  border-t border-gray-500 py-5 pb-2 text-sm dark:border-gray-500 md:flex-row ">
         <div>
-          © {new Date().getFullYear()} | {siteMetadata.author} | Have a great{' '}
+          © {new Date().getFullYear()} • {siteMetadata.author} • Have a great{' '}
           <span className="font-extrabold text-primary-500 dark:text-darkprimary-500 ">
             {currentDayName()}!
           </span>
@@ -51,6 +51,15 @@ export default function Footer() {
             rel="noreferrer"
           >
             Linkedin
+          </a>{' '}
+          •{' '}
+          <a
+            className="group hover:text-primary-500 dark:hover:text-darkprimary-500"
+            target="_blank"
+            href={siteMetadata.email}
+            rel="noreferrer"
+          >
+            Mail Me
           </a>
         </div>
       </div>

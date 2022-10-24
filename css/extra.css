@@ -248,3 +248,32 @@ input:-webkit-autofill:focus {
 /* .prose {
   max-width: 40rem;
 } */
+
+.img6 {
+  --b: 3px; /* the border thickness*/
+  --g: 8px; /* the gap */
+  --c: #6562f5;
+
+  padding: calc(var(--b) + var(--g));
+  --_l: var(--c) var(--b), #0000 0 calc(100% - var(--b)), var(--c) 0;
+  background: linear-gradient(var(--_l)) 50% / calc(100% - var(--_i, 80%)) 100% no-repeat,
+    linear-gradient(90deg, var(--_l)) 50% var(--_i, -100%) / 100% 200% no-repeat;
+  --_m: conic-gradient(at 50% var(--b), #0000 25%, #000 0) calc(50% + var(--_i, 50%)) / 200%,
+    conic-gradient(at 50% var(--b), #000 75%, #0000 0) calc(50% - var(--_i, 50%)) / 200%;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  transition: 0.3s calc(0.6s - var(--_t, 0.6s)) -webkit-mask-position, 0.3s 0.3s background-position,
+    0.3s var(--_t, 0.6s) background-size, 0.4s transform;
+  cursor: pointer;
+}
+.img6:hover {
+  --_i: 0%;
+  --_t: 0s;
+  transform: scale(1.1);
+}
+
+.dark .img6 {
+  --b: 3px; /* the border thickness*/
+  --g: 8px; /* the gap */
+  --c: #84cc16;
+}

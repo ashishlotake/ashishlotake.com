@@ -4,15 +4,19 @@ date: '2022-10-13'
 tags: [CNN, CV, Deep Learning, Docker, Cloud]
 draft: false
 summary: 'The article walks through the process of how I build an active labeling system, from theory to deployment.'
-images:
-  [
-    'https://res.cloudinary.com/dh7z3vizh/image/upload/v1666461956/BlogCover/erol-ahmed-Y3KEBQlB1Zk-unsplash_tfkn0l.jpg',
-  ]
+images: ['activelabelling']
 layout: PostLayout
 author: Ashish Lotake
 ---
 
-<div align="center">![](/static/images/blog/active-labelling/webapp.gif)</div>
+<div align="center">
+  <Image
+    src="/static/images/blog/active-labelling/webapp.gif"
+    layout="intrinsic"
+    width={854}
+    height={480}
+  />
+</div>
 
 <div className="mt-5 mb-5 grid place-items-center">
   <a
@@ -724,8 +728,6 @@ We will be covering streamlit deployment here, as it's the fastest and it's free
 
 Wola, your app is deployed. Go to the link given by streamlit.
 
-<div align="center">![](/static/images/blog/active-labelling/webapp.gif)</div>
-
 <div className="mt-16 mb-5 grid place-items-center">
   <a
     target="_blank"
@@ -739,7 +741,14 @@ Wola, your app is deployed. Go to the link given by streamlit.
     </button>
   </a>
 </div>
-
+<div align="center">
+  <Image
+    src="/static/images/blog/active-labelling/webapp.gif"
+    layout="intrinsic"
+    width={854}
+    height={480}
+  />
+</div>
 ## Final Thought
 
 We have successfully created an active labeling system, using transfer learning which can achieve an accuracy of above 90% on unseen data. Allowing the user to input raw data, label if the model performs poorly and then give the user correctly classified images, by placing them into the correct directory.

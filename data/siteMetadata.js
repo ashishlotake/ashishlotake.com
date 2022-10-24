@@ -6,7 +6,7 @@ const siteMetadata = {
     'Dive deep into nitty-gritty of Data science, Machine learning & Artificial Intelligence with me!',
   snippets: 'Reuseable code snippets collected by Ashish',
   language: 'en-us',
-  theme: 'dark', // system, dark or light
+  theme: 'system', // system, dark or light
   siteUrl: 'https://ashishlotake.com',
   siteRepo: 'https://github.com/ashishlotake/ashishlotake.com',
   siteLogo: '/static/images/logo.svg',
@@ -17,6 +17,8 @@ const siteMetadata = {
   linkedin: 'https://www.linkedin.com/in/ashish-lotake/',
   twitter: 'https://twitter.com/Ashish02lotake',
   locale: 'en-IN',
+  occupation: 'Student',
+  company: 'University of Hyderabad',
   analytics: {
     plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
     simpleAnalytics: false, // true or false

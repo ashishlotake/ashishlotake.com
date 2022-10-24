@@ -66,12 +66,23 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                       <div className="flex flex-1 transform flex-col pb-3 transition">
                         {images ? (
                           <div className="relative">
-                            <img
+                            {/* <img
                               alt=""
                               className="pointer-events-none h-52 w-full overflow-hidden rounded-t-[5px] object-cover"
                               src={images}
-                              // src=''
-                            />
+                            /> */}
+                            <picture>
+                              <source
+                                srcSet={'/static/images/blogcover/' + images + '.webp'}
+                                type="image/webp"
+                                className="pointer-events-none h-52 w-full overflow-hidden rounded-t-[5px] object-cover"
+                              />
+
+                              <img
+                                src={'/static/images/blogcover/' + images + '.jpg'}
+                                className="pointer-events-none h-52 w-full overflow-hidden rounded-t-[5px] object-cover"
+                              />
+                            </picture>
                             <div
                               className={clsx(
                                 'absolute bottom-0 w-full px-4 py-2',

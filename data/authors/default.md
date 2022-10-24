@@ -4,4 +4,4 @@ Check out my [Résumé](https://ashishlotakeresume.pages.dev/) and to see my [pr
 
 Feel free to reach out if you wanna collaborate or simply wanna chat. I’m best reached via [email](mailto:hello@ashihlotake.com). I am also happy to connect on different social and professional platforms.
 
-Checkout my [Journey](/journey) and [what I am doing right now](/now) for more.
+Checkout my Journey and [what I am doing right now](/now) for more.

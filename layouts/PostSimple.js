@@ -60,7 +60,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             <div className="my-2 flex flex-wrap gap-4">
               {icons.map((logo) => (
                 <div key={logo} className="group">
-                  <TechIcons className="" techs={[logo]} />
+                  <TechIcons className="" techs={[logo]} techsize={30} />
                 </div>
               ))}
             </div>

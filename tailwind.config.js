@@ -34,11 +34,11 @@ module.exports = {
         darkprimary: colors.lime,
         //@ts-ignore
         gray: colors.neutral, // TODO: Remove ts-ignore after tw types gets updated to v3
-        'background-color': '#111827',
+        // 'background-color': '#111827',
         // 'background-color':'#1f1f1f',
-        // 'background-color': '#111111',
-        // 'slate': colors.gray,
-        white: '#f9f5f0',
+        'background-color': '#151515',
+        slate: colors.gray,
+        white: '#fcfaf7',
         black: '#333333',
       },
       typography: (theme) => ({

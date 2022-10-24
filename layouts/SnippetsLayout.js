@@ -68,10 +68,10 @@ export default function SnippetsLayout({ posts, title, initialDisplayPosts = [],
                     <h4 className=" w-full text-xl font-bold leading-none tracking-tight text-black dark:text-white ">
                       {title}
                     </h4>
-                    <div className="my-2 flex flex-wrap gap-4">
+                    <div className="my-2 flex flex-wrap gap-4 text-black dark:text-white">
                       {icons.map((logo) => (
                         <div key={logo} className="group">
-                          <TechIcons className="" techs={[logo]} />
+                          <TechIcons className="" techs={[logo]} techsize={20} />
                         </div>
                       ))}
                     </div>

@@ -89,8 +89,9 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             {children}
           </div>
           <footer>
-            <div className="flex items-center justify-center pt-2 ">
+            <div className="flex items-center justify-center py-4 ">
               <button
+                title="Copy Link"
                 className="share-button reddit hover:bg-primary-500 dark:hover:bg-darkprimary-500 "
                 onClick={copy}
               >
@@ -99,7 +100,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               </button>
               <a
                 className="share-button reddit hover:bg-[#FF5700]  "
-                title="Share on Facebook"
+                title="Share on Reddit"
                 href={redditShare(slug, title)}
               >
                 <FaRedditSquare size={34} />
@@ -115,18 +116,35 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               </a>
               <a
                 className="share-button linkedin hover:bg-[#0077B5] "
-                title="Share on Twitter"
+                title="Share on LinkedIN"
                 href={linkedinShare(slug, title)}
               >
                 <FaLinkedinIn size={34} />
                 Post
               </a>
             </div>
+            <div className="dark:-gray-700 font-medium leading-5 xl:col-start-1 xl:row-start-2">
+              <div className="flex justify-between py-4 ">
+                <div>
+                  <Link
+                    href="/blog"
+                    className="link-underline text-primary-500 hover:text-primary-600 dark:text-darkprimary-500 dark:hover:text-darkprimary-400  "
+                  >
+                    &larr; Back to the blog
+                  </Link>
+                </div>
+                <div>
+                  <div className="link-underline text-primary-500 hover:text-primary-600 dark:text-darkprimary-500 dark:hover:text-darkprimary-400  ">
+                    <Link href={editUrl(fileName)}>{'Edit this on GitHub'}</Link>
+                  </div>
+                </div>
+              </div>
+            </div>
           </footer>
 
           <Comments frontMatter={frontMatter} />
         </div>
-        <div className="bordert mt-5 border-gray-500 pt-5">
+        <div className="bordert border-gray-500">
           <h2 className="py-4 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
             Other posts
           </h2>
@@ -151,7 +169,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             </div>
           )}
         </div>
-        <div className="dark:-gray-700 pt-10  font-medium leading-5 xl:col-start-1 xl:row-start-2">
+        {/* <div className="dark:-gray-700 pt-10  font-medium leading-5 xl:col-start-1 xl:row-start-2">
           <div className="flex justify-between py-4 ">
             <div>
               <Link
@@ -167,7 +185,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </article>
     </>
   )
@@ -180,11 +198,18 @@ const BlogCard = ({ prev }) => (
         <div className="flex flex-1 transform flex-col pb-3 transition">
           {prev.images ? (
             <div className="relative">
-              <img
-                alt=""
-                className="pointer-events-none h-52 w-full overflow-hidden rounded-t-[5px] object-cover"
-                src={prev.images}
-              />
+              <picture>
+                <source
+                  srcSet={'/static/images/blogcover/' + prev.images + '.webp'}
+                  type="image/webp"
+                  className="pointer-events-none h-52 w-full overflow-hidden rounded-t-[5px] object-cover"
+                />
+
+                <img
+                  src={'/static/images/blogcover/' + prev.images + '.jpg'}
+                  className="pointer-events-none h-52 w-full overflow-hidden rounded-t-[5px] object-cover"
+                />
+              </picture>
               <div
                 className={clsx(
                   'absolute bottom-0 w-full px-4 py-2',

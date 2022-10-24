@@ -3,7 +3,7 @@ import siteMetadata from '@/data/siteMetadata'
 import projectsData from '@/data/projectsData'
 import Card from '@/components/Card'
 import { PageSEO } from '@/components/SEO'
-
+import ArtWorkLightBox from '@/components/LightBox'
 export default function Projects() {
   return (
     <>
@@ -13,7 +13,7 @@ export default function Projects() {
       />
       <div className="border-b border-gray-400 dark:border-gray-600">
         <div className="max-w-xl ">
-          <PageTitle>Project</PageTitle>
+          <PageTitle>Work</PageTitle>
           <Subtitle>{/* A list of projects I have been working on or built */}</Subtitle>
         </div>
       </div>

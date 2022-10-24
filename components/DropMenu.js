@@ -21,10 +21,10 @@ export default function Example() {
           <motion.div
             className="flex h-8 w-8 items-center justify-center "
             whileTap={{
-              scale: 0.8,
+              scale: 0.5,
               // rotate:100
             }}
-            transition={{ duration: 0.2, ease: 'easeIn' }}
+            // transition={{ duration: 0.01, ease: 'easeIn' }}
             aria-label="Toggle List Menu"
             type="button"
           >
@@ -71,6 +71,8 @@ export default function Example() {
                   </CustomLink>
                 )}
               </Menu.Item>
+            </div>
+            <div className="">
               <Menu.Item>
                 {({ active }) => (
                   <CustomLink
@@ -82,12 +84,12 @@ export default function Example() {
                       'block px-4 py-2 text-sm'
                     )}
                   >
-                    Blogs
+                    Blog
                   </CustomLink>
                 )}
               </Menu.Item>
             </div>
-            <div className="py-1">
+            <div className="">
               <Menu.Item>
                 {({ active }) => (
                   <CustomLink
@@ -104,7 +106,7 @@ export default function Example() {
                 )}
               </Menu.Item>
             </div>
-            <div className="py-1">
+            <div className="">
               <Menu.Item>
                 {({ active }) => (
                   <CustomLink
@@ -120,7 +122,21 @@ export default function Example() {
                   </CustomLink>
                 )}
               </Menu.Item>
-
+              <Menu.Item>
+                {({ active }) => (
+                  <CustomLink
+                    href="/artworks"
+                    className={classNames(
+                      active
+                        ? ' hover:bg-gray-300 dark:text-gray-200 dark:hover:bg-slate-800'
+                        : 'text-gray-700 dark:text-gray-100',
+                      'block px-4 py-2 text-sm'
+                    )}
+                  >
+                    ArtWork
+                  </CustomLink>
+                )}
+              </Menu.Item>
               <Menu.Item>
                 {({ active }) => (
                   <CustomLink
@@ -185,7 +201,7 @@ export default function Example() {
               )}
             </Menu.Item>
           </div>
-          <div className="py-1">
+          <div className="">
             <Menu.Item>
               {({ active }) => (
                 <CustomLink
@@ -202,23 +218,7 @@ export default function Example() {
               )}
             </Menu.Item>
           </div>
-          <div className="">
-            <Menu.Item>
-              {({ active }) => (
-                <CustomLink
-                  href="/journey"
-                  className={classNames(
-                    active
-                      ? ' hover:bg-gray-300 dark:text-gray-200 dark:hover:bg-slate-800'
-                      : 'text-gray-700 dark:text-gray-100',
-                    'block px-4 py-2 text-sm'
-                  )}
-                >
-                  Journey
-                </CustomLink>
-              )}
-            </Menu.Item>
-          </div>
+
           <div className="">
             <Menu.Item>
               {({ active }) => (

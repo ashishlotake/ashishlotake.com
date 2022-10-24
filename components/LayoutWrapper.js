@@ -3,12 +3,10 @@ import { motion } from 'framer-motion'
 import DropMenu from './DropMenu'
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
-import CustomLink from './Link'
 import Link from 'next/link'
 import SectionContainer from './SectionContainer'
 import Footer from './Footer'
 import ThemeSwitch from './ThemeSwitch'
-import Typewriter from 'typewriter-effect'
 import { useRouter } from 'next/router'
 // import Logo from '@/data/logo.svg'
 import MobileNav from './MobileNav'
@@ -21,7 +19,6 @@ const variants = {
 
 const LayoutWrapper = ({ children }) => {
   const router = useRouter()
-
   return (
     <SectionContainer>
       <div className="flex h-screen flex-col justify-between">
@@ -94,9 +91,9 @@ function NavItem({ href, text }) {
       <a
         className={cn(
           isActive
-            ? 'font-semibold text-primary-500 dark:text-darkprimary-500 dark:text-white'
+            ? 'font-semibold text-primary-500 dark:text-darkprimary-500 '
             : 'font-normal text-gray-700 dark:text-white',
-          'link-underline hidden rounded-lg p-1 transition-all sm:px-3 sm:py-2 md:inline-block'
+          'link-underline hidden rounded-lg p-1  sm:px-3 sm:py-2 md:inline-block'
         )}
       >
         <span className="capsize">{text}</span>

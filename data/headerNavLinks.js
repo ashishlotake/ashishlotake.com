@@ -7,8 +7,7 @@ const headerNavLinks = [
   { href: '/resume', title: 'Résumé' },
   // { href: 'https://resume.ashishlotake.com/', title: 'Résumé' },
   // { href: '/stats', title: 'Stats' },
-  // { href: '/journey', title: 'Journey' },
-  // { href: '/now', title: 'Now' },
+  { href: '/artworks', title: 'Artworks' },
 ]
 
 export default headerNavLinks

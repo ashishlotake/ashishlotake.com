@@ -14,6 +14,7 @@ let logo = [
   'sklearn',
   'pandas',
   'plotly',
+  'powerbi',
   'matplotlib',
   'mysql',
   'excel',
@@ -41,9 +42,9 @@ export default function Journey() {
         {/* #################### 1nd col #################### */}
         <div className="space-y-4">
           {/* 1 */}
-          <div className="rounded-xl border-2 border-black hover:bg-[#6562F5]  hover:bg-opacity-90 hover:text-white dark:border-[#BFB9AA] dark:border-opacity-80 dark:hover:bg-[#cadd57] dark:hover:text-black">
+          <div className="rounded-xl border-2 border-black hover:bg-[#7471f6]  hover:bg-opacity-90 hover:text-white dark:border-[#BFB9AA] dark:border-opacity-80 dark:hover:bg-[#cadd57] dark:hover:text-black">
             <div className="group">
-              <div className=" border-b-2 border-gray-500  px-5 py-2 text-2xl font-medium md:text-3xl">
+              <div className="  border-b-2 border-gray-500 px-5 py-2   text-2xl font-medium group-hover:border-white dark:group-hover:border-black md:text-3xl">
                 Experience
               </div>
 
@@ -76,9 +77,9 @@ export default function Journey() {
           </div>
           {/* 2 */}
 
-          <div className="rounded-xl border-2 border-black hover:bg-[#6562F5] hover:bg-opacity-90 hover:text-white dark:border-[#BFB9AA] dark:border-opacity-80 dark:hover:bg-[#cadd57] dark:hover:text-black">
+          <div className="rounded-xl border-2 border-black hover:bg-[#7157eb] hover:bg-opacity-90 hover:text-white dark:border-[#BFB9AA] dark:border-opacity-80 dark:hover:bg-[#cadd57] dark:hover:text-black">
             <div className="group">
-              <div className="  border-b-2 border-gray-500  px-5 py-2 text-2xl font-medium md:text-3xl">
+              <div className="   border-b-2 border-gray-500 px-5 py-2   text-2xl font-medium group-hover:border-white dark:group-hover:border-black md:text-3xl">
                 Education
               </div>
               <div className="px-5 pt-5">
@@ -112,7 +113,7 @@ export default function Journey() {
           {/* 3 */}
           <div className="rounded-xl border-2 border-black hover:bg-[#6562F5] hover:bg-opacity-90 hover:text-white dark:border-[#BFB9AA] dark:border-opacity-80 dark:hover:bg-[#cadd57] dark:hover:text-black">
             <div className="group">
-              <div className="  border-b-2 border-gray-500  px-5 py-2 text-2xl font-medium md:text-3xl">
+              <div className="   border-b-2 border-gray-500 px-5 py-2   text-2xl font-medium group-hover:border-white dark:group-hover:border-black md:text-3xl">
                 Certificates
               </div>
               <div className="px-5 pt-5">
@@ -146,7 +147,7 @@ export default function Journey() {
           {/* 1 */}
           <div className="rounded-xl border-2 border-black hover:bg-[#6562F5] hover:bg-opacity-90 hover:text-white dark:border-[#BFB9AA] dark:border-opacity-80 dark:hover:bg-[#cadd57] dark:hover:text-black">
             <div className="group">
-              <div className="  border-b-2 border-gray-500  px-5 py-2 text-2xl font-medium md:text-4xl">
+              <div className="   border-b-2 border-gray-500 px-5 py-2   text-2xl font-medium group-hover:border-white dark:group-hover:border-black md:text-4xl">
                 Project
               </div>
               <div className="px-5 pt-5">
@@ -163,15 +164,15 @@ export default function Journey() {
 
           {/* 2 */}
 
-          <div className="rounded-xl border-2 border-black  hover:bg-[#6562F5] hover:bg-opacity-90 hover:text-white dark:border-[#BFB9AA] dark:border-opacity-80 dark:hover:bg-[#cadd57] dark:hover:text-black">
-            <div className="  border-b-2 border-gray-500  px-5 py-2 text-2xl font-medium md:text-3xl">
+          <div className=" rounded-xl border-2 border-black  hover:bg-[#6562F5] hover:bg-opacity-90 hover:text-white dark:border-[#BFB9AA] dark:border-opacity-80 dark:hover:bg-[#cadd57] dark:hover:text-black">
+            <div className="   border-b-2 border-gray-500 px-5 py-2 text-2xl font-medium md:text-3xl">
               Skills
             </div>
             <div className="px-5 py-5">
               <div className="mt-2 flex flex-wrap gap-4">
                 {logo.map((logo) => (
                   <div key={logo} className="group dark:hover:text-black">
-                    <TechIcons className="my-2" techs={[logo]} />
+                    <TechIcons className="my-2" techs={[logo]} techsize="25" />
                   </div>
                 ))}
               </div>
@@ -182,7 +183,7 @@ export default function Journey() {
 
           <div className="rounded-xl border-2  border-black hover:bg-[#6562F5] hover:bg-opacity-90 hover:text-white dark:border-[#BFB9AA] dark:border-opacity-80 dark:hover:bg-[#cadd57] dark:hover:text-black">
             <div className="group">
-              <div className="  border-b-2 border-gray-500  px-5 py-2 text-2xl font-medium md:text-3xl">
+              <div className="   border-b-2 border-gray-500 px-5 py-2   text-2xl font-medium group-hover:border-white dark:group-hover:border-black md:text-3xl">
                 Community works
               </div>
               <div className="px-5 pt-5">
