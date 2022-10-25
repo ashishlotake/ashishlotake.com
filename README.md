@@ -1,4 +1,5 @@
 ![](public/static/images/index.png)
+_I've been slowly building this website so something you saw last week may not be here today._
 
 # Personal Blog
 

@@ -15,7 +15,9 @@ const Card = ({ title, description, imgSrc, href, github, tech1, tech2, tech3 })
           </div>
         ) : null}
         <div className="">
-          <h3 className="m-0 my-2 w-full text-2xl font-bold tracking-tight">{title}</h3>
+          <h3 className="my-2 w-full text-xl font-bold tracking-tight text-black dark:text-white">
+            {title}
+          </h3>
           <p className="flex-1  tracking-tight text-gray-500">{description}</p>
           <div className="flex space-x-4 pb-1 pt-1">
             {github ? (

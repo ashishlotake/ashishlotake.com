@@ -21,16 +21,16 @@ export default function Home({ posts }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <img className="rounded-xl  bg-[#f2e8de] md:rounded-2xl" src="/static/images/index.svg" />
-      {/* <div className="flex flex-col-reverse items-start sm:flex-row">
-        <div className="flex flex-col pr-20">
-          <h1 className="mb-1 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
+      {/* <img className="rounded-xl  bg-[#f2e8de] md:rounded-2xl" src="/static/images/index.svg" /> */}
+      <div className="flex flex-col-reverse items-start pt-5 sm:flex-row">
+        <div className="flex w-full flex-col pr-20">
+          <h1 className="mb-1 text-4xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
             Ashish Lotake
           </h1>
           <h2 className="mb-4 text-gray-700 dark:text-gray-200">
             DA, DS, ML & AI <span className="font-semibold">practitioner</span>
           </h2>
-          <p className="mb-16 text-gray-600 dark:text-gray-400">
+          <p className=" text-gray-600 dark:text-gray-400">
             Welcome to my website.<br></br> I use it to share information about myself, case
             studies/projects, and my thoughts.
           </p>
@@ -44,7 +44,8 @@ export default function Home({ posts }) {
             height="250px"
           />
         </div>
-      </div> */}
+      </div>
+
       <div>
         <h2 className="py-4 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
           Recent Posts
@@ -126,9 +127,9 @@ function TopProject() {
           <CustomLink
             href="/projects"
             className="link-underline  text-primary-500 dark:text-darkprimary-500"
-            aria-label="all posts"
+            aria-label="all project"
           >
-            All Posts &rarr;
+            All Projects &rarr;
           </CustomLink>
         </div>
       )}

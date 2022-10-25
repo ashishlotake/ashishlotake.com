@@ -1,6 +1,6 @@
 I am a data scientist, machine learning practitioner, and artificial intelligence practitioner. For better or worse, I believe ML and AI will become an important part of our daily lives and will be available to everyone, and I intend to steer this boat. In order to collaborate and deliver production-ready models, I am learning practical skills in tools such as Cloud, Docker, Kubernetes, and various ML tools.
 
-Check out my [Résumé](https://ashishlotakeresume.pages.dev/) and to see my [projects](/projects)
+Check out my [Résumé](https://www.ashishlotake.com/static/resume.pdf/) and to see my [projects](/projects)
 
 Feel free to reach out if you wanna collaborate or simply wanna chat. I’m best reached via [email](mailto:hello@ashihlotake.com). I am also happy to connect on different social and professional platforms.
 

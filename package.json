@@ -19,10 +19,7 @@
     "prepare": "husky install"
   },
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pycoder2000/blog.git"
-  },
+  "licenseUrl": "https://github.com/ashishlotake/ashishlotake.com/blob/main/LICENSE",
   "dependencies": {
     "@fontsource/inter": "4.5.2",
     "@headlessui/react": "^1.5.0",

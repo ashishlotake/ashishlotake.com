@@ -13,7 +13,7 @@ export default function Projects() {
       />
       <div className="border-b border-gray-400 dark:border-gray-600">
         <div className="max-w-xl ">
-          <PageTitle>Work</PageTitle>
+          <PageTitle>Project</PageTitle>
           <Subtitle>{/* A list of projects I have been working on or built */}</Subtitle>
         </div>
       </div>

@@ -27,8 +27,8 @@ function ArtWorkLightBox() {
         <PageTitle>Artwork</PageTitle>
         <Subtitle>:)</Subtitle>
       </div>
-      <div className="grid pt-5">
-        <h1 className="block py-10 text-lg font-semibold md:hidden ">Click to view full Image</h1>
+      <div className="grid pt-2">
+        <i className="block text-lg font-semibold md:hidden ">Click on image to view full Image</i>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {arrOfThumnail.map((image, index) => (
             <div key={index} className="group relative flex ">
@@ -37,7 +37,7 @@ function ArtWorkLightBox() {
                   // style={{ height: "200px", width: "300px", margin: "20px" }}
                   src={image}
                   alt={image}
-                  className="img6 object-cover"
+                  className="img1 object-cover"
                   // className="pointer-events-none h-52 w-full overflow-hidden rounded-t-[5px] object-cover"
                   onClick={() => openModalAndSetIndex(index)}
                   imageCaption="---------"

@@ -135,13 +135,13 @@ export default function Now(currentlyReading) {
         <div className="border-b border-gray-400 dark:border-gray-600">
           <div className="max-w-xl ">
             <PageTitle>What I am up to these days?</PageTitle>
-            <Subtitle>Last update - 04/October/2022</Subtitle>
+            <Subtitle>Last update - 25/October/2022</Subtitle>
           </div>
         </div>
         {/* Misc */}
         <div className="pt-3">
-          <div className="mt-3 flex justify-between gap-5">
-            <div className=" mb-10 w-1/2 rounded-lg border-2 border-gray-500 p-4 text-lg dark:border-gray-500">
+          <div className=" grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+            <div className="  rounded-lg border-2 border-gray-500 p-4 text-lg dark:border-gray-500">
               <span className="ml-2 font-semibold">Location:</span> <span>Ahmednagar, India</span>
               <br />
               <span className="ml-2 font-semibold">Weather:</span>{' '}
@@ -159,7 +159,7 @@ export default function Now(currentlyReading) {
               </span>
             </div>
 
-            <div className=" mb-10 w-1/2 rounded-lg border-2 border-gray-500 p-4 text-lg dark:border-gray-500">
+            <div className="  rounded-lg border-2 border-gray-500 p-4 text-lg dark:border-gray-500">
               <span className="ml-2 font-semibold">Reading:</span>{' '}
               <a>
                 <span>Atomic Habits</span> by <span>James Clear</span>
@@ -167,10 +167,8 @@ export default function Now(currentlyReading) {
               <br />
               <span className="ml-2 font-semibold">Age:</span> <span>{ageString}</span>
             </div>
-          </div>
 
-          <div className="-my-6 flex justify-between gap-5">
-            <div className=" mb-10 w-1/2 rounded-lg border-2 border-gray-500 p-4 text-lg dark:border-gray-500">
+            <div className="  rounded-lg border-2 border-gray-500 p-4 text-lg dark:border-gray-500">
               <span className="ml-2 font-semibold">Date:</span>{' '}
               <span>{TodayDate.format('DD/MMMM/YYYY')}</span>
               <br />
@@ -181,7 +179,7 @@ export default function Now(currentlyReading) {
               </span>
             </div>
 
-            <div className=" mb-10 w-1/2 rounded-lg border-2 border-gray-500 p-4 text-lg dark:border-gray-500">
+            <div className="  rounded-lg border-2 border-gray-500 p-4 text-lg dark:border-gray-500">
               <span className="ml-2 font-semibold">Listening:</span>{' '}
               <span>
                 {data?.songUrl ? (
@@ -213,17 +211,18 @@ export default function Now(currentlyReading) {
               Data Scientist, Data Analyst and Machine Learning.
             </span>
           </li>
-          <li className="pt-5">
+          {/* <li className="pt-5">
             I am working on{' '}
             <span className="special-underline">Active Learnig Image Classification</span> for my
             Diploma in AI & ML.
+          </li> */}
+          <li className="pt-5">
+            I am working towards improving my{' '}
+            <span className="special-underline "> PowerBI skills.</span>
           </li>
           <li className="pt-5">
-            I am also working on <span className="special-underline "> PowerBI project.</span>
-          </li>
-          <li className="pt-5">
-            I've been slowly building this website, trying to share interesting things with anyone
-            who wants to read it.
+            I've been slowly building this website so something you saw last week may not be here
+            today and trying to share interesting things with anyone who wants to read it.
           </li>
         </CardTitle>
       </div>

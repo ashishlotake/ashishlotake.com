@@ -3,11 +3,12 @@ import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import { ProfileCard } from '@/components/ProfileCard'
 import TechIcons from '@/components/TechIcons'
+import Container from '@/components/Container'
 
 const socialslinks = [
   {
     social: 'socialtwitter',
-    href: 'https://twitter.com/messages/compose?recipient_id=1552051098&text=Hey Ashish',
+    href: 'https://twitter.com/messages/compose?recipient_id=1552051098&text=Hallo! Ashish',
   },
   {
     social: 'socialgit',
@@ -21,33 +22,20 @@ const socialslinks = [
     social: 'socialmail',
     href: 'mailto:ashishlotake@duck.com',
   },
+  {
+    social: 'socialphone',
+    href: 'tel:+91-888-858-8053',
+  },
 ]
 
-export default function AuthorLayout({ children, frontMatter }) {
-  const {
-    name,
-    avatar,
-    occupation,
-    company,
-    email,
-    twitter,
-    linkedin,
-    github,
-    text1,
-    text2,
-    text3,
-  } = frontMatter
-
+export default function AuthorLayout({ children }) {
   return (
     <>
-      <PageSEO title={`About - ${name}`} description={`A little trivia me`} />
+      <PageSEO title={`About - ${siteMetadata.author}`} description={`A little trivia me`} />
       <div className="">
         <div className="border-b border-gray-400 dark:border-gray-600">
           <div className="max-w-xl ">
             <PageTitle>About</PageTitle>
-            <Subtitle>
-              Data scientist 👨‍💻, Machine learning 🤖 & artificial intelligence 🧠 practitioner
-            </Subtitle>
           </div>
         </div>
         <div className="items-start space-y-2 pt-5 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
@@ -71,7 +59,7 @@ export default function AuthorLayout({ children, frontMatter }) {
                   target="_blank"
                   rel="noreferrer noopener"
                 >
-                  <TechIcons techs={[d.social]} />
+                  <TechIcons techs={[d.social]} techsize={25} />
                 </a>
               ))}
             </div>

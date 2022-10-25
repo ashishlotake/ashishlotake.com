@@ -6,6 +6,30 @@ import CustomLink from './CustomLink'
 import { ImCross } from 'react-icons/im'
 import { GiHamburgerMenu } from 'react-icons/gi'
 
+import {
+  CodeIcon,
+  HomeIcon,
+  Pencil1Icon,
+  DiscIcon,
+  HamburgerMenuIcon,
+  Cross1Icon,
+  FrameIcon,
+  LaptopIcon,
+  BarChartIcon,
+  DrawingPinIcon,
+  Link2Icon,
+  QuoteIcon,
+  CalendarIcon,
+  PersonIcon,
+  ArchiveIcon,
+  TwitterLogoIcon,
+  RocketIcon,
+  ChatBubbleIcon,
+} from '@radix-ui/react-icons'
+
+import { GiPaintBrush, GiExtraTime } from 'react-icons/gi'
+import { HiOutlineBriefcase } from 'react-icons/hi'
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
@@ -22,8 +46,9 @@ export default function Example() {
             className="flex h-8 w-8 items-center justify-center "
             whileTap={{
               scale: 0.5,
-              // rotate:100
+              rotate: 60,
             }}
+            whileHover={{ scale: 1.2 }}
             // transition={{ duration: 0.01, ease: 'easeIn' }}
             aria-label="Toggle List Menu"
             type="button"
@@ -67,7 +92,9 @@ export default function Example() {
                       'block px-4 py-2 text-sm'
                     )}
                   >
-                    Home
+                    <div className="flex flex-row">
+                      <HomeIcon className="mr-4 mt-0.5" /> Home
+                    </div>
                   </CustomLink>
                 )}
               </Menu.Item>
@@ -84,7 +111,9 @@ export default function Example() {
                       'block px-4 py-2 text-sm'
                     )}
                   >
-                    Blog
+                    <div className="flex flex-row">
+                      <Pencil1Icon className="mr-4 mt-0.5" /> Blog
+                    </div>
                   </CustomLink>
                 )}
               </Menu.Item>
@@ -101,7 +130,9 @@ export default function Example() {
                       'block px-4 py-2 text-sm'
                     )}
                   >
-                    Snippets
+                    <div className="flex flex-row">
+                      <CodeIcon className="mr-4 mt-0.5" /> Snippets
+                    </div>
                   </CustomLink>
                 )}
               </Menu.Item>
@@ -118,22 +149,9 @@ export default function Example() {
                       'block px-4 py-2 text-sm'
                     )}
                   >
-                    Projects
-                  </CustomLink>
-                )}
-              </Menu.Item>
-              <Menu.Item>
-                {({ active }) => (
-                  <CustomLink
-                    href="/artworks"
-                    className={classNames(
-                      active
-                        ? ' hover:bg-gray-300 dark:text-gray-200 dark:hover:bg-slate-800'
-                        : 'text-gray-700 dark:text-gray-100',
-                      'block px-4 py-2 text-sm'
-                    )}
-                  >
-                    ArtWork
+                    <div className="flex flex-row">
+                      <ArchiveIcon className="mr-4 mt-0.5" /> Projects
+                    </div>
                   </CustomLink>
                 )}
               </Menu.Item>
@@ -148,7 +166,26 @@ export default function Example() {
                       'block px-4 py-2 text-sm'
                     )}
                   >
-                    About
+                    <div className="flex flex-row">
+                      <PersonIcon className="mr-4 mt-0.5" /> About
+                    </div>
+                  </CustomLink>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <CustomLink
+                    href="/artworks"
+                    className={classNames(
+                      active
+                        ? ' hover:bg-gray-300 dark:text-gray-200 dark:hover:bg-slate-800'
+                        : 'text-gray-700 dark:text-gray-100',
+                      'block px-4 py-2 text-sm'
+                    )}
+                  >
+                    <div className="flex flex-row">
+                      <GiPaintBrush className="mr-4 mt-0.5" /> ArtWork
+                    </div>
                   </CustomLink>
                 )}
               </Menu.Item>
@@ -163,14 +200,16 @@ export default function Example() {
                       'block px-4 py-2 text-sm'
                     )}
                   >
-                    Résumé
+                    <div className="flex flex-row">
+                      <HiOutlineBriefcase className="mr-4 mt-0.5" /> Résumé
+                    </div>
                   </CustomLink>
                 )}
               </Menu.Item>
             </div>
           </div>
           <div className="">
-            <Menu.Item>
+            {/* <Menu.Item>
               {({ active }) => (
                 <CustomLink
                   href="/tags"
@@ -181,10 +220,12 @@ export default function Example() {
                     'block px-4 py-2 text-sm'
                   )}
                 >
-                  Blog Tags
+                  <div className="flex flex-row">
+                      <FrameIcon className="mr-4 mt-0.5" /> Tags
+                    </div>
                 </CustomLink>
               )}
-            </Menu.Item>
+            </Menu.Item> */}
             <Menu.Item>
               {({ active }) => (
                 <CustomLink
@@ -196,7 +237,9 @@ export default function Example() {
                     'block px-4 py-2 text-sm'
                   )}
                 >
-                  Stats
+                  <div className="flex flex-row">
+                    <BarChartIcon className="mr-4 mt-0.5" /> Stats
+                  </div>
                 </CustomLink>
               )}
             </Menu.Item>
@@ -213,7 +256,9 @@ export default function Example() {
                     'block px-4 py-2 text-sm'
                   )}
                 >
-                  Now
+                  <div className="flex flex-row">
+                    <DiscIcon className="mr-4 mt-0.5" /> Now
+                  </div>
                 </CustomLink>
               )}
             </Menu.Item>
@@ -231,7 +276,9 @@ export default function Example() {
                     'block px-4 py-2 text-sm'
                   )}
                 >
-                  Recommendation
+                  <div className="flex flex-row">
+                    <GiExtraTime className="mr-4 mt-0.5" /> Recommendation
+                  </div>
                 </CustomLink>
               )}
             </Menu.Item>

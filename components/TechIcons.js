@@ -22,21 +22,21 @@ import {
 
 import { AiOutlineTwitter, AiTwotoneMail, AiOutlineBarChart } from 'react-icons/ai'
 
-import { RiFileExcel2Fill, RiLinkedinBoxFill } from 'react-icons/ri'
+import { RiFileExcel2Fill, RiLinkedinBoxFill, RiPhoneFill } from 'react-icons/ri'
 
 export default function TechIcons({ className, techs, techsize }) {
   return (
-    <ul className={clsx(className, 'group flex gap-2')}>
+    <ul className={clsx(className, ' group flex gap-2')}>
       {techs.map((tech) => {
         if (!techList[tech]) return null
 
         const current = techList[tech]
 
         return (
-          <li key={current} className="text-xl ">
+          <li key={current} className="text-xl">
             {techsize ? <current.icon size={techsize} /> : <current.icon size={20} />}
 
-            <span className="absolute z-50 hidden rounded border border-white border-opacity-20 bg-[#000]  bg-opacity-[85%] p-2 text-center text-sm text-white group-hover:block">
+            <span className="absolute z-50 hidden rounded border border-white border-opacity-20 bg-[#000]  bg-opacity-[85%] p-2 text-center text-xs text-white group-hover:block md:text-[17px]">
               {current.name}
             </span>
           </li>
@@ -134,5 +134,9 @@ const techList = {
   socialmail: {
     icon: AiTwotoneMail,
     name: 'Mail Me',
+  },
+  socialphone: {
+    icon: RiPhoneFill,
+    name: 'Call Me',
   },
 }

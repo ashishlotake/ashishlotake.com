@@ -56,7 +56,7 @@ export default function Footer() {
           <a
             className="group hover:text-primary-500 dark:hover:text-darkprimary-500"
             target="_blank"
-            href={siteMetadata.email}
+            href={'mailto:' + siteMetadata.email}
             rel="noreferrer"
           >
             Mail Me

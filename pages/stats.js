@@ -50,7 +50,7 @@ export default function Stats() {
           </p>
           <a
             className="text-md mt-4 rounded-full border-2 border border-slate-500 px-8 py-2 text-center font-normal text-gray-800 transition-colors hover:border-green-500 hover:bg-green-500 hover:text-black dark:text-gray-200 dark:hover:text-black"
-            href="https://twitter.com/messages/compose?recipient_id=1552051098&text=Hey Ashish, you should listen to:"
+            href="https://twitter.com/messages/compose?recipient_id=1552051098&text=Hallo Ashish, you should listen to:"
             data-screen-name="@Ashish02lotake"
             target="_blank"
             rel="noreferrer noopener"

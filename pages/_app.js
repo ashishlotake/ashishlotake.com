@@ -10,6 +10,7 @@ import siteMetadata from '@/data/siteMetadata'
 import Analytics from '@/components/analytics'
 import LayoutWrapper from '@/components/LayoutWrapper'
 import { ClientReload } from '@/components/ClientReload'
+import ProgressBar from 'react-scroll-progress-bar'
 import ScrollTop from '@/components/ScrollTop'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
@@ -45,7 +46,7 @@ export default function App({ Component, pageProps: { session, ...pageProps } })
   return (
     <>
       <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
-        {/* <ProgressBar bgcolor="#f97316" /> */}
+        <ProgressBar bgcolor="#f97316" />
         <ScrollTop />
         <Head>
           <meta content="width=device-width, initial-scale=1" name="viewport" />

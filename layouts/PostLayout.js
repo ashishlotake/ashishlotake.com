@@ -63,7 +63,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
       <article className="mx-auto min-h-screen max-w-4xl">
         <header className=" relative pb-3">
           <div>
-            <h1 className="text-3xl font-extrabold leading-normal tracking-normal sm:text-4xl md:text-5xl">
+            <h1 className="text-xl font-extrabold leading-normal tracking-tight sm:text-4xl md:text-5xl">
               {title}
             </h1>
           </div>

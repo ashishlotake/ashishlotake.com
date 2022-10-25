@@ -93,10 +93,9 @@ export default function Timeline() {
   return (
     <>
       <PageSEO title={`Journey - ${siteMetadata.author}`} description="My journey" />
-      <div className="pt-10">
-        <div className="border-b border-gray-400 dark:border-gray-600">
+      <div className="pt-4">
+        <div className="borderb border-gray-400 dark:border-gray-600">
           <PageTitle>Journery</PageTitle>
-          <Subtitle>Growing everyday a bit.</Subtitle>
         </div>
 
         <ol className="relative mt-6 ml-6 border-l border-zinc-400 dark:border-gray-800 ">
@@ -160,7 +159,7 @@ export default function Timeline() {
                 <Disclosure.Button>
                   <div className="text-small ml-1.5 flex">
                     <HiChevronDown
-                      className={`h-6 w-6 text-primary-500 dark:text-darkprimary-500 ${
+                      className={`h-8 w-8 text-primary-500 dark:text-darkprimary-500 ${
                         open ? 'rotate-180 transform ' : ''
                       }`}
                     />
