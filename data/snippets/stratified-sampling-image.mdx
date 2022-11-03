@@ -1,0 +1,131 @@
+---
+title: 'Stratified Sampling for Image Data'
+heading: 'Stratified Sampling Images'
+date: '2022-10-10'
+type: Keras
+draft: false
+tags: ['keras', 'tensorflow', 'sklearn', 'images']
+summary: 'How to split image data when all images are stored in one folder'
+---
+
+This will only work if your directory structure is:
+
+```bash
+101_ObjectCategories/
+    class_a/
+        a_image_1.jpg
+        a_image_2.jpg
+        .
+    class_b/
+        b_image_1.jpg
+        b_image_2.jpg
+        .
+    class_c/
+        c_image_1.jpg
+        c_image_2.jpg
+        .
+    .
+```
+
+## Step 1 :- First load images as path and split
+
+Adjust `test_size` according to your need
+
+```py showLineNumbers
+
+from sklearn.model_selection import StratifiedShuffleSplit
+import pandas as pd
+from glob import glob
+
+def strat_train_val_test_split(df_img):
+    '''
+    df_img --> pandas DataFrame
+
+    input pandas dataframe and return train val test split in using
+    stratified sampling technique
+    '''
+    split = StratifiedShuffleSplit(n_splits=1, test_size=0.15,random_state=42)
+
+    for train_index, test_index in split.split(df_img, df_img["img_cat"]):
+        strat_train_set = df_img.loc[train_index]
+        test_set_path = df_img.loc[test_index]
+
+    ## split strat_train_set --> train and split
+
+    strat_train_set.reset_index(inplace=True)  ## reset the index,
+    strat_train_set.drop("index",axis=1, inplace=True) ## drop the "index"
+
+    split = StratifiedShuffleSplit(n_splits=1, test_size=0.18,random_state=42)
+
+    for train_index, test_index in split.split(strat_train_set, strat_train_set["img_cat"]):
+        train_set_path = strat_train_set.loc[train_index]
+        val_set_path = strat_train_set.loc[test_index]
+
+    print(f"Train Dataset:      {train_set_path.shape[0]} images\nTest Dataset:       {test_set_path.shape[0]} images\nValidation Dataset: {val_set_path.shape[0]} images")
+    return train_set_path, val_set_path , test_set_path
+
+
+all_img = glob("101_ObjectCategories/*/*.jpg")
+df_img = pd.DataFrame(all_img, columns=["images_path"])
+## adding a column to dataframe for image category
+df_img["img_cat"] = df_img["images_path"].apply(lambda x: x.split("/")[1])
+
+
+train_set_path, val_set_path , test_set_path = strat_train_val_test_split(df_img)
+```
+
+## Step 2 :- Then creat folder and copy images to `Train`,`Test` and `split` folders
+
+```py
+## copy images to dir
+
+import pathlib
+from tqdm import tqdm
+
+def make_subset(subset_name, dataset,classes, new_base_dir):
+    '''
+    subset name --> train/test/val
+    dataset --> list form
+    classes --> category name
+    new_base_dir --> folder where we want to copy splitted data
+    '''
+    new_base_dir = pathlib.Path(new_base_dir)
+    try:
+        os.mkdir(new_base_dir)
+    except:
+        pass
+    for class_name in classes:
+        dir = new_base_dir/subset_name/class_name
+        os.makedirs(dir)
+    for i in tqdm(range(len(dataset))):
+        fname = dataset[i]
+        name = str(i)+train_data[0].split("/")[-1]
+        shutil.copy(src= fname, dst=new_base_dir / subset_name / fname.split("/")[-2] / name)
+
+
+train_set_path, val_set_path , test_set_path = strat_train_val_test_split(df_img)
+train_data = list(train_set_path["images_path"])
+val_data = list(val_set_path["images_path"])
+test_data = list(test_set_path["images_path"])
+
+classes = os.listdir("101_ObjectCategories")
+
+import os
+if os.path.exists("splitted_dataset"):
+    pass
+else:
+    make_subset("train", train_data, classes, new_base_dir="splitted_dataset")
+    make_subset("validation",val_data, classes, new_base_dir="splitted_dataset")
+    make_subset("test",test_data, classes, new_base_dir="splitted_dataset")
+```
+
+`output`
+
+```
+Train Dataset:      6047 images
+Test Dataset:       1302 images
+Validation Dataset: 1328 images
+100%|██████████| 6047/6047 [00:01<00:00, 3425.02it/s]
+100%|██████████| 1328/1328 [00:00<00:00, 3163.67it/s]
+100%|██████████| 1302/1302 [00:00<00:00, 5307.39it/s]
+```

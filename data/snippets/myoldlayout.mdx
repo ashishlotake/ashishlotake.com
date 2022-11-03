@@ -1,0 +1,766 @@
+---
+title: 'Page Layouts With TOC'
+heading: 'Page Layouts With TOC'
+date: '2022-10-29'
+lastmod: '2022-10-15'
+tags: ['markdown']
+draft: false
+type: 'Markdown'
+summary: 'My old blog layout from simple to sticky table of content'
+layout: PostSimple
+---
+
+## Importing Required Stuffs
+
+```js:PostLayout.js showLineNumbers
+import formatDate from '@/lib/utils/formatDate'
+import CustomLink from '@/components/CustomLink'
+import { PageTitle } from '@/components/PageTitle'
+import ScrollTop from '@/components/ScrollTop'
+import { BlogSEO } from '@/components/SEO'
+import Image from '@/components/Image'
+import siteMetadata from '@/data/siteMetadata'
+import Comments from '@/components/comments'
+import { useEffect, useRef, useState } from 'react'
+import ViewCounter from '@/components/ViewCounter'
+import clsx from 'clsx'
+import { BlogNewsletterForm } from '@/components/NewsletterForm'
+
+
+
+const twitterShare = (slug, title) =>
+  `https://twitter.com/intent/tweet?text=${title}&url=${encodeURIComponent(
+    `https://ashishlotake.com/blog/${slug}`
+  )}`
+
+const facebookShare = (slug) =>
+  `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+    `https://ashishlotake.com/blog/${slug}`
+  )}`
+
+const redditShare = (slug, title) =>
+  `https://www.reddit.com/submit?title=${title}&url=${encodeURIComponent(
+    `https://ashishlotake.com/blog/${slug}`
+  )}`
+
+const linkedinShare = (slug, title) =>
+  `https://www.linkedin.com/shareArticle?title=${title}&url=${encodeURIComponent(
+    `https://ashishlotake.com/blog/${slug}`
+  )}`
+
+const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/master/data/blog/${fileName}`
+
+const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
+```
+
+## Defining Required Function
+
+```js:PostLayout.js showLineNumbers
+// TOC #################
+function TocComponent({ toc }) {
+  const [activeId, setActiveId] = useState()
+  useIntersectionObserver(setActiveId)
+  const [TOC, setTOC] = useState([])
+  useEffect(() => {
+    let etoc = toc.map((e) => ({ ...e, children: [] }))
+    for (let i = etoc.length - 1; i >= 0; i--) {
+      if (etoc[i].depth == 1) continue
+      for (let j = i; j >= 0; j--) {
+        if (etoc[i].depth - etoc[j].depth == 1) {
+          etoc[j].children.unshift(etoc[i])
+          etoc[i].remove = true
+          break
+        }
+      }
+    }
+    setTOC(etoc.filter((e) => !e.remove))
+  }, [toc])
+
+  let RenderToc = ({ item, activeId }) => {
+    const isActive = (e) => {
+      if ('#' + activeId === e.url) return true
+      for (let i of e.children) if (isActive(i)) return true
+      return false
+    }
+    return item.map((e, i) => (
+      <div key={i}>
+        <CustomLink href={e.url}>
+          <p
+            className={`border-l-[2px] border-gray-300 pl-2 font-medium text-gray-500 dark:border-gray-700 ${
+              isActive(e) &&
+              'border-primary-500 bg-black/10 dark:bg-white/10  text-primary-600 dark:border-darkprimary-400 dark:text-darkprimary-500'
+            }`}
+          >
+            {e.value}
+          </p>
+        </CustomLink>
+        <div className="mt-1 ml-4 space-y-1">
+          <RenderToc item={e.children} activeId={activeId} />
+        </div>
+      </div>
+    ))
+  }
+
+  return (
+    <div className=" space-y-1 rounded-md border border-gray-300 p-5 text-sm  shadow-lg dark:border-gray-700 dark:bg-[#171919]020">
+      <p className="pb-5 text-lg  font-bold">Table of content</p>
+      <RenderToc item={TOC} activeId={activeId} />
+    </div>
+  )
+}
+
+const useIntersectionObserver = (setActiveId) => {
+  const headingElementsRef = useRef({})
+  useEffect(() => {
+    const callback = (headings) => {
+      headingElementsRef.current = headings.reduce((map, headingElement) => {
+        map[headingElement.target.id] = headingElement
+        return map
+      }, headingElementsRef.current)
+
+      const visibleHeadings = []
+      Object.keys(headingElementsRef.current).forEach((key) => {
+        const headingElement = headingElementsRef.current[key]
+        if (headingElement.isIntersecting) visibleHeadings.push(headingElement)
+      })
+
+      const getIndexFromId = (id) => headingElements.findIndex((heading) => heading.id === id)
+
+      if (visibleHeadings.length === 1) {
+        setActiveId(visibleHeadings[0].target.id)
+      } else if (visibleHeadings.length > 1) {
+        const sortedVisibleHeadings = visibleHeadings.sort(
+          (a, b) => getIndexFromId(a.target.id) > getIndexFromId(b.target.id)
+        )
+        setActiveId(sortedVisibleHeadings[0].target.id)
+      }
+    }
+
+    const observer = new IntersectionObserver(callback, {
+      rootMargin: '0px 0px -40% 0px',
+    })
+
+    const headingElements = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5'))
+
+    headingElements.forEach((element) => observer.observe(element))
+
+    return () => observer.disconnect()
+  }, [setActiveId])
+}
+
+
+// ShareBtn ####################
+
+export function ShareButtons({ className, children }) {
+  return (
+    <button
+      type="button"
+      data-mdb-ripple="true"
+      data-mdb-ripple-color="light"
+      className={clsx(
+        'mb-2 border border-gray-300 dark:border-gray-600',
+        'scale-100 hover:scale-[1.1] active:scale-[0.97] motion-safe:transform-gpu',
+        'motion-reduce:hover:scale-100',
+        'transition-all duration-100',
+        'animate-shadow',
+        ' rounded  px-3 py-2.5 text-xs font-medium uppercase leading-tight  hover:text-white',
+        ' shadow-md  shadow-gray-500/50  hover:shadow-lg ',
+        className
+      )}
+    >
+      <div className="flex flex-row gap-2">{children}</div>
+    </button>
+  )
+}
+
+// NxtPrevBlog ####################
+
+const NextPrevBlog = ({ prev, next }) => (
+  <div className="">
+    {(next || prev) && (
+      <div className=" grid gap-8 sm:grid-cols-2 xl:grid-cols-2">
+        {next && (
+          <div>
+            <h2 className="py-1 text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+              Next Article
+            </h2>
+            <BlogCard prev={next} />
+          </div>
+        )}
+        {prev && (
+          <div className="">
+            <h2 className="md:text-end  py-1 text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+              Previous Article
+            </h2>
+            <BlogCard prev={prev} />
+          </div>
+        )}
+      </div>
+    )}
+  </div>
+)
+
+// BlogCard ####################
+
+export const BlogCard = ({ prev }) => (
+  <CustomLink key={prev.slug} href={`/blog/${prev.slug}`} aria-label={`Read "${prev.title}"`}>
+    <div className="group relative block h-full dark:bg-[#171919]/10">
+      <div className="relative flex h-full rounded-md  border  border-gray-300 border-opacity-50 shadow-md  shadow-gray-500/50 transition-all hover:border-[#000] hover:border-opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:shadow-[8px_8px_0_0_#000] dark:border-gray-600 dark:border-opacity-50 dark:hover:border-[#f2e8de] dark:group-hover:shadow-[8px_8px_0_0_#f2e8de]">
+        <div className="flex flex-1 transform flex-col pb-3 transition">
+          <h3 className="m-0 w-full px-3 pt-2 text-xl font-bold tracking-tight text-black dark:text-white">
+            {prev.title}
+          </h3>
+          <p className="flex-1 px-3 pt-2 leading-[18px] text-gray-500">
+            {prev.summary}
+          </p>
+          <div className="flex flex-wrap justify-between space-x-2 px-3 pt-3 text-sm font-semibold text-primary-400 dark:text-darkprimary-400">
+            <span>
+              <time dateTime={prev.date}>{formatDate(prev.date)}</time>
+            </span>
+            <span>
+              <ViewCounter className="mx-1" slug={prev.slug} />
+              views
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </CustomLink>
+)
+```
+
+
+## Layout 1 
+
+```js:PostLayout.js showLineNumbers
+export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
+  const { slug, fileName, date, title, images, tags, readingTime, author } = frontMatter
+  const [copied, setCopied] = useState(false)
+
+  function copy() {
+    const el = document.createElement('input')
+    el.value = window.location.href
+    document.body.appendChild(el)
+    el.select()
+    document.execCommand('copy')
+    document.body.removeChild(el)
+    setCopied(true)
+  }
+
+  return (
+    <>
+      <BlogSEO
+        url={`${siteMetadata.siteUrl}/blog/${slug}`}
+        authorDetails={authorDetails}
+        {...frontMatter}
+      />
+
+      <article className="mx-auto min-h-screen max-w-4xl">
+        <Image
+          alt=""
+          width={400}
+          height={200}
+          layout="responsive"
+          objectFit="cover"
+          className="img2 "
+          src={'/static/images/blogcover/' + images}
+        />
+        <header className="relative pt-2 pb-3">
+          <div>
+            <PageTitle>{title}</PageTitle>
+          </div>
+          <dl className="space-y-10 ">
+            <div className="flex w-full  flex-col items-start justify-between pt-5 font-medium md:flex-row md:items-center">
+              <time dateTime={date}>
+                {`Written on ${new Date(date).toLocaleDateString(
+                  siteMetadata.locale,
+                  postDateTemplate
+                )} by ${author}`}
+              </time>
+              <p className=" text min-w-32 md:mt-0">
+                {readingTime.text}
+                {` • `}
+                <ViewCounter className="ml-0" slug={slug} blogPage={true} /> views
+              </p>
+            </div>
+          </dl>
+          {/* </div> */}
+        </header>
+        <div className="">
+          <div className=" prose max-w-none border-t  border-b border-gray-400/50 pb-5 pt-2 text-lg dark:prose-dark dark:border-gray-500/50">
+            {children}
+          </div>
+          <footer>
+            <div className="flex items-center justify-center gap-2 py-4">
+              <button
+                onClick={copy}
+                type="button"
+                data-mdb-ripple="true"
+                data-mdb-ripple-color="light"
+                className={clsx(
+                  'mb-2 border border-gray-300 dark:border-gray-600',
+                  'scale-100 hover:scale-[1.1] active:scale-[0.97] motion-safe:transform-gpu',
+                  'motion-reduce:hover:scale-100',
+                  'transition duration-100',
+                  'animate-shadow',
+                  ' rounded  px-3 py-2.5 text-xs font-medium uppercase leading-tight  hover:text-white',
+                  ' shadow-md  shadow-gray-500/50  hover:shadow-lg ',
+                  'text-[#f8cc1b] hover:bg-[#f8cc1b]'
+                )}
+              >
+                <div className="flex flex-row gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1.4em"
+                    height="1.4em"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M20 2H10a2 2 0 0 0-2 2v2h8a2 2 0 0 1 2 2v8h2a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"
+                    />
+                    <path
+                      fill="currentColor"
+                      d="M4 22h10c1.103 0 2-.897 2-2V10c0-1.103-.897-2-2-2H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2zm2-10h6v2H6v-2zm0 4h6v2H6v-2z"
+                    />
+                  </svg>
+                  Copy Link
+                </div>
+              </button>
+
+              <CustomLink className="" title="Share on Reddit" href={redditShare(slug, title)}>
+                <ShareButtons className="text-[#ff4500] hover:bg-[#ff4500]">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="h-4 w-4">
+                    <path
+                      fill="currentColor"
+                      d="M440.3 203.5c-15 0-28.2 6.2-37.9 15.9-35.7-24.7-83.8-40.6-137.1-42.3L293 52.3l88.2 19.8c0 21.6 17.6 39.2 39.2 39.2 22 0 39.7-18.1 39.7-39.7s-17.6-39.7-39.7-39.7c-15.4 0-28.7 9.3-35.3 22l-97.4-21.6c-4.9-1.3-9.7 2.2-11 7.1L246.3 177c-52.9 2.2-100.5 18.1-136.3 42.8-9.7-10.1-23.4-16.3-38.4-16.3-55.6 0-73.8 74.6-22.9 100.1-1.8 7.9-2.6 16.3-2.6 24.7 0 83.8 94.4 151.7 210.3 151.7 116.4 0 210.8-67.9 210.8-151.7 0-8.4-.9-17.2-3.1-25.1 49.9-25.6 31.5-99.7-23.8-99.7zM129.4 308.9c0-22 17.6-39.7 39.7-39.7 21.6 0 39.2 17.6 39.2 39.7 0 21.6-17.6 39.2-39.2 39.2-22 .1-39.7-17.6-39.7-39.2zm214.3 93.5c-36.4 36.4-139.1 36.4-175.5 0-4-3.5-4-9.7 0-13.7 3.5-3.5 9.7-3.5 13.2 0 27.8 28.5 120 29 149 0 3.5-3.5 9.7-3.5 13.2 0 4.1 4 4.1 10.2.1 13.7zm-.8-54.2c-21.6 0-39.2-17.6-39.2-39.2 0-22 17.6-39.7 39.2-39.7 22 0 39.7 17.6 39.7 39.7-.1 21.5-17.7 39.2-39.7 39.2z"
+                    />
+                  </svg>
+                  Post
+                </ShareButtons>
+              </CustomLink>
+              <CustomLink className="" title="Share on Twitter" href={twitterShare(slug, title)}>
+                <ShareButtons className="text-[#1da1f2] hover:bg-[#1da1f2] ">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="h-4 w-4">
+                    <path
+                      fill="currentColor"
+                      d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+                    />
+                  </svg>
+                  Tweet
+                </ShareButtons>
+              </CustomLink>
+              <CustomLink className="" title="Share on LinkedIN" href={linkedinShare(slug, title)}>
+                <ShareButtons className="text-[#0077b5] hover:bg-[#0077b5]">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" className="h-4 w-4">
+                    <path
+                      fill="currentColor"
+                      d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+                    />
+                  </svg>
+                  post
+                </ShareButtons>
+              </CustomLink>
+            </div>
+            <div className="dark:-gray-700 font-medium leading-5 xl:col-start-1 xl:row-start-2">
+              <div className="flex justify-between py-4 ">
+                <div>
+                  <CustomLink
+                    href="/blog"
+                    className="link-underline text-primary-500 hover:text-primary-600 dark:text-darkprimary-500 dark:hover:text-darkprimary-400  "
+                  >
+                    &larr; Back to the blog
+                  </CustomLink>
+                </div>
+                <div>
+                  <div className="link-underline text-primary-500 hover:text-primary-600 dark:text-darkprimary-500 dark:hover:text-darkprimary-400  ">
+                    <CustomLink href={editUrl(fileName)}>{'Edit this on GitHub'}</CustomLink>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+
+          <Comments frontMatter={frontMatter} />
+        </div>
+        <BlogNewsletterForm className="my-5" title="Like what you read, subscribe to read more." />
+        <NextPrevBlog prev={prev} next={next} />
+      </article>
+    </>
+  )
+}
+
+```
+
+A simple layout 
+
+![](/static/images/snippets/layouts/layout-1.jpg)
+
+
+## Layout 2
+
+```js:PostLayout.js showLineNumbers
+export default function PostLayout({ frontMatter, authorDetails, next, prev, children, toc }) {
+  const { slug, fileName, date, title, tags, readingTime, images } = frontMatter
+  const [copied, setCopied] = useState(false)
+
+  function copy() {
+    const el = document.createElement('input')
+    el.value = window.location.href
+    document.body.appendChild(el)
+    el.select()
+    document.execCommand('copy')
+    document.body.removeChild(el)
+    setCopied(true)
+  }
+  return (
+    <>
+      <BlogSEO
+        url={`${siteMetadata.siteUrl}/blog/${slug}`}
+        authorDetails={authorDetails}
+        {...frontMatter}
+      />
+      <article>
+        <div className="">
+          <header className="relative">
+            <div className="space-y-1 ">
+              <Image
+                alt=""
+                width={400}
+                height={200}
+                layout="responsive"
+                objectFit="cover"
+                className="img2 "
+                src={'/static/images/blogcover/' + images}
+              />
+              <header className="relative pt-2 pb-3">
+                <div>
+                  <PageTitle>{title}</PageTitle>
+                </div>
+                <dl className="space-y-10 ">
+                  <div className="flex w-full  flex-col items-start justify-between pt-5 font-medium md:flex-row md:items-center">
+                    <time dateTime={date}>
+                      {`Written on ${new Date(date).toLocaleDateString(
+                        siteMetadata.locale,
+                        postDateTemplate
+                      )} by ${siteMetadata.author}`}
+                    </time>
+                    <p className=" text min-w-32 md:mt-0">
+                      {readingTime.text}
+                      {` • `}
+                      <ViewCounter className="ml-0" slug={slug} blogPage={true} /> views
+                    </p>
+                  </div>
+                </dl>
+              </header>
+            </div>
+          </header>
+        </div>
+
+        <div className="flex flex-col">
+          <div
+            className="border-b border-t border-gray-300 dark:border-gray-700 xl:grid xl:grid-cols-4 xl:gap-x-6"
+            style={{ gridTemplateRows: 'auto 1fr' }}
+          >
+            <div className="prose max-w-none pt-4 pb-8 dark:prose-dark xl:col-span-3 xl:row-span-2">
+              {children}
+            </div>
+            <div className="sticky top-4 hidden py-4 xl:top-14 xl:block">
+              <TocComponent toc={toc} />
+            </div>
+          </div>
+        </div>
+      </article>
+      <footer>
+        <div className="flex items-center justify-center gap-2 pt-4">
+          <button
+            onClick={copy}
+            type="button"
+            data-mdb-ripple="true"
+            data-mdb-ripple-color="light"
+            className={clsx(
+              'mb-2 border border-gray-300 dark:border-gray-600',
+              'scale-100 hover:scale-[1.1] active:scale-[0.97] motion-safe:transform-gpu',
+              'motion-reduce:hover:scale-100',
+              'transition duration-100',
+              'animate-shadow',
+              ' rounded  px-3 py-2.5 text-xs font-medium uppercase leading-tight  hover:text-white',
+              ' shadow-md  shadow-gray-500/50  hover:shadow-lg ',
+              'text-[#f8cc1b] hover:bg-[#f8cc1b]'
+            )}
+          >
+            <div className="flex flex-row gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1.4em"
+                height="1.4em"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M20 2H10a2 2 0 0 0-2 2v2h8a2 2 0 0 1 2 2v8h2a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"
+                />
+                <path
+                  fill="currentColor"
+                  d="M4 22h10c1.103 0 2-.897 2-2V10c0-1.103-.897-2-2-2H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2zm2-10h6v2H6v-2zm0 4h6v2H6v-2z"
+                />
+              </svg>
+              Copy Link
+            </div>
+          </button>
+
+          <CustomLink className="" title="Share on Reddit" href={redditShare(slug, title)}>
+            <ShareButtons className="text-[#ff4500] hover:bg-[#ff4500]">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="h-4 w-4">
+                <path
+                  fill="currentColor"
+                  d="M440.3 203.5c-15 0-28.2 6.2-37.9 15.9-35.7-24.7-83.8-40.6-137.1-42.3L293 52.3l88.2 19.8c0 21.6 17.6 39.2 39.2 39.2 22 0 39.7-18.1 39.7-39.7s-17.6-39.7-39.7-39.7c-15.4 0-28.7 9.3-35.3 22l-97.4-21.6c-4.9-1.3-9.7 2.2-11 7.1L246.3 177c-52.9 2.2-100.5 18.1-136.3 42.8-9.7-10.1-23.4-16.3-38.4-16.3-55.6 0-73.8 74.6-22.9 100.1-1.8 7.9-2.6 16.3-2.6 24.7 0 83.8 94.4 151.7 210.3 151.7 116.4 0 210.8-67.9 210.8-151.7 0-8.4-.9-17.2-3.1-25.1 49.9-25.6 31.5-99.7-23.8-99.7zM129.4 308.9c0-22 17.6-39.7 39.7-39.7 21.6 0 39.2 17.6 39.2 39.7 0 21.6-17.6 39.2-39.2 39.2-22 .1-39.7-17.6-39.7-39.2zm214.3 93.5c-36.4 36.4-139.1 36.4-175.5 0-4-3.5-4-9.7 0-13.7 3.5-3.5 9.7-3.5 13.2 0 27.8 28.5 120 29 149 0 3.5-3.5 9.7-3.5 13.2 0 4.1 4 4.1 10.2.1 13.7zm-.8-54.2c-21.6 0-39.2-17.6-39.2-39.2 0-22 17.6-39.7 39.2-39.7 22 0 39.7 17.6 39.7 39.7-.1 21.5-17.7 39.2-39.7 39.2z"
+                />
+              </svg>
+              Post
+            </ShareButtons>
+          </CustomLink>
+          <CustomLink className="" title="Share on Twitter" href={twitterShare(slug, title)}>
+            <ShareButtons className="text-[#1da1f2] hover:bg-[#1da1f2] ">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="h-4 w-4">
+                <path
+                  fill="currentColor"
+                  d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+                />
+              </svg>
+              Tweet
+            </ShareButtons>
+          </CustomLink>
+          <CustomLink className="" title="Share on LinkedIN" href={linkedinShare(slug, title)}>
+            <ShareButtons className="text-[#0077b5] hover:bg-[#0077b5]">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" className="h-4 w-4">
+                <path
+                  fill="currentColor"
+                  d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+                />
+              </svg>
+              post
+            </ShareButtons>
+          </CustomLink>
+        </div>
+      </footer>
+      <Comments frontMatter={frontMatter} />
+      <div className="dark:-gray-700 font-medium leading-5 xl:col-start-1 xl:row-start-2">
+        <div className="flex justify-between pt-4 ">
+          <div>
+            <CustomLink
+              href="/blog"
+              className="link-underline text-primary-500 hover:text-primary-600 dark:text-darkprimary-500 dark:hover:text-darkprimary-400  "
+            >
+              &larr; Back to the blog
+            </CustomLink>
+          </div>
+          <div>
+            <div className="link-underline text-primary-500 hover:text-primary-600 dark:text-darkprimary-500 dark:hover:text-darkprimary-400  ">
+              <CustomLink href={editUrl(fileName)}>{'Edit this on GitHub'}</CustomLink>
+            </div>
+          </div>
+        </div>
+      </div>
+      <BlogNewsletterForm className="my-5" title="Like what you read, subscribe to read more." />
+      <NextPrevBlog prev={prev} next={next} />
+    </>
+  )
+}
+```
+Sticky TOC on full screen size
+
+![](/static/images/snippets/layouts/layout-2_1.jpg)
+
+But hides on half screen size
+
+![](/static/images/snippets/layouts/layout-2_2.jpg)
+
+
+
+## Layout 3 Sticky TOC
+
+```js:PostLayout.js showLineNumbers
+export default function PostLayout({ frontMatter, authorDetails, next, prev, children, toc }) {
+  const { slug, fileName, date, title, tags, readingTime, images } = frontMatter
+  const [copied, setCopied] = useState(false)
+
+  function copy() {
+    const el = document.createElement('input')
+    el.value = window.location.href
+    document.body.appendChild(el)
+    el.select()
+    document.execCommand('copy')
+    document.body.removeChild(el)
+    setCopied(true)
+  }
+  return (
+    <>
+      <BlogSEO
+        url={`${siteMetadata.siteUrl}/blog/${slug}`}
+        authorDetails={authorDetails}
+        {...frontMatter}
+      />
+      <ScrollTop />
+      <article>
+        <div className="">
+          <header className="relative">
+            <div className="space-y-1 ">
+              <Image
+                alt=""
+                width={400}
+                height={200}
+                layout="responsive"
+                objectFit="cover"
+                className="img2 "
+                src={'/static/images/blogcover/' + images}
+              />
+              <header className="relative">
+                <div>
+                  <PageTitle>{title}</PageTitle>
+                </div>
+                <dl className="space-y-10 pb-2">
+                  <div className="flex w-full  flex-col items-start justify-between pt-5 font-medium md:flex-row md:items-center">
+                    <time dateTime={date}>
+                      {`Written on ${new Date(date).toLocaleDateString(
+                        siteMetadata.locale,
+                        postDateTemplate
+                      )} by ${siteMetadata.author}`}
+                    </time>
+                    <p className=" text min-w-32 md:mt-0">
+                      {readingTime.text}
+                      {` • `}
+                      <ViewCounter className="ml-0" slug={slug} blogPage={true} /> views
+                    </p>
+                  </div>
+                </dl>
+              </header>
+            </div>
+          </header>
+
+        </div>
+           <section className='relative border-b border-t border-gray-300 dark:border-gray-700 lg:grid lg:grid-cols-[auto,250px] lg:gap-8'>
+              <article className='xl: px-1 overflow-x-auto prose max-w-none pb-5 pt-2 text-lg dark:prose-dark transition-colors dark:prose-invert'>
+                {children}
+              </article>
+              <aside className='py-4'>
+                <div className='hidden md:block sticky top-20'>
+                <TocComponent toc={toc} />
+                </div>
+              </aside>
+            </section>
+        <Comments frontMatter={frontMatter} />
+        <footer>
+            <div className="flex items-center justify-center gap-2 py-4">
+              <button
+                onClick={copy}
+                type="button"
+                data-mdb-ripple="true"
+                data-mdb-ripple-color="light"
+                className={clsx(
+                  'mb-2 border border-gray-300 dark:border-gray-600',
+                  'scale-100 hover:scale-[1.1] active:scale-[0.97] motion-safe:transform-gpu',
+                  'motion-reduce:hover:scale-100',
+                  'transition duration-100',
+                  'animate-shadow',
+                  ' rounded  px-3 py-2.5 text-xs font-medium uppercase leading-tight  hover:text-white',
+                  ' shadow-md  shadow-gray-500/50  hover:shadow-lg ',
+                  'text-[#f8cc1b] hover:bg-[#f8cc1b]'
+                )}
+              >
+                <div className="flex flex-row gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1.4em"
+                    height="1.4em"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M20 2H10a2 2 0 0 0-2 2v2h8a2 2 0 0 1 2 2v8h2a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"
+                    />
+                    <path
+                      fill="currentColor"
+                      d="M4 22h10c1.103 0 2-.897 2-2V10c0-1.103-.897-2-2-2H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2zm2-10h6v2H6v-2zm0 4h6v2H6v-2z"
+                    />
+                  </svg>
+                  Copy Link
+                </div>
+              </button>
+
+              <CustomLink className="" title="Share on Reddit" href={redditShare(slug, title)}>
+                <ShareButtons className="text-[#ff4500] hover:bg-[#ff4500]">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="h-4 w-4">
+                    <path
+                      fill="currentColor"
+                      d="M440.3 203.5c-15 0-28.2 6.2-37.9 15.9-35.7-24.7-83.8-40.6-137.1-42.3L293 52.3l88.2 19.8c0 21.6 17.6 39.2 39.2 39.2 22 0 39.7-18.1 39.7-39.7s-17.6-39.7-39.7-39.7c-15.4 0-28.7 9.3-35.3 22l-97.4-21.6c-4.9-1.3-9.7 2.2-11 7.1L246.3 177c-52.9 2.2-100.5 18.1-136.3 42.8-9.7-10.1-23.4-16.3-38.4-16.3-55.6 0-73.8 74.6-22.9 100.1-1.8 7.9-2.6 16.3-2.6 24.7 0 83.8 94.4 151.7 210.3 151.7 116.4 0 210.8-67.9 210.8-151.7 0-8.4-.9-17.2-3.1-25.1 49.9-25.6 31.5-99.7-23.8-99.7zM129.4 308.9c0-22 17.6-39.7 39.7-39.7 21.6 0 39.2 17.6 39.2 39.7 0 21.6-17.6 39.2-39.2 39.2-22 .1-39.7-17.6-39.7-39.2zm214.3 93.5c-36.4 36.4-139.1 36.4-175.5 0-4-3.5-4-9.7 0-13.7 3.5-3.5 9.7-3.5 13.2 0 27.8 28.5 120 29 149 0 3.5-3.5 9.7-3.5 13.2 0 4.1 4 4.1 10.2.1 13.7zm-.8-54.2c-21.6 0-39.2-17.6-39.2-39.2 0-22 17.6-39.7 39.2-39.7 22 0 39.7 17.6 39.7 39.7-.1 21.5-17.7 39.2-39.7 39.2z"
+                    />
+                  </svg>
+                  Post
+                </ShareButtons>
+              </CustomLink>
+              <CustomLink className="" title="Share on Twitter" href={twitterShare(slug, title)}>
+                <ShareButtons className="text-[#1da1f2] hover:bg-[#1da1f2] ">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="h-4 w-4">
+                    <path
+                      fill="currentColor"
+                      d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+                    />
+                  </svg>
+                  Tweet
+                </ShareButtons>
+              </CustomLink>
+              <CustomLink className="" title="Share on LinkedIN" href={linkedinShare(slug, title)}>
+                <ShareButtons className="text-[#0077b5] hover:bg-[#0077b5]">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" className="h-4 w-4">
+                    <path
+                      fill="currentColor"
+                      d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+                    />
+                  </svg>
+                  post
+                </ShareButtons>
+              </CustomLink>
+            </div>
+            <div className="dark:-gray-700 font-medium leading-5 xl:col-start-1 xl:row-start-2">
+              <div className="flex justify-between py-4 ">
+                <div>
+                  <CustomLink
+                    href="/blog"
+                    className="link-underline text-primary-500 hover:text-primary-600 dark:text-darkprimary-500 dark:hover:text-darkprimary-400  "
+                  >
+                    &larr; Back to the blog
+                  </CustomLink>
+                </div>
+                <div>
+                  <div className="link-underline text-primary-500 hover:text-primary-600 dark:text-darkprimary-500 dark:hover:text-darkprimary-400  ">
+                    <CustomLink href={editUrl(fileName)}>{'Edit this on GitHub'}</CustomLink>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+      </article>
+      <BlogNewsletterForm className="my-5" title="Like what you read, subscribe to read more." />
+        <NextPrevBlog prev={prev} next={next} />
+    </>
+  )
+}
+```
+
+
+Sticky TOC on full screen size
+
+![](/static/images/snippets/layouts/final-2.jpg)
+
+Make the TOC sticky for half screen + window size
+
+![](/static/images/snippets/layouts/final-3.jpg)
+
+
+## Footer
+
+![](/static/images/snippets/layouts/footer.jpg)
