@@ -146,3 +146,8 @@ max-width: 100rem
   transition: transform 34ms;
   transform: scale(-2px, -2px);
 }
+
+::selection {
+  background-color: #47a3f3;
+  color: #fefefe;
+}
