@@ -6,7 +6,7 @@ This is my portfolio <a href="https://ashishlotake.com/" target="_blank">website
 
 ## Perfect Light House Score
 
-![](public/static/images/score.gif)
+![](score.gif)
 
 ## 🛠 Installation & Set Up
 

@@ -123,7 +123,7 @@ module.exports = {
             code: {
               fontWeight: 1000,
               color: theme('colors.black'),
-              backgroundColor: theme('colors.gray.100'),
+              backgroundColor: theme('colors.gray.300'),
               paddingLeft: '2px',
               paddingRight: '2px',
               paddingTop: '2px',
@@ -208,7 +208,7 @@ module.exports = {
               color: '#fff',
             },
             pre: {
-              backgroundColor: theme('colors.gray.900'),
+              backgroundColor: theme('colors.dark'),
             },
             code: {
               color: theme('colors.white'),

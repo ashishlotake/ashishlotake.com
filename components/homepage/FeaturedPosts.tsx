@@ -15,9 +15,8 @@ export function FeaturedPosts({ posts }: { posts: BlogFrontMatter[] }) {
           let { slug, date, title, summary, tags } = frontMatter
           return (
             <Link key={slug} href={`/blog/${slug}`} aria-label={`Read "${title}"`}>
-              <div className="group relative block h-full md:hover:scale-[102%] transition-all">
+              <div className="group relative block h-full md:hover:scale[102%] transition-all shadow-lg rounded-lg">
                 <div className="relative  flex h-full ">
-                  {/* <div className="p-4 flex flex-1 transform flex-col  transition border rounded-lg overflow-hidden   bg-gray-50/20  dark:border-gray-800 dark:bg-gray-900/40 hover:border-black dark:hover:border-white "> */}
                   <div className="p-4 flex flex-1 transform flex-col  transition rounded-lg overflow-hidden border-2   dark:border-gray-800  dark:bg-gray-900/40  hover:border-black dark:hover:border-white  ">
                     <h3 className=" w-full text-xl font-bold tracking-tight text-black dark:text-white">
                       {title}

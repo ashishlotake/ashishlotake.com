@@ -4,7 +4,7 @@ export let headerNavLinks = [
   { href: '/projects', title: 'Projects' },
   { href: '/about', title: 'About' },
   // { href: '/xyz', title: 'xyz' },
-  { href: 'ashishlotake.com/static/resume.pdf', title: 'Résumé' },
+  { href: '/static/resume.pdf', title: 'Résumé' },
 
 ]
 
@@ -17,6 +17,6 @@ export let mobileNavLinks = [
   { href: '/projects', title: 'Projects' },
   { href: '/about', title: 'About' },
   // { href: '/xyz', title: 'xyz' },
-  { href: 'ashishlotake.com/static/resume.pdf', title: 'Résumé' },
+  { href: '/static/resume.pdf', title: 'Résumé' },
 
 ]

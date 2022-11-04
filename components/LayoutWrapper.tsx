@@ -15,7 +15,8 @@ export function LayoutWrapper({ children }) {
       <Header onToggleNav={onToggleNav} />
       <SectionContainer>
         <div className="flex flex-col justify-between">
-          <main style={{ minHeight: MAIN_CONTENT_MIN_HEIGHT }}>{children}</main>
+          {/* <main style={{ minHeight: MAIN_CONTENT_MIN_HEIGHT }}>{children}</main> */}
+          <main>{children}</main>
           <Footer />
         </div>
       </SectionContainer>

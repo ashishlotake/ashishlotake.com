@@ -1,7 +1,6 @@
 import { PageSeo } from 'components/SEO'
-import { PageTitle, ProjectCard, Subtitle } from '~/components'
+import { PageTitle, ProjectCard, Subtitle, ProjectCard01 } from '~/components'
 import { projectsData, siteMetadata } from '~/data'
-import { ProjectCard01 } from '~/components'
 
 export default function Projects() {
   // let workProjects = projectsData.filter(({ type }) => type === 'work')

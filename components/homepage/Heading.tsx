@@ -34,10 +34,7 @@ export function Heading() {
               mail
             </Link>{' '}
             and check out my{' '}
-            <Link
-              href="http://ashishlotake.com/static/resume.pdf"
-              className="company font-semibold text-primary-500 "
-            >
+            <Link href="/static/resume.pdf" className="company font-semibold text-primary-500 ">
               resume
             </Link>
           </p>

@@ -2,7 +2,7 @@ export let siteMetadata = {
   title: "Ashish Lotaks's Portfolio",
   author: 'Ashish Lotake',
   fullName: 'Ashish Lotake',
-  headerTitle: "Ashish's blog - Ashish coding journey",
+  headerTitle: "Ashish's digital garden",
   description:
     'Dive deep into nitty-gritty of Data science, Machine learning & Artificial Intelligence with me!',
   language: 'en-us',

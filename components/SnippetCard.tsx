@@ -12,9 +12,10 @@ export function SnippetCard({ snippet }: { snippet: SnippetFrontMatter }) {
         className={clsx(
           'flex h-full cursor-pointer mb-4 lg:mb-0',
           'dark:border-gray-800 rounded-lg border-2',
-          ' dark:bg-gray-900/40 bg-gray-50/10',
+          ' dark:bg-gray-900/40 bggray-50/10',
           'hover:border-black dark:hover:border-white',
-          'md:hover:scale-[102%] transition'
+          'md:hover:scale[102%] transition',
+          'shadow-lg'
         )}
       >
         <div className="p-3 lg:p-4">

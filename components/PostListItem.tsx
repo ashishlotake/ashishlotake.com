@@ -8,17 +8,22 @@ export function PostListItem({ frontMatter }: { frontMatter: MdxFrontMatter }) {
   let { slug, date, title, summary, tags, images, postimg } = frontMatter
   return (
     <Link key={slug} href={`/blog/${slug}`} aria-label={`Read "${title}"`}>
-      <div className="group relative block h-full md:hover:scale-[102%] transition-all">
+      <div className="group relative block h-full mdhover:scale-[102%] transition-all">
         <div className="relative  flex h-full ">
-          <div className="p-5 flex flex-1 transform flex-col  transition  rounded-lg overflow-hidden border-2 dark:border-gray-800 bg-gray-50/10 dark:bg-gray-900/40  md:hover:border-black dark:md:hover:border-white ">
+          <div
+            className={clsx(
+              'p5 flex flex-1 transform flex-col  transition  rounded-lg overflow-hidden border-2 dark:border-gray-800 bggray-50/10 dark:bg-gray-900/40  md:hover:border-black dark:md:hover:border-white ',
+              'shadow-lg'
+            )}
+          >
             {images ? (
               <div className="relative ">
                 <Image
                   alt=""
                   width={400}
                   height={200}
-                  src={'/static/images/blogcover/' + images}
-                  className="object-cover rounded-md object-center lg:h-48 md:h-36"
+                  src={images[0]}
+                  className="object-cover rounded-t-md object-center lg:h-48 md:h-36"
                 />
                 <div
                   className={clsx(
@@ -37,16 +42,18 @@ export function PostListItem({ frontMatter }: { frontMatter: MdxFrontMatter }) {
                 </div>
               </div>
             ) : null}
-            <h3 className=" mb-3 pt-5 m-0 w-full text-xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
-              {title}
-            </h3>
-            <p className=" flex-1 mb-3  text-gray-800 dark:text-gray-200 ">{summary}</p>
+            <div className="p-6">
+              <h3 className=" mb-3 pt-1 m-0 w-full text-xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
+                {title}
+              </h3>
+              <p className=" flex-1 mb-3  text-gray-800 dark:text-gray-200 ">{summary}</p>
 
-            <div className=" flex flex-wrap  justify-between space-x-2  pt-3 text-sm font-semibold text-gray-500">
-              <span>
-                <time dateTime={date}>{formatDate(date)}</time>
-              </span>
-              <span>{/* <ViewCounter className="mx-1" slug={slug} /> */}</span>
+              <div className=" flex flex-wrap  justify-between space-x-2  pt-3 text-sm font-semibold text-gray-500">
+                <span>
+                  <time dateTime={date}>{formatDate(date)}</time>
+                </span>
+                <span>{/* <ViewCounter className="mx-1" slug={slug} /> */}</span>
+              </div>
             </div>
           </div>
         </div>

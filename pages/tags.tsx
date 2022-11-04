@@ -28,10 +28,10 @@ export default function Tags({ tags }: { tags: TagsCount }) {
               <div className="flex   ">
                 <p
                   className={clsx(
-                    'md:text-md text-xs rounded-l border px-1 uppercase',
+                    'text-[13px] md:text-base  rounded-l border px-1 uppercase',
                     'border   dark:border-gray-800',
-                    ' bg-gray-50/20 dark:bg-gray-900/40',
-                    ' hover:bg-primary-500  dark:hover:bg-darkprimary-500',
+                    ' shadow-lg dark:bg-gray-900/40',
+                    ' hover:bg-primary-500  dark:hover:bg-primary-500',
                     'hover:border-primary-500 dark:hover:border-darkprimary-500',
                     'hover:text-white dark:hover:text-black p-1'
                   )}
@@ -42,9 +42,9 @@ export default function Tags({ tags }: { tags: TagsCount }) {
                   href={`/tags/${kebabCase(tag)}`}
                   className="bg-gray-800 dark:bg-gray-200 rounded-r"
                 >
-                  <small className="md:text-md tenxt-center m-1 textxs  text-white  dark:text-black    ">
+                  <p className="  p-1 text-[13px] md:text-base text-white  dark:text-black    ">
                     {` (${tags[tag]})`}
-                  </small>
+                  </p>
                 </Link>
               </div>
             </div>

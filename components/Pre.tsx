@@ -63,9 +63,8 @@ export function Pre({ children }: { children: React.ReactNode }) {
           )}
         </>
       )}
-      <pre className="border border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-[#171919]  ">
-        {children}
-      </pre>
+      {/* <pre className="border border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-[#000]  "> */}
+      <pre className="dark:border-gray-800 border-2">{children}</pre>
     </div>
   )
 }

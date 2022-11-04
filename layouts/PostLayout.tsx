@@ -29,7 +29,7 @@ export function PostLayout(props: PostLayoutProps) {
                 alt=""
                 width={800}
                 height={800}
-                src={'/static/images/blogcover/' + images}
+                src={images[0]}
                 className="object-cover object-center sm:h-72 h-36 rounded-lg"
               />
               <h1 className=" mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">

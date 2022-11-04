@@ -65,7 +65,7 @@ export let DevIconsMap = {
 
 export function DevIcon({ type, className }) {
   let Icon = DevIconsMap[type]
-  if (!Icon) return <div>Missing icon</div>
+  if (!Icon) return null
 
   return <Icon className={className} fill="currentColor" />
 }
