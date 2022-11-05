@@ -29,7 +29,7 @@ function TopProject() {
   return (
     <>
       <div className="mt-4 flex flex-col ">
-        <h2 className="mb-4 text-3xl font-bold">Projects</h2>
+        <h2 className="mb-4 text-3xl font-bold text-gray-800 dark:text-gray-100">Projects</h2>
 
         <div className=" grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-2">
           {projectsData.slice(0, 2).map((project) => (
@@ -52,10 +52,10 @@ function TopProject() {
 
 function Contact() {
   return (
-    <div className="my-10 flex flex-col">
-      <h2 className="mb-7 text-3xl font-bold">Contact</h2>
+    <div className="my-10 flex flex-col ">
+      <h2 className="mb-7 text-3xl font-bold text-gray-800 dark:text-gray-100">Contact</h2>
 
-      <p className="text-lg font-normal ">
+      <p className="text-lg font-normal text-gray-700 max-w-none dark:text-gray-300">
         If you want to collaborate or just want to have a conversation you can{' '}
         <Link
           className="company text-primary-500 font-semibold "

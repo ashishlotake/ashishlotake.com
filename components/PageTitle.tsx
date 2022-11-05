@@ -10,7 +10,7 @@
 
 export function PageTitle({ children }) {
   return (
-    <h1 className="text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white  ">
+    <h1 className="text-3xl font-bold tracking-tight  md:text-5xl text-gray-800 dark:text-gray-100  ">
       {children}
     </h1>
   )

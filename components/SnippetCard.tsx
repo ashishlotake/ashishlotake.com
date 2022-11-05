@@ -22,10 +22,10 @@ export function SnippetCard({ snippet }: { snippet: SnippetFrontMatter }) {
           <DevIcon className="h-16 w-16 lg:h-14 lg:w-14 xl:h-24 xl:w-24" type={type} />
         </div>
         <div className="p-3 lg:p-4 md:p-4 overflow-hidden">
-          <h3 className="text-xl font-bold leading-8 tracking-tight whitespace-nowrap overflow-hidden overflow-ellipsis">
+          <h3 className="text-xl font-bold leading-8 tracking-tight whitespace-nowrap overflow-hidden overflow-ellipsis text-gray-800 dark:text-gray-100">
             {heading}
           </h3>
-          <p className="text-md lg:text-base mt-2 text-gray-800 dark:text-gray-200">{summary}</p>
+          <p className=" flex-1 prose text-gray-500 max-w-none dark:text-gray-400">{summary}</p>
         </div>
       </div>
     </Link>

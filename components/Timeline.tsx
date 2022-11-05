@@ -154,7 +154,7 @@ function TimelineCard({ d }) {
         {/* <Icon icon={d.icon} /> */}
         <DevIcon type={d.icon} className="h-6 w-6" />
       </span>
-      <h3 className="flex items-center text-xl font-medium tracking-tight ">
+      <h3 className="flex items-center text-xl font-medium tracking-tight text-gray-800 dark:text-gray-100 ">
         {d.title}
 
         {d.status ? (
@@ -166,7 +166,7 @@ function TimelineCard({ d }) {
       <time className="font-mono text-sm font-normal leading-none text-gray-500 dark:text-gray-500">
         {d.date}
       </time>
-      <p className="text mt-1 font-normal tracking-tight text-gray-800 dark:text-gray-200 ">
+      <p className="text mt-1 font-normal tracking-tight text-gray-700 dark:text-gray-300   ">
         {d.description}
       </p>
     </li>

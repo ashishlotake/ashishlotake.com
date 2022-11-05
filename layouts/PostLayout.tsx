@@ -32,7 +32,7 @@ export function PostLayout(props: PostLayoutProps) {
                 src={images[0]}
                 className="object-cover object-center sm:h-72 h-36 rounded-lg"
               />
-              <h1 className=" mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
+              <h1 className=" mb-4 text-3xl font-bold tracking-tight  md:text-5xl text-gray-800 dark:text-gray-100">
                 {title}
               </h1>
               <dl>
@@ -46,7 +46,7 @@ export function PostLayout(props: PostLayoutProps) {
 
           <div className="">
             <div className="">
-              <div className="prose dark:prose-dark ">{children}</div>
+              <div className="prose dark:prose-dark md:text-lg ">{children}</div>
               <div className="border-t border-b mt-4 border-gray-200 dark:border-gray-700">
                 <SocialButtons
                   postUrl={postUrl}

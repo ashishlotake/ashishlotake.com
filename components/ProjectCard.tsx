@@ -18,7 +18,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
         <div className="p-6">
           <div className="flex justify-between mb-3">
-            <h2 className="m-0 w-full  pt-2 text-xl font-bold tracking-tight ">
+            <h2 className="m-0 w-full  pt-2 text-xl font-bold tracking-tight text-gray-800 dark:text-gray-100">
               {href ? (
                 <Link href={href} aria-label={`Link to ${title}`}>
                   {title}
@@ -30,7 +30,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
               )}
             </h2>
           </div>
-          <p className="mb-3 prose dark:prose-dark   max-w-none ">{description}</p>
+          {/* <p className="mb-3 max-w-none text-gray-600 dark:text-gray-300 ">{description}</p> */}
+          <p className="mb-3 prose text-gray-500 max-w-none dark:text-gray-400">{description}</p>
           <div className=" flex space-x-4 pb-1 pt-1">
             {github && (
               <Link href={github} className="group block ">
@@ -77,32 +78,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 </Button>
               </Link>
             )}
-            {blog && (
-              <Link href={blog} className=" hidden group sm:block ">
-                <Button className="px-1  sm:px-2 ">
-                  <p className="link-underline1 py-2">
-                    <text className=""> Read More</text>
-                    <svg
-                      className="ml-1 mb-0.5 inline-block h-5 w-5 fill-current"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="1em"
-                      height="1em"
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 24 24"
-                    >
-                      <g fill="currentColor">
-                        <path
-                          fillRule="evenodd"
-                          d="M17 5H7a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1ZM7 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3H7Z"
-                          clipRule="evenodd"
-                        />
-                        <path d="M8 7h8v2H8V7Zm0 4h8v2H8v-2Zm0 4h5v2H8v-2Z" />
-                      </g>
-                    </svg>
-                  </p>
-                </Button>
-              </Link>
-            )}
           </div>
         </div>
       </div>
@@ -137,7 +112,7 @@ export function ProjectCard01({ project }: ProjectCardProps) {
   let { title, description, imgSrc, href, github, blog } = project
 
   return (
-    <div className="overflow-hidden flex flex-col space-y-5 rounded-lg border  bggray-50/10 p4 dark:border-gray-800 dark:bg-gray-900/40  md:flex-row md:space-y-0 md:space-x-8 shadow-md">
+    <div className="overflow-hidden flex flex-col space-y-5 rounded-lg border-2  bggray-50/10 p4 dark:border-gray-800 dark:bg-gray-900/40  md:flex-row md:space-y-0 md:space-x-8 shadow-md">
       <div className="overflow-hidden  md:w-52 bg-white">
         <div className="relative  w-full  md:h-full md:w-52 h-36">
           <Image
@@ -152,9 +127,10 @@ export function ProjectCard01({ project }: ProjectCardProps) {
       <div className="flex flex-1 flex-col justify-between">
         <div className="px-5 pb-3 md:p-2 flex flex-col space-y-2">
           <Link href={github} className="transition duration-200 hover:opacity-60">
-            <h2 className="text-2xl font-semibold text-black dark:text-white ">{title}</h2>
+            <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 ">{title}</h2>
           </Link>
-          <p className="text-gray-800 dark:text-gray-200 ">{description}</p>
+          {/* <p className="text-gray-800 dark:text-gray-300 ">{description}</p> */}
+          <p className="mb-3  text-gray-500 max-w-none dark:text-gray-400">{description}</p>
           <div className=" flex space-x-4 pb-1 pt-1">
             {github && (
               <Link href={github} className="group block ">

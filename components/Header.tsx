@@ -28,7 +28,7 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
               <Link
                 key={link.title}
                 href={link.href}
-                className="rounded-lg py-1 px-2 font-medium text-gray-900 sm:py-2 sm:px-3 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800"
+                className="rounded-lg py-1 px-2 font-medium text-gray-700 sm:py-2 sm:px-3 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800"
               >
                 {link.title}
               </Link>

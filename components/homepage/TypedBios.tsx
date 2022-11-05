@@ -18,11 +18,11 @@ export function TypedBios() {
 
   return (
     <div>
-      <ul id="bios" className="hidden ">
-        <li>Hello!</li>
+      <ul id="bios" className="hidden font-mono">
+        <li>Hello!👋</li>
         <li>I'm a builder, learner and freedom seeker.</li>
         <li>
-          I live in <b className="font-medium">Ahmednagar, India</b>.
+          I live in <b className="font-medium">Maharashtra, India 🇮🇳</b>.
         </li>
         <li>
           My first programming language I learned was <b className="font-medium">Python</b>.

@@ -53,7 +53,7 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
-        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        sans: ['IBM Plex Sans', ...defaultTheme.fontFamily.sans]
       },
       colors: {
         primary: colors.sky,
@@ -83,7 +83,7 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.black'),
+            color: theme('colors.gray.700'),
             a: {
               fontWeight: '500',
               color: theme('colors.primary.500'),
@@ -100,21 +100,21 @@ module.exports = {
             h1: {
               fontWeight: '800',
               letterSpacing: theme('letterSpacing.tight'),
-              color: '#000',
+              color: theme('colors.black'),
             },
             h2: {
               fontWeight: '700',
 
               letterSpacing: theme('letterSpacing.tight'),
-              color: '#000',
+              color: theme('colors.black'),
             },
             h3: {
               fontWeight: '600',
 
-              color: '#000',
+              color: theme('colors.black'),
             },
             'h4,h5,h6': {
-              color: '#000',
+              color: theme('colors.black'),
             },
             pre: {
               backgroundColor: theme('colors.gray.50'),
@@ -122,7 +122,7 @@ module.exports = {
             },
             code: {
               fontWeight: 1000,
-              color: theme('colors.black'),
+              color: theme('colors.gray.700'),
               backgroundColor: theme('colors.gray.300'),
               paddingLeft: '2px',
               paddingRight: '2px',
@@ -151,19 +151,19 @@ module.exports = {
             hr: { borderColor: theme('colors.gray.200') },
             'ol li::marker': {
               fontWeight: '600',
-              color: theme('colors.gray.500'),
+              color: theme('colors.gray.700'),
             },
             'ul li::marker': {
               backgroundColor: theme('colors.gray.500'),
             },
             strong: { color: theme('colors.gray.600') },
             blockquote: {
-              color: theme('colors.black'),
+              color: theme('colors.gray.700'),
               borderLeftColor: theme('colors.gray.500'),
             },
             li: {
               '&::marker': {
-                color: theme('colors.black'),
+                color: theme('colors.gray.700'),
               },
             },
             tbody: {
@@ -173,7 +173,7 @@ module.exports = {
         },
         dark: {
           css: {
-            color: theme('colors.gray.200'),
+            color: theme('colors.gray.300'),
             a: {
               fontWeight: '500',
               color: theme('colors.primary.500'),
@@ -188,24 +188,20 @@ module.exports = {
             },
             h1: {
               fontWeight: '800',
-              // fontStyle: 'italic',
               letterSpacing: theme('letterSpacing.tight'),
-              color: '#fff',
+              color: theme('colors.white'),
             },
             h2: {
               fontWeight: '700',
-              // fontStyle: 'italic',
               letterSpacing: theme('letterSpacing.tight'),
-              color: '#fff',
+              color: theme('colors.white'),
             },
             h3: {
               fontWeight: '600',
-              // fontStyle: 'italic',
-              color: '#fff',
+              color: theme('colors.white'),
             },
             'h4,h5,h6': {
-              // fontStyle: 'italic',
-              color: '#fff',
+              color: theme('colors.white'),
             },
             pre: {
               backgroundColor: theme('colors.dark'),
@@ -225,7 +221,7 @@ module.exports = {
             'ul li::marker': {
               backgroundColor: theme('colors.gray.400'),
             },
-            strong: { color: theme('colors.white') },
+            strong: { color: theme('colors.gray.300') },
             thead: {
               th: {
                 color: theme('colors.white'),
@@ -237,12 +233,12 @@ module.exports = {
               },
             },
             blockquote: {
-              color: theme('colors.white'),
+              color: theme('colors.gray.300'),
               borderLeftColor: theme('colors.gray.700'),
             },
             li: {
               '&::marker': {
-                color: theme('colors.white'),
+                color: theme('colors.gray.300'),
               },
             },
           },

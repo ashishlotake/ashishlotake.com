@@ -43,11 +43,12 @@ export function PostListItem({ frontMatter }: { frontMatter: MdxFrontMatter }) {
               </div>
             ) : null}
             <div className="p-6">
-              <h3 className=" mb-3 pt-1 m-0 w-full text-xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
+              <h3 className=" mb-3 pt-1 m-0 w-full text-xl font-bold tracking-tight text-gray-800 dark:text-gray-100">
                 {title}
               </h3>
-              <p className=" flex-1 mb-3  text-gray-800 dark:text-gray-200 ">{summary}</p>
-
+              <p className="mb-3 flex-1 prose text-gray-500 max-w-none dark:text-gray-400">
+                {summary}
+              </p>
               <div className=" flex flex-wrap  justify-between space-x-2  pt-3 text-sm font-semibold text-gray-500">
                 <span>
                   <time dateTime={date}>{formatDate(date)}</time>

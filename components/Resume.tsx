@@ -135,7 +135,9 @@ function ResumeContent({ data }) {
       {data.map((d) => (
         <div key={d.title} className="my-2">
           <div className="flex flex-row">
-            <h1 className=" m-0 w-full text-xl font-medium tracking-tight">{d.title}</h1>{' '}
+            <h1 className=" m-0 w-full text-xl font-medium tracking-tight text-gray-800 dark:text-gray-100">
+              {d.title}
+            </h1>{' '}
             <span className="text-md text-gray-500 ">&nbsp;@&nbsp;</span>{' '}
             <span className="">
               <Link href={d.url} className="company">
@@ -148,7 +150,7 @@ function ResumeContent({ data }) {
               {d.range ? `${d.range}` : `${d.provider}`}
             </div>
             {d.text1 ? (
-              <p className="pb-5 pt-2 tracking-tight text-gray-800 dark:text-gray-200 ">
+              <p className="pb-5 pt-2 porse tracking-tight text-gray-700 dark:text-gray-300  ">
                 {d.text1}
               </p>
             ) : null}
