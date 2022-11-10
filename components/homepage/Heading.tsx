@@ -11,11 +11,11 @@ export function Heading() {
             {siteMetadata.author}
           </h1>
           <TypedBios />
-          <p className="text-xl md:text-2xl pt-4 mb-2 font-bold text-gray-800 dark:text-gray-100">
+          <p className="text-xl md:text-2xl pt-4 mb-2 font-semibold text-gray-800 dark:text-gray-100">
             DA, DS, ML &amp; AI practitioner{' '}
           </p>
           {/* <p className="text max-w-2xl text-gray-600 dark:text-gray-300 font-medium"> */}
-          <p className="text-lg leading-7  text-gray-700 max-w-2xl dark:text-gray-300">
+          <p className="text-gray-700 max-w-2xl dark:text-gray-300">
             Welcome to my website <br></br>I am a data scientist, machine learning practitioner, and
             artificial intelligence practitioner, learning new thing everyday. We live in a world of
             internet where sharing mental model is never been easier and i feel like I should share

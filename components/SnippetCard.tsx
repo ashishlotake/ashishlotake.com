@@ -10,22 +10,20 @@ export function SnippetCard({ snippet }: { snippet: SnippetFrontMatter }) {
     <Link href={`/snippets/${slug}`} title={title}>
       <div
         className={clsx(
-          'flex h-full cursor-pointer mb-4 lg:mb-0',
+          'flex h-full cursor-pointer lg:mb-0',
           'dark:border-gray-800 rounded-lg border-2',
-          ' dark:bg-gray-900/40 bggray-50/10',
+          ' dark:bg-bg bggray-50/10',
           'hover:border-black dark:hover:border-white',
           'md:hover:scale[102%] transition',
           'shadow-lg'
         )}
       >
-        <div className="p-3 lg:p-4">
-          <DevIcon className="h-16 w-16 lg:h-14 lg:w-14 xl:h-24 xl:w-24" type={type} />
+        <div className="p-3 ">
+          <DevIcon className="h-16 w-16 " type={type} />
         </div>
-        <div className="p-3 lg:p-4 md:p-4 overflow-hidden">
-          <h3 className="text-xl font-bold leading-8 tracking-tight whitespace-nowrap overflow-hidden overflow-ellipsis text-gray-800 dark:text-gray-100">
-            {heading}
-          </h3>
-          <p className=" flex-1 prose text-gray-500 max-w-none dark:text-gray-400">{summary}</p>
+        <div className="md:p-3 overflow-hidden">
+          <h3 className="  text-lg font-semibold  text-gray-800 dark:text-gray-100">{heading}</h3>
+          <p className=" flex-1  text-gray-600  dark:text-gray-300">{summary}</p>
         </div>
       </div>
     </Link>

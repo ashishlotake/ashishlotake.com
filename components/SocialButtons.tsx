@@ -27,10 +27,10 @@ export function SocialButtons({ postUrl, title, fileName, summary }: SocialButto
       </div>
       <div className="flex items-center">
         <TwitterShareButton url={postUrl} title={title} via={siteMetadata.socialAccounts.twitter}>
-          <span className="mr-2 inline-flex items-center rounded border-2 border-[#55acee] bg-[#55acee] px-1 py-1 md:px-3 md:py-2 text-sm font-extrabold text-white transition-colors hover:bg-transparent hover:text-[#55acee] focus:outline-none focus:ring active:opacity-75">
+          <span className="mr-2 inline-flex items-center rounded border-2 border-[#55acee] bg-[#55acee] px-1 py-1  text-sm font-bold text-white transition-colors hover:bg-transparent hover:text-[#55acee] focus:outline-none focus:ring active:opacity-75">
             Tweet
             <svg
-              className="ml-1 h-5 w-5"
+              className="ml-1 h-4 w-4"
               fill="currentColor"
               viewBox="0 0 24 24"
               aria-hidden="true"
@@ -41,12 +41,17 @@ export function SocialButtons({ postUrl, title, fileName, summary }: SocialButto
         </TwitterShareButton>
         <Link
           href={linkedinShare(postUrl, title)}
-          className="inline-flex font-extrabold items-center rounded border-2 border-[#0077b5] bg-[#0077b5] px-1 py-1 md:px-3 md:py-2 text-sm  text-white transition-colors hover:bg-transparent hover:text-[#0077b5] focus:outline-none focus:ring active:opacity-75"
+          className="inline-flex font-bold items-center rounded border-2 border-[#0077b5] bg-[#0077b5] px-1 py-1  text-sm  text-white transition-colors hover:bg-transparent hover:text-[#0077b5] focus:outline-none focus:ring active:opacity-75"
           target="_blank"
           rel="noreferrer"
         >
           Post
-          <svg className="ml-1 h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <svg
+            className="ml-1 mb-0.5 h-4 w-4"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
             <path fill="none" d="M0 0h24v24H0z" />
             <path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z" />
           </svg>

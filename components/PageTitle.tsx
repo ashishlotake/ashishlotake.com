@@ -1,16 +1,6 @@
-// import type { PageTitleProps } from '~/types'
-
-// export function PageTitle({ children }: PageTitleProps) {
-//   return (
-//     <h1 className="font-extrabold tracking-tight text-gray-900 dark:text-gray-100 text-[34px] leading-10 md:text-5xl md:leading-14 lg:text-[54px] lg:leading-[64px]">
-//       {children}
-//     </h1>
-//   )
-// }
-
 export function PageTitle({ children }) {
   return (
-    <h1 className="text-3xl font-bold tracking-tight  md:text-5xl text-gray-800 dark:text-gray-100  ">
+    <h1 className="text-3xl font-bold tracking-tight  md:text-4xl text-gray-800 dark:text-gray-100  ">
       {children}
     </h1>
   )

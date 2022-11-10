@@ -18,7 +18,7 @@ export function TypedBios() {
 
   return (
     <div>
-      <ul id="bios" className="hidden font-mono">
+      <ul id="bios" className="hidden font-mono ">
         <li>Hello!👋</li>
         <li>I'm a builder, learner and freedom seeker.</li>
         <li>
@@ -36,7 +36,7 @@ export function TypedBios() {
         <li>I frequently enjoy playing video game 🎮.</li>
         <li>I love coffee ☕.</li>
       </ul>
-      <span ref={el} className="text-neutral-900 dark:text-neutral-200" />
+      <span ref={el} className="text-gray-700 dark:text-gray-300" />
     </div>
   )
 }

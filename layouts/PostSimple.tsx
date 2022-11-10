@@ -28,11 +28,7 @@ export function PostSimple(props: PostSimpleLayoutProps) {
           <header className="pt-6 border-b border-gray-200 dark:border-gray-700 mb-3">
             <div className="space-y-4">
               <BlogTags tags={tags} />
-              {/* <PageTitle>{title}</PageTitle> */}
-              {/* <Image src={images[0] window} */}
-              <h1 className="mb-4 text-3xl font-bold tracking-tight  md:text-5xl text-gray-800 dark:text-gray-100">
-                {title}
-              </h1>
+              <PageTitle>{title}</PageTitle>
               <dl>
                 <div>
                   <dt className="sr-only">Published on</dt>

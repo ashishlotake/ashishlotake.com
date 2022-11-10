@@ -32,8 +32,8 @@ export default function Resume() {
         title={`Resume - ${siteMetadata.author}`}
         description="A dedicated and aspiring data scientist and machine learning engineer, wish to work for an institution that offers technical and personal growth."
       />
-      <div className="0 mt-5  rounded-lg border-2    text-center shadow-lg bggray-50/10 p-2 dark:border-gray-800 dark:bg-gray-900/40  ">
-        <div className="   border-b-2  pb-2 text-2xl   font-medium dark:border-gray-800  md:text-3xl">
+      <div className="0 mt-5  rounded-lg border-2    text-center shadow-lg bggray-50/10 p-2 dark:border-gray-800 dark:bg-bg  ">
+        <div className="   border-b-2  pb-2 text-xl   font-medium dark:border-gray-800 ">
           Skills
         </div>
         <div className="my-5 flex flex-col  items-center space-x-2   xl:sticky xl:top-0">
@@ -118,12 +118,12 @@ export default function Resume() {
 
 function ResumeBlock({ title, children }) {
   return (
-    <div className="rounded-lg border-2 px-3 shadow-lg bggray-50/10 dark:border-gray-800 dark:bg-gray-900/40   ">
+    <div className="rounded-lg border-2 px-3 shadow-lg bggray-50/10 dark:border-gray-800 dark:bg-bg   ">
       <div className="group">
-        <div className="   border-b-2  py-2 text-2xl  text-center font-medium dark:border-gray-800  md:text-3xl">
+        <div className="   border-b-2  py-2 text-xl  text-center font-medium dark:border-gray-800 ">
           {title}
         </div>
-        <div className="px-1 pt-5">{children}</div>
+        <div className="px-1 pt-2">{children}</div>
       </div>
     </div>
   )
@@ -135,7 +135,7 @@ function ResumeContent({ data }) {
       {data.map((d) => (
         <div key={d.title} className="my-2">
           <div className="flex flex-row">
-            <h1 className=" m-0 w-full text-xl font-medium tracking-tight text-gray-800 dark:text-gray-100">
+            <h1 className=" m-0 w-full text-lg font-medium tracking-tight text-gray-800 dark:text-gray-100">
               {d.title}
             </h1>{' '}
             <span className="text-md text-gray-500 ">&nbsp;@&nbsp;</span>{' '}
@@ -146,11 +146,9 @@ function ResumeContent({ data }) {
             </span>
           </div>
           <div className="">
-            <div className=" font-mono text-sm text-gray-500 ">
-              {d.range ? `${d.range}` : `${d.provider}`}
-            </div>
+            <div className="text-sm text-gray-500 ">{d.range ? `${d.range}` : `${d.provider}`}</div>
             {d.text1 ? (
-              <p className="pb-5 pt-2 porse tracking-tight text-gray-700 dark:text-gray-300  ">
+              <p className=" my-3 text-sm text-gray-700 max-w-none dark:text-gray-300 ">
                 {d.text1}
               </p>
             ) : null}

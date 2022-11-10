@@ -2,10 +2,11 @@ import { headerNavLinks } from 'data'
 import NextImage from 'next/image'
 import { Link } from './Link'
 import { ThemeSwitcher } from './ThemeSwitcher'
-
+import { useRouter } from 'next/router'
+import clsx from 'clsx'
 export function Header({ onToggleNav }: { onToggleNav: () => void }) {
   return (
-    <header className="overflow-x-hidden backdrop-blur supports-backdrop-blur:bg-white/95 py-3 sticky top-0 z-40 bg-white/75 dark:bg-dark/75">
+    <header className="overflowxhidden backdrop-blur supports-backdrop-blur:bg-white/80 py-2 sticky top-0 z-40 bg-white/75 dark:bg-dark/75">
       <div className="mx-auto max-w-3xl flex items-center justify-between px-3 md:px-0">
         <div>
           <Link href="/" aria-label="Ashish's Blog">
@@ -23,15 +24,15 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
           </Link>
         </div>
         <div className="flex items-center text-base leading-5">
-          <div className="hidden sm:block space-x-2">
+          <DropdownHover />
+          <div className="hidden sm:block">
             {headerNavLinks.map((link) => (
-              <Link
+              <NavItem
                 key={link.title}
                 href={link.href}
-                className="rounded-lg py-1 px-2 font-medium text-gray-700 sm:py-2 sm:px-3 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800"
-              >
-                {link.title}
-              </Link>
+                text={link.title}
+                className="sm:px-3 sm:py-2 rounded-md"
+              />
             ))}
           </div>
           <ThemeSwitcher />
@@ -57,5 +58,45 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
         </div>
       </div>
     </header>
+  )
+}
+
+function NavItem({ href, text, className }) {
+  const router = useRouter()
+  const isActive = router.asPath === href
+
+  return (
+    <Link
+      href={href}
+      className={clsx(
+        isActive
+          ? 'font-semibold text-gray-800 dark:text-gray-200'
+          : 'font-normal text-gray-600 dark:text-gray-400',
+        'hidden md:inline-block p-1 hover:text-black hover:dark:text-white hover:bg-gray-200  hover:dark:bg-gray-800 transition-all',
+        className
+      )}
+    >
+      <span className="capsize">{text}</span>
+    </Link>
+  )
+}
+
+export function DropdownHover() {
+  return (
+    <div className="group relative ">
+      <button className=" text-gray-700  rounded inline-flex items-center group">
+        <NavItem href="/blog" text="Blog" className="sm:px-3 sm:py-2 rounded-md" />
+      </button>
+
+      {/* menu list */}
+      <ul className="rounded-lg absolute hidden pt-2 text-gray-700 p-1 group-hover:block ">
+        <li className="bg-gray-200hover:bg-gray-400  cursor-pointer rounded-t border dark:border-gray-800 bg-white dark:bg-bg">
+          <NavItem href="/blog" text="Blog" className="py-2 px-4 w-full" />
+        </li>
+        <li className="bg-gray-200hover:bg-gray-400  cursor-pointer rounded-b border dark:border-gray-800 bg-white dark:bg-bg">
+          <NavItem href="/tags" text="Tags" className="py-2 px-4 w-full" />
+        </li>
+      </ul>
+    </div>
   )
 }

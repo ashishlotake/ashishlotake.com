@@ -46,7 +46,7 @@ max-width: 100rem
 }
 
 .remark-code-title {
-  @apply rounded-t-lg border-2 border-b-0  bg-gray-200 px-5 py-3 font-mono text-sm font-bold text-gray-800 dark:border-gray-800 dark:bg-[#111111] dark:text-gray-200;
+  @apply rounded-t-lg border-2 border-b-0  bg-gray-200 px-5 py-1 font-mono text-sm font-bold text-gray-800 dark:border-gray-800 dark:bg-gray-800 dark:text-gray-200;
 }
 
 .remark-code-title + div > pre {
@@ -58,7 +58,7 @@ max-width: 100rem
 }
 
 .code-line {
-  @apply -mx-4 block border-l-4 border-transparent bg-gray-50  pl-4 pr-4   text-black dark:bg-dark  dark:text-white;
+  @apply -mx-4 block border-l-4 border-transparent bg-gray-50  pl-4 pr-4   text-black dark:bg-bg  dark:text-white;
 }
 
 .code-line.inserted {
@@ -70,7 +70,7 @@ max-width: 100rem
 }
 
 .highlight-line {
-  @apply -mx-4 block border-l-4 border-primary-500 bg-gray-200 px-4 dark:border-primary-500 dark:bg-gray-900;
+  @apply -mx-4 block border-l-4 border-primary-500 bg-gray-200 px-4 dark:border-primary-500 dark:bg-gray-800;
 }
 
 .line-number::before {

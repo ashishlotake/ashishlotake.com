@@ -58,7 +58,12 @@ module.exports = {
       colors: {
         primary: colors.sky,
         gray: colors.neutral,
-        dark: '#000',
+        // dark: '#000',
+        dark:'#070707',
+        bg: '#101010',
+        // bg:'#000',
+        // darkwhite: '#d4d4d4',
+        darkwhite: '#eae8e8',
         code: {
           green: '#22c55e',
           yellow: '#eab308',
@@ -160,6 +165,9 @@ module.exports = {
             blockquote: {
               color: theme('colors.gray.700'),
               borderLeftColor: theme('colors.gray.500'),
+              backgroundColor: theme('colors.gray.100'),
+              borderTopRightRadius: '8px',
+              borderBottomRightRadius: '8px',
             },
             li: {
               '&::marker': {
@@ -173,7 +181,7 @@ module.exports = {
         },
         dark: {
           css: {
-            color: theme('colors.gray.300'),
+            color: theme('colors.darkwhite'),
             a: {
               fontWeight: '500',
               color: theme('colors.primary.500'),
@@ -204,14 +212,15 @@ module.exports = {
               color: theme('colors.white'),
             },
             pre: {
-              backgroundColor: theme('colors.dark'),
+              backgroundColor: theme('colors.bg'),
+              // backgroundColor: '#101010',
             },
             code: {
               color: theme('colors.white'),
               backgroundColor: theme('colors.gray.800'),
             },
             details: {
-              backgroundColor: '#171919',
+              backgroundColor: theme('colors.bg'),
             },
             hr: { borderColor: theme('colors.gray.700') },
             'ol li::marker': {
@@ -235,6 +244,8 @@ module.exports = {
             blockquote: {
               color: theme('colors.gray.300'),
               borderLeftColor: theme('colors.gray.700'),
+              // backgroundColor: '#101010',
+              backgroundColor: theme('colors.bg'),
             },
             li: {
               '&::marker': {
@@ -249,5 +260,5 @@ module.exports = {
   variants: {
     typography: ['dark'],
   },
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography'), require('@tailwindcss/line-clamp')],
 }

@@ -146,29 +146,26 @@ function TimelineCard({ d }) {
   return (
     <li
       key={d.title}
-      className=" mb-4 ml-8 rounded-lg    border-2 shadow-lg bggray-50/10 p-4 dark:border-gray-800 dark:bg-gray-900/40"
+      className=" mb-4 ml-8 rounded-lg    border-2 shadow-lg bggray-50/10 p-4 dark:border-gray-800 dark:bg-bg"
     >
       <span
-        className={` absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full text-black  ${d.color}  ring-8 ring-white  dark:ring-gray-900`}
+        className={` absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full text-black  ${d.color}   ring-white  dark:ring-gray-900`}
       >
-        {/* <Icon icon={d.icon} /> */}
-        <DevIcon type={d.icon} className="h-6 w-6" />
+        <DevIcon type={d.icon} className="h-4 w-4" />
       </span>
-      <h3 className="flex items-center text-xl font-medium tracking-tight text-gray-800 dark:text-gray-100 ">
+      <h3 className="flex  m-0 w-full text-lg font-medium tracking-tight text-gray-800 dark:text-gray-100 ">
         {d.title}
 
         {d.status ? (
-          <span className="mr-2 ml-3 rounded bg-blue-100 px-2.5 py-0.5 text-sm font-medium text-blue-800 dark:bg-blue-200 dark:text-blue-800">
+          <span className="mr-2 ml-3 rounded bg-blue-100 px-2.5 py-1 text-sm font-medium text-blue-800 dark:bg-blue-200 dark:text-blue-800">
             {d.status}
           </span>
         ) : null}
       </h3>
-      <time className="font-mono text-sm font-normal leading-none text-gray-500 dark:text-gray-500">
+      <time className="text-sm font-normal leading-none text-gray-500 dark:text-gray-500">
         {d.date}
       </time>
-      <p className="text mt-1 font-normal tracking-tight text-gray-700 dark:text-gray-300   ">
-        {d.description}
-      </p>
+      <p className="text-sm text-gray-700 max-w-none dark:text-gray-300 my-1 ">{d.description}</p>
     </li>
   )
 }

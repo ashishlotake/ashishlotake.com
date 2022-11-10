@@ -14,7 +14,7 @@ export function AuthorLayout({ children }: AuthorLayoutProps) {
         description={`${title} - ${siteMetadata.title} - ${description}`}
       />
       <div className="dividey divide-gray-200 dark:divide-gray-700">
-        <div className="pt-0 md:pt-6 pb-4">
+        <div className="pt-3 md:pt-6 pb-4">
           <PageTitle>{title}</PageTitle>
           <Subtitle>{description}</Subtitle>
         </div>
@@ -24,7 +24,7 @@ export function AuthorLayout({ children }: AuthorLayoutProps) {
               <ProfileCard />
             </div>
           </div>
-          <div className="prose max-w-none text-lg dark:prose-dark xl:col-span-2">{children}</div>
+          <div className="prose max-w-none dark:prose-dark xl:col-span-2">{children}</div>
         </div>
       </div>
     </>

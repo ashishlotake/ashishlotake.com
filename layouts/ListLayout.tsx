@@ -17,13 +17,13 @@ export function ListLayout(props: ListLayoutProps) {
   return (
     <>
       <div className="dividey divide-gray-200 dark:divide-gray-700">
-        <div className="pt-0 md:pt-6 pb-4">
+        <div className="pt-3 md:pt-6 pb-4">
           <PageTitle>{title}</PageTitle>
           <Subtitle>Thoughts, mental models, and tutorials related to ML DS and AI</Subtitle>
         </div>
         <PostsSearch onChange={setSearchValue} />
 
-        <div className="pt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-2">
+        <div className="pt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-2">
           {!filteredBlogPosts.length && 'No posts found.'}
           {displayPosts.map((frontMatter) => (
             <PostListItem key={frontMatter.slug} frontMatter={frontMatter} />

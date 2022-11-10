@@ -15,34 +15,30 @@ export default function Tags({ tags }: { tags: TagsCount }) {
   return (
     <>
       <PageSeo title={`Tags - ${siteMetadata.author}`} description="Things I blog about" />
-      {/* <div className="pt-6 pb-8 space-y-2 md:space-y-5"> */}
-      <div className="pt-0 md:pt-6 pb-4">
+      <div className="pt-3 md:pt-6 pb-4">
         <PageTitle>Tags</PageTitle>
       </div>
-
       <div className="flex flex-wrap">
         {Object.keys(tags).length === 0 && 'No tags found.'}
         {sortedTags.map((tag) => {
           return (
-            <div key={tag} className="relative m-2 inline-flex flex-row  rounded  font-medium  ">
+            <div key={tag} className="relative m-1 inline-flex flex-row  rounded  font-medium  ">
               <div className="flex   ">
                 <p
                   className={clsx(
-                    'text-[13px] md:text-base  rounded-l border px-1 uppercase',
+                    'text-[10px] md:text-[13px]  rounded-l border px-1 uppercase',
                     'border   dark:border-gray-800',
                     ' shadow-lg dark:bg-gray-900/40',
                     ' hover:bg-primary-500  dark:hover:bg-primary-500',
-                    'hover:border-primary-500 dark:hover:border-darkprimary-500',
-                    'hover:text-white dark:hover:text-black p-1'
+                    'hover:border-primary-500 dark:hover:border-primary-500',
+                    'hover:text-white dark:hover:text-black p-1',
+                    'text-gray-800 dark:text-gray-300'
                   )}
                 >
                   <Tag text={tag} />
                 </p>
-                <Link
-                  href={`/tags/${kebabCase(tag)}`}
-                  className="bg-gray-800 dark:bg-gray-200 rounded-r"
-                >
-                  <p className="  p-1 text-[13px] md:text-base text-white  dark:text-black    ">
+                <Link href={`/tags/${kebabCase(tag)}`} className="bg-bg dark:bg-gray-200 rounded-r">
+                  <p className=" mt-0.5 p-1 text-[10px] md:text-[13px] text-white  dark:text-black    ">
                     {` (${tags[tag]})`}
                   </p>
                 </Link>
