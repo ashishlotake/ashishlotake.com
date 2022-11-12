@@ -1,5 +1,5 @@
 export let siteMetadata = {
-  title: "Ashish Lotaks's Portfolio",
+  title: "Ashish Lotake's Portfolio",
   author: 'Ashish Lotake',
   fullName: 'Ashish Lotake',
   headerTitle: "Ashish's digital garden",

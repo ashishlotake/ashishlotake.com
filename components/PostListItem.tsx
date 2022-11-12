@@ -42,7 +42,7 @@ export function PostListItem({ frontMatter }: { frontMatter: MdxFrontMatter }) {
                 </div>
               </div>
             ) : null}
-            <h3 className="px-3 pt-3 mb-2 s m-0 w-full text-lg font-semibold  text-gray-800 dark:text-gray-100">
+            <h3 className="px-3 pt-3 mb-2 s m-0 w-full text-lg font-semibold  text-gray-800 dark:text-gray-100 hover:opacity-60">
               {title}
             </h3>
             <p className="px-3 mb-2 flex-1 prose text-gray-600  dark:text-gray-300 line-clamp-3">
@@ -58,5 +58,60 @@ export function PostListItem({ frontMatter }: { frontMatter: MdxFrontMatter }) {
         </div>
       </div>
     </Link>
+  )
+}
+
+export function PostListItem01({ frontMatter }: { frontMatter: MdxFrontMatter }) {
+  let { slug, date, title, summary, tags, images, postimg } = frontMatter
+  return (
+    <div className="p-3 overflow-hidden flex flex-col space-y-4 md:space-x-2 rounded-lg border-2  bggray-50/10 p4 dark:border-gray-800 dark:bg-bg dark:bg-opacity-[80%]  md:flex-row md:space-y-0  shadow-md md:hover:border-black md:dark:hover:border-white">
+      <div className="overflow-hidden  md:w-52 ">
+        <div className="relative  w-full  h-36 md:w-52 ">
+          <Link href={`/blog/${slug}`}>
+            <Image
+              alt={title}
+              src={images[0]}
+              className="object-cover object-center h-36 mdhover:grayscale-[75%] rounded-md"
+              width={1088}
+              height={612}
+            />
+          </Link>
+        </div>
+      </div>
+      <div className="flex flex-1 flex-col justify-between">
+        <div className="px-3  flex flex-col ">
+          <div className="flex flex-wrap pb-1 line-clamp-1">
+            {tags.map((tag) => (
+              <span
+                key={tag}
+                className="text-[13px] mr-2 text-gray-500 dark:text-gray-400 hover:!text-primary-600 hover:underline "
+              >
+                #<Tag key={tag} text={tag} />
+              </span>
+            ))}
+          </div>
+          <Link href={`/blog/${slug}`} className="transition duration-200 hover:opacity-60">
+            <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100  ">{title}</h2>
+          </Link>
+          <p className="mb-3 flex-1 text-sm text-gray-600  dark:text-gray-300 line-clamp-2">
+            {summary}
+          </p>
+          <div className="mb-2 flex flex-wrap  justify-between space-x-2  pr-0 md:pr-3 text-sm font-medium text-gray-500">
+            <span>
+              <time dateTime={date}>{formatDate(date)}</time>
+            </span>
+            <span className="text-sm">
+              <Link
+                href="/blog"
+                className="link-underline1 font-semibold text-primary-500   "
+                aria-label="all posts"
+              >
+                Read More &rarr;
+              </Link>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }

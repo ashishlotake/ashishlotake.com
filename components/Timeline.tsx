@@ -13,12 +13,14 @@ const TimeLineInfo = [
   //   color:'bg-lime-200',
   //   dark_color:'dark:bg-purple-900',
   //   date:'Dec 2022',
+  //   status: 'Present',
+
   // },
   {
     title: 'Applying for Jobs',
     description: 'Feel confident that I can work as a junior Data Scientist. Wish me Luck',
     icon: 'jobsearch',
-    color: 'bg-primary-300',
+    color: 'bg-primary-400',
     dark_color: 'dark:bg-green-900',
     date: 'September 2022',
     status: 'Present',
@@ -92,7 +94,7 @@ export default function Timeline() {
           <Subtitle>Growing everyday a bit.</Subtitle>
         </div>
 
-        <ol className="relative mt-6 ml-6 border-l border-zinc-400 dark:border-gray-800 ">
+        <ol className="relative mt-6 ml-3 border-l border-gray-400 dark:border-gray-700 ">
           {TimeLineInfo.slice(0, 1).map((d) => (
             <TimelineCard key={d.title} d={d} />
           ))}
@@ -146,18 +148,26 @@ function TimelineCard({ d }) {
   return (
     <li
       key={d.title}
-      className=" mb-4 ml-8 rounded-lg    border-2 shadow-lg bggray-50/10 p-4 dark:border-gray-800 dark:bg-bg"
+      className=" mb-4 ml-6 md:ml-8 rounded-lg    border-2 shadow-lg bggray-50/10 p-4 dark:border-gray-800 dark:bg-bg"
     >
+      <div></div>
       <span
-        className={` absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full text-black  ${d.color}   ring-white  dark:ring-gray-900`}
+        className={` absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full text-black  ${d.color}  ring-1 ring-black  dark:ring-gray-700 `}
       >
+        {d.status ? (
+          <>
+            <div className={`absolute ${d.color} rounded-full w-6 h-6   animate-ping`}></div>
+            <div className={`absolute ${d.color} rounded-full w-6 h-6`}></div>
+          </>
+        ) : null}
+
         <DevIcon type={d.icon} className="h-4 w-4" />
       </span>
       <h3 className="flex  m-0 w-full text-lg font-medium tracking-tight text-gray-800 dark:text-gray-100 ">
         {d.title}
 
         {d.status ? (
-          <span className="mr-2 ml-3 rounded bg-blue-100 px-2.5 py-1 text-sm font-medium text-blue-800 dark:bg-blue-200 dark:text-blue-800">
+          <span className="mr-2 ml-3 h-full rounded bg-blue-100 px-2.5 py-1 text-xs font-medium text-blue-800 dark:bg-blue-200 dark:text-blue-800">
             {d.status}
           </span>
         ) : null}

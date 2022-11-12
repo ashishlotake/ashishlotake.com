@@ -6,7 +6,6 @@ import type { BlogFrontMatter } from '~/types'
 import { projectsData } from '~/data'
 import { ProjectCard } from '~/components'
 import { Link } from '~/components'
-import { DropdownHover } from '~/components/Header'
 
 export function getStaticProps() {
   let posts = getAllFilesFrontMatter('blog')
@@ -18,7 +17,6 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
     <>
       <PageSeo title={siteMetadata.title} description={siteMetadata.description} />
       <Heading />
-
       <TopProject />
       <FeaturedPosts posts={posts} />
       <Contact />

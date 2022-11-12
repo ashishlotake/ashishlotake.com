@@ -7,18 +7,18 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <div>
-      <div className="h-full overflow-hidden border-2 rounded-lg dark:border-gray-800   dark:bg-bg hover:border-black dark:hover:border-white shadow-lg">
+      <div className=" h-full overflow-hidden border-2 rounded-lg dark:border-gray-800   dark:bg-bg md:hover:border-black md:dark:hover:border-white shadow-lg">
         <Image
           alt={title}
           src={imgSrc}
-          className="object-cover object-center h-48 bg-white "
+          className="object-cover object-center h-48 bg-white roundedmd"
           width={1088}
           height={612}
         />
 
-        <div className="p-6">
+        <div className="p-3">
           <div className="flex justify-between mb-3">
-            <h2 className="m-0 w-full  pt-2 text-lg font-semibold tracking-tight text-gray-800 dark:text-gray-100">
+            <h2 className="m-0 w-full  pt-2 text-lg font-semibold tracking-tight text-gray-800 dark:text-gray-100 hover:opacity-60">
               {href ? (
                 <Link href={href} aria-label={`Link to ${title}`}>
                   {title}
@@ -34,7 +34,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <p className="mb-3 prose text-gray-500 max-w-none dark:text-gray-400 line-clamp-3">
             {description}
           </p>
-          <div className=" flex space-x-4 pb-1 pt-1">
+          <div className=" flex space-x-1 pb-1 pt-1">
             {github && (
               <Link href={github} className="group block ">
                 <Button className="px-1  sm:px-2 ">
@@ -114,7 +114,7 @@ export function ProjectCard01({ project }: ProjectCardProps) {
   let { title, description, imgSrc, href, github, blog } = project
 
   return (
-    <div className="overflow-hidden flex flex-col space-y-5 rounded-lg border-2  bggray-50/10 p4 dark:border-gray-800 dark:bg-bg  md:flex-row md:space-y-0 md:space-x-8 shadow-md">
+    <div className="overflow-hidden flex flex-col space-y-5 md:space-x-2 rounded-lg border-2   dark:border-gray-800 dark:bg-bg  md:flex-row md:space-y-0  shadow-md md:hover:border-black md:dark:hover:border-white">
       <div className="overflow-hidden  md:w-52 bg-white">
         <div className="relative  w-full  md:h-full md:w-52 h-36">
           <Image
@@ -132,7 +132,7 @@ export function ProjectCard01({ project }: ProjectCardProps) {
             <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100 ">{title}</h2>
           </Link>
           <p className="mb-3 flex-1 text-sm text-gray-600  dark:text-gray-300">{description}</p>
-          <div className=" flex flex-wrap space-x-4 pb-1 pt-1">
+          <div className="flex flex-wrap space-x-1 pb-1 pt-1">
             {github && (
               <Link href={github} className="group block ">
                 <Button className="px-1  sm:px-2 ">

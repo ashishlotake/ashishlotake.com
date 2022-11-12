@@ -89,12 +89,12 @@ export function DropdownHover() {
       </button>
 
       {/* menu list */}
-      <ul className="rounded-lg absolute hidden pt-2 text-gray-700 p-1 group-hover:block ">
-        <li className="bg-gray-200hover:bg-gray-400  cursor-pointer rounded-t border dark:border-gray-800 bg-white dark:bg-bg">
-          <NavItem href="/blog" text="Blog" className="py-2 px-4 w-full" />
+      <ul className="rounded absolute hidden pt-2 text-gray-700 p-1 group-hover:block ">
+        <li className="overflow-hidden bg-gray-200hover:bg-gray-400 cursor-pointer rounded-t-md border dark:border-gray-800 bg-white dark:bg-bg">
+          <NavItem href="/blog" text="Blog" className="py-2 px-6 w-full" />
         </li>
-        <li className="bg-gray-200hover:bg-gray-400  cursor-pointer rounded-b border dark:border-gray-800 bg-white dark:bg-bg">
-          <NavItem href="/tags" text="Tags" className="py-2 px-4 w-full" />
+        <li className="overflow-hidden bg-gray-200hover:bg-gray-400  cursor-pointer rounded-b-md border dark:border-gray-800 bg-white dark:bg-bg">
+          <NavItem href="/tags" text="Tags" className="py-2 px-6 w-full" />
         </li>
       </ul>
     </div>

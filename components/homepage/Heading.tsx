@@ -7,7 +7,7 @@ export function Heading() {
     <>
       <section id="intro" className="flex items-center justify-center flex-col pt-5 pb-6">
         <div className="text-center">
-          <h1 className="text-5xl md:text-7xl text-gray-800 dark:text-gray-100 mb-1 md:mb-3 font-bold">
+          <h1 className="text-[45px] sm:text-7xl text-gray-800 dark:text-gray-100 mb-1 md:mb-3 font-bold">
             {siteMetadata.author}
           </h1>
           <TypedBios />

@@ -29,6 +29,7 @@ import graudate from '~/icons/graudate.svg'
 import highschool from '~/icons/highschool.svg'
 import intern from '~/icons/intern.svg'
 import jobsearch from '~/icons/jobsearch.svg'
+import clsx from 'clsx'
 
 export let DevIconsMap = {
   React,
@@ -67,5 +68,5 @@ export function DevIcon({ type, className }) {
   let Icon = DevIconsMap[type]
   if (!Icon) return null
 
-  return <Icon className={className} fill="currentColor" />
+  return <Icon className={clsx(className)} fill="currentColor" />
 }

@@ -1,5 +1,12 @@
 import { useState } from 'react'
-import { PageTitle, Pagination, PostListItem, PostsSearch, Subtitle } from '~/components'
+import {
+  PageTitle,
+  Pagination,
+  PostListItem,
+  PostsSearch,
+  Subtitle,
+  PostListItem01,
+} from '~/components'
 import type { ListLayoutProps } from '~/types'
 
 export function ListLayout(props: ListLayoutProps) {
@@ -23,10 +30,10 @@ export function ListLayout(props: ListLayoutProps) {
         </div>
         <PostsSearch onChange={setSearchValue} />
 
-        <div className="pt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-2">
+        <div className="pt-4 grid gap-4 sm:grid-cols-1 md:grid-cols-1">
           {!filteredBlogPosts.length && 'No posts found.'}
           {displayPosts.map((frontMatter) => (
-            <PostListItem key={frontMatter.slug} frontMatter={frontMatter} />
+            <PostListItem01 key={frontMatter.slug} frontMatter={frontMatter} />
           ))}
         </div>
       </div>

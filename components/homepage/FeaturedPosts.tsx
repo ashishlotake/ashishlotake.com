@@ -17,7 +17,7 @@ export function FeaturedPosts({ posts }: { posts: BlogFrontMatter[] }) {
             <Link key={slug} href={`/blog/${slug}`} aria-label={`Read "${title}"`}>
               <div className="group relative block h-full md:hover:scale[102%] transition-all shadow-lg rounded-lg">
                 <div className="relative  flex h-full ">
-                  <div className="p-4 flex flex-1 transform flex-col  transition rounded-lg overflow-hidden border-2   dark:border-gray-800  dark:bg-bg  hover:border-black dark:hover:border-white  ">
+                  <div className="p-4 flex flex-1 transform flex-col  transition rounded-lg overflow-hidden border-2   dark:border-gray-800  dark:bg-bg  md:hover:border-black md:dark:hover:border-white  ">
                     <h3 className=" w-full text-lg font-semibold tracking-tight text-gray-800 dark:text-gray-100">
                       {title}
                     </h3>
