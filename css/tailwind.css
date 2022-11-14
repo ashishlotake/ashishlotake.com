@@ -168,3 +168,14 @@ max-width: 100rem
   background-color: #47a3f3;
   color: #fefefe;
 }
+
+
+
+.hiremeBTN {
+  position: relative;
+  /* padding: 1px; */
+  background: url("/static/images/build-btn.gif") no-repeat center center;
+  background-size: auto;
+  background-size: cover;
+  /* border-radius: 5px; */
+}

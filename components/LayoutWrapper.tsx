@@ -7,8 +7,18 @@ import { SectionContainer } from './SectionContainer'
 
 export function LayoutWrapper({ children }) {
   let [navShow, setNavShow] = useState(false)
-  let onToggleNav = () => setNavShow((status) => !status)
-
+  // let onToggleNav = () => setNavShow((status) => !status)
+  const onToggleNav = () => {
+    setNavShow((status) => {
+      if (status) {
+        document.body.style.overflow = 'auto'
+      } else {
+        // Prevent scrolling
+        document.body.style.overflow = 'hidden'
+      }
+      return !status
+    })
+  }
   return (
     <>
       <MobileNav navShow={navShow} onToggleNav={onToggleNav} />

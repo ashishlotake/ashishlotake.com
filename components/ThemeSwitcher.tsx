@@ -13,7 +13,7 @@ export function ThemeSwitcher() {
     <button
       aria-label="Toggle Dark Mode"
       type="button"
-      className="w-8 h-8 p-1 ml-1 bg-gray-200 rounded-md dark:bg-gray-800 flex items-center justify-center hover:ring-2 ring-gray-500 transition-all"
+      className="w-8 h-8 p-1 ml-1 bg-gray-200 rounded-md dark:bg-gray-800 flex items-center justify-center md:hover:ring-2 ring-gray-500 transition-all"
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
     >
       <svg

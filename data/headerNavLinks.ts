@@ -3,10 +3,8 @@ export let headerNavLinks = [
   { href: '/projects', title: 'Projects' },
   { href: '/about', title: 'About' },
   // { href: '/xyz', title: 'xyz' },
-  { href: 'https://resume.ashishlotake.com/', title: 'Résumé' },
-
+  // { href: 'https://resume.ashishlotake.com/', title: 'Résumé' },
 ]
-
 
 export let mobileNavLinks = [
   { href: '/', title: 'Home' },
@@ -16,6 +14,6 @@ export let mobileNavLinks = [
   { href: '/projects', title: 'Projects' },
   { href: '/about', title: 'About' },
   // { href: '/xyz', title: 'xyz' },
-  { href: 'https://resume.ashishlotake.com/', title: 'Résumé' },
+  // { href: 'https://resume.ashishlotake.com/', title: 'Résumé' },
 
 ]

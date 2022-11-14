@@ -97,7 +97,7 @@ export function Button({ className, children }) {
         'rounded  ',
         'border   dark:border-gray-800',
         'focus:outline-none focus-visible:ring focus-visible:ring-primary-300',
-        'scale-100 hover:scale-[1.05] active:scale-[0.97] motion-safe:transform-gpu',
+        'scale-100 md:hover:scale-[1.05] active:scale-[0.97] motion-safe:transform-gpu',
         'motion-reduce:hover:scale-100',
         'transition-transform ',
         className

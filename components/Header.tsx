@@ -4,6 +4,8 @@ import { Link } from './Link'
 import { ThemeSwitcher } from './ThemeSwitcher'
 import { useRouter } from 'next/router'
 import clsx from 'clsx'
+import { Button } from './ProjectCard'
+
 export function Header({ onToggleNav }: { onToggleNav: () => void }) {
   return (
     <header className="overflowxhidden backdrop-blur supports-backdrop-blur:bg-white/80 py-2 sticky top-0 z-40 bg-white/75 dark:bg-dark/75">
@@ -34,7 +36,13 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
                 className="sm:px-3 sm:py-2 rounded-md"
               />
             ))}
+            <Link href="https://resume.ashishlotake.com/">
+              <Button className="hiremeBTN p-[6px] mx-1 rounded-[5px]">
+                <span className="text-white">Résumé</span>{' '}
+              </Button>
+            </Link>
           </div>
+
           <ThemeSwitcher />
           <button
             className="w-8 h-8 ml-2 mr-1 rounded sm:hidden"

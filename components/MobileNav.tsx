@@ -1,7 +1,7 @@
 import { mobileNavLinks } from '~/data'
 import { Link } from './Link'
 import clsx from 'clsx'
-
+import { Button } from './ProjectCard'
 export function MobileNav({ navShow, onToggleNav }) {
   let className = clsx(
     `sm:hidden fixed w-full h-screen inset-0 bg-gray-200 dark:bg-black opacity-95 z-50 transition-transform transform ease-in-out duration-300`,
@@ -12,7 +12,7 @@ export function MobileNav({ navShow, onToggleNav }) {
       <button
         type="button"
         aria-label="toggle modal"
-        className="fixed w-8 h-8 right-4 top-5 cursor-auto focus:outline-none"
+        className="fixed w-8 h-8 right-4 top-4 cursor-auto focus:outline-none"
         onClick={onToggleNav}
       >
         <svg
@@ -28,18 +28,25 @@ export function MobileNav({ navShow, onToggleNav }) {
           />
         </svg>
       </button>
-      <nav className="fixed h-full mt-8">
+      <nav className="fixed h-full mt-12">
         {mobileNavLinks.map((link) => (
-          <div key={link.title} className="px-8 py-4">
+          <div key={link.title} className="px-8 py-3">
             <Link
               href={link.href}
-              className="text-2xl font-semibold tracking-wide text-gray-900 dark:text-gray-100"
+              className="text-xl font-semibold tracking-wide text-gray-900 dark:text-gray-100"
               onClick={onToggleNav}
             >
               {link.title}
             </Link>
           </div>
         ))}
+        <div className="px-6 py-3">
+          <Link href="https://resume.ashishlotake.com/">
+            <Button className="hiremeBTN p-[5px] mx-1 rounded-md">
+              <span className="text-white text-xl">Résumé</span>{' '}
+            </Button>
+          </Link>
+        </div>
       </nav>
     </div>
   )
