@@ -7,6 +7,8 @@ import Mail from '~/icons/mail.svg'
 import Twitter from '~/icons/twitter.svg'
 import Youtube from '~/icons/youtube.svg'
 
+import mastodon from '~/icons/mastodon.svg'
+
 // Icons from: https://simpleicons.org/
 export let SocialIconsMap = {
   Mail,
@@ -15,6 +17,7 @@ export let SocialIconsMap = {
   Youtube,
   Linkedin,
   Twitter,
+  mastodon,
 }
 
 export function SocialIcon({ name, href }: SocialIconProps) {
@@ -26,7 +29,7 @@ export function SocialIcon({ name, href }: SocialIconProps) {
   }
 
   return (
-    <a className="text-sm text-gray-500 transition hover:text-gray-600" {...attrs}>
+    <a rel="me" className="text-sm text-gray-500 transition hover:text-gray-600" {...attrs}>
       <span className="sr-only">{name}</span>
       <SocialSvg
         className={`h-6 w-6 fill-current text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400`}

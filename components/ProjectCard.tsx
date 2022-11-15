@@ -7,7 +7,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <div>
-      <div className=" h-full overflow-hidden border-2 rounded-lg dark:border-gray-800   dark:bg-bg md:hover:border-black md:dark:hover:border-white shadow-lg">
+      <div className=" h-full overflow-hidden border-2 rounded-lg dark:border-gray-800 bg-white dark:bg-bg/80 bg-white/50 md:hover:border-black md:dark:hover:border-white shadow-lg">
         <Image
           alt={title}
           src={imgSrc}
@@ -114,7 +114,7 @@ export function ProjectCard01({ project }: ProjectCardProps) {
   let { title, description, imgSrc, href, github, blog } = project
 
   return (
-    <div className="overflow-hidden flex flex-col space-y-5 md:space-x-2 rounded-lg border-2   dark:border-gray-800 dark:bg-bg  md:flex-row md:space-y-0  shadow-md md:hover:border-black md:dark:hover:border-white">
+    <div className="overflow-hidden flex flex-col space-y-5 md:space-x-2 rounded-lg border-2   dark:border-gray-800 dark:bg-bg/80 bg-white/50  md:flex-row md:space-y-0  shadow-md md:hover:border-black md:dark:hover:border-white">
       <div className="overflow-hidden  md:w-52 bg-white">
         <div className="relative  w-full  md:h-full md:w-52 h-36">
           <Image

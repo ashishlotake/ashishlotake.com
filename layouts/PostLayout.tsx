@@ -23,7 +23,7 @@ export function PostLayout(props: PostLayoutProps) {
       <ScrollTopButton />
       <article>
         <div>
-          <header className="pt-6 border-b border-gray-200 dark:border-gray-700 mb-3">
+          <header className="pt-6 border-b border-gray-200 dark:border-gray-700">
             <div className="space-y-4">
               <BlogTags tags={tags} />
               <Image
@@ -45,8 +45,10 @@ export function PostLayout(props: PostLayoutProps) {
 
           <div className="">
             <div className="">
-              <div className="prose dark:prose-dark ">{children}</div>
-              <div className="border-t border-b mt-4 border-gray-200 dark:border-gray-700">
+              <div className="prose dark:prose-dark bg-white/50 dark:bg-dark/70 py-3">
+                {children}
+              </div>
+              <div className="border-t border-b border-gray-200 dark:border-gray-700">
                 <SocialButtons
                   postUrl={postUrl}
                   title={title}

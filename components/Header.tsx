@@ -8,8 +8,9 @@ import { Button } from './ProjectCard'
 
 export function Header({ onToggleNav }: { onToggleNav: () => void }) {
   return (
-    <header className="overflowxhidden backdrop-blur supports-backdrop-blur:bg-white/80 py-2 sticky top-0 z-40 bg-white/75 dark:bg-dark/75">
-      <div className="mx-auto max-w-3xl flex items-center justify-between px-3 md:px-0">
+    // <header className="overflowxhidden backdrop-blur supports-backdrop-blur:bg-white/80 py-2 sticky top-0 z-40 bg-white/75 dark:bg-dark/75">
+    <header className="rounded-full border-2 border-gray-200/50 dark:border-gray-800/20  sticky top-2 z-40 bg-white mt-2  dark:bg-dark pr-1 md:pr-3">
+      <div className="mx-auto max-w-3xl flex items-center justify-between px3 md:px-0">
         <div>
           <Link href="/" aria-label="Ashish's Blog">
             <div className="flex items-center justify-between">

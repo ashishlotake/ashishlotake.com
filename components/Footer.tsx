@@ -6,16 +6,12 @@ import type { SpotifyNowPlayingData } from '~/types'
 const { default: useSWR } = require('swr')
 import { fetcher } from '~/utils'
 import { Button } from './ProjectCard'
-
 export function Footer() {
   let response = useSWR('/api/spotify', fetcher)
   let nowPlayingData = response.data as SpotifyNowPlayingData
   return (
     <footer className="mt-16 ">
-      <SpotifyNowPlaying
-        className="bg-gray-50/20 dark:bg-gray-900/40 rounded-t-lg"
-        {...nowPlayingData}
-      />
+      <SpotifyNowPlaying className=" dark:bg-bg/80 bg-white/50 rounded-t-lg" {...nowPlayingData} />
       <div className="flex flex-col items-center pt-4 border-t dark:border-gray-800">
         <HirMeBtn />
         {/* <Button className='hiremeBTN p-3 mb-3'><span className='text-white'>Hire me</span> </Button> */}
@@ -25,9 +21,10 @@ export function Footer() {
           <SocialIcon name="Twitter" href={siteMetadata.twitter} />
           <SocialIcon name="Linkedin" href={siteMetadata.linkedin} />
           <SocialIcon name="Mail" href={`mailto:${siteMetadata.email}`} />
+          <SocialIcon name="mastodon" href="https://mastodon.social/@ashish02lotake" />
         </div>
         <div className="flex my-2 space-x-2 text-sm text-gray-500 dark:text-gray-400">
-          <div>{`Copyright © ${new Date().getFullYear()}`}</div>
+          <div>{` © ${new Date().getFullYear()}`}</div>
           <span>{` • `}</span>
           <Link className="hover:text-primary-500" href="/">
             {siteMetadata.author}

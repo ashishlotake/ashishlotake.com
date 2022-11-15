@@ -21,9 +21,9 @@ export function LayoutWrapper({ children }) {
   }
   return (
     <>
-      <MobileNav navShow={navShow} onToggleNav={onToggleNav} />
-      <Header onToggleNav={onToggleNav} />
       <SectionContainer>
+        <MobileNav navShow={navShow} onToggleNav={onToggleNav} />
+        <Header onToggleNav={onToggleNav} />
         <div className="flex flex-col justify-between">
           {/* <main style={{ minHeight: MAIN_CONTENT_MIN_HEIGHT }}>{children}</main> */}
           <main>{children}</main>

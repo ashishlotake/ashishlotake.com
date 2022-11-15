@@ -25,7 +25,7 @@ export function PostSimple(props: PostSimpleLayoutProps) {
       <ScrollTopButton />
       <article>
         <div>
-          <header className="pt-6 border-b border-gray-200 dark:border-gray-700 mb-3">
+          <header className="pt-6 border-b border-gray-200 dark:border-gray-700 ">
             <div className="space-y-4">
               {/* <BlogTags tags={tags} /> */}
               <PageTitle>{title}</PageTitle>
@@ -40,7 +40,7 @@ export function PostSimple(props: PostSimpleLayoutProps) {
 
           <div className="">
             <div className="">
-              <div className="prose dark:prose-dark text-gray-700 dark:text-gray-500">
+              <div className="prose dark:prose-dark text-gray-700 dark:text-gray-500 bg-white/50 dark:bg-dark/70 py-3">
                 {children}
               </div>
               <div className="border-t border-b border-gray-200 dark:border-gray-700">

@@ -12,7 +12,7 @@ export function SnippetCard({ snippet }: { snippet: SnippetFrontMatter }) {
         className={clsx(
           'flex h-full cursor-pointer lg:mb-0',
           'dark:border-gray-800 rounded-lg border-2',
-          ' dark:bg-bg bggray-50/10',
+          ' dark:bg-bg/80 bg-white/50',
           'md:hover:border-black md:dark:hover:border-white',
           'md:hover:scale[102%] transition',
           'shadow-lg'

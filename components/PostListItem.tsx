@@ -12,7 +12,7 @@ export function PostListItem({ frontMatter }: { frontMatter: MdxFrontMatter }) {
         <div className="relative  flex h-full ">
           <div
             className={clsx(
-              'p5 flex flex-1 transform flex-col  transition  rounded-lg overflow-hidden border-2 dark:border-gray-800 bggray-50/10 dark:bg-bg  md:hover:border-black dark:md:hover:border-white ',
+              'p5 flex flex-1 transform flex-col  transition  rounded-lg overflow-hidden border-2 dark:border-gray-800 dark:bg-bg/80 bg-white/50 md:hover:border-black dark:md:hover:border-white ',
               'shadow-lg'
             )}
           >
@@ -64,7 +64,7 @@ export function PostListItem({ frontMatter }: { frontMatter: MdxFrontMatter }) {
 export function PostListItem01({ frontMatter }: { frontMatter: MdxFrontMatter }) {
   let { slug, date, title, summary, tags, images, postimg } = frontMatter
   return (
-    <div className="p-3 overflow-hidden flex flex-col space-y-4 md:space-x-2 rounded-lg border-2  bggray-50/10 p4 dark:border-gray-800 dark:bg-bg dark:bg-opacity-[80%]  md:flex-row md:space-y-0  shadow-md md:hover:border-black md:dark:hover:border-white">
+    <div className="p-3 overflow-hidden flex flex-col space-y-4 md:space-x-2 rounded-lg border-2  bggray-50/10 p4 dark:border-gray-800 dark:bg-bg/80 bg-white/50  md:flex-row md:space-y-0  shadow-md md:hover:border-black md:dark:hover:border-white">
       <div className="overflow-hidden  md:w-52 ">
         <div className="relative  w-full  h-36 md:w-52 ">
           <Link href={`/blog/${slug}`}>

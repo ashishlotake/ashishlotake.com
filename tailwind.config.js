@@ -60,9 +60,9 @@ module.exports = {
         gray: colors.neutral,
         // dark: '#000',
         dark:'#070707',
-        bg: '#101010',
-        // bg:'#000',
-        // darkwhite: '#d4d4d4',
+        // bg: '#101010',
+        bg:'#070707',
+        bgcode:'#090909',
         darkwhite: '#eae8e8',
         code: {
           green: '#22c55e',
@@ -212,7 +212,7 @@ module.exports = {
               color: theme('colors.white'),
             },
             pre: {
-              backgroundColor: theme('colors.bg'),
+              backgroundColor: theme('colors.bgcode'),
               // backgroundColor: '#101010',
             },
             code: {
@@ -245,7 +245,7 @@ module.exports = {
               color: theme('colors.gray.300'),
               borderLeftColor: theme('colors.gray.700'),
               // backgroundColor: '#101010',
-              backgroundColor: theme('colors.bg'),
+              backgroundColor: theme('colors.gray.900'),
             },
             li: {
               '&::marker': {

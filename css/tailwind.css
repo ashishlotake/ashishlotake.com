@@ -1,5 +1,5 @@
 * {
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  /* transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; */
 }
 
 @tailwind base;
@@ -46,7 +46,7 @@ max-width: 100rem
 }
 
 .remark-code-title {
-  @apply rounded-t-lg border-2 border-b-0  bg-gray-200 px-5 py-1 font-mono text-sm font-bold text-gray-800 dark:border-gray-800 dark:bg-gray-800 dark:text-gray-200;
+  @apply rounded-t-lg border-2 border-b-0  bg-gray-200 px-5 py-1 font-mono text-sm font-bold text-gray-800 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-200;
 }
 
 .remark-code-title + div > pre {
@@ -58,7 +58,7 @@ max-width: 100rem
 }
 
 .code-line {
-  @apply -mx-4 block border-l-4 border-transparent bg-gray-50  pl-4 pr-4   text-black dark:bg-bg  dark:text-white;
+  @apply -mx-4 block border-l-4 border-transparent bg-gray-50  pl-4 pr-4   text-black dark:bg-bgcode  dark:text-white;
 }
 
 .code-line.inserted {
@@ -165,8 +165,8 @@ max-width: 100rem
 }
 
 ::selection {
-  background-color: #47a3f3;
-  color: #fefefe;
+  background-color: #00ff84;
+  color: #000;
 }
 
 
@@ -179,3 +179,18 @@ max-width: 100rem
   background-size: cover;
   /* border-radius: 5px; */
 }
+
+
+body {
+
+  background-image: linear-gradient(rgb(245, 245, 245) 0.1px, transparent 1px), linear-gradient(90deg, rgb(245, 245, 245) 0.1px, transparent 1px), linear-gradient(rgb(245, 245, 245) 0.1px, transparent 1px), linear-gradient(90deg, rgb(245, 245, 245) 0.1px, transparent 1px);
+  background-size: 80px 80px, 80px 80px, 20px 20px, 20px 20px;
+  background-position: -200px -200px, -200px -200px, -100px -100px, -100px -100px;
+  
+} 
+
+.dark body {
+  background-image: linear-gradient(rgb(17, 17, 17) 0.1px, transparent 1px), linear-gradient(90deg, rgb(17, 17, 17) 0.1px, transparent 1px), linear-gradient(rgb(17, 17, 17) 0.1px, transparent 1px), linear-gradient(90deg, rgb(17, 17, 17) 0.1px, transparent 1px);
+}
+
+
