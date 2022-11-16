@@ -1,5 +1,5 @@
 * {
-  /* transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; */
+  /* transition: background-color 0.5s ease-in-out, border-color 0s ease-in-out; */
 }
 
 @tailwind base;
@@ -46,7 +46,7 @@ max-width: 100rem
 }
 
 .remark-code-title {
-  @apply rounded-t-lg border-2 border-b-0  bg-gray-200 px-5 py-1 font-mono text-sm font-bold text-gray-800 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-200;
+  @apply rounded-t-lg border-2 border-b-0  bg-gray-200 px-5 py-1 font-mono text-sm font-bold text-gray-800 dark:border-gray-800 dark:bg-gray-800 dark:text-gray-200;
 }
 
 .remark-code-title + div > pre {
@@ -110,14 +110,14 @@ max-width: 100rem
 
 
 .company {
-  box-shadow: inset 0 0 0 0 #3b82f6;
+  box-shadow: inset 0 0 0 0 #0ea5e9;
   color: #0ea5e9;
   margin: 0 -0.25rem;
   padding: 0 0.25rem;
   transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 .company:hover {
-  box-shadow: inset 200px 0 0 0 #3b82f6;
+  box-shadow: inset 200px 0 0 0 #0ea5e9;
   color: white;
 }
 
@@ -182,15 +182,37 @@ max-width: 100rem
 
 
 body {
-
-  background-image: linear-gradient(rgb(245, 245, 245) 0.1px, transparent 1px), linear-gradient(90deg, rgb(245, 245, 245) 0.1px, transparent 1px), linear-gradient(rgb(245, 245, 245) 0.1px, transparent 1px), linear-gradient(90deg, rgb(245, 245, 245) 0.1px, transparent 1px);
+  background-image: linear-gradient(rgb(250, 250, 250) 3px, transparent 2px), linear-gradient(90deg, rgb(250, 250, 250) 3px, transparent 2px), linear-gradient(rgb(253, 253, 253) 0.1px, transparent 2px), linear-gradient(90deg, rgb(253, 253, 253) 0.1px, transparent 2px);
+  /* background-image: linear-gradient(rgb(245, 245, 245) 0.1px, transparent 1px), linear-gradient(90deg, rgb(245, 245, 245) 0.1px, transparent 1px), linear-gradient(rgb(245, 245, 245) 0.1px, transparent 1px), linear-gradient(90deg, rgb(245, 245, 245) 0.1px, transparent 1px); */
   background-size: 80px 80px, 80px 80px, 20px 20px, 20px 20px;
   background-position: -200px -200px, -200px -200px, -100px -100px, -100px -100px;
-  
 } 
 
 .dark body {
-  background-image: linear-gradient(rgb(17, 17, 17) 0.1px, transparent 1px), linear-gradient(90deg, rgb(17, 17, 17) 0.1px, transparent 1px), linear-gradient(rgb(17, 17, 17) 0.1px, transparent 1px), linear-gradient(90deg, rgb(17, 17, 17) 0.1px, transparent 1px);
+  background-image: linear-gradient(rgb(14, 14, 14) 3px, transparent 2px), linear-gradient(90deg, rgb(14, 14, 14) 3px, transparent 2px), linear-gradient(rgb(12, 12, 12) 0.1px, transparent 2px), linear-gradient(90deg, rgb(12, 12, 12) 0.1px, transparent 2px);
+  /* background-image: linear-gradient(rgb(12, 12, 12) 0.1px, transparent 1px), linear-gradient(90deg, rgb(12, 12, 12) 0.1px, transparent 1px), linear-gradient(rgb(12, 12, 12) 0.1px, transparent 1px), linear-gradient(90deg, rgb(12, 12, 12) 0.1px, transparent 1px); */
 }
 
 
+.css-1o0ttfu {
+  line-height: 1;
+  color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(to left, rgb(121, 194, 255), rgb(74, 88, 136));
+}
+
+.jumbotron-name-heading {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: shine 10s infinite linear;
+}
+
+/* 
+#intro{
+  z-index: -1;
+  -webkit-filter: blur(5px); 
+  filter: blur(5px);
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='fill' x1='0%25' y1='0%25' x2='100%25' y2='0%25' gradientTransform='rotate(49 0.5 0.5)'%3E%3Cstop offset='0%25' stop-color='%234F46E5'%3E%3C/stop%3E%3Cstop offset='100%25' stop-color='%237ad0ff'%3E%3C/stop%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M91 63Q86 76 73.5 80.5Q61 85 49 88Q37 91 28 82Q19 73 10 61.5Q1 50 9 38Q17 26 27.5 20Q38 14 51.5 9.5Q65 5 76 14Q87 23 91.5 36.5Q96 50 91 63Z' stroke='none' stroke-width='0' fill='url(%23fill)'%3E%3C/path%3E%3C/svg%3E");
+} */

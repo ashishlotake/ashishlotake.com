@@ -28,7 +28,7 @@ export function ProfileCard() {
           />
         </div>
         <SpotifyNowPlaying
-          className="bg-black dark:bg-white text-white dark:text-black rounded-t-md"
+          className="bg-dark dark:bg-white text-white dark:text-black rounded-t-md"
           {...nowPlayingData}
         />
         <span className="h-2 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-b-md"></span>

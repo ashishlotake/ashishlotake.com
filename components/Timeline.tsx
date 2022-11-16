@@ -148,7 +148,7 @@ function TimelineCard({ d }) {
   return (
     <li
       key={d.title}
-      className=" mb-4 ml-6 md:ml-8 rounded-lg    border-2 shadow-lg bggray-50/10 p-4 dark:border-gray-800 dark:bg-bg/80 bg-white/50"
+      className=" mb-4 ml-6 md:ml-8 rounded-lg    border-2 shadow-lg bggray-50/10 p-4 dark:border-gray-800 dark:bg-bg bg-white"
     >
       <div></div>
       <span

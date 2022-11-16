@@ -45,7 +45,7 @@ export function PostLayout(props: PostLayoutProps) {
 
           <div className="">
             <div className="">
-              <div className="prose dark:prose-dark bg-white/50 dark:bg-dark/70 py-3">
+              <div className="prose dark:prose-dark bg-white/80 dark:bg-dark/[85%] py-3">
                 {children}
               </div>
               <div className="border-t border-b border-gray-200 dark:border-gray-700">

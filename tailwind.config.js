@@ -61,7 +61,7 @@ module.exports = {
         // dark: '#000',
         dark:'#070707',
         // bg: '#101010',
-        bg:'#070707',
+        bg:'#050505',
         bgcode:'#090909',
         darkwhite: '#eae8e8',
         code: {

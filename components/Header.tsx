@@ -9,7 +9,7 @@ import { Button } from './ProjectCard'
 export function Header({ onToggleNav }: { onToggleNav: () => void }) {
   return (
     // <header className="overflowxhidden backdrop-blur supports-backdrop-blur:bg-white/80 py-2 sticky top-0 z-40 bg-white/75 dark:bg-dark/75">
-    <header className="rounded-full border-2 border-gray-200/50 dark:border-gray-800/20  sticky top-2 z-40 bg-white mt-2  dark:bg-dark pr-1 md:pr-3">
+    <header className="rounded-full border-2 border-gray-200/50 dark:border-gray-800/50  sticky top-2 z-40 bg-white mt-2  dark:bg-dark pr-1 md:pr-3">
       <div className="mx-auto max-w-3xl flex items-center justify-between px3 md:px-0">
         <div>
           <Link href="/" aria-label="Ashish's Blog">
@@ -34,7 +34,7 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
                 key={link.title}
                 href={link.href}
                 text={link.title}
-                className="sm:px-3 sm:py-2 rounded-md"
+                className="sm:px-3 sm:py-2 rounded"
               />
             ))}
             <Link href="https://resume.ashishlotake.com/">
@@ -94,15 +94,15 @@ export function DropdownHover() {
   return (
     <div className="group relative ">
       <button className=" text-gray-700  rounded inline-flex items-center group">
-        <NavItem href="/blog" text="Blog" className="sm:px-3 sm:py-2 rounded-md" />
+        <NavItem href="/blog" text="Blog" className="sm:px-3 sm:py-2 rounded" />
       </button>
 
       {/* menu list */}
-      <ul className="rounded absolute hidden pt-2 text-gray-700 p-1 group-hover:block ">
-        <li className="overflow-hidden bg-gray-200hover:bg-gray-400 cursor-pointer rounded-t-md border dark:border-gray-800 bg-white dark:bg-bg">
+      <ul className="rounded absolute hidden pt-[5px] text-gray-700 group-hover:block ">
+        <li className="overflow-hidden  cursor-pointer rounded-t border dark:border-gray-800 bg-white dark:bg-bg">
           <NavItem href="/blog" text="Blog" className="py-2 px-6 w-full" />
         </li>
-        <li className="overflow-hidden bg-gray-200hover:bg-gray-400  cursor-pointer rounded-b-md border dark:border-gray-800 bg-white dark:bg-bg">
+        <li className="overflow-hidden   cursor-pointer rounded-b border dark:border-gray-800 bg-white dark:bg-bg">
           <NavItem href="/tags" text="Tags" className="py-2 px-6 w-full" />
         </li>
       </ul>

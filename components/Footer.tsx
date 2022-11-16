@@ -11,7 +11,7 @@ export function Footer() {
   let nowPlayingData = response.data as SpotifyNowPlayingData
   return (
     <footer className="mt-16 ">
-      <SpotifyNowPlaying className=" dark:bg-bg/80 bg-white/50 rounded-t-lg" {...nowPlayingData} />
+      <SpotifyNowPlaying className=" dark:bg-bg bg-white rounded-t-lg" {...nowPlayingData} />
       <div className="flex flex-col items-center pt-4 border-t dark:border-gray-800">
         <HirMeBtn />
         {/* <Button className='hiremeBTN p-3 mb-3'><span className='text-white'>Hire me</span> </Button> */}
