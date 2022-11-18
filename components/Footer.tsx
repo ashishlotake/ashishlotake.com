@@ -6,6 +6,7 @@ import type { SpotifyNowPlayingData } from '~/types'
 const { default: useSWR } = require('swr')
 import { fetcher } from '~/utils'
 import { Button } from './ProjectCard'
+import { DevIcon } from './DevIcon'
 export function Footer() {
   let response = useSWR('/api/spotify', fetcher)
   let nowPlayingData = response.data as SpotifyNowPlayingData
@@ -18,10 +19,11 @@ export function Footer() {
 
         <div className="flex mb-3 space-x-4">
           <SocialIcon name="Github" href={siteMetadata.github} />
-          <SocialIcon name="Twitter" href={siteMetadata.twitter} />
-          <SocialIcon name="Linkedin" href={siteMetadata.linkedin} />
           <SocialIcon name="Mail" href={`mailto:${siteMetadata.email}`} />
-          <SocialIcon name="mastodon" href="https://mastodon.social/@ashish02lotake" />
+          {/* <SocialIcon name="Twitter" href={siteMetadata.twitter} /> */}
+          <SocialIcon name="Linkedin" href={siteMetadata.linkedin} />
+          <SocialIcon name="pixelfed" href="https://pixelfed.social/@ashishlotake" />
+          {/* <SocialIcon name="mastodon" href="https://mastodon.social/@ashish02lotake" /> */}
         </div>
         <div className="flex my-2 space-x-2 text-sm text-gray-500 dark:text-gray-400">
           <div>{` © ${new Date().getFullYear()}`}</div>

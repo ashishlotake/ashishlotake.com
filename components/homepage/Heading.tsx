@@ -7,8 +7,7 @@ export function Heading() {
     <>
       <section id="intro" className="flex items-center justify-center flex-col pt-5 pb-6">
         <div className="text-center">
-          <h1 className="text-[45px] sm:text-7xl text-gray-800 dark:text-gray-100 mb-1 md:mb-3 font-bold jumbotron-name-headingcss-1o0ttfu">
-            {/* <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M83.5,69.5Q72,89,50.5,87.5Q29,86,18.5,68Q8,50,18.5,32Q29,14,50,14Q71,14,83,32Q95,50,83.5,69.5Z" stroke="none" fill="#4F46E5"></path><path d="M83.5,69.5Q72,89,50.5,87.5Q29,86,18.5,68Q8,50,18.5,32Q29,14,50,14Q71,14,83,32Q95,50,83.5,69.5Z" transform="translate(-5.73 6.06)" stroke="#332e97" stroke-width="1" fill="none"></path></svg> */}
+          <h1 className="intro text-transparent bg-clip-text bg-gradient-to-r from-[#79C2FF] to-[#4A5888] text-[45px] sm:text-7xl  mb-1 md:mb-3 font-bold ">
             {siteMetadata.author}
           </h1>
           <TypedBios />

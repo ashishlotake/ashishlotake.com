@@ -6,6 +6,7 @@ import Linkedin from '~/icons/linkedin.svg'
 import Mail from '~/icons/mail.svg'
 import Twitter from '~/icons/twitter.svg'
 import Youtube from '~/icons/youtube.svg'
+import pixelfed from '~/icons/pixelfed.svg'
 
 import mastodon from '~/icons/mastodon.svg'
 
@@ -18,6 +19,7 @@ export let SocialIconsMap = {
   Linkedin,
   Twitter,
   mastodon,
+  pixelfed,
 }
 
 export function SocialIcon({ name, href }: SocialIconProps) {
