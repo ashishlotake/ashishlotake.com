@@ -6,7 +6,8 @@ import type { SpotifyNowPlayingData } from '~/types'
 const { default: useSWR } = require('swr')
 import { fetcher } from '~/utils'
 import { Button } from './ProjectCard'
-import { DevIcon } from './DevIcon'
+import Image from 'next/image'
+
 export function Footer() {
   let response = useSWR('/api/spotify', fetcher)
   let nowPlayingData = response.data as SpotifyNowPlayingData
@@ -15,14 +16,13 @@ export function Footer() {
       <SpotifyNowPlaying className=" dark:bg-bg bg-white rounded-t-lg" {...nowPlayingData} />
       <div className="flex flex-col items-center pt-4 border-t dark:border-gray-800">
         <HirMeBtn />
-        {/* <Button className='hiremeBTN p-3 mb-3'><span className='text-white'>Hire me</span> </Button> */}
-
-        <div className="flex mb-3 space-x-4">
+        <div className="flex mt-2 space-x-4">
           <SocialIcon name="Github" href={siteMetadata.github} />
           <SocialIcon name="Mail" href={`mailto:${siteMetadata.email}`} />
-          {/* <SocialIcon name="Twitter" href={siteMetadata.twitter} /> */}
+          <SocialIcon name="Twitter" href={siteMetadata.twitter} />
           <SocialIcon name="Linkedin" href={siteMetadata.linkedin} />
-          <SocialIcon name="pixelfed" href="https://pixelfed.social/@ashishlotake" />
+          {/* <SocialIcon name="pixelfed" href="https://pixelfed.social/@ashishlotake" /> */}
+          <SocialIcon name="pixelfed" href="https://portfolio.pixelfed.social/ashishlotake" />
           {/* <SocialIcon name="mastodon" href="https://mastodon.social/@ashish02lotake" /> */}
         </div>
         <div className="flex my-2 space-x-2 text-sm text-gray-500 dark:text-gray-400">
@@ -41,13 +41,14 @@ export function HirMeBtn() {
   return (
     <div className=" flex items-center justify-center ">
       <div className="relative">
-        <Link href={`mailto:${siteMetadata.email}`} aria-label="Ashish's Blog">
-          <Button className="hiremeBTN p-3 mb-3">
-            <span className="text-white font-bold italic uppercase">Hire me</span>{' '}
+        <Link
+          href="https://www.buymeacoffee.com/ashishlotake"
+          aria-label=" buymeacoffee ashishlotake"
+        >
+          <Button className="">
+            <Image alt="BuyMeCoffe" src="/static/images/bmc-button.png" height="20" width="150" />
           </Button>
         </Link>
-        <div className="absolute bg-green-500 rounded-full w-5 h-5 top-0 right-0 -mt-2 -mr-2  animate-ping"></div>
-        <div className="absolute bg-green-500 rounded-full w-5 h-5 top-0 right-0 -mt-2 -mr-2 "></div>
       </div>
     </div>
   )
