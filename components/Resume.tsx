@@ -28,10 +28,10 @@ let skills = [
 export default function Resume() {
   return (
     <>
-      <PageSeo
+      {/* <PageSeo
         title={`Resume - ${siteMetadata.author}`}
         description="A dedicated and aspiring data scientist and machine learning engineer, wish to work for an institution that offers technical and personal growth."
-      />
+      /> */}
       <div className="0 mt-5  rounded-lg border-2    text-center shadow-lg bggray-50/10 p-2 dark:border-gray-800 dark:bg-bg bg-white  ">
         <div className="   border-b-2  pb-2 text-xl   font-medium dark:border-gray-800 ">
           Skills

@@ -23,21 +23,24 @@ export default function Tags({ tags }: { tags: TagsCount }) {
         {sortedTags.map((tag) => {
           return (
             <div key={tag} className="relative m-1 inline-flex flex-row  rounded  font-medium  ">
-              <div className="flex   ">
+              <div className="flex   group">
                 <p
                   className={clsx(
                     'text-[10px] md:text-[13px]  rounded-l border px-1 uppercase',
                     'border   dark:border-gray-800',
                     ' shadow-lg dark:bg-gray-900/40',
-                    ' hover:bg-primary-500  dark:hover:bg-primary-500',
-                    'hover:border-primary-500 dark:hover:border-primary-500',
-                    'hover:text-white dark:hover:text-black p-1',
+                    ' group-hover:!bg-primary-500  ',
+                    'group-hover:!border-primary-500 ',
+                    'group-hover:text-white dark:group-hover:text-black p-1',
                     'text-gray-800 dark:text-gray-300'
                   )}
                 >
                   <Tag text={tag} />
                 </p>
-                <Link href={`/tags/${kebabCase(tag)}`} className="bg-bg dark:bg-gray-200 rounded-r">
+                <Link
+                  href={`/tags/${kebabCase(tag)}`}
+                  className="bg-bg/70 dark:bg-gray-300 rounded-r"
+                >
                   <p className=" mt-0.5 p-1 text-[10px] md:text-[13px] text-white  dark:text-black    ">
                     {` (${tags[tag]})`}
                   </p>

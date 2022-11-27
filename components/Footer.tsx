@@ -22,14 +22,14 @@ export function Footer() {
           <SocialIcon name="Twitter" href={siteMetadata.twitter} />
           <SocialIcon name="Linkedin" href={siteMetadata.linkedin} />
           {/* <SocialIcon name="pixelfed" href="https://pixelfed.social/@ashishlotake" /> */}
-          <SocialIcon name="pixelfed" href="https://portfolio.pixelfed.social/ashishlotake" />
-          {/* <SocialIcon name="mastodon" href="https://mastodon.social/@ashish02lotake" /> */}
+          {/* <SocialIcon name="pixelfed" href="https://portfolio.pixelfed.social/ashishlotake" /> */}
+          <SocialIcon name="mastodon" href="https://mastodon.social/@ashish02lotake" />
         </div>
         <div className="flex my-2 space-x-2 text-sm text-gray-500 dark:text-gray-400">
           <div>{` © ${new Date().getFullYear()}`}</div>
           <span>{` • `}</span>
-          <Link className="hover:text-primary-500" href="/">
-            {siteMetadata.author}
+          <Link className="hover:text-primary-500 link-underline1" href="/">
+            {siteMetadata.headerTitle}
           </Link>
         </div>
       </div>
@@ -45,7 +45,7 @@ export function HirMeBtn() {
           href="https://www.buymeacoffee.com/ashishlotake"
           aria-label=" buymeacoffee ashishlotake"
         >
-          <Button className="">
+          <Button className="!bg-[#ffdd00] border-opacity-0">
             <Image alt="BuyMeCoffe" src="/static/images/bmc-button.png" height="20" width="150" />
           </Button>
         </Link>

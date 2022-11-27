@@ -13,10 +13,7 @@ export default function Snippet({ snippets }: { snippets: SnippetFrontMatter[] }
   let description = 'Reuseable code snippets collected by me'
   return (
     <>
-      <PageSeo
-        title={`Snippets - ${siteMetadata.author} - ${siteMetadata.title}`}
-        description={description}
-      />
+      <PageSeo title={`Snippets - ${siteMetadata.author}`} description={description} />
       <SnippetLayout snippets={snippets} description={description} />
     </>
   )

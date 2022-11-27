@@ -37,7 +37,10 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
                 className="sm:px-3 sm:py-2 rounded"
               />
             ))}
-            <Link href="https://resume.ashishlotake.com/">
+            <Link
+              // href="/static/ashishlotake_resuem.pdf"
+              href="https://resume.ashishlotake.com/"
+            >
               <Button className="hiremeBTN p-[6px] mx-1 rounded-[5px]">
                 <span className="text-white">Résumé</span>{' '}
               </Button>

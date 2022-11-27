@@ -41,7 +41,10 @@ export function MobileNav({ navShow, onToggleNav }) {
           </div>
         ))}
         <div className="px-6 py-3">
-          <Link href="https://resume.ashishlotake.com/">
+          <Link
+            // href="/static/ashishlotake_resuem.pdf"
+            href="https://resume.ashishlotake.com/"
+          >
             <Button className="hiremeBTN p-[5px] mx-1 rounded-md">
               <span className="text-white text-xl">Résumé</span>{' '}
             </Button>

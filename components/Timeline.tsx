@@ -87,7 +87,7 @@ export default function Timeline() {
   const col = 'bg-lime-00'
   return (
     <>
-      <PageSeo title={`Journey - ${siteMetadata.author}`} description="My journey" />
+      {/* <PageSeo title={`Journey - ${siteMetadata.author}`} description="My journey" /> */}
       <div className="pt-10">
         <div className="">
           <PageTitle>Journery</PageTitle>
