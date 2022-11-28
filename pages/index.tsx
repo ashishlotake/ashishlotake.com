@@ -37,7 +37,7 @@ function TopProject() {
         </div>
         <div className="pt-6 pb-10 flex justify-start  font-normal leading-6">
           <Link
-            href="/blog"
+            href="/projects"
             className="link-underline1 font-semibold text-primary-500   "
             aria-label="all posts"
           >

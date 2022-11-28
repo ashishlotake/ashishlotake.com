@@ -103,9 +103,8 @@ export function PostListItem01({ frontMatter }: { frontMatter: MdxFrontMatter })
             </span>
             <span className="text-sm">
               <Link
-                href="/blog"
+                href={`/blog/${slug}`}
                 className="link-underline1 font-semibold text-primary-500   "
-                aria-label="all posts"
               >
                 Read More &rarr;
               </Link>
