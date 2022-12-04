@@ -92,7 +92,9 @@ export function PostListItem01({ frontMatter }: { frontMatter: MdxFrontMatter })
             ))}
           </div>
           <Link href={`/blog/${slug}`} className="transition duration-200 hover:opacity-60">
-            <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100  ">{title}</h2>
+            <h2 className="text-lg leading-none font-semibold text-gray-800 dark:text-gray-100  hover:underline">
+              {title}
+            </h2>
           </Link>
           <p className="mb-3 flex-1 text-sm text-gray-600  dark:text-gray-300 line-clamp-2">
             {summary}

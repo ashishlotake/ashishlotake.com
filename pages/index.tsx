@@ -30,7 +30,7 @@ function TopProject() {
       <div className="mt-4 flex flex-col ">
         <h2 className="mb-2 text-3xl font-semibold text-gray-800 dark:text-gray-100">Projects</h2>
 
-        <div className=" grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-2">
+        <div className=" grid grid-cols-1 gap-4 sm:grid-cols-2 ">
           {projectsData.slice(0, 2).map((project) => (
             <ProjectCard key={project.title} project={project} />
           ))}

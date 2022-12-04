@@ -9,7 +9,7 @@ export function SnippetLayout({ snippets, description }: SnippetLayoutProps) {
         <Subtitle>{description}</Subtitle>
       </div>
       <div className="container">
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid sm:grid-cols-2  md:grid-cols-2 gap-4">
           {snippets.map((snippet) => (
             <SnippetCard key={snippet.title} snippet={snippet} />
           ))}

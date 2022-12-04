@@ -15,9 +15,9 @@ export default function Projects() {
           <PageTitle>Projects</PageTitle>
           <Subtitle>{description}</Subtitle>
         </div>
-        <div className="container">
+        <div className="">
           {/* <h3 className="mb-4 text-3xl font-bold">Work</h3> */}
-          <div className="  grid gap-4 sm:grid-cols-1 xl:grid-cols-1  ">
+          <div className="  grid gap-4 sm:grid-cols-2 md:grid-cols-1  ">
             {projectsData.map((project) => (
               <ProjectCard01 key={project.title} project={project} />
             ))}

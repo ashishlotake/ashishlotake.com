@@ -84,7 +84,7 @@ function NavItem({ href, text, className }) {
         isActive
           ? 'font-semibold text-gray-800 dark:text-gray-200'
           : 'font-normal text-gray-600 dark:text-gray-400',
-        'hidden md:inline-block p-1 hover:text-black hover:dark:text-white hover:bg-gray-200  hover:dark:bg-gray-800 transition-all',
+        'hidden sm:inline-block p-1 hover:text-black hover:dark:text-white hover:bg-gray-200  hover:dark:bg-gray-800 transition-all',
         className
       )}
     >

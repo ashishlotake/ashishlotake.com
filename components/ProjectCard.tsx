@@ -18,7 +18,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
         <div className="p-3">
           <div className="flex justify-between mb-3">
-            <h2 className="m-0 w-full  pt-2 text-lg font-semibold tracking-tight text-gray-800 dark:text-gray-100 hover:opacity-60">
+            <h2 className="m-0 w-full hover:underline pt-2 text-lg font-semibold tracking-tight text-gray-800 dark:text-gray-100 hover:opacity-60">
               {href ? (
                 <Link href={href} aria-label={`Link to ${title}`}>
                   {title}
@@ -115,7 +115,7 @@ export function ProjectCard01({ project }: ProjectCardProps) {
 
   return (
     <div className="overflow-hidden flex flex-col space-y-5 md:space-x-2 rounded-lg border-2   dark:border-gray-800 dark:bg-bg bg-white md:flex-row md:space-y-0  shadow-md md:hover:border-black md:dark:hover:border-white">
-      <div className="overflow-hidden  md:w-52 bg-white">
+      <div className="overflow-hidden md:w-52 bg-white">
         <div className="relative  w-full  md:h-full md:w-52 h-36">
           <Image
             alt={title}
@@ -131,7 +131,9 @@ export function ProjectCard01({ project }: ProjectCardProps) {
           <Link href={github} className="transition duration-200 hover:opacity-60">
             <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100 ">{title}</h2>
           </Link>
-          <p className="mb-3 flex-1 text-sm text-gray-600  dark:text-gray-300">{description}</p>
+          <p className="mb-3 flex-1 prose text-sm text-gray-600  dark:text-gray-300">
+            {description}
+          </p>
           <div className="flex flex-wrap space-x-1 pb-1 pt-1">
             {github && (
               <Link href={github} className="group block ">

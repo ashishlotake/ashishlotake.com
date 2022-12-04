@@ -30,7 +30,7 @@ export function ListLayout(props: ListLayoutProps) {
         </div>
         <PostsSearch onChange={setSearchValue} />
 
-        <div className="pt-4 grid gap-4 sm:grid-cols-1 md:grid-cols-1">
+        <div className="pt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-1">
           {!filteredBlogPosts.length && 'No posts found.'}
           {displayPosts.map((frontMatter) => (
             <PostListItem01 key={frontMatter.slug} frontMatter={frontMatter} />
