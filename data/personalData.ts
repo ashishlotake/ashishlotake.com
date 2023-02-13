@@ -55,6 +55,11 @@ export let educationData = [
   
   export let certificateData = [
     {
+      title: 'SQL Basic & Intermediate',
+      provider: 'HackerRank',
+      url: 'https://www.hackerrank.com/certificates/7e2b39648527',
+    },
+    {
       title: 'AWS Certified Cloud Practitioner (CLF-C01)',
       provider: 'AWS',
       url: 'https://www.credly.com/badges/a2f0aa3f-1f1e-4804-b74e-766c30790bb4/public_urlF',

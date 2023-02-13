@@ -6,24 +6,22 @@ import { PageTitle, Subtitle } from './PageTitle'
 import { PageSeo } from './SEO'
 
 const TimeLineInfo = [
-  // {
-  //   title: 'Graduated College',
-  //   description:"",
-  //   icon: 'ic:outline-school',
-  //   color:'bg-lime-200',
-  //   dark_color:'dark:bg-purple-900',
-  //   date:'Dec 2022',
-  //   status: 'Present',
-
-  // },
   {
     title: 'Applying for Jobs',
     description: 'Feel confident that I can work as a junior Data Scientist. Wish me Luck',
     icon: 'jobsearch',
     color: 'bg-primary-400',
     dark_color: 'dark:bg-green-900',
-    date: 'September 2022',
+    date: 'December 2022',
     status: 'Present',
+  },
+  {
+    title: 'Graduated Diploma in Artificial Intelligence & Machine Learning',
+    description: 'With 81.6%',
+    icon: 'graudate',
+    color: 'bg-lime-200',
+    dark_color: 'dark:bg-purple-900',
+    date: 'January 2023',
   },
   {
     title: 'Intership',
