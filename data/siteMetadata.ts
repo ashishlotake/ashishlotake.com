@@ -6,13 +6,13 @@ export let siteMetadata = {
   description:
     'Dive deep into nitty-gritty of Data science, Machine learning & Artificial Intelligence with me!',
   language: 'en-us',
-  theme: 'dark', // system, dark or light
+  theme: 'system', // system, dark or light
   siteUrl: 'https://ashishlotake.com',
   siteRepo: 'https://github.com/ashishlotake/ashishlotake.com',
   siteLogo: '/static/images/logo.svg',
   image: '/static/images/logo.jpg',
   socialBanner: '/static/images/twitter-card.png',
-  email: 'hello@ashishlotake.com',
+  email: 'ashishlotake@duck.com',
   github: 'https://github.com/ashishlotake',
   linkedin: 'https://www.linkedin.com/in/ashish-lotake/',
   twitter: 'https://twitter.com/Ashish02lotake',
