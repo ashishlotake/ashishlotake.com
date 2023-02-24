@@ -6,6 +6,7 @@ import {
   PostsSearch,
   Subtitle,
   PostListItem01,
+  PostListItem001,
 } from '~/components'
 import type { ListLayoutProps } from '~/types'
 
@@ -29,11 +30,16 @@ export function ListLayout(props: ListLayoutProps) {
           <Subtitle>Thoughts, mental models, and tutorials related to ML DS and AI</Subtitle>
         </div>
         <PostsSearch onChange={setSearchValue} />
-
-        <div className="pt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-1">
+        {/* <div className="pt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-1">
           {!filteredBlogPosts.length && 'No posts found.'}
           {displayPosts.map((frontMatter) => (
             <PostListItem01 key={frontMatter.slug} frontMatter={frontMatter} />
+          ))}
+        </div> */}
+        <div className="pt-4 grid gap4 sm:grid-cols-1 md:grid-cols-1">
+          {!filteredBlogPosts.length && 'No posts found.'}
+          {displayPosts.map((frontMatter) => (
+            <PostListItem001 key={frontMatter.slug} frontMatter={frontMatter} />
           ))}
         </div>
       </div>

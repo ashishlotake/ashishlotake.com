@@ -26,7 +26,7 @@ export default function Tags({ tags }: { tags: TagsCount }) {
               <div className="flex   group">
                 <p
                   className={clsx(
-                    'text-[10px] md:text-[13px]  rounded-l border px-1 uppercase',
+                    'text-[13px] md:text-[13px]  rounded-l border px-1 uppercase',
                     'border   dark:border-gray-800',
                     ' shadow-lg dark:bg-gray-900/40',
                     ' group-hover:!bg-primary-500  ',

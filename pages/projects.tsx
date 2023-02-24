@@ -15,22 +15,20 @@ export default function Projects() {
           <PageTitle>Projects</PageTitle>
           <Subtitle>{description}</Subtitle>
         </div>
-        <div className="">
-          {/* <h3 className="mb-4 text-3xl font-bold">Work</h3> */}
+        {/* <div className="">
           <div className="  grid gap-4 sm:grid-cols-2 md:grid-cols-1  ">
             {projectsData.map((project) => (
               <ProjectCard01 key={project.title} project={project} />
             ))}
           </div>
-        </div>
-        {/* <div className="container py-12">
-          <h3 className="mb-4 text-3xl font-bold">Side Projects</h3>
+        </div> */}
+        <div className="">
           <div className="  grid gap-4 sm:grid-cols-2 md:grid-cols-2">
-            {sideProjects.map((project) => (
+            {projectsData.map((project) => (
               <ProjectCard key={project.title} project={project} />
             ))}
           </div>
-        </div> */}
+        </div>
       </div>
     </>
   )

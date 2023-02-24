@@ -75,12 +75,13 @@ export let projectsData = [
   {
     title: 'Automated data labelling system',
     description:
-      "This is an automated labeling system, the app will label the input images from the user and then correctly label the images by placing them in their category folder and giving the user a zip file, and at the same time user can label images if not satisfied with the result and then retrain the original model, to improve the models' generalization accuracy",
+      "This is an automated labeling system, the app will label the input images from the user and then correctly label the images by placing them in their category folder and giving the user a zip file, and at the same time user can label images if not satisfied with the result and then retrain the original model, to improve the models' generalization accuracy.",
     imgSrc: '/static/images/projects/labelling.svg',
     href: 'https://ashishlotake-active-labelling-system-project-app-14t6bq.streamlitapp.com/',
     github: 'https://github.com/ashishlotake/active-labelling-system-project',
     stack: ['Labelling System', 'CNN', 'Transfer Learning', 'Docker', 'Streamlit'],
     blog: '/blog/active-labelling-system',
+    lang: 'Keras',
   },
   {
     title: 'General Q&A Conversational ChatBot',
@@ -90,6 +91,7 @@ export let projectsData = [
     github: 'https://github.com/ashishlotake/rasa_chat_bot',
     stack: ['Chatbot', 'NLU', 'RASA'],
     blog: '/blog/rasa-chat-bot',
+    lang: 'Rasa',
   },
   {
     title: 'Resume Filtering System',
@@ -99,6 +101,7 @@ export let projectsData = [
     github: 'https://github.com/ashishlotake/Resume-Filtering-System',
     href: 'https://ashishlotake-resume-filtering-system-app-38ajgg.streamlitapp.com/',
     stack: ['Python', 'Streamlit'],
+    lang: 'Python',
   },
   {
     title: 'Which Anime to Watch',
@@ -108,6 +111,15 @@ export let projectsData = [
     github: 'https://github.com/ashishlotake/Which_anime_to_watch',
     href: 'https://share.streamlit.io/ashishlotake/which_anime_to_watch/app.py',
     stack: ['Python', 'Streamlit'],
+    lang: 'Python',
+  },
+  {
+    title: 'ashishlotake.com',
+    description:
+      'This is my personal portfolio/resume website. I update it regularly, buit using Next.js, TailwindCSS, next-mdx and deployed on Vercel.',
+    imgSrc: '',
+    github: 'https://github.com/ashishlotake/ashishlotake.com',
+    href: 'https://ashishlotake.com',
+    lang: 'Typescript',
   },
 ]
-

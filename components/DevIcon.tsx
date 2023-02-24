@@ -29,6 +29,8 @@ import graudate from '~/icons/graudate.svg'
 import highschool from '~/icons/highschool.svg'
 import intern from '~/icons/intern.svg'
 import jobsearch from '~/icons/jobsearch.svg'
+import Rasa from '~/icons/rasa1.svg'
+
 import clsx from 'clsx'
 
 export let DevIconsMap = {
@@ -62,6 +64,7 @@ export let DevIconsMap = {
   highschool,
   intern,
   jobsearch,
+  Rasa,
 }
 
 export function DevIcon({ type, className }) {
