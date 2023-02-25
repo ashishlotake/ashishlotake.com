@@ -5,7 +5,7 @@ export let siteMetadata = {
   headerTitle: "Ashish's digital garden",
   description:
     'Dive deep into nitty-gritty of Data science, Machine learning & Artificial Intelligence with me!',
-  language: 'en-us',
+  language: 'en-GB',
   theme: 'light', // system, dark or light
   siteUrl: 'https://ashishlotake.com',
   siteRepo: 'https://github.com/ashishlotake/ashishlotake.com',
@@ -16,7 +16,7 @@ export let siteMetadata = {
   github: 'https://github.com/ashishlotake',
   linkedin: 'https://www.linkedin.com/in/ashish-lotake/',
   twitter: 'https://twitter.com/Ashish02lotake',
-  locale: 'en-US',
+  locale: 'en-GB',
   occupation: 'Student',
   company: 'University of Hyderabad',
   /** Choose one of these Analytics providers */

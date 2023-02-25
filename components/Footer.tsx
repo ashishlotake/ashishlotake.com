@@ -23,7 +23,7 @@ export function Footer() {
           <SocialIcon name="Linkedin" href={siteMetadata.linkedin} />
           {/* <SocialIcon name="pixelfed" href="https://pixelfed.social/@ashishlotake" /> */}
           {/* <SocialIcon name="pixelfed" href="https://portfolio.pixelfed.social/ashishlotake" /> */}
-          <SocialIcon name="mastodon" href="https://mastodon.social/@ashish02lotake" />
+          {/* <SocialIcon name="mastodon" href="https://mastodon.social/@ashish02lotake" /> */}
         </div>
         <div className="flex my-2 space-x-2 text-sm text-gray-500 dark:text-gray-400">
           <div>{` © ${new Date().getFullYear()}`}</div>

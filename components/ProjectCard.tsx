@@ -8,14 +8,18 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <div>
-      <div className="group px-3 p-2  h-full overflow-hidden border-2 rounded-lg dark:border-gray-800 bg-white dark:bg-bg  md:hover:border-black md:dark:hover:border-white shadow-lg flex flex-col">
-        <h2 className="m-0 w-full  pb-2 text-lg font-bold tracking-tight text-gray-800 dark:text-gray-100">
+      <div className="group px-3 p-2  h-full overflow-hidden border-2 rounded-lg dark:border-gray-800 bg-white dark:bg-bg  md:hover:border-black md:dark:hover:border-white shadow-lg flex flex-col transition-border-color">
+        {/* <h2 className="m-0 w-full  pb-2 text-lg font-semibold tracking-tight text-gray-800 dark:text-gray-100">
+          {title}
+        </h2> */}
+        <h2 className="flex leading-none w-full text-lg font-semibold tracking-tight text-gray-800 dark:text-gray-100 pb-2">
           {title}
         </h2>
-        <p className="mb-3 flex-1 prose text-sm text-gray-600  dark:text-gray-300">{description}</p>{' '}
+        {/* <p className="mb-3 flex-1 prose text-sm text-gray-600  dark:text-gray-300">{description}</p>{' '} */}
+        <p className="text-sm text-gray-700 max-w-none dark:text-gray-300 my-1">{description}</p>
         <div className="text-center mt-auto">
           <div className="flow-root mt-auto">
-            <p className="float-left flex flex-wrap space-x-1 pb-1 pt-1 sm:group-hover:opacity-100 sm:opacity-0">
+            <p className="float-left flex flex-wrap space-x-1 pb-1 pt-1 sm:group-hover:opacity-100 sm:opacity-0 ease-in-out transition">
               {github && (
                 <Link href={github} className="group block ">
                   <Button className="px-2 hover:bg-black hover:bg-opacity-10 dark:hover:bg-white dark:hover:bg-opacity-20">

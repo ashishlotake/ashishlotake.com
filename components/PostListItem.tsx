@@ -173,7 +173,7 @@ export function PostListItem001({ frontMatter }: { frontMatter: MdxFrontMatter }
       </div>
 
       {/* <div className="col-span-3 rounded-lg p-3"> */}
-      <div className="col-span-3 p-3 rounded-lg border-2 dark:border-gray-800 dark:bg-bg bg-white  md:flex-row md:space-y-0  shadow-md md:hover:border-black md:dark:hover:border-white">
+      <div className="col-span-3 p-3 rounded-lg border-2 dark:border-gray-800 dark:bg-bg bg-white  md:flex-row md:space-y-0  shadow-md md:hover:border-black md:dark:hover:border-white transition-border-color">
         <div className="hidden md:flex flex-wrap ">
           {tags.map((tag) => (
             <span
@@ -193,6 +193,7 @@ export function PostListItem001({ frontMatter }: { frontMatter: MdxFrontMatter }
           <h2 className="text-lg leading-none font-semibold text-gray-800 dark:text-gray-100  hover:underline">
             {title}
           </h2>
+
           <p className=" md:mb-3 flex-1 text-sm text-gray-600  dark:text-gray-300 line-clamp-2">
             {summary}
           </p>
@@ -211,4 +212,73 @@ export function PostListItem001({ frontMatter }: { frontMatter: MdxFrontMatter }
       </div>
     </div>
   )
+}
+
+export function FeedStyle({ frontMatter }: { frontMatter: MdxFrontMatter }) {
+  let { slug, date, title, summary, tags, images, postimg } = frontMatter
+  return (
+    <ol className="relative md:border-l border-gray-400 dark:border-gray-700 ">
+      <li
+        key={title}
+        className="group transition-border-color md:hover:border-black md:dark:hover:border-white  mb-4 ml-0 md:ml-4 rounded-lg border-2 shadow-lg bggray-50/10 dark:border-gray-800 dark:bg-bg bg-white"
+      >
+        <Link href={`/blog/${slug}`} className="">
+          <span
+            className={`hidden md:block text-sm absolute -left-5 w-[5px] items-center justify-center  rounded-full py-2 `}
+          >
+            <div
+              className="rotate-180 text-gray-500 group-hover:text-black dark:group-hover:text-white "
+              style={{ writingMode: 'vertical-rl' }}
+            >
+              <time dateTime={date}>{formatDate01(date)}</time>
+            </div>
+          </span>
+          <span
+            className={`absolute -left-[4px] top-[0px] h-[7px] w-[7px] items-center justify-center rounded-full text-black   ring-1 ring-gray-500 bg-white dark:bg-bg md:group-hover:bg-black  md:dark:group-hover:bg-white hidden md:block`}
+          ></span>
+        </Link>
+        <div className="p-3">
+          <div className="hiddenmd:flex flex-wrap line-clamp-1">
+            {tags.map((tag) => (
+              <span
+                key={tag}
+                className="text-[13px] mr-2 text-gray-500 dark:text-gray-400 hover:!text-primary-600 hover:underline "
+              >
+                #<Tag key={tag} text={tag} />
+              </span>
+            ))}
+          </div>
+          <Link href={`/blog/${slug}`} className="">
+            <h2 className="flex leading-none w-full text-lg font-semibold tracking-tight text-gray-800 dark:text-gray-100 ">
+              {title}
+            </h2>
+            <time className="md:hidden text-sm font-normal leading-none !text-gray-500 ">
+              {date}
+            </time>
+            <p className="text-sm text-gray-700 max-w-none dark:text-gray-300 my-1 line-clamp-2">
+              {summary}
+            </p>
+          </Link>
+          <div className="mt-2 flex flex-wrap  justify-between space-x-2  pr-0 md:pr-3 text-sm font-medium text-gray-500">
+            <span className="text-sm">
+              <Link
+                href={`/blog/${slug}`}
+                className="link-underline1 font-semibold text-primary-500   "
+              >
+                Read More &rarr;
+              </Link>
+            </span>
+          </div>
+        </div>
+      </li>
+    </ol>
+  )
+}
+
+export function formatDate01(date: string) {
+  return new Date(date).toLocaleDateString('en-GB', {
+    day: '2-digit',
+    month: 'short',
+    year: '2-digit',
+  })
 }

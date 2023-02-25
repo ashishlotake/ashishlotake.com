@@ -23,7 +23,7 @@ export default function Tags({ tags }: { tags: TagsCount }) {
         {sortedTags.map((tag) => {
           return (
             <div key={tag} className="relative m-1 inline-flex flex-row  rounded  font-medium  ">
-              <div className="flex   group">
+              <div className="flex   group ">
                 <p
                   className={clsx(
                     'text-[13px] md:text-[13px]  rounded-l border px-1 uppercase',
@@ -31,6 +31,7 @@ export default function Tags({ tags }: { tags: TagsCount }) {
                     ' shadow-lg dark:bg-gray-900/40',
                     ' group-hover:!bg-primary-500  ',
                     'group-hover:!border-primary-500 ',
+                    'transition-color duration-100 ease-in-out',
                     'group-hover:text-white dark:group-hover:text-black p-1',
                     'text-gray-800 dark:text-gray-300'
                   )}

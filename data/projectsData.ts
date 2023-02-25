@@ -119,7 +119,7 @@ export let projectsData = [
       'This is my personal portfolio/resume website. I update it regularly, buit using Next.js, TailwindCSS, next-mdx and deployed on Vercel.',
     imgSrc: '',
     github: 'https://github.com/ashishlotake/ashishlotake.com',
-    href: 'https://ashishlotake.com',
+    href: '/',
     lang: 'Typescript',
   },
 ]

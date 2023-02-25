@@ -9,18 +9,18 @@ export function FeaturedPosts({ posts }: { posts: BlogFrontMatter[] }) {
     <>
       <h2 className="mb-4 text-3xl font-bold">Latest Posts</h2>
 
-      <div className=" grid gap-6 sm:grid-cols-3 xl:grid-cols-3">
+      <div className=" grid gap-4 sm:grid-cols-3 xl:grid-cols-3">
         {!posts.length && 'No posts found.'}
         {posts.slice(0, 3).map((frontMatter) => {
           let { slug, date, title, summary, tags } = frontMatter
           return (
             <Link key={slug} href={`/blog/${slug}`} aria-label={`Read "${title}"`}>
-              <div className="group relative block h-full md:hover:scale[102%]  shadow-lg rounded-lg">
+              <div className="group relative block h-full md:hover:scale[102%]  shadow-lg rounded-lg ">
                 <div className="relative  flex h-full ">
-                  <div className="p-3 flex flex-1  flex-col  rounded-lg overflow-hidden border-2   dark:border-gray-800 dark:bg-bg bg-white md:hover:border-black md:dark:hover:border-white">
-                    <h3 className=" w-full text-lg font-semibold tracking-tight text-gray-800 dark:text-gray-100">
+                  <div className="p-3 flex flex-1  flex-col  rounded-lg overflow-hidden border-2   dark:border-gray-800 dark:bg-bg bg-white md:hover:border-black md:dark:hover:border-white transition-border-color">
+                    <h2 className="flex leading-none w-full text-lg font-semibold tracking-tight text-gray-800 dark:text-gray-100">
                       {title}
-                    </h3>
+                    </h2>
                     <p className="flex-1  prose text-gray-500 max-w-none dark:text-gray-400">
                       {/* {summary} */}
                     </p>

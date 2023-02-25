@@ -161,7 +161,9 @@ function TimelineCard({ d }) {
 
         <DevIcon type={d.icon} className="h-4 w-4" />
       </span>
-      <h3 className="flex  m-0 w-full text-lg font-medium tracking-tight text-gray-800 dark:text-gray-100 ">
+      {/* <h3 className="flex  m-0 w-full text-lg font-medium tracking-tight text-gray-800 dark:text-gray-100 ">
+        {d.title} */}
+      <h3 className="flex leading-none w-full text-lg font-semibold tracking-tight text-gray-800 dark:text-gray-100">
         {d.title}
 
         {d.status ? (

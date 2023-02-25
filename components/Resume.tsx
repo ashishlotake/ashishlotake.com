@@ -135,9 +135,9 @@ function ResumeContent({ data }) {
       {data.map((d) => (
         <div key={d.title} className="my-2">
           <div className="flex flex-row">
-            <h1 className=" m-0 w-full text-lg font-medium tracking-tight text-gray-800 dark:text-gray-100">
+            <h2 className="flex pb-2 leading-none w-full text-lg font-semibold tracking-tight text-gray-800 dark:text-gray-100">
               {d.title}
-            </h1>{' '}
+            </h2>{' '}
             <span className="text-md text-gray-500 ">&nbsp;@&nbsp;</span>{' '}
             <span className="">
               <Link href={d.url} className="company">

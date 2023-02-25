@@ -22,9 +22,8 @@
   src: url(/fonts/ibm-plex-sans-var-italic.woff2) format('woff2');
 }
 
-
 .prose {
-max-width: 100rem
+  max-width: 100rem;
 }
 
 /**
@@ -40,8 +39,8 @@ max-width: 100rem
  * https://github.com/PrismJS/prism-themes
  */
 
- .prose pre code {
-  @apply p-0 text-gray-800 dark:text-gray-200 ;
+.prose pre code {
+  @apply p-0 text-gray-800 dark:text-gray-200;
   border: initial;
 }
 
@@ -50,7 +49,7 @@ max-width: 100rem
 }
 
 .remark-code-title + div > pre {
-  @apply mt-0 rounded-t-none  ;
+  @apply mt-0 rounded-t-none;
 }
 
 .code-highlight {
@@ -78,14 +77,10 @@ max-width: 100rem
   content: attr(line);
 }
 
-
-
 /* project hover line */
 .link-underline1 {
   position: relative;
-
 }
-
 
 .link-underline1:after {
   content: '';
@@ -95,7 +90,11 @@ max-width: 100rem
   display: block;
   margin-top: 0px;
   right: 0;
-  background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(109,127,253,1) 0%, rgba(168,91,245,1) 90% );
+  background: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(109, 127, 253, 1) 0%,
+    rgba(168, 91, 245, 1) 90%
+  );
   transition: width 0.25s ease;
   -webkit-transition: width 0.25s ease;
 }
@@ -103,11 +102,14 @@ max-width: 100rem
 .link-underline1:hover:after {
   width: 100%;
   left: 0;
-  background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(109,127,253,1) 0%, rgba(168,91,245,1) 90% );
+  background: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(109, 127, 253, 1) 0%,
+    rgba(168, 91, 245, 1) 90%
+  );
 }
 
 /* Resume special link  */
-
 
 .company {
   box-shadow: inset 0 0 0 0 #0ea5e9;
@@ -121,17 +123,13 @@ max-width: 100rem
   color: white;
 }
 
-
 /* mdx images */
 
 .img2 {
   border-radius: 7px;
 }
 
-
-
 /*  Pushable button */
-
 
 .frontblue {
   display: block;
@@ -146,17 +144,16 @@ max-width: 100rem
   color: #3f3f46;
   padding: 0.5rem;
   font-weight: 600;
-  }
+}
 
- .dark .frontblue {
+.dark .frontblue {
   border: 1px solid #525252;
-  box-shadow: 0 10px 15px -5px  #0ea5e9;
-  color: #e5e5e5
-  }
-
+  box-shadow: 0 10px 15px -5px #0ea5e9;
+  color: #e5e5e5;
+}
 
 .pushable:hover .frontblue {
-    transform: scale(1.05, 1.05);
+  transform: scale(1.05, 1.05);
   transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
 }
 .pushable:active .frontblue {
@@ -169,32 +166,36 @@ max-width: 100rem
   color: #000;
 }
 
-
-
 .hiremeBTN {
   position: relative;
   /* padding: 1px; */
-  background: url("/static/images/build-btn.gif") no-repeat center center;
+  background: url('/static/images/build-btn.gif') no-repeat center center;
   background-size: auto;
   background-size: cover;
   /* border-radius: 5px; */
 }
 
-
 body {
-  background: radial-gradient(circle, #fafafa 10%, transparent 11%),radial-gradient(circle at bottom left, #fafafa 5%, transparent 6%),radial-gradient(circle at bottom right, #fafafa 5%, transparent 6%),radial-gradient(circle at top left, #fafafa 5%, transparent 6%),radial-gradient(circle at top right, #fafafa 5%, transparent 6%);
+  background: radial-gradient(circle, #fafafa 10%, transparent 11%),
+    radial-gradient(circle at bottom left, #fafafa 5%, transparent 6%),
+    radial-gradient(circle at bottom right, #fafafa 5%, transparent 6%),
+    radial-gradient(circle at top left, #fafafa 5%, transparent 6%),
+    radial-gradient(circle at top right, #fafafa 5%, transparent 6%);
   background-size: 3em 3em;
   background-color: #ffffff;
-  opacity: 1
-} 
-
-.dark body {
-  background: radial-gradient(circle, #0c0c0c 10%, transparent 11%),radial-gradient(circle at bottom left, #0c0c0c 5%, transparent 6%),radial-gradient(circle at bottom right, #0c0c0c 5%, transparent 6%),radial-gradient(circle at top left, #0c0c0c 5%, transparent 6%),radial-gradient(circle at top right, #0c0c0c 5%, transparent 6%);
-  background-size: 3em 3em;
-  background-color: #ffffff;
-  opacity: 1
+  opacity: 1;
 }
 
+.dark body {
+  background: radial-gradient(circle, #0c0c0c 10%, transparent 11%),
+    radial-gradient(circle at bottom left, #0c0c0c 5%, transparent 6%),
+    radial-gradient(circle at bottom right, #0c0c0c 5%, transparent 6%),
+    radial-gradient(circle at top left, #0c0c0c 5%, transparent 6%),
+    radial-gradient(circle at top right, #0c0c0c 5%, transparent 6%);
+  background-size: 3em 3em;
+  background-color: #ffffff;
+  opacity: 1;
+}
 
 /* 
 .intro{
@@ -209,3 +210,27 @@ body {
   color: white;
 }
  */
+
+/* @layer base {
+  :root {
+    --white: #fff;
+    --black: #000;
+    --bg: var(--white);
+    --text: var(--black);
+  }
+
+  .dark {
+    --bg: var(--black);
+    --text: var(--white);
+  }
+
+  * {
+    @apply transition-shadow duration-200;
+  }
+} */
+
+.transition-border-color:hover {
+  transition-property: border-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
