@@ -8,7 +8,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <div>
-      <div className="group px-3 p-2  h-full overflow-hidden border-2 rounded-lg dark:border-gray-800 bg-white dark:bg-bg  md:hover:border-black md:dark:hover:border-white shadow-lg flex flex-col transition-border-color">
+      <div className="group p-3 h-full overflow-hidden border-2 rounded-lg dark:border-gray-800 bg-white dark:bg-bg  md:hover:border-black md:dark:hover:border-white shadow-lg flex flex-col transition-border-color">
         {/* <h2 className="m-0 w-full  pb-2 text-lg font-semibold tracking-tight text-gray-800 dark:text-gray-100">
           {title}
         </h2> */}
@@ -19,7 +19,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <p className="text-sm text-gray-700 max-w-none dark:text-gray-300 my-1">{description}</p>
         <div className="text-center mt-auto">
           <div className="flow-root mt-auto">
-            <p className="float-left flex flex-wrap space-x-1 pb-1 pt-1 sm:group-hover:opacity-100 sm:opacity-0 ease-in-out transition">
+            <p className="float-left flex flex-wrap space-x-1 sm:group-hover:opacity-100 sm:opacity-0 ease-in-out transition">
               {github && (
                 <Link href={github} className="group block ">
                   <Button className="px-2 hover:bg-black hover:bg-opacity-10 dark:hover:bg-white dark:hover:bg-opacity-20">
@@ -87,7 +87,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 </Link>
               )}
             </p>
-            <p className="float-right pt-3 p-2 flex flex-wrap">
+            <p className="float-right p-2 flex flex-wrap">
               <text className="text-sm pt-[2px] px-[4px]">{lang}</text>
               <DevIcon className="w-6 h-6" type={lang} />
             </p>
@@ -125,7 +125,7 @@ export function ProjectCard01({ project }: ProjectCardProps) {
   let { title, description, imgSrc, href, github, blog, lang } = project
 
   return (
-    <div className="overflow-hidden flex flex-col space-y-2 md:space-x-2 rounded-lg border-2   dark:border-gray-800 dark:bg-bg bg-white md:flex-row md:space-y-0  shadow-md md:hover:border-black md:dark:hover:border-white">
+    <div className="overflow-hidden flex flex-col space-y-2 md:space-x-2 rounded-lg border-2   dark:border-gray-800 dark:bg-bg bg-white md:flex-row md:space-y-0  shadow-md md:hover:border-black md:dark:hover:border-white transition-border-color">
       <div className="overflow-hidden md:w-52 bg-white">
         <div className="relative  w-full  md:h-full md:w-52 hidden md:block">
           <Image

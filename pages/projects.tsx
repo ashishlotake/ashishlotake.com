@@ -23,7 +23,7 @@ export default function Projects() {
           </div>
         </div> */}
         <div className="">
-          <div className="  grid gap-4 sm:grid-cols-2 md:grid-cols-2">
+          <div className="  grid gap-4 sm:grid-cols-2">
             {projectsData.map((project) => (
               <ProjectCard key={project.title} project={project} />
             ))}
