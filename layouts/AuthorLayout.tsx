@@ -21,7 +21,7 @@ export function AuthorLayout({ children }: AuthorLayoutProps) {
           <Subtitle>{description1}</Subtitle>
         </div>
         <div className="items-start space-y-2 pt-3 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
-          <div className="grid flex-col items-center space-x-2  lg:grid-cols-1  xl:sticky xl:top-28">
+          <div className=" flex-col items-center space-x-2  lg:grid-cols-1  xl:sticky xl:top-28">
             <div className="border2  ">
               <ProfileCard />
             </div>

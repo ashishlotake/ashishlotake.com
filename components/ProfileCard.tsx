@@ -28,10 +28,10 @@ export function ProfileCard() {
           />
         </div>
         <SpotifyNowPlaying
-          className="bg-dark dark:bg-white text-white dark:text-black rounded-t-md md:hidden lg:flex"
+          className="bg-dark dark:bg-white text-white dark:text-black rounded-md mdhidden lg:flex"
           {...nowPlayingData}
         />
-        <span className="h-2 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-b-md md:hidden lg:flex"></span>
+        {/* <span className="h-2 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-b-md md:hidden lg:flex"></span> */}
         <ProfileCardInfo />
       </div>
     </div>
